@@ -1,0 +1,25 @@
+QDateTimeEdit {
+    background-color: #FFFFFF;
+    border: 1px solid rgb(87, 78, 209);
+    border-radius: 4px;
+    color: #000000;
+    font-size: 18px;
+}
+
+QDateTimeEdit::drop-down {
+    display: none;
+}
+
+QDateTimeEdit::up-button, QDateTimeEdit::down-button {
+    width: 0;
+    height: 0;
+    border: none;
+}
+
+QDateTimeEdit:hover {
+    background-color: rgba(229, 228, 253, 0.2);
+}
+
+QDateTimeEdit:focus {
+    border-color: rgb(35, 26, 132);
+}
