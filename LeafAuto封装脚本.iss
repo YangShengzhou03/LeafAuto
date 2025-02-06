@@ -51,8 +51,8 @@ Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone
 
 [Files]
-Source: "D:\LeafAuto\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\LeafAuto\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Application\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Application\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; 注意: 不要在任何共享系统文件上使用“Flags: ignoreversion”
 
 [Icons]

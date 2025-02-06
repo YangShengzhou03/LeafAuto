@@ -6,7 +6,7 @@ from PyQt6.QtNetwork import QLocalServer, QLocalSocket
 from MainWindow import MainWindow
 
 """
-pyinstaller --windowed --icon=resources/img/icon.ico --add-data "resources;resources" --version-file=LeafAuto_version_info.txt Application.py
+pyinstaller Application.spec
 """
 
 
