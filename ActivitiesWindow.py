@@ -15,6 +15,8 @@ class ActivitiesWindow(QtWidgets.QMainWindow, Ui_ActivitiesWindow):
         super().__init__()
         self.ui = Ui_ActivitiesWindow()
         self.ui.setupUi(self)
+        self.setWindowTitle("等待激活枫叶")
+        self.setWindowIcon(QtGui.QIcon(get_resource_path('resources/img/tray.ico')))
         self.setWindowFlags(
             self.windowFlags() | QtCore.Qt.WindowType.FramelessWindowHint | QtCore.Qt.WindowType.WindowStaysOnTopHint)
         self.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)

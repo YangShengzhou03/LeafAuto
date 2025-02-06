@@ -3,10 +3,10 @@ import sys
 from PyQt6 import QtWidgets, QtCore
 from PyQt6.QtNetwork import QLocalServer, QLocalSocket
 
-from LeafProcess import LeafAuto
+from MainWindow import MainWindow
 
 """
-pyinstaller --windowed --icon=resources/img/icon.ico --add-data "resources;resources" --version-file=LeafAuto_version_info.txt App.py
+pyinstaller --windowed --icon=resources/img/icon.ico --add-data "resources;resources" --version-file=LeafAuto_version_info.txt Application.py
 """
 
 
@@ -44,7 +44,7 @@ def main():
 
         local_server.newConnection.connect(new_connection)
 
-    window = LeafAuto()
+    window = MainWindow()
     window.move(100, 50)
     window.show()
     sys.exit(app.exec())

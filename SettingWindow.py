@@ -1,4 +1,4 @@
-from PyQt6 import QtWidgets, QtCore
+from PyQt6 import QtWidgets, QtCore, QtGui
 from PyQt6.QtCore import QUrl
 from PyQt6.QtGui import QDesktopServices
 
@@ -6,7 +6,7 @@ import UpdateDialog
 from System_info import write_key_value, read_key_value
 from Thread import ErrorSoundThread
 from Ui_SettingWindow import Ui_SettingWindow
-from common import str_to_bool, log
+from common import str_to_bool, log, get_resource_path
 
 
 class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
@@ -21,6 +21,8 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
         super().__init__()
         self.ui = Ui_SettingWindow()
         self.ui.setupUi(self)
+        self.setWindowTitle("设置枫叶")
+        self.setWindowIcon(QtGui.QIcon(get_resource_path('resources/img/icon.ico')))
         self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
         self.setting_init()

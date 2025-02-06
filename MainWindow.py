@@ -22,10 +22,12 @@ wx = None
 current_version = 4.35
 
 
-class LeafAuto(QtWidgets.QMainWindow, Ui_MainWindow):
+class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.setWindowTitle("枫叶信息自动化系统")
+        self.setWindowIcon(QtGui.QIcon(get_resource_path('resources/img/icon.ico')))
         common.main_window = self
         global wx
 
@@ -151,7 +153,7 @@ class LeafAuto(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def create_tray(self):
         self.tray_icon = QtWidgets.QSystemTrayIcon(self)
-        self.tray_icon.setIcon(QtGui.QIcon(get_resource_path('resources/img/icon.ico')))
+        self.tray_icon.setIcon(QtGui.QIcon(get_resource_path('resources/img/tray.ico')))
 
         menu = QtWidgets.QMenu(self)
         menu.setTitle("枫叶信息自动")
