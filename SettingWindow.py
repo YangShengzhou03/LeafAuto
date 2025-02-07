@@ -7,6 +7,7 @@ from Thread import ErrorSoundThread
 from Ui_SettingWindow import Ui_SettingWindow
 from common import str_to_bool, log, get_resource_path
 
+
 class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
     language_map = {'cn': '简体中文', 'cn_t': '繁体中文', 'en': 'English'}
     reverse_language_map = {v: k for k, v in language_map.items()}
@@ -90,6 +91,8 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
 
     def save_close(self):
         try:
+            if self.error_sound_thread._is_playing:
+                self.error_sound_thread.stop_playback()
             for key, checkbox in [
                 ('error_sound', self.ui.checkBox_sound),
                 ('net_time', self.ui.checkBox_net_time),
@@ -113,4 +116,6 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
         if index < 0 or index >= len(self.audio_files):
             log('ERROR', f'报错音频索引无效: {index}')
             return
+        if self.error_sound_thread._is_playing:
+            self.error_sound_thread.stop_playback()
         self.selected_audio_file = self.audio_files[index]

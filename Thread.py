@@ -133,53 +133,53 @@ class WorkerThread(QtCore.QThread):
         while not self.interrupted:
             if self.interrupted:
                 break
-
             next_task = self.find_next_ready_task()
             if next_task is None:
                 ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)
                 self.prevent_sleep = False
                 self.app_instance.on_thread_finished()
                 break
-
             task_time = datetime.strptime(next_task['time'], '%Y-%m-%dT%H:%M:%S')
             remaining_time = (task_time - get_current_time(self.current_time)).total_seconds()
-
             if remaining_time > 0:
                 if self.interrupted:
                     break
                 self.msleep(int(remaining_time * 1000))
-
             if self.interrupted:
                 break
+            try:
+                name = next_task['name']
+                info = next_task['info']
 
-            name = next_task['name']
-            info = next_task['info']
-
-            if self.interrupted:
-                break
-
-            if os.path.isfile(info):
-                file_name = os.path.basename(info)
-                log("INFO", f"开始把文件 {file_name} 发给 {name}")
                 if self.interrupted:
                     break
-                self.app_instance.wx.SendFiles(filepath=info, who=name)
-            elif info == 'Video_chat':
-                log("INFO", f"开始与 {name} 视频通话")
+
+                if os.path.isfile(info):
+                    file_name = os.path.basename(info)
+                    log("INFO", f"开始把文件 {file_name} 发给 {name}")
+                    if self.interrupted:
+                        break
+                    self.app_instance.wx.SendFiles(filepath=info, who=name)
+                elif info == 'Video_chat':
+                    log("INFO", f"开始与 {name} 视频通话")
+                    if self.interrupted:
+                        break
+                    self.app_instance.wx.VideoCall(who=name)
+                else:
+                    log("INFO", f"开始把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]}")
+                    if self.interrupted:
+                        break
+                    self.app_instance.wx.SendMsg(msg=info, who=name)
+
                 if self.interrupted:
                     break
-                self.app_instance.wx.VideoCall(who=name)
+                log("DEBUG", f"成功把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]} ")
+            except Exception as e:
+                self.msleep(50)
+                log("ERROR", f"{str(e)}")
+                self.app_instance.update_task_status(next_task, '出错')
             else:
-                log("INFO", f"开始把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]}")
-                if self.interrupted:
-                    break
-                self.app_instance.wx.SendMsg(msg=info, who=name)
-
-            if self.interrupted:
-                break
-
-            log("DEBUG", f"成功把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]} ")
-            self.app_instance.update_task_status(next_task, '成功')
+                self.app_instance.update_task_status(next_task, '成功')
 
             while not self.interrupted and self.is_paused:
                 self.msleep(50)
@@ -206,9 +206,6 @@ class WorkerThread(QtCore.QThread):
     def requestInterruption(self):
         self.interrupted = True
 
-
-import os
-from PyQt6 import QtCore, QtMultimedia
 
 class ErrorSoundThread(QtCore.QThread):
     finished = QtCore.pyqtSignal()

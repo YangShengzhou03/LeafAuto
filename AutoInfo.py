@@ -22,6 +22,13 @@ class AutoInfo(QtWidgets.QWidget):
         self.is_executing = False
         self.worker_thread = None
         self.error_sound_thread = ErrorSoundThread()
+        self.audio_files = {
+            0: get_resource_path('resources/sound/error_sound_1.mp3'),
+            1: get_resource_path('resources/sound/error_sound_2.mp3'),
+            2: get_resource_path('resources/sound/error_sound_3.mp3'),
+            3: get_resource_path('resources/sound/error_sound_4.mp3'),
+            4: get_resource_path('resources/sound/error_sound_5.mp3')
+        }
 
     def openFileNameDialog(self, filepath=None):
         if filepath:
@@ -174,6 +181,8 @@ class AutoInfo(QtWidgets.QWidget):
         return widget_item
 
     def remove_task(self, time_text, name_text, info_text):
+        if self.error_sound_thread._is_playing:
+            self.error_sound_thread.stop_playback()
         for task in self.ready_tasks:
             if task['time'] == time_text and task['name'] == name_text and task['info'] == info_text:
                 self.ready_tasks.remove(task)
@@ -202,6 +211,8 @@ class AutoInfo(QtWidgets.QWidget):
             if self.worker_thread is not None:
                 self.worker_thread.requestInterruption()
                 self.worker_thread = None
+            if self.error_sound_thread._is_playing:
+                self.error_sound_thread.stop_playback()
         else:
             if not self.ready_tasks:
                 log("WARNING", "任务列表为空，请先添加任务至任务列表")
@@ -354,4 +365,14 @@ class AutoInfo(QtWidgets.QWidget):
 
     def play_error_sound(self):
         if str_to_bool(read_key_value('error_sound')):
+            try:
+                selected_audio_index = int(read_key_value('selected_audio_index'))
+            except Exception:
+                selected_audio_index = 0
+            if selected_audio_index in self.audio_files:
+                self.selected_audio_file = self.audio_files[selected_audio_index]
+            else:
+                log("ERROR", f"音频播放失败{selected_audio_index}")
+                return
+            self.error_sound_thread.update_sound_file(self.selected_audio_file)
             self.error_sound_thread.start()
