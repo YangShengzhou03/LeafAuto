@@ -87,23 +87,36 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.auto_info.ready_tasks.clear()
                     current_time = datetime.now()
 
+                    membership_limit = 5 if self.Membership == 'Free' else 30
+                    remaining_slots = membership_limit - len(self.auto_info.ready_tasks)
+
                     for task in loaded_tasks:
-                        if all(key in task for key in ['time', 'name', 'info', 'frequency']):
+                        if (all(key in task for key in ['time', 'name', 'info', 'frequency']) and
+                                remaining_slots > 0):
                             task_time = datetime.fromisoformat(task['time'])
 
-                            if task['frequency'] in ['每天', '工作日']:
-                                while task_time < current_time:
-                                    task_time += timedelta(days=1)
-                                    if task['frequency'] == '工作日':
-                                        while task_time.weekday() >= 5:
-                                            task_time += timedelta(days=1)
+                            while task_time < current_time and task['frequency'] in ['每天', '工作日']:
+                                task_time += timedelta(days=1)
+                                if task['frequency'] == '工作日':
+                                    while task_time.weekday() >= 5:
+                                        task_time += timedelta(days=1)
 
                             widget_item = self.auto_info.create_widget(task_time.isoformat(), task['name'],
                                                                        task['info'], task['frequency'])
                             self.formLayout_3.addRow(widget_item)
-                            task['time'] = task_time.isoformat()
-                            self.auto_info.ready_tasks.append(task)
-                            self.auto_info.save_tasks_to_json()
+                            self.auto_info.ready_tasks.append({
+                                'time': task_time.isoformat(),
+                                'name': task['name'],
+                                'info': task['info'],
+                                'frequency': task['frequency']
+                            })
+                            remaining_slots -= 1
+
+                    if remaining_slots <= 0:
+                        log("WARNING", f"当前已达到最大任务限制 {membership_limit}, 请升级会员")
+
+                    self.auto_info.save_tasks_to_json()
+
                 except json.JSONDecodeError:
                     log("ERROR", "无法解析JSON文件")
                     self.ready_tasks = []
@@ -150,6 +163,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.label_78.setText('ON' if common.str_to_bool(read_key_value('error_sound')) else 'OFF')
         self.label_80.setText(self.language.upper())
         self.label_82.setText('V' + self.version)
+        self.log_textEdit.setReadOnly(True)
 
     def create_tray(self):
         self.tray_icon = QtWidgets.QSystemTrayIcon(self)
@@ -209,7 +223,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.Free_pushButton.setText("您正在免费试用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"欢迎使用免费试用版, 剩余试用 {retain_day} 天</span></p></body></html>"
+                f"试用还有{retain_day}天 快充分利用吧(o^▽^o)</span></p></body></html>"
             )
             self.label_64.setText("12%")
             self.label_66.setText("6%")
@@ -224,7 +238,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_68.setText("使用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"你好呀, 今天也要加油鸭~</span></p></body></html>"
+                f"愿你充满动力 继续加油 (/・ω・)/</span></p></body></html>"
             )
             self.checkBox_Ai.setChecked(True)
             self.checkBox_stopSleep.setChecked(True)
@@ -241,7 +255,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_69.setText("使用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"尊敬的高级会员, 欢迎您</span></p></body></html>"
+                f"尊敬的会员 愿您再创佳绩 (`・ω・´)</span></p></body></html>"
             )
             self.checkBox_Ai.setChecked(True)
             self.checkBox_stopSleep.setChecked(True)
@@ -262,7 +276,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_70.setText("使用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"尊贵的超级会员, 感谢您的使用</span></p></body></html>"
+                f"尊贵的超级会员 感谢您的支持 (◍•ᴗ•◍)</span></p></body></html>"
             )
             self.checkBox_Ai.setChecked(True)
             self.checkBox_stopSleep.setChecked(True)

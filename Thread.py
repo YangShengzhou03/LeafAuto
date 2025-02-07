@@ -127,64 +127,75 @@ class WorkerThread(QtCore.QThread):
         self.current_time = 'sys'
 
     def run(self):
-        try:
-            if self.prevent_sleep:
-                ctypes.windll.kernel32.SetThreadExecutionState(0x80000002)
+        if self.prevent_sleep:
+            ctypes.windll.kernel32.SetThreadExecutionState(0x80000002)
 
-            while not self.interrupted:
+        while not self.interrupted:
+            if self.interrupted:
+                break
 
-                next_task = self.find_next_ready_task()
-                if next_task is None:
-                    ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)
-                    self.prevent_sleep = False
-                    self.app_instance.on_thread_finished()
-                    break
-                task_time = datetime.strptime(next_task['time'], '%Y-%m-%dT%H:%M:%S')
-
-                remaining_time = (task_time - get_current_time(self.current_time)).total_seconds()
-
-                if remaining_time > 0:
-                    self.msleep(int(remaining_time * 1000))
-
-                try:
-                    name = next_task['name']
-                    info = next_task['info']
-
-                    if os.path.isfile(info):
-                        file_name = os.path.basename(info)
-                        log("INFO", f"开始把文件 {file_name} 发给 {name}")
-                        self.app_instance.wx.SendFiles(filepath=info, who=name)
-                    elif info == 'Video_chat':
-                        log("INFO", f"开始与 {name} 视频通话")
-                        self.app_instance.wx.VideoCall(who=name)
-                    else:
-                        log("INFO", f"开始把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]}")
-                        self.app_instance.wx.SendMsg(msg=info, who=name)
-                    log('DEBUG', f"成功把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]} ")
-
-                except Exception as e:
-                    self.msleep(50)  # 有效阻止爆日志的问题
-                    log("ERROR", f"{str(e)}")
-                    self.app_instance.update_task_status(next_task, '出错')
-                else:
-                    self.app_instance.update_task_status(next_task, '成功')
-
-                while not self.interrupted and self.is_paused:
-                    self.msleep(50)
-                if self.interrupted:
-                    break
-            if self.prevent_sleep:
+            next_task = self.find_next_ready_task()
+            if next_task is None:
                 ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)
                 self.prevent_sleep = False
-        except Exception as e:
-            log("ERROR", f"{str(e)}")
+                self.app_instance.on_thread_finished()
+                break
+
+            task_time = datetime.strptime(next_task['time'], '%Y-%m-%dT%H:%M:%S')
+            remaining_time = (task_time - get_current_time(self.current_time)).total_seconds()
+
+            if remaining_time > 0:
+                if self.interrupted:
+                    break
+                self.msleep(int(remaining_time * 1000))
+
+            if self.interrupted:
+                break
+
+            name = next_task['name']
+            info = next_task['info']
+
+            if self.interrupted:
+                break
+
+            if os.path.isfile(info):
+                file_name = os.path.basename(info)
+                log("INFO", f"开始把文件 {file_name} 发给 {name}")
+                if self.interrupted:
+                    break
+                self.app_instance.wx.SendFiles(filepath=info, who=name)
+            elif info == 'Video_chat':
+                log("INFO", f"开始与 {name} 视频通话")
+                if self.interrupted:
+                    break
+                self.app_instance.wx.VideoCall(who=name)
+            else:
+                log("INFO", f"开始把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]}")
+                if self.interrupted:
+                    break
+                self.app_instance.wx.SendMsg(msg=info, who=name)
+
+            if self.interrupted:
+                break
+
+            log("DEBUG", f"成功把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]} ")
+            self.app_instance.update_task_status(next_task, '成功')
+
+            while not self.interrupted and self.is_paused:
+                self.msleep(50)
+            if self.interrupted:
+                break
+
+        if self.prevent_sleep:
+            ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)
+            self.prevent_sleep = False
 
     def find_next_ready_task(self):
         next_task = None
         min_time = None
         for task in self.app_instance.ready_tasks:
             try:
-                task_time = QtCore.QDateTime.fromString(task['time'], QtCore.Qt.DateFormat.ISODate).toSecsSinceEpoch()
+                task_time = QtCore.QDateTime.fromString(task['time'], "yyyy-MM-ddTHH:mm:ss").toSecsSinceEpoch()
                 if min_time is None or task_time < min_time:
                     min_time = task_time
                     next_task = task
@@ -196,36 +207,50 @@ class WorkerThread(QtCore.QThread):
         self.interrupted = True
 
 
+import os
+from PyQt6 import QtCore, QtMultimedia
+
 class ErrorSoundThread(QtCore.QThread):
     finished = QtCore.pyqtSignal()
-    _has_run = False
+    _is_playing = False
 
     def __init__(self):
         super().__init__()
-        if self._has_run:
-            return
-        self.sound_file = get_resource_path('resources/sound/error_sound.mp3')
+        self.sound_file = None
+        self.player = None
+
+    def update_sound_file(self, sound_file_path):
+        self.sound_file = sound_file_path
 
     def run(self):
-        try:
-            if not os.path.exists(self.sound_file):
-                return
-            self._has_run = True
-            audio_output = QtMultimedia.QAudioOutput()
-            self.player = QtMultimedia.QMediaPlayer()
-            self.player.setAudioOutput(audio_output)
-            self.player.setSource(QtCore.QUrl.fromLocalFile(self.sound_file))
-            self.player.mediaStatusChanged.connect(self._on_media_status_changed)
-            self.player.play()
-
-            loop = QtCore.QEventLoop()
-            self.finished.connect(loop.quit)
-            loop.exec()
-        except Exception as e:
-            log("ERROR", f"{str(e)}")
+        if not self.sound_file or not os.path.exists(self.sound_file) or self._is_playing:
+            return
+        self._is_playing = True
+        audio_output = QtMultimedia.QAudioOutput()
+        self.player = QtMultimedia.QMediaPlayer()
+        self.player.setAudioOutput(audio_output)
+        self.player.setSource(QtCore.QUrl.fromLocalFile(self.sound_file))
+        self.player.mediaStatusChanged.connect(self._on_media_status_changed)
+        self.player.play()
+        loop = QtCore.QEventLoop()
+        self.finished.connect(loop.quit)
+        loop.exec()
 
     def _on_media_status_changed(self, status):
         if status == QtMultimedia.QMediaPlayer.MediaStatus.EndOfMedia:
             self.finished.emit()
             if self.player:
                 self.player.stop()
+                self._is_playing = False
+
+    def stop_playback(self):
+        if self.player and self._is_playing:
+            self.player.stop()
+            self._is_playing = False
+            self.finished.emit()
+
+    def play_test(self):
+        if self._is_playing:
+            self.stop_playback()
+        else:
+            self.start()

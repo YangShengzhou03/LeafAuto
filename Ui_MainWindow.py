@@ -907,6 +907,7 @@ class Ui_MainWindow(object):
         self.gridLayout.setContentsMargins(9, 6, 9, 6)
         self.gridLayout.setObjectName("gridLayout")
         self.inBottom_frame = QtWidgets.QFrame(parent=self.bottom_frame)
+        self.inBottom_frame.setMinimumSize(QtCore.QSize(936, 0))
         self.inBottom_frame.setStyleSheet("QFrame{\n"
                                           "    background-color: rgb(215, 187, 167);\n"
                                           "border:0px solid red;\n"
