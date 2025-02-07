@@ -19,7 +19,7 @@ from UpdateDialog import check_update
 from common import get_resource_path, log, get_current_time, get_url
 
 wx = None
-current_version = 4.35
+current_version = 4.36
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
