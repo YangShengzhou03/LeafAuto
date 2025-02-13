@@ -35,12 +35,13 @@ Compression=lzma2/max
 SolidCompression=yes
 WizardStyle=modern
 AppCopyright=© 2025 LeafAuto by YangShengzhou.版权所有
-UninstallDisplayIcon=D:\code\Python\LeafAuto\resource\img\icon.ico
+UninstallDisplayIcon=D:\code\Python\LeafAuto\resource\img\Setup.ico
 
 
 [UninstallDelete]
 Type: files; Name: "{app}\*.*"
 Type: files; Name: "{app}\_internal\system_info.ini"
+Type: files; Name: "{app}\_internal\tasks.json"
 Type: dirifempty; Name: "{app}\_internal"
 Type: dirifempty; Name: "{app}"
 
