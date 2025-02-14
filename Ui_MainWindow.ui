@@ -3328,14 +3328,14 @@ border-radius:18px</string>
                            <widget class="QWidget" name="widget_54" native="true">
                             <property name="minimumSize">
                              <size>
-                              <width>56</width>
-                              <height>56</height>
+                              <width>36</width>
+                              <height>36</height>
                              </size>
                             </property>
                             <property name="maximumSize">
                              <size>
-                              <width>56</width>
-                              <height>56</height>
+                              <width>36</width>
+                              <height>36</height>
                              </size>
                             </property>
                             <property name="styleSheet">
@@ -4907,14 +4907,14 @@ QComboBox QAbstractItemView {
                              <widget class="QWidget" name="takeOver_widget" native="true">
                               <property name="minimumSize">
                                <size>
-                                <width>30</width>
-                                <height>30</height>
+                                <width>28</width>
+                                <height>28</height>
                                </size>
                               </property>
                               <property name="maximumSize">
                                <size>
-                                <width>30</width>
-                                <height>30</height>
+                                <width>28</width>
+                                <height>28</height>
                                </size>
                               </property>
                               <property name="sizeIncrement">

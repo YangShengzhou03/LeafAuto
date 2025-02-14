@@ -223,7 +223,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.Free_pushButton.setText("您正在免费试用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"试用还剩{retain_day}天 快充分利用吧(^.^)</span></p></body></html>"
+                f"试用还剩{retain_day}天 快充分利用吧(≧◡≦)</span></p></body></html>"
             )
             self.label_64.setText("12%")
             self.label_66.setText("6%")
@@ -238,7 +238,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_68.setText("使用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"愿你充满动力 继续加油 (/・ω・)/</span></p></body></html>"
+                f"愿你充满动力 继续加油(⁎˃ᆺ˂)</span></p></body></html>"
             )
             self.checkBox_Ai.setChecked(True)
             self.checkBox_stopSleep.setChecked(True)
@@ -255,7 +255,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_69.setText("使用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"尊敬的会员 愿您再创佳绩 (`・ω・´)</span></p></body></html>"
+                f"尊敬的会员 愿您再创佳绩(*´∀`*)</span></p></body></html>"
             )
             self.checkBox_Ai.setChecked(True)
             self.checkBox_stopSleep.setChecked(True)
@@ -276,7 +276,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_70.setText("使用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"尊贵的超级会员 欢迎您 (◍•ᴗ•◍)</span></p></body></html>"
+                f"尊贵的超级会员 欢迎您(◍•ᴗ•◍)</span></p></body></html>"
             )
             self.checkBox_Ai.setChecked(True)
             self.checkBox_stopSleep.setChecked(True)
@@ -414,4 +414,5 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if notice_content:
                 self.textBrowser.setHtml(notice_content)
         except Exception:
-            self.textBrowser.setHtml('<center><h2>🎉欢迎使用·枫叶信息自动化，祝您一切顺利🎉</h2><h3>服务连接似乎不太顺利，不过问题不大(^o^)</h3></center>')
+            self.textBrowser.setHtml('<center><h2>🎉欢迎使用·枫叶信息自动化，祝您一切顺利🎉</h2><h2>服务连接似乎遇到了一点小麻烦，但别担心，不影响正常使用！</h2'
+                                     '></center>')
