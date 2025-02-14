@@ -49,9 +49,6 @@ class ActivitiesWindow(QtWidgets.QMainWindow, Ui_ActivitiesWindow):
         self.ui.pushButton_Base.setIcon(icon)
         icon.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/wp18.9.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.ui.pushButton_Wechat.setIcon(icon)
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/ap18.9.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.ui.pushButton_AliPay.setIcon(icon2)
         self.ui.label_prices.setText("18.90")
 
 
@@ -67,9 +64,6 @@ class ActivitiesWindow(QtWidgets.QMainWindow, Ui_ActivitiesWindow):
         self.ui.pushButton_Base.setIcon(icon)
         icon.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/wp99.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.ui.pushButton_Wechat.setIcon(icon)
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/ap99.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.ui.pushButton_AliPay.setIcon(icon2)
         self.ui.label_prices.setText("99.00")
 
     def ai_vip(self):
@@ -84,9 +78,6 @@ class ActivitiesWindow(QtWidgets.QMainWindow, Ui_ActivitiesWindow):
         self.ui.pushButton_Base.setIcon(icon)
         icon.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/wp17.9.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.ui.pushButton_Wechat.setIcon(icon)
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/ap17.9.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.ui.pushButton_AliPay.setIcon(icon2)
         self.ui.label_prices.setText("17.90")
 
     def base_vip(self):
@@ -101,9 +92,6 @@ class ActivitiesWindow(QtWidgets.QMainWindow, Ui_ActivitiesWindow):
         self.ui.pushButton_Base.setIcon(icon)
         icon.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/wp9.9.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.ui.pushButton_Wechat.setIcon(icon)
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/ap9.9.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.ui.pushButton_AliPay.setIcon(icon2)
         self.ui.label_prices.setText("9.90")
 
     def validate_activation(self):

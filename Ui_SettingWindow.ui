@@ -114,13 +114,13 @@ border-radius:30px
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>36</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
-                 <height>32</height>
+                 <height>36</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -263,12 +263,12 @@ border-radius:8px;
               <widget class="QPushButton" name="pushButton_exit_setting">
                <property name="font">
                 <font>
-                 <pointsize>10</pointsize>
+                 <pointsize>12</pointsize>
                 </font>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton {
-color: rgb(160, 160, 160);
+color: rgb(68, 68, 68);
 border:none;
 text-align:left;
 padding:10px;
@@ -385,7 +385,7 @@ border-radius:30px
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,2,1,2,1,2,1,2,5">
+                <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1,1,1,1,1,0">
                  <property name="spacing">
                   <number>12</number>
                  </property>
@@ -399,7 +399,7 @@ border-radius:30px
                   <number>18</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>24</number>
+                  <number>0</number>
                  </property>
                  <item>
                   <widget class="QLabel" name="label_setting_1">
@@ -421,28 +421,66 @@ border-radius:30px
                      <bold>false</bold>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                   </property>
                    <property name="text">
                     <string>基本设置</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="3">
+                  <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="0,0">
                    <property name="spacing">
-                    <number>8</number>
+                    <number>12</number>
                    </property>
                    <property name="sizeConstraint">
                     <enum>QLayout::SetDefaultConstraint</enum>
                    </property>
                    <property name="leftMargin">
-                    <number>220</number>
+                    <number>166</number>
                    </property>
+                   <property name="rightMargin">
+                    <number>166</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_2">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Microsoft YaHei UI</family>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>关闭程序时隐藏到系统托盘</string>
+                     </property>
+                    </widget>
+                   </item>
                    <item>
                     <widget class="QCheckBox" name="checkBox_close_option">
                      <property name="minimumSize">
                       <size>
-                       <width>0</width>
-                       <height>34</height>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
                       </size>
                      </property>
                      <property name="font">
@@ -450,44 +488,74 @@ border-radius:30px
                        <pointsize>12</pointsize>
                       </font>
                      </property>
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox {
+    width: 18px;
+    height: 14px;
+    margin: 1px;
+    border-radius: 14px;
+    padding: 0;
+    border: 1px solid #8a8a8a;
+}
+
+QCheckBox::indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 1px;
+}
+
+QCheckBox:unchecked {
+    background-color: white;
+}
+
+QCheckBox:checked {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+}
+
+QCheckBox::indicator:unchecked {
+    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+    left: 1px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: white;
+    left: 24px;
+}</string>
+                     </property>
                      <property name="text">
-                      <string>关闭程序时隐藏到系统托盘</string>
+                      <string/>
                      </property>
                      <property name="icon">
                       <iconset>
                        <normaloff>:/buttom/img/buttom/F0_f-zero-key.svg</normaloff>:/buttom/img/buttom/F0_f-zero-key.svg</iconset>
+                     </property>
+                     <property name="checked">
+                      <bool>false</bool>
                      </property>
                     </widget>
                    </item>
                   </layout>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="1,1,1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="0,0,0">
                    <property name="spacing">
-                    <number>8</number>
+                    <number>12</number>
                    </property>
                    <property name="leftMargin">
-                    <number>220</number>
+                    <number>166</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>124</number>
                    </property>
                    <item>
-                    <widget class="QCheckBox" name="checkBox_sound">
-                     <property name="minimumSize">
+                    <widget class="QLabel" name="label_3">
+                     <property name="maximumSize">
                       <size>
-                       <width>0</width>
-                       <height>34</height>
+                       <width>16777215</width>
+                       <height>16777215</height>
                       </size>
                      </property>
                      <property name="font">
@@ -495,8 +563,74 @@ border-radius:30px
                        <pointsize>12</pointsize>
                       </font>
                      </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                     </property>
                      <property name="text">
                       <string>信息发送出错时播放提示音</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_sound">
+                     <property name="minimumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox {
+    width: 18px;
+    height: 14px;
+    margin: 1px;
+    border-radius: 14px;
+    padding: 0;
+    border: 1px solid #8a8a8a;
+}
+
+QCheckBox::indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 1px;
+}
+
+QCheckBox:unchecked {
+    background-color: white;
+}
+
+QCheckBox:checked {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+}
+
+QCheckBox::indicator:unchecked {
+    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+    left: 1px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: white;
+    left: 24px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string/>
                      </property>
                      <property name="icon">
                       <iconset>
@@ -549,48 +683,25 @@ border:none;</string>
                      </property>
                     </widget>
                    </item>
-                   <item>
-                    <spacer name="horizontalSpacer_5">
-                     <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>40</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </spacer>
-                   </item>
                   </layout>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer_2">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="3">
+                  <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,0">
                    <property name="spacing">
-                    <number>8</number>
+                    <number>12</number>
                    </property>
                    <property name="leftMargin">
-                    <number>220</number>
+                    <number>166</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>166</number>
                    </property>
                    <item>
-                    <widget class="QCheckBox" name="checkBox_net_time">
-                     <property name="minimumSize">
+                    <widget class="QLabel" name="label_5">
+                     <property name="maximumSize">
                       <size>
-                       <width>0</width>
-                       <height>34</height>
+                       <width>16777215</width>
+                       <height>16777215</height>
                       </size>
                      </property>
                      <property name="font">
@@ -598,8 +709,74 @@ border:none;</string>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                     </property>
                      <property name="text">
                       <string>全局使用网络授时（会员专享）</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_net_time">
+                     <property name="minimumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox {
+    width: 18px;
+    height: 14px;
+    margin: 1px;
+    border-radius: 14px;
+    padding: 0;
+    border: 1px solid #8a8a8a;
+}
+
+QCheckBox::indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 1px;
+}
+
+QCheckBox:unchecked {
+    background-color: white;
+}
+
+QCheckBox:checked {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+}
+
+QCheckBox::indicator:unchecked {
+    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+    left: 1px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: white;
+    left: 24px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string/>
                      </property>
                      <property name="icon">
                       <iconset>
@@ -610,32 +787,22 @@ border:none;</string>
                   </layout>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer_3">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="3">
+                  <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0">
                    <property name="spacing">
-                    <number>8</number>
+                    <number>12</number>
                    </property>
                    <property name="leftMargin">
-                    <number>220</number>
+                    <number>166</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>166</number>
                    </property>
                    <item>
-                    <widget class="QCheckBox" name="checkBox_updata">
-                     <property name="minimumSize">
+                    <widget class="QLabel" name="label_6">
+                     <property name="maximumSize">
                       <size>
-                       <width>0</width>
-                       <height>34</height>
+                       <width>16777215</width>
+                       <height>16777215</height>
                       </size>
                      </property>
                      <property name="font">
@@ -643,8 +810,74 @@ border:none;</string>
                        <pointsize>12</pointsize>
                       </font>
                      </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                     </property>
                      <property name="text">
                       <string>启动时自动检查更新</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_updata">
+                     <property name="minimumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox {
+    width: 18px;
+    height: 14px;
+    margin: 1px;
+    border-radius: 14px;
+    padding: 0;
+    border: 1px solid #8a8a8a;
+}
+
+QCheckBox::indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 1px;
+}
+
+QCheckBox:unchecked {
+    background-color: white;
+}
+
+QCheckBox:checked {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+}
+
+QCheckBox::indicator:unchecked {
+    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+    left: 1px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: white;
+    left: 24px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string/>
                      </property>
                      <property name="icon">
                       <iconset>
@@ -655,7 +888,102 @@ border:none;</string>
                   </layout>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer_4">
+                  <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="0,0">
+                   <property name="spacing">
+                    <number>12</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>166</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>166</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_7">
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>QQ模式切换</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_QQmode">
+                     <property name="minimumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>52</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox {
+    width: 18px;
+    height: 14px;
+    margin: 1px;
+    border-radius: 14px;
+    padding: 0;
+    border: 1px solid #8a8a8a;
+}
+
+QCheckBox::indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 1px;
+}
+
+QCheckBox:unchecked {
+    background-color: white;
+}
+
+QCheckBox:checked {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+}
+
+QCheckBox::indicator:unchecked {
+    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+    left: 1px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: white;
+    left: 24px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>:/buttom/img/buttom/F4_f-four-key.svg</normaloff>:/buttom/img/buttom/F4_f-four-key.svg</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_2">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
                    </property>
@@ -709,9 +1037,9 @@ border:none;</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,2,1,2,1,2,1,2,3">
+                <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1,1,1,0">
                  <property name="spacing">
-                  <number>12</number>
+                  <number>22</number>
                  </property>
                  <property name="leftMargin">
                   <number>18</number>
@@ -723,7 +1051,7 @@ border:none;</string>
                   <number>18</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>24</number>
+                  <number>0</number>
                  </property>
                  <item>
                   <widget class="QLabel" name="label_setting_2">
@@ -745,21 +1073,29 @@ border:none;</string>
                      <bold>false</bold>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                   </property>
                    <property name="text">
                     <string>高级设置</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="1,1,1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="1,1">
                    <property name="spacing">
-                    <number>8</number>
+                    <number>0</number>
                    </property>
                    <property name="sizeConstraint">
                     <enum>QLayout::SetMaximumSize</enum>
                    </property>
                    <property name="leftMargin">
-                    <number>220</number>
+                    <number>188</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>188</number>
                    </property>
                    <item>
                     <widget class="QLabel" name="label_language">
@@ -767,6 +1103,11 @@ border:none;</string>
                       <font>
                        <pointsize>12</pointsize>
                       </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
                      </property>
                      <property name="text">
                       <string>PC客户端微信语言</string>
@@ -789,19 +1130,26 @@ border:none;</string>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QComboBox {
-border: 1px solid #ccc;
-padding: 2px;
-font-family: 'Microsoft YaHei', sans-serif;
-font-size: 14px;
-width: 120px;
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 14px;
+    width: 120px;
+    background-color: #fff;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
 }
+
 QComboBox:hover {
-border-color: #888;
+    border-color: #888;
+    background-color: #f5f5f5;
 }
+
 QComboBox QAbstractItemView {
-border-radius: 0px;
-background-color: white;
-selection-background-color: #ddd;
+    border-radius: 4px;
+    background-color: white;
+    selection-background-color: #ddd;
+    color: rgb(0, 0, 0);
 }</string>
                      </property>
                      <item>
@@ -821,41 +1169,18 @@ selection-background-color: #ddd;
                      </item>
                     </widget>
                    </item>
-                   <item>
-                    <spacer name="horizontalSpacer_10">
-                     <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>40</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </spacer>
-                   </item>
                   </layout>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer_5">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="1,1,1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="1,1">
                    <property name="spacing">
-                    <number>8</number>
+                    <number>0</number>
                    </property>
                    <property name="leftMargin">
-                    <number>220</number>
+                    <number>188</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>188</number>
                    </property>
                    <item>
                     <widget class="QLabel" name="label_addtime">
@@ -863,6 +1188,11 @@ selection-background-color: #ddd;
                       <font>
                        <pointsize>12</pointsize>
                       </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
                      </property>
                      <property name="text">
                       <string>添加任务自增分钟</string>
@@ -886,53 +1216,39 @@ selection-background-color: #ddd;
                      <property name="styleSheet">
                       <string notr="true">QSpinBox {
     border: 1px solid #ccc;
-    padding: 2px 20px 2px 4px;
+    padding: 4px 20px 4px 8px;
     font-family: 'Microsoft YaHei', sans-serif;
     font-size: 14px;
     width: 120px;
+    background-color: #fff;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
 }
 
 QSpinBox:hover {
     border-color: #888;
+    background-color: #f5f5f5;
+}
+
+QSpinBox:focus {
+    border-color: #0078d4;
+    box-shadow: 0 0 3px rgba(0, 120, 212, 0.8);
 }</string>
                      </property>
                     </widget>
                    </item>
-                   <item>
-                    <spacer name="horizontalSpacer_11">
-                     <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>40</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </spacer>
-                   </item>
                   </layout>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer_6">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1,1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1">
                    <property name="spacing">
-                    <number>8</number>
+                    <number>0</number>
                    </property>
                    <property name="leftMargin">
-                    <number>220</number>
+                    <number>188</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>188</number>
                    </property>
                    <item>
                     <widget class="QLabel" name="label_errorAudio">
@@ -940,6 +1256,11 @@ QSpinBox:hover {
                       <font>
                        <pointsize>12</pointsize>
                       </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
                      </property>
                      <property name="text">
                       <string>任务出错时提示音</string>
@@ -962,19 +1283,26 @@ QSpinBox:hover {
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QComboBox {
-border: 1px solid #ccc;
-padding: 2px;
-font-family: 'Microsoft YaHei', sans-serif;
-font-size: 14px;
-width: 120px;
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 14px;
+    width: 120px;
+    background-color: #fff;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
 }
+
 QComboBox:hover {
-border-color: #888;
+    border-color: #888;
+    background-color: #f5f5f5;
 }
+
 QComboBox QAbstractItemView {
-border-radius: 0px;
-background-color: white;
-selection-background-color: #ddd;
+    border-radius: 4px;
+    background-color: white;
+    selection-background-color: #ddd;
+    color: rgb(0, 0, 0);
 }</string>
                      </property>
                      <item>
@@ -1004,46 +1332,10 @@ selection-background-color: #ddd;
                      </item>
                     </widget>
                    </item>
-                   <item>
-                    <spacer name="horizontalSpacer_12">
-                     <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>40</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </spacer>
-                   </item>
                   </layout>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer_7">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_8">
-                   <property name="spacing">
-                    <number>8</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>220</number>
-                   </property>
-                  </layout>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_8">
+                  <spacer name="verticalSpacer">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
                    </property>
@@ -1132,6 +1424,11 @@ selection-background-color: #ddd;
                      <pointsize>18</pointsize>
                      <bold>false</bold>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
                    </property>
                    <property name="text">
                     <string>其他设置</string>
@@ -1311,6 +1608,11 @@ selection-background-color: #ddd;
                      <bold>false</bold>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                   </property>
                    <property name="text">
                     <string>关于枫叶</string>
                    </property>
@@ -1402,9 +1704,15 @@ border:none;</string>
                     <widget class="QLabel" name="label">
                      <property name="font">
                       <font>
+                       <family>微软雅黑 Light</family>
                        <pointsize>12</pointsize>
                        <bold>false</bold>
                       </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
                      </property>
                      <property name="text">
                       <string>版本信息</string>
@@ -1420,6 +1728,11 @@ border:none;</string>
                       <font>
                        <pointsize>12</pointsize>
                       </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
                      </property>
                      <property name="text">
                       <string>Null</string>
@@ -1572,9 +1885,15 @@ QPushButton:pressed {
                     <widget class="QLabel" name="label_4">
                      <property name="font">
                       <font>
+                       <family>微软雅黑 Light</family>
                        <pointsize>12</pointsize>
                        <bold>false</bold>
                       </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
                      </property>
                      <property name="text">
                       <string>枫叶帮助</string>

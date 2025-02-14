@@ -13,7 +13,7 @@ from common import get_resource_path
 
 class Ui_SettingWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("设置枫叶")
+        MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 495)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -52,9 +52,9 @@ class Ui_SettingWindow(object):
         self.horizontalLayout_17.setSpacing(0)
         self.horizontalLayout_17.setObjectName("horizontalLayout_17")
         self.widget_SettingLogo = QtWidgets.QWidget(parent=self.frame_left_head)
-        self.widget_SettingLogo.setMinimumSize(QtCore.QSize(0, 32))
-        self.widget_SettingLogo.setMaximumSize(QtCore.QSize(16777215, 32))
-        self.widget_SettingLogo.setStyleSheet("image: url(:/svg/Morikawa/01_Data/img/logo/443px.png);")
+        self.widget_SettingLogo.setMinimumSize(QtCore.QSize(0, 36))
+        self.widget_SettingLogo.setMaximumSize(QtCore.QSize(16777215, 36))
+        self.widget_SettingLogo.setStyleSheet(f"image: url({get_resource_path('yangshengzhou')});")
         self.widget_SettingLogo.setObjectName("widget_SettingLogo")
         self.horizontalLayout_17.addWidget(self.widget_SettingLogo)
         self.verticalLayout_12.addWidget(self.frame_left_head)
@@ -130,7 +130,7 @@ class Ui_SettingWindow(object):
         font.setPointSize(10)
         self.pushButton_exit_setting.setFont(font)
         self.pushButton_exit_setting.setStyleSheet("QPushButton {\n"
-"color: rgb(160, 160, 160);\n"
+"color: rgb(68, 68, 68);\n"
 "border:none;\n"
 "text-align:left;\n"
 "padding:10px;\n"
@@ -183,7 +183,7 @@ class Ui_SettingWindow(object):
         self.frame_setting_1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_setting_1.setObjectName("frame_setting_1")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_setting_1)
-        self.verticalLayout_3.setContentsMargins(18, 12, 18, 24)
+        self.verticalLayout_3.setContentsMargins(18, 12, 18, 0)
         self.verticalLayout_3.setSpacing(12)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.label_setting_1 = QtWidgets.QLabel(parent=self.frame_setting_1)
@@ -193,38 +193,134 @@ class Ui_SettingWindow(object):
         font.setPointSize(18)
         font.setBold(False)
         self.label_setting_1.setFont(font)
+        self.label_setting_1.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_setting_1.setObjectName("label_setting_1")
         self.verticalLayout_3.addWidget(self.label_setting_1)
         self.horizontalLayout_24 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_24.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint)
-        self.horizontalLayout_24.setContentsMargins(220, -1, -1, -1)
-        self.horizontalLayout_24.setSpacing(8)
+        self.horizontalLayout_24.setContentsMargins(166, -1, 166, -1)
+        self.horizontalLayout_24.setSpacing(12)
         self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        self.label_2 = QtWidgets.QLabel(parent=self.frame_setting_1)
+        self.label_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft YaHei UI")
+        font.setPointSize(12)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout_24.addWidget(self.label_2)
         self.checkBox_close_option = QtWidgets.QCheckBox(parent=self.frame_setting_1)
-        self.checkBox_close_option.setMinimumSize(QtCore.QSize(0, 34))
+        self.checkBox_close_option.setMinimumSize(QtCore.QSize(52, 30))
+        self.checkBox_close_option.setMaximumSize(QtCore.QSize(52, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.checkBox_close_option.setFont(font)
+        self.checkBox_close_option.setStyleSheet("QCheckBox {\n"
+"    width: 18px;\n"
+"    height: 14px;\n"
+"    margin: 1px;\n"
+"    border-radius: 14px;\n"
+"    padding: 0;\n"
+"    border: 1px solid #8a8a8a;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 24px;\n"
+"    height: 24px;\n"
+"    border-radius: 12px;\n"
+"    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);\n"
+"    position: absolute;\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox:unchecked {\n"
+"    background-color: white;\n"
+"}\n"
+"\n"
+"QCheckBox:checked {\n"
+"    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"    left: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    background-color: white;\n"
+"    left: 24px;\n"
+"}")
+        self.checkBox_close_option.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/复选框.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap(":/buttom/img/buttom/F0_f-zero-key.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBox_close_option.setIcon(icon5)
+        self.checkBox_close_option.setChecked(False)
         self.checkBox_close_option.setObjectName("checkBox_close_option")
         self.horizontalLayout_24.addWidget(self.checkBox_close_option)
-        self.horizontalLayout_24.setStretch(0, 3)
         self.verticalLayout_3.addLayout(self.horizontalLayout_24)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem)
         self.horizontalLayout_23 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_23.setContentsMargins(220, -1, -1, -1)
-        self.horizontalLayout_23.setSpacing(8)
+        self.horizontalLayout_23.setContentsMargins(166, -1, 124, -1)
+        self.horizontalLayout_23.setSpacing(12)
         self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        self.label_3 = QtWidgets.QLabel(parent=self.frame_setting_1)
+        self.label_3.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
+        self.label_3.setObjectName("label_3")
+        self.horizontalLayout_23.addWidget(self.label_3)
         self.checkBox_sound = QtWidgets.QCheckBox(parent=self.frame_setting_1)
-        self.checkBox_sound.setMinimumSize(QtCore.QSize(0, 34))
+        self.checkBox_sound.setMinimumSize(QtCore.QSize(52, 30))
+        self.checkBox_sound.setMaximumSize(QtCore.QSize(52, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.checkBox_sound.setFont(font)
+        self.checkBox_sound.setStyleSheet("QCheckBox {\n"
+"    width: 18px;\n"
+"    height: 14px;\n"
+"    margin: 1px;\n"
+"    border-radius: 14px;\n"
+"    padding: 0;\n"
+"    border: 1px solid #8a8a8a;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 24px;\n"
+"    height: 24px;\n"
+"    border-radius: 12px;\n"
+"    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);\n"
+"    position: absolute;\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox:unchecked {\n"
+"    background-color: white;\n"
+"}\n"
+"\n"
+"QCheckBox:checked {\n"
+"    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"    left: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    background-color: white;\n"
+"    left: 24px;\n"
+"}")
+        self.checkBox_sound.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/播放测试复选框.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon6.addPixmap(QtGui.QPixmap(":/buttom/img/buttom/F1_f-one-key.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBox_sound.setIcon(icon6)
         self.checkBox_sound.setObjectName("checkBox_sound")
         self.horizontalLayout_23.addWidget(self.checkBox_sound)
@@ -242,59 +338,197 @@ class Ui_SettingWindow(object):
         self.pushButton_test_sound.setIconSize(QtCore.QSize(28, 28))
         self.pushButton_test_sound.setObjectName("pushButton_test_sound")
         self.horizontalLayout_23.addWidget(self.pushButton_test_sound)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_23.addItem(spacerItem1)
-        self.horizontalLayout_23.setStretch(0, 1)
-        self.horizontalLayout_23.setStretch(1, 1)
-        self.horizontalLayout_23.setStretch(2, 1)
         self.verticalLayout_3.addLayout(self.horizontalLayout_23)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem2)
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_6.setContentsMargins(220, -1, -1, -1)
-        self.horizontalLayout_6.setSpacing(8)
+        self.horizontalLayout_6.setContentsMargins(166, -1, 166, -1)
+        self.horizontalLayout_6.setSpacing(12)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.label_5 = QtWidgets.QLabel(parent=self.frame_setting_1)
+        self.label_5.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
+        self.label_5.setObjectName("label_5")
+        self.horizontalLayout_6.addWidget(self.label_5)
         self.checkBox_net_time = QtWidgets.QCheckBox(parent=self.frame_setting_1)
-        self.checkBox_net_time.setMinimumSize(QtCore.QSize(0, 34))
+        self.checkBox_net_time.setMinimumSize(QtCore.QSize(52, 30))
+        self.checkBox_net_time.setMaximumSize(QtCore.QSize(52, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.checkBox_net_time.setFont(font)
+        self.checkBox_net_time.setStyleSheet("QCheckBox {\n"
+"    width: 18px;\n"
+"    height: 14px;\n"
+"    margin: 1px;\n"
+"    border-radius: 14px;\n"
+"    padding: 0;\n"
+"    border: 1px solid #8a8a8a;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 24px;\n"
+"    height: 24px;\n"
+"    border-radius: 12px;\n"
+"    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);\n"
+"    position: absolute;\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox:unchecked {\n"
+"    background-color: white;\n"
+"}\n"
+"\n"
+"QCheckBox:checked {\n"
+"    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"    left: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    background-color: white;\n"
+"    left: 24px;\n"
+"}")
+        self.checkBox_net_time.setText("")
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/复选框.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon8.addPixmap(QtGui.QPixmap(":/buttom/img/buttom/F2_f-two-key.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBox_net_time.setIcon(icon8)
         self.checkBox_net_time.setObjectName("checkBox_net_time")
         self.horizontalLayout_6.addWidget(self.checkBox_net_time)
-        self.horizontalLayout_6.setStretch(0, 3)
         self.verticalLayout_3.addLayout(self.horizontalLayout_6)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem3)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_5.setContentsMargins(220, -1, -1, -1)
-        self.horizontalLayout_5.setSpacing(8)
+        self.horizontalLayout_5.setContentsMargins(166, -1, 166, -1)
+        self.horizontalLayout_5.setSpacing(12)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.label_6 = QtWidgets.QLabel(parent=self.frame_setting_1)
+        self.label_6.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_6.setFont(font)
+        self.label_6.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
+        self.label_6.setObjectName("label_6")
+        self.horizontalLayout_5.addWidget(self.label_6)
         self.checkBox_updata = QtWidgets.QCheckBox(parent=self.frame_setting_1)
-        self.checkBox_updata.setMinimumSize(QtCore.QSize(0, 34))
+        self.checkBox_updata.setMinimumSize(QtCore.QSize(52, 30))
+        self.checkBox_updata.setMaximumSize(QtCore.QSize(52, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.checkBox_updata.setFont(font)
+        self.checkBox_updata.setStyleSheet("QCheckBox {\n"
+"    width: 18px;\n"
+"    height: 14px;\n"
+"    margin: 1px;\n"
+"    border-radius: 14px;\n"
+"    padding: 0;\n"
+"    border: 1px solid #8a8a8a;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 24px;\n"
+"    height: 24px;\n"
+"    border-radius: 12px;\n"
+"    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);\n"
+"    position: absolute;\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox:unchecked {\n"
+"    background-color: white;\n"
+"}\n"
+"\n"
+"QCheckBox:checked {\n"
+"    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"    left: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    background-color: white;\n"
+"    left: 24px;\n"
+"}")
+        self.checkBox_updata.setText("")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/复选框.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon9.addPixmap(QtGui.QPixmap(":/buttom/img/buttom/F4_f-four-key.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBox_updata.setIcon(icon9)
         self.checkBox_updata.setObjectName("checkBox_updata")
         self.horizontalLayout_5.addWidget(self.checkBox_updata)
-        self.horizontalLayout_5.setStretch(0, 3)
         self.verticalLayout_3.addLayout(self.horizontalLayout_5)
-        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem4)
-        self.verticalLayout_3.setStretch(0, 1)
-        self.verticalLayout_3.setStretch(1, 2)
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_19.setContentsMargins(166, -1, 166, -1)
+        self.horizontalLayout_19.setSpacing(12)
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.label_7 = QtWidgets.QLabel(parent=self.frame_setting_1)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_7.setFont(font)
+        self.label_7.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
+        self.label_7.setObjectName("label_7")
+        self.horizontalLayout_19.addWidget(self.label_7)
+        self.checkBox_QQmode = QtWidgets.QCheckBox(parent=self.frame_setting_1)
+        self.checkBox_QQmode.setMinimumSize(QtCore.QSize(52, 30))
+        self.checkBox_QQmode.setMaximumSize(QtCore.QSize(52, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.checkBox_QQmode.setFont(font)
+        self.checkBox_QQmode.setStyleSheet("QCheckBox {\n"
+"    width: 18px;\n"
+"    height: 14px;\n"
+"    margin: 1px;\n"
+"    border-radius: 14px;\n"
+"    padding: 0;\n"
+"    border: 1px solid #8a8a8a;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 24px;\n"
+"    height: 24px;\n"
+"    border-radius: 12px;\n"
+"    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);\n"
+"    position: absolute;\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox:unchecked {\n"
+"    background-color: white;\n"
+"}\n"
+"\n"
+"QCheckBox:checked {\n"
+"    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"    left: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    background-color: white;\n"
+"    left: 24px;\n"
+"}")
+        self.checkBox_QQmode.setText("")
+        self.checkBox_QQmode.setIcon(icon9)
+        self.checkBox_QQmode.setObjectName("checkBox_QQmode")
+        self.horizontalLayout_19.addWidget(self.checkBox_QQmode)
+        self.verticalLayout_3.addLayout(self.horizontalLayout_19)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_3.addItem(spacerItem)
+        self.verticalLayout_3.setStretch(1, 1)
         self.verticalLayout_3.setStretch(2, 1)
-        self.verticalLayout_3.setStretch(3, 2)
+        self.verticalLayout_3.setStretch(3, 1)
         self.verticalLayout_3.setStretch(4, 1)
-        self.verticalLayout_3.setStretch(5, 2)
-        self.verticalLayout_3.setStretch(6, 1)
-        self.verticalLayout_3.setStretch(7, 2)
-        self.verticalLayout_3.setStretch(8, 5)
+        self.verticalLayout_3.setStretch(5, 1)
         self.verticalLayout.addWidget(self.frame_setting_1)
         self.stackedWidget.addWidget(self.page_1)
         self.page_2 = QtWidgets.QWidget()
@@ -310,8 +544,8 @@ class Ui_SettingWindow(object):
         self.frame_setting_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_setting_2.setObjectName("frame_setting_2")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame_setting_2)
-        self.verticalLayout_4.setContentsMargins(18, 12, 18, 24)
-        self.verticalLayout_4.setSpacing(12)
+        self.verticalLayout_4.setContentsMargins(18, 12, 18, 0)
+        self.verticalLayout_4.setSpacing(22)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.label_setting_2 = QtWidgets.QLabel(parent=self.frame_setting_2)
         self.label_setting_2.setMinimumSize(QtCore.QSize(0, 72))
@@ -320,58 +554,69 @@ class Ui_SettingWindow(object):
         font.setPointSize(18)
         font.setBold(False)
         self.label_setting_2.setFont(font)
+        self.label_setting_2.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_setting_2.setObjectName("label_setting_2")
         self.verticalLayout_4.addWidget(self.label_setting_2)
         self.horizontalLayout_25 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_25.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetMaximumSize)
-        self.horizontalLayout_25.setContentsMargins(220, -1, -1, -1)
-        self.horizontalLayout_25.setSpacing(8)
+        self.horizontalLayout_25.setContentsMargins(188, -1, 188, -1)
+        self.horizontalLayout_25.setSpacing(0)
         self.horizontalLayout_25.setObjectName("horizontalLayout_25")
         self.label_language = QtWidgets.QLabel(parent=self.frame_setting_2)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_language.setFont(font)
+        self.label_language.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_language.setObjectName("label_language")
         self.horizontalLayout_25.addWidget(self.label_language)
         self.comboBox_language = QtWidgets.QComboBox(parent=self.frame_setting_2)
         self.comboBox_language.setMinimumSize(QtCore.QSize(106, 27))
         self.comboBox_language.setMaximumSize(QtCore.QSize(106, 27))
         self.comboBox_language.setStyleSheet("QComboBox {\n"
-"border: 1px solid #ccc;\n"
-"padding: 2px;\n"
-"font-family: \'Microsoft YaHei\', sans-serif;\n"
-"font-size: 14px;\n"
-"width: 120px;\n"
+"    border: 1px solid #ccc;\n"
+"    padding: 4px;\n"
+"    font-family: \'Microsoft YaHei\', sans-serif;\n"
+"    font-size: 14px;\n"
+"    width: 120px;\n"
+"    background-color: #fff;\n"
+"    border-radius: 4px;\n"
+"    color: rgb(0, 0, 0);\n"
 "}\n"
+"\n"
 "QComboBox:hover {\n"
-"border-color: #888;\n"
+"    border-color: #888;\n"
+"    background-color: #f5f5f5;\n"
 "}\n"
+"\n"
 "QComboBox QAbstractItemView {\n"
-"border-radius: 0px;\n"
-"background-color: white;\n"
-"selection-background-color: #ddd;\n"
+"    border-radius: 4px;\n"
+"    background-color: white;\n"
+"    selection-background-color: #ddd;\n"
+"    color: rgb(0, 0, 0);\n"
 "}")
         self.comboBox_language.setObjectName("comboBox_language")
         self.comboBox_language.addItem("")
         self.comboBox_language.addItem("")
         self.comboBox_language.addItem("")
         self.horizontalLayout_25.addWidget(self.comboBox_language)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_25.addItem(spacerItem5)
         self.horizontalLayout_25.setStretch(0, 1)
         self.horizontalLayout_25.setStretch(1, 1)
-        self.horizontalLayout_25.setStretch(2, 1)
         self.verticalLayout_4.addLayout(self.horizontalLayout_25)
-        spacerItem6 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_4.addItem(spacerItem6)
         self.horizontalLayout_26 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_26.setContentsMargins(220, -1, -1, -1)
-        self.horizontalLayout_26.setSpacing(8)
+        self.horizontalLayout_26.setContentsMargins(188, -1, 188, -1)
+        self.horizontalLayout_26.setSpacing(0)
         self.horizontalLayout_26.setObjectName("horizontalLayout_26")
         self.label_addtime = QtWidgets.QLabel(parent=self.frame_setting_2)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_addtime.setFont(font)
+        self.label_addtime.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_addtime.setObjectName("label_addtime")
         self.horizontalLayout_26.addWidget(self.label_addtime)
         self.spinBox_timestep = QtWidgets.QSpinBox(parent=self.frame_setting_2)
@@ -379,52 +624,66 @@ class Ui_SettingWindow(object):
         self.spinBox_timestep.setMaximumSize(QtCore.QSize(106, 27))
         self.spinBox_timestep.setStyleSheet("QSpinBox {\n"
 "    border: 1px solid #ccc;\n"
-"    padding: 2px 20px 2px 4px;\n"
+"    padding: 4px 20px 4px 8px;\n"
 "    font-family: \'Microsoft YaHei\', sans-serif;\n"
 "    font-size: 14px;\n"
 "    width: 120px;\n"
+"    background-color: #fff;\n"
+"    border-radius: 4px;\n"
+"    color: rgb(0, 0, 0);\n"
 "}\n"
 "\n"
 "QSpinBox:hover {\n"
 "    border-color: #888;\n"
+"    background-color: #f5f5f5;\n"
+"}\n"
+"\n"
+"QSpinBox:focus {\n"
+"    border-color: #0078d4;\n"
+"    box-shadow: 0 0 3px rgba(0, 120, 212, 0.8);\n"
 "}")
         self.spinBox_timestep.setObjectName("spinBox_timestep")
         self.horizontalLayout_26.addWidget(self.spinBox_timestep)
-        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_26.addItem(spacerItem7)
         self.horizontalLayout_26.setStretch(0, 1)
         self.horizontalLayout_26.setStretch(1, 1)
-        self.horizontalLayout_26.setStretch(2, 1)
         self.verticalLayout_4.addLayout(self.horizontalLayout_26)
-        spacerItem8 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_4.addItem(spacerItem8)
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_7.setContentsMargins(220, -1, -1, -1)
-        self.horizontalLayout_7.setSpacing(8)
+        self.horizontalLayout_7.setContentsMargins(188, -1, 188, -1)
+        self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.label_errorAudio = QtWidgets.QLabel(parent=self.frame_setting_2)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_errorAudio.setFont(font)
+        self.label_errorAudio.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_errorAudio.setObjectName("label_errorAudio")
         self.horizontalLayout_7.addWidget(self.label_errorAudio)
         self.comboBox_errorAudio = QtWidgets.QComboBox(parent=self.frame_setting_2)
         self.comboBox_errorAudio.setMinimumSize(QtCore.QSize(106, 27))
         self.comboBox_errorAudio.setMaximumSize(QtCore.QSize(106, 27))
         self.comboBox_errorAudio.setStyleSheet("QComboBox {\n"
-"border: 1px solid #ccc;\n"
-"padding: 2px;\n"
-"font-family: \'Microsoft YaHei\', sans-serif;\n"
-"font-size: 14px;\n"
-"width: 120px;\n"
+"    border: 1px solid #ccc;\n"
+"    padding: 4px;\n"
+"    font-family: \'Microsoft YaHei\', sans-serif;\n"
+"    font-size: 14px;\n"
+"    width: 120px;\n"
+"    background-color: #fff;\n"
+"    border-radius: 4px;\n"
+"    color: rgb(0, 0, 0);\n"
 "}\n"
+"\n"
 "QComboBox:hover {\n"
-"border-color: #888;\n"
+"    border-color: #888;\n"
+"    background-color: #f5f5f5;\n"
 "}\n"
+"\n"
 "QComboBox QAbstractItemView {\n"
-"border-radius: 0px;\n"
-"background-color: white;\n"
-"selection-background-color: #ddd;\n"
+"    border-radius: 4px;\n"
+"    background-color: white;\n"
+"    selection-background-color: #ddd;\n"
+"    color: rgb(0, 0, 0);\n"
 "}")
         self.comboBox_errorAudio.setObjectName("comboBox_errorAudio")
         self.comboBox_errorAudio.addItem("")
@@ -433,30 +692,14 @@ class Ui_SettingWindow(object):
         self.comboBox_errorAudio.addItem("")
         self.comboBox_errorAudio.addItem("")
         self.horizontalLayout_7.addWidget(self.comboBox_errorAudio)
-        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_7.addItem(spacerItem9)
         self.horizontalLayout_7.setStretch(0, 1)
         self.horizontalLayout_7.setStretch(1, 1)
-        self.horizontalLayout_7.setStretch(2, 1)
         self.verticalLayout_4.addLayout(self.horizontalLayout_7)
-        spacerItem10 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_4.addItem(spacerItem10)
-        self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_8.setContentsMargins(220, -1, -1, -1)
-        self.horizontalLayout_8.setSpacing(8)
-        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        self.verticalLayout_4.addLayout(self.horizontalLayout_8)
-        spacerItem11 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_4.addItem(spacerItem11)
-        self.verticalLayout_4.setStretch(0, 1)
-        self.verticalLayout_4.setStretch(1, 2)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_4.addItem(spacerItem1)
+        self.verticalLayout_4.setStretch(1, 1)
         self.verticalLayout_4.setStretch(2, 1)
-        self.verticalLayout_4.setStretch(3, 2)
-        self.verticalLayout_4.setStretch(4, 1)
-        self.verticalLayout_4.setStretch(5, 2)
-        self.verticalLayout_4.setStretch(6, 1)
-        self.verticalLayout_4.setStretch(7, 2)
-        self.verticalLayout_4.setStretch(8, 3)
+        self.verticalLayout_4.setStretch(3, 1)
         self.verticalLayout_2.addWidget(self.frame_setting_2)
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
@@ -482,6 +725,9 @@ class Ui_SettingWindow(object):
         font.setPointSize(18)
         font.setBold(False)
         self.label_setting_3.setFont(font)
+        self.label_setting_3.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_setting_3.setObjectName("label_setting_3")
         self.verticalLayout_5.addWidget(self.label_setting_3)
         self.horizontalLayout_27 = QtWidgets.QHBoxLayout()
@@ -490,29 +736,29 @@ class Ui_SettingWindow(object):
         self.horizontalLayout_27.setSpacing(8)
         self.horizontalLayout_27.setObjectName("horizontalLayout_27")
         self.verticalLayout_5.addLayout(self.horizontalLayout_27)
-        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_5.addItem(spacerItem12)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem2)
         self.horizontalLayout_28 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_28.setContentsMargins(220, -1, -1, -1)
         self.horizontalLayout_28.setSpacing(8)
         self.horizontalLayout_28.setObjectName("horizontalLayout_28")
         self.verticalLayout_5.addLayout(self.horizontalLayout_28)
-        spacerItem13 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_5.addItem(spacerItem13)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem3)
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_9.setContentsMargins(220, -1, -1, -1)
         self.horizontalLayout_9.setSpacing(8)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
         self.verticalLayout_5.addLayout(self.horizontalLayout_9)
-        spacerItem14 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_5.addItem(spacerItem14)
+        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem4)
         self.horizontalLayout_10 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_10.setContentsMargins(220, -1, -1, -1)
         self.horizontalLayout_10.setSpacing(8)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.verticalLayout_5.addLayout(self.horizontalLayout_10)
-        spacerItem15 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_5.addItem(spacerItem15)
+        spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem5)
         self.verticalLayout_5.setStretch(0, 1)
         self.verticalLayout_5.setStretch(1, 2)
         self.verticalLayout_5.setStretch(2, 1)
@@ -547,6 +793,9 @@ class Ui_SettingWindow(object):
         font.setPointSize(18)
         font.setBold(False)
         self.label_setting_4.setFont(font)
+        self.label_setting_4.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_setting_4.setObjectName("label_setting_4")
         self.verticalLayout_6.addWidget(self.label_setting_4)
         self.horizontalLayout_30 = QtWidgets.QHBoxLayout()
@@ -577,13 +826,17 @@ class Ui_SettingWindow(object):
         self.horizontalLayout_11.setContentsMargins(0, -1, -1, -1)
         self.horizontalLayout_11.setSpacing(8)
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        spacerItem16 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_11.addItem(spacerItem16)
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_11.addItem(spacerItem6)
         self.label = QtWidgets.QLabel(parent=self.frame_setting_4)
         font = QtGui.QFont()
+        font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
         font.setBold(False)
         self.label.setFont(font)
+        self.label.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.horizontalLayout_11.addWidget(self.label)
@@ -591,11 +844,14 @@ class Ui_SettingWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_version.setFont(font)
+        self.label_version.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_version.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_version.setObjectName("label_version")
         self.horizontalLayout_11.addWidget(self.label_version)
-        spacerItem17 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_11.addItem(spacerItem17)
+        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_11.addItem(spacerItem7)
         self.horizontalLayout_11.setStretch(0, 2)
         self.horizontalLayout_11.setStretch(1, 1)
         self.horizontalLayout_11.setStretch(2, 1)
@@ -605,8 +861,8 @@ class Ui_SettingWindow(object):
         self.horizontalLayout_13.setContentsMargins(0, -1, 6, -1)
         self.horizontalLayout_13.setSpacing(8)
         self.horizontalLayout_13.setObjectName("horizontalLayout_13")
-        spacerItem18 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem18)
+        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem8)
         self.pushButton_check_updata = QtWidgets.QPushButton(parent=self.frame_setting_4)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -636,8 +892,8 @@ class Ui_SettingWindow(object):
         self.pushButton_check_updata.setIconSize(QtCore.QSize(80, 80))
         self.pushButton_check_updata.setObjectName("pushButton_check_updata")
         self.horizontalLayout_13.addWidget(self.pushButton_check_updata)
-        spacerItem19 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem19)
+        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem9)
         self.horizontalLayout_13.setStretch(0, 3)
         self.horizontalLayout_13.setStretch(1, 1)
         self.horizontalLayout_13.setStretch(2, 2)
@@ -646,13 +902,17 @@ class Ui_SettingWindow(object):
         self.horizontalLayout_14.setContentsMargins(0, -1, 12, -1)
         self.horizontalLayout_14.setSpacing(8)
         self.horizontalLayout_14.setObjectName("horizontalLayout_14")
-        spacerItem20 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_14.addItem(spacerItem20)
+        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_14.addItem(spacerItem10)
         self.label_4 = QtWidgets.QLabel(parent=self.frame_setting_4)
         font = QtGui.QFont()
+        font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
         font.setBold(False)
         self.label_4.setFont(font)
+        self.label_4.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
         self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout_14.addWidget(self.label_4)
@@ -685,20 +945,20 @@ class Ui_SettingWindow(object):
         self.pushButton_help.setIconSize(QtCore.QSize(80, 80))
         self.pushButton_help.setObjectName("pushButton_help")
         self.horizontalLayout_14.addWidget(self.pushButton_help)
-        spacerItem21 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_14.addItem(spacerItem21)
+        spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_14.addItem(spacerItem11)
         self.horizontalLayout_14.setStretch(0, 2)
         self.horizontalLayout_14.setStretch(1, 1)
         self.horizontalLayout_14.setStretch(3, 2)
         self.verticalLayout_6.addLayout(self.horizontalLayout_14)
-        spacerItem22 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_6.addItem(spacerItem22)
+        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_6.addItem(spacerItem12)
         self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_12.setContentsMargins(0, -1, -1, -1)
         self.horizontalLayout_12.setSpacing(8)
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        spacerItem23 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_12.addItem(spacerItem23)
+        spacerItem13 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_12.addItem(spacerItem13)
         self.label_copy_right = QtWidgets.QLabel(parent=self.frame_setting_4)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -707,8 +967,8 @@ class Ui_SettingWindow(object):
         self.label_copy_right.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_copy_right.setObjectName("label_copy_right")
         self.horizontalLayout_12.addWidget(self.label_copy_right)
-        spacerItem24 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_12.addItem(spacerItem24)
+        spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_12.addItem(spacerItem14)
         self.horizontalLayout_12.setStretch(0, 2)
         self.horizontalLayout_12.setStretch(1, 1)
         self.horizontalLayout_12.setStretch(2, 2)
@@ -749,10 +1009,11 @@ class Ui_SettingWindow(object):
         self.listWidget_setting.setSortingEnabled(__sortingEnabled)
         self.pushButton_exit_setting.setText(_translate("MainWindow", "完成设置"))
         self.label_setting_1.setText(_translate("MainWindow", "基本设置"))
-        self.checkBox_close_option.setText(_translate("MainWindow", "关闭程序时隐藏到系统托盘"))
-        self.checkBox_sound.setText(_translate("MainWindow", "信息发送出错时播放提示音"))
-        self.checkBox_net_time.setText(_translate("MainWindow", "全局使用网络授时（会员专享）"))
-        self.checkBox_updata.setText(_translate("MainWindow", "启动时自动检查更新"))
+        self.label_2.setText(_translate("MainWindow", "关闭程序时隐藏到系统托盘"))
+        self.label_3.setText(_translate("MainWindow", "信息发送出错时播放提示音"))
+        self.label_5.setText(_translate("MainWindow", "全局使用网络授时（会员专享）"))
+        self.label_6.setText(_translate("MainWindow", "启动时自动检查更新"))
+        self.label_7.setText(_translate("MainWindow", "QQ模式切换"))
         self.label_setting_2.setText(_translate("MainWindow", "高级设置"))
         self.label_language.setText(_translate("MainWindow", "PC客户端微信语言"))
         self.comboBox_language.setItemText(0, _translate("MainWindow", "简体中文"))
