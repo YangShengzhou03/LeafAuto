@@ -256,6 +256,9 @@ class AutoInfo(QtWidgets.QWidget):
                         if task['frequency'] == '每天':
                             next_time += timedelta(days=1)
                             self.add_next_task(next_time.isoformat(), task['name'], task['info'], task['frequency'])
+                        elif task['frequency'] == '每周':
+                            next_time += timedelta(days=7)
+                            self.add_next_task(next_time.isoformat(), task['name'], task['info'], task['frequency'])
                         elif task['frequency'] == '工作日':
                             while True:
                                 next_time += timedelta(days=1)
