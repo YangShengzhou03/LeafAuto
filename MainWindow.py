@@ -223,7 +223,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.Free_pushButton.setText("您正在免费试用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"试用还有{retain_day}天 快充分利用吧(o^▽^o)</span></p></body></html>"
+                f"试用还剩{retain_day}天 快充分利用吧(^.^)</span></p></body></html>"
             )
             self.label_64.setText("12%")
             self.label_66.setText("6%")
@@ -276,7 +276,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_70.setText("使用中")
             self.welcome_label.setText(
                 f"<html><head/><body><p><span style=\"font-size:16pt; font-weight:700; color:#ffffff;\">"
-                f"尊贵的超级会员 感谢您的支持 (◍•ᴗ•◍)</span></p></body></html>"
+                f"尊贵的超级会员 欢迎您 (◍•ᴗ•◍)</span></p></body></html>"
             )
             self.checkBox_Ai.setChecked(True)
             self.checkBox_stopSleep.setChecked(True)
