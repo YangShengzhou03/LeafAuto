@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>862</width>
+    <height>516</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame{
+background-color: rgb(245, 249, 254);
+border-radius:25px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="4">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6" stretch="9">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>9</number>
+        </property>
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>9</number>
+        </property>
+        <item>
+         <widget class="QWidget" name="widget_3" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">.QWidget{
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                  stop:0 rgb(105, 27, 253), 
+                                  stop:1 rgb(200, 160, 240));
+border-radius:16px;
+color: rgb(255, 255, 255);
+}
+
+</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="5">
+           <property name="spacing">
+            <number>18</number>
+           </property>
+           <property name="leftMargin">
+            <number>18</number>
+           </property>
+           <property name="topMargin">
+            <number>18</number>
+           </property>
+           <property name="rightMargin">
+            <number>18</number>
+           </property>
+           <property name="bottomMargin">
+            <number>18</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,5,1">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_title">
+                 <property name="font">
+                  <font>
+                   <pointsize>16</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgba(222, 255, 255, 255)</string>
+                 </property>
+                 <property name="text">
+                  <string>自动回复规则</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <property name="spacing">
+                  <number>9</number>
+                 </property>
+                 <item>
+                  <widget class="QScrollArea" name="scrollArea">
+                   <property name="styleSheet">
+                    <string notr="true">border: none;
+background:rgba(0, 0, 0, 0);</string>
+                   </property>
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="scrollAreaWidgetContents">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>784</width>
+                      <height>312</height>
+                     </rect>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_3">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QFrame" name="horizontalFrame_7">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>52</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-radius: 8px;
+background:rgb(255, 255, 255);</string>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0,1,0,0,1,0,1,0">
+                        <property name="spacing">
+                         <number>6</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>4</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>4</number>
+                        </property>
+                        <item>
+                         <widget class="QLabel" name="label_9">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>规则名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="RuleName_lineEdit">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QComboBox" name="KeyWord_comboBox">
+                          <property name="minimumSize">
+                           <size>
+                            <width>76</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QComboBox {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    border: none;
+}
+
+QComboBox::drop-down {
+    width: 0px;
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: none;
+}</string>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>半匹配</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>全匹配</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="KeyWord_lineEdit">
+                          <property name="minimumSize">
+                           <size>
+                            <width>145</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_2">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>回复内容</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="Reply_lineEdit">
+                          <property name="minimumSize">
+                           <size>
+                            <width>220</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>文字或文件路径</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="file_pushButton">
+                          <property name="minimumSize">
+                           <size>
+                            <width>32</width>
+                            <height>32</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{
+	background-color: rgba(255, 255, 255, 0);
+border: none;
+border-radius:20px;
+}
+QPushButton:hover {
+
+}
+QPushButton:pressed {
+
+}
+</string>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="horizontalFrame_8">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>52</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-radius: 8px;
+background:rgb(255, 255, 255);</string>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="0,1,0,0,1,0,1,0">
+                        <property name="spacing">
+                         <number>6</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>4</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>4</number>
+                        </property>
+                        <item>
+                         <widget class="QLabel" name="label_10">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>规则名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="RuleName_lineEdit_2">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_3">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QComboBox" name="KeyWord_comboBox_2">
+                          <property name="minimumSize">
+                           <size>
+                            <width>76</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QComboBox {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    border: none;
+}
+
+QComboBox::drop-down {
+    width: 0px;
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: none;
+}</string>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>半匹配</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>全匹配</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="KeyWord_lineEdit_2">
+                          <property name="minimumSize">
+                           <size>
+                            <width>145</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_4">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>回复内容</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="Reply_lineEdit_2">
+                          <property name="minimumSize">
+                           <size>
+                            <width>220</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>文字或文件路径</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="file_pushButton_2">
+                          <property name="minimumSize">
+                           <size>
+                            <width>32</width>
+                            <height>32</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{
+	background-color: rgba(255, 255, 255, 0);
+border: none;
+border-radius:20px;
+}
+QPushButton:hover {
+
+}
+QPushButton:pressed {
+
+}
+</string>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="horizontalFrame_9">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>52</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-radius: 8px;
+background:rgb(255, 255, 255);</string>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="0,1,0,0,1,0,1,0">
+                        <property name="spacing">
+                         <number>6</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>4</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>4</number>
+                        </property>
+                        <item>
+                         <widget class="QLabel" name="label_11">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>规则名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="RuleName_lineEdit_3">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_5">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QComboBox" name="KeyWord_comboBox_3">
+                          <property name="minimumSize">
+                           <size>
+                            <width>76</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QComboBox {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    border: none;
+}
+
+QComboBox::drop-down {
+    width: 0px;
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: none;
+}</string>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>半匹配</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>全匹配</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="KeyWord_lineEdit_3">
+                          <property name="minimumSize">
+                           <size>
+                            <width>145</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_6">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>回复内容</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="Reply_lineEdit_3">
+                          <property name="minimumSize">
+                           <size>
+                            <width>220</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>文字或文件路径</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="file_pushButton_3">
+                          <property name="minimumSize">
+                           <size>
+                            <width>32</width>
+                            <height>32</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{
+	background-color: rgba(255, 255, 255, 0);
+border: none;
+border-radius:20px;
+}
+QPushButton:hover {
+
+}
+QPushButton:pressed {
+
+}
+</string>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="horizontalFrame_10">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>52</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-radius: 8px;
+background:rgb(255, 255, 255);</string>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="0,1,0,0,1,0,1,0">
+                        <property name="spacing">
+                         <number>6</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>4</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>4</number>
+                        </property>
+                        <item>
+                         <widget class="QLabel" name="label_12">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>规则名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="RuleName_lineEdit_4">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_7">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QComboBox" name="KeyWord_comboBox_4">
+                          <property name="minimumSize">
+                           <size>
+                            <width>76</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QComboBox {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    border: none;
+}
+
+QComboBox::drop-down {
+    width: 0px;
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: none;
+}</string>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>半匹配</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>全匹配</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="KeyWord_lineEdit_4">
+                          <property name="minimumSize">
+                           <size>
+                            <width>145</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_8">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>回复内容</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="Reply_lineEdit_4">
+                          <property name="minimumSize">
+                           <size>
+                            <width>220</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>文字或文件路径</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="file_pushButton_4">
+                          <property name="minimumSize">
+                           <size>
+                            <width>32</width>
+                            <height>32</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{
+	background-color: rgba(255, 255, 255, 0);
+border: none;
+border-radius:20px;
+}
+QPushButton:hover {
+
+}
+QPushButton:pressed {
+
+}
+</string>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="horizontalFrame_11">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>52</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-radius: 8px;
+background:rgb(255, 255, 255);</string>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="0,1,0,0,1,0,1,0">
+                        <property name="spacing">
+                         <number>6</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>4</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>6</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>4</number>
+                        </property>
+                        <item>
+                         <widget class="QLabel" name="label_13">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>规则名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="RuleName_lineEdit_5">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入名称</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_14">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QComboBox" name="KeyWord_comboBox_5">
+                          <property name="minimumSize">
+                           <size>
+                            <width>76</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QComboBox {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    border: none;
+}
+
+QComboBox::drop-down {
+    width: 0px;
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: none;
+}</string>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>半匹配</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>全匹配</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="KeyWord_lineEdit_5">
+                          <property name="minimumSize">
+                           <size>
+                            <width>145</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>输入关键词</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_15">
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgba(0, 0, 0, 0);</string>
+                          </property>
+                          <property name="text">
+                           <string>回复内容</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="Reply_lineEdit_5">
+                          <property name="minimumSize">
+                           <size>
+                            <width>220</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>微软雅黑 Light</family>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color:rgb(0, 0, 0);
+background:rgb(255, 255, 255);
+border-radius: 0px;</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>文字或文件路径</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="file_pushButton_5">
+                          <property name="minimumSize">
+                           <size>
+                            <width>32</width>
+                            <height>32</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{
+	background-color: rgba(255, 255, 255, 0);
+border: none;
+border-radius:20px;
+}
+QPushButton:hover {
+
+}
+QPushButton:pressed {
+
+}
+</string>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <property name="spacing">
+                  <number>12</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_download">
+                   <property name="minimumSize">
+                    <size>
+                     <width>88</width>
+                     <height>36</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>88</width>
+                     <height>36</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+    background-color: rgba(105, 27, 253, 180);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+}
+
+QPushButton:hover {
+    background-color: rgba(105, 27, 253, 120);
+}
+
+QPushButton:pressed {
+    background-color: rgba(105, 27, 253, 250);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>保存</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
