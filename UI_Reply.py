@@ -8,6 +8,8 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from common import get_resource_path
+
 
 class Ui_ReplyDialog(object):
     def setupUi(self, Dialog):
@@ -183,6 +185,8 @@ class Ui_ReplyDialog(object):
 "}\n"
 "")
         self.file_pushButton.setText("")
+        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
+        self.file_pushButton.setIcon(icon)
         self.file_pushButton.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton.setObjectName("file_pushButton")
         self.horizontalLayout_12.addWidget(self.file_pushButton)
@@ -297,6 +301,8 @@ class Ui_ReplyDialog(object):
 "}\n"
 "")
         self.file_pushButton_2.setText("")
+        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
+        self.file_pushButton_2.setIcon(icon)
         self.file_pushButton_2.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton_2.setObjectName("file_pushButton_2")
         self.horizontalLayout_13.addWidget(self.file_pushButton_2)
@@ -411,6 +417,8 @@ class Ui_ReplyDialog(object):
 "}\n"
 "")
         self.file_pushButton_3.setText("")
+        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
+        self.file_pushButton_3.setIcon(icon)
         self.file_pushButton_3.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton_3.setObjectName("file_pushButton_3")
         self.horizontalLayout_14.addWidget(self.file_pushButton_3)
@@ -525,6 +533,8 @@ class Ui_ReplyDialog(object):
 "}\n"
 "")
         self.file_pushButton_4.setText("")
+        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
+        self.file_pushButton_4.setIcon(icon)
         self.file_pushButton_4.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton_4.setObjectName("file_pushButton_4")
         self.horizontalLayout_15.addWidget(self.file_pushButton_4)
@@ -639,6 +649,8 @@ class Ui_ReplyDialog(object):
 "}\n"
 "")
         self.file_pushButton_5.setText("")
+        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
+        self.file_pushButton_5.setIcon(icon)
         self.file_pushButton_5.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton_5.setObjectName("file_pushButton_5")
         self.horizontalLayout_16.addWidget(self.file_pushButton_5)

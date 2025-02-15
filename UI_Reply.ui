@@ -376,6 +376,9 @@ QPushButton:pressed {
                           <property name="text">
                            <string/>
                           </property>
+                          <property name="icon">
+                           <iconset theme="resources/img/page1/page1_打开文件.svg"/>
+                          </property>
                           <property name="iconSize">
                            <size>
                             <width>24</width>
@@ -598,6 +601,9 @@ QPushButton:pressed {
                           </property>
                           <property name="text">
                            <string/>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="resources/img/page1/page1_打开文件.svg"/>
                           </property>
                           <property name="iconSize">
                            <size>
@@ -822,6 +828,9 @@ QPushButton:pressed {
                           <property name="text">
                            <string/>
                           </property>
+                          <property name="icon">
+                           <iconset theme="resources/img/page1/page1_打开文件.svg"/>
+                          </property>
                           <property name="iconSize">
                            <size>
                             <width>24</width>
@@ -1045,6 +1054,9 @@ QPushButton:pressed {
                           <property name="text">
                            <string/>
                           </property>
+                          <property name="icon">
+                           <iconset theme="resources/img/page1/page1_打开文件.svg"/>
+                          </property>
                           <property name="iconSize">
                            <size>
                             <width>24</width>
@@ -1267,6 +1279,9 @@ QPushButton:pressed {
                           </property>
                           <property name="text">
                            <string/>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="resources/img/page1/page1_打开文件.svg"/>
                           </property>
                           <property name="iconSize">
                            <size>

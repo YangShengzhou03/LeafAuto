@@ -1,6 +1,6 @@
 import json
 from PyQt6 import QtCore, QtWidgets
-
+from PyQt6.QtWidgets import QFileDialog
 from UI_Reply import Ui_ReplyDialog
 from common import log
 
@@ -10,9 +10,15 @@ class ReplyDialog(QtWidgets.QDialog):
         super().__init__(parent)
         self.ui = Ui_ReplyDialog()
         self.ui.setupUi(self)
+        self.setWindowTitle("编辑Ai接管规则")
         self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
         self.ui.pushButton_download.clicked.connect(self.saveRulesToJsonAndClose)
+        self.ui.file_pushButton.clicked.connect(lambda: self.choose_file_path(self.ui.Reply_lineEdit))
+        self.ui.file_pushButton_2.clicked.connect(lambda: self.choose_file_path(self.ui.Reply_lineEdit_2))
+        self.ui.file_pushButton_3.clicked.connect(lambda: self.choose_file_path(self.ui.Reply_lineEdit_3))
+        self.ui.file_pushButton_4.clicked.connect(lambda: self.choose_file_path(self.ui.Reply_lineEdit_4))
+        self.ui.file_pushButton_5.clicked.connect(lambda: self.choose_file_path(self.ui.Reply_lineEdit_5))
 
     def saveRulesToJson(self):
         rules = []
@@ -56,3 +62,9 @@ class ReplyDialog(QtWidgets.QDialog):
     def saveRulesToJsonAndClose(self):
         self.saveRulesToJson()
         self.close()
+
+    def choose_file_path(self, line_edit):
+        file_dialog = QFileDialog()
+        file_path, _ = file_dialog.getOpenFileName(self, "选择文件", "", "All Files (*)")
+        if file_path:
+            line_edit.setText(file_path)

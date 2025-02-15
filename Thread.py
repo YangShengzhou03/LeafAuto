@@ -51,7 +51,11 @@ class AiWorkerThread(QThread):
                     if self.rules is not None:
                         matched_reply = self.match_rule(msg)
                         if matched_reply:
-                            self.app_instance.wx.SendMsg(msg=matched_reply, who=self.receiver)
+                            # 检查 matched_reply 是否为有效文件路径
+                            if os.path.isfile(matched_reply):
+                                self.app_instance.wx.SendFiles(filepath=matched_reply, who=self.receiver)
+                            else:
+                                self.app_instance.wx.SendMsg(msg=matched_reply, who=self.receiver)
                         else:
                             self.main(msg, self.receiver)
                     else:
@@ -83,8 +87,12 @@ class AiWorkerThread(QThread):
 
     def match_rule(self, msg):
         for rule in self.rules:
-            if rule['keyword'] in msg:
-                return rule['reply_content']
+            if rule['match_type'] == '全匹配':
+                if msg.strip() == rule['keyword'].strip():
+                    return rule['reply_content']
+            elif rule['match_type'] == '半匹配':
+                if rule['keyword'].strip() in msg.strip():
+                    return rule['reply_content']
         return None
 
     def main(self, msg, who):
