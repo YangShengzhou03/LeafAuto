@@ -241,7 +241,7 @@ class AutoInfo(QtWidgets.QWidget):
                     widget_item = item.widget()
                     if hasattr(widget_item, 'task') and all(
                             widget_item.task[key] == task[key] for key in ['time', 'name', 'info', 'frequency']):
-                        widget_image = widget_item.findChild(QtWidgets.QWidget, "widget_image")
+                        widget_image = widget_item.findChild(QtWidgets.QWidget, "widget_54")
                         if widget_image:
                             if status == '成功':
                                 icon_path_key = 'page1_发送成功.svg'
@@ -295,18 +295,25 @@ class AutoInfo(QtWidgets.QWidget):
             if not self.ready_tasks:
                 log("WARNING", "当前任务列表为空,没有任务可供保存")
                 return
-
             documents_dir = os.path.expanduser("~/Documents")
             file_name, _ = QtWidgets.QFileDialog.getSaveFileName(
                 self, "保存任务计划", os.path.join(documents_dir, "LeafAuto自动计划"), "枫叶任务文件(*.csv);;All Files (*)"
             )
             if file_name:
-                with open(file_name, mode='w', newline='', encoding='ansi') as file:
-                    writer = csv.writer(file)
-                    writer.writerow(['Time', 'Name', 'Info', 'Frequency'])
-                    for task in self.ready_tasks:
-                        writer.writerow([task['time'], task['name'], task['info'], task['frequency']])
-                log("DEBUG", f"任务文件已保存至{file_name}")
+                try:
+                    with open(file_name, mode='w', newline='', encoding='ansi') as file:
+                        writer = csv.writer(file)
+                        writer.writerow(['Time', 'Name', 'Info', 'Frequency'])
+                        for task in self.ready_tasks:
+                            writer.writerow([task['time'], task['name'], task['info'], task['frequency']])
+                    log("DEBUG", f"任务文件已保存至{file_name}")
+                except UnicodeEncodeError:
+                    with open(file_name, mode='w', newline='', encoding='utf-8') as file:
+                        writer = csv.writer(file)
+                        writer.writerow(['Time', 'Name', 'Info', 'Frequency'])
+                        for task in self.ready_tasks:
+                            writer.writerow([task['time'], task['name'], task['info'], task['frequency']])
+                    log("DEBUG", f"使用UTF-8编码任务文件已保存至{file_name}")
         except Exception as e:
             log("ERROR", f"任务保存失败,{e}")
 

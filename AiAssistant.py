@@ -32,7 +32,9 @@ class AiAssistant(QtWidgets.QWidget):
 
                 self.is_taking_over = True
                 self.elapsed_time = 0
-                self.ai_thread = AiWorkerThread(self, self.parent.takeOverReceiver_lineEdit.text())
+                self.ai_thread = AiWorkerThread(self, self.parent.takeOverReceiver_lineEdit.text(),
+                                                model=self.parent.comboBox_AiLmodel.currentText(),
+                                                role=self.parent.Characters_lineEdit.text())
                 self.ai_thread.finished.connect(self.on_thread_finished)
                 self.ai_thread.start()
                 self.timer.start(1000)
@@ -46,7 +48,6 @@ class AiAssistant(QtWidgets.QWidget):
         log("INFO", "Leaf Ai 接管线程结束")
         self.is_taking_over = False
         self.timer.stop()
-        self.update_timer()
         self.update_button_icon('resources/img/page3/page3_开始接管.svg')
         self.parent.label_7.setText(self.parent.label_7.text().replace('Leaf Ai 已为您接管', 'Leaf Ai接管 准备就绪'))
 

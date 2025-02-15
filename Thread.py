@@ -7,19 +7,21 @@ import requests
 from PyQt6 import QtCore, QtMultimedia
 from PyQt6.QtCore import QThread, pyqtSignal
 
-from common import log, get_current_time, get_resource_path
+from common import log, get_current_time
 
 
 class AiWorkerThread(QThread):
     pause_changed = pyqtSignal(bool)
     finished = pyqtSignal()
 
-    def __init__(self, app_instance, receiver):
+    def __init__(self, app_instance, receiver, model="月之暗面", role="你是一个体贴的人，但回答问题时尽量简短。"):
         super().__init__()
         self.app_instance = app_instance
         self.receiver = receiver
+        self.model = model
         self.stop_event = threading.Event()
         self.running = True
+        self.system_content = role
 
     def run(self):
         try:
@@ -27,58 +29,76 @@ class AiWorkerThread(QThread):
         except Exception as e:
             log("ERROR", f"{str(e)}")
             self.app_instance.on_thread_finished()
-            return
 
         while self.running and not self.stop_event.is_set():
             try:
                 msgs = self.app_instance.wx.GetAllMessage()
-                if msgs:
-                    last_msg = msgs[-1]
-                    if last_msg.type == "friend":
-                        self.main(last_msg.content, self.receiver)
+                if msgs and msgs[-1].type == "friend":
+                    self.main(msgs[-1].content, self.receiver)
             except Exception as e:
                 log("ERROR", f"{str(e)}")
                 break
             finally:
                 self.msleep(100)
-            if self.stop_event.is_set():
-                break
         self.app_instance.on_thread_finished()
 
     def requestInterruption(self):
         self.stop_event.set()
 
+    def query_api(self, url, payload=None, headers=None, params=None, method='POST'):
+        try:
+            response = requests.request(method=method, url=url, json=payload, headers=headers, params=params)
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as e:
+            log("ERROR", f"Request failed: {e}")
+            return None
+
     def get_access_token(self):
-        url = "https://aip.baidubce.com/oauth/2.0/token"
-        params = {
-            'grant_type': 'client_credentials',
-            'client_id': 'eCB39lMiTbHXV0mTt1d6bBw7',
-            'client_secret': 'WUbEO3XdMNJLTJKNQfFbMSQvtBVzRhvu'
-        }
-        response = requests.post(url, params=params)
-        return response.json().get("access_token")
+        return self.query_api(
+            "https://aip.baidubce.com/oauth/2.0/token",
+            params={'grant_type': 'client_credentials', 'client_id': 'eCB39lMiTbHXV0mTt1d6bBw7', 'client_secret': 'WUbEO3XdMNJLTJKNQfFbMSQvtBVzRhvu'}
+        ).get("access_token")
 
     def main(self, msg, who):
-        access_token = self.get_access_token()
-        url = f"https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie-speed-128k?access_token={access_token}"
-        payload = {
-            "messages": [
-                {"role": "user", "content": msg}
-            ]
-        }
-        headers = {'Content-Type': 'application/json'}
+        if self.model == "文心一言":
+            access_token = self.get_access_token()
+            payload = {"messages": [{"role": "user", "content": msg}]}
+            result = self.query_api(
+                f"https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie-speed-128k?access_token={access_token}",
+                payload=payload,
+                headers={'Content-Type': 'application/json'}
+            ).get('result', "无法解析响应")
+        elif self.model == "月之暗面":
+            from openai import OpenAI
+            client = OpenAI(api_key="sk-dx1RuweBS0LU0bCR5HizbWjXLuBL6HrS8BT21NEEGwbeyuo6", base_url="https://api.moonshot.cn/v1")
+            completion = client.chat.completions.create(
+                model="moonshot-v1-8k",
+                messages=[{"role": "system", "content": self.system_content}, {"role": "user", "content": msg}],
+                temperature=0.3,
+            )
+            result = completion.choices[0].message.content
+        else :
+            data = {
+                "max_tokens": 64,
+                "top_k": 4,
+                "temperature": 0.5,
+                "messages": [
+                    {"role": "system", "content": self.system_content},
+                    {"role": "user", "content": msg}
+                ],
+                "model": "4.0Ultra"
+            }
+            header = {
+                "Authorization": "Bearer xCPWitJxfzhLaZNOAdtl:PgJXiEyvKjUaoGzKwgIi",
+                "Content-Type": "application/json"
+            }
+            response = self.query_api("https://spark-api-open.xf-yun.com/v1/chat/completions", data, header)
+            result = response['choices'][0]['message']['content'] if response else "无法解析响应"
 
-        try:
-            response = requests.post(url, json=payload, headers=headers)
-            response.raise_for_status()
-            json_result = response.json()
-            if 'result' in json_result:
-                self.app_instance.wx.SendMsg(msg=json_result['result'], who=who)
-                log("INFO", f"Ai发送:{json_result['result']}")
-            else:
-                log("ERROR", f"{response.text}")
-        except Exception as e:
-            log("ERROR", f"{str(e)}")
+        if result:
+            self.app_instance.wx.SendMsg(msg=result, who=who)
+            log("INFO", f"Ai发送:{result}")
 
 
 class SplitWorkerThread(QThread):

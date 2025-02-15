@@ -2208,8 +2208,8 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setBold(False)
         self.LeafAi_Title.setFont(font)
         self.LeafAi_Title.setStyleSheet("QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                        "    color: rgb(0, 0, 0);\n"
+                                        "}")
         self.LeafAi_Title.setObjectName("LeafAi_Title")
         self.verticalLayout_104.addWidget(self.LeafAi_Title)
         self.frame_60 = QtWidgets.QFrame(parent=self.verticalWidget_4)
@@ -2224,10 +2224,10 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         self.frame_61 = QtWidgets.QFrame(parent=self.frame_60)
         self.frame_61.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.frame_61.setStyleSheet("QFrame{\n"
-"background-color: rgb(255, 255, 255);\n"
-"border:0px solid red;\n"
-"border-radius:18px\n"
-"}")
+                                    "background-color: rgb(255, 255, 255);\n"
+                                    "border:0px solid red;\n"
+                                    "border-radius:18px\n"
+                                    "}")
         self.frame_61.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_61.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_61.setObjectName("frame_61")
@@ -2238,7 +2238,7 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         self.frame_59.setMinimumSize(QtCore.QSize(361, 48))
         self.frame_59.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.frame_59.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-radius:12px")
+                                    "border-radius:12px")
         self.frame_59.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_59.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_59.setObjectName("frame_59")
@@ -2254,8 +2254,8 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setPointSize(12)
         self.label_9.setFont(font)
         self.label_9.setStyleSheet("QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                   "    color: rgb(0, 0, 0);\n"
+                                   "}")
         self.label_9.setObjectName("label_9")
         self.horizontalLayout_13.addWidget(self.label_9)
         self.takeOverReceiver_lineEdit = QtWidgets.QLineEdit(parent=self.frame_59)
@@ -2264,19 +2264,19 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setPointSize(-1)
         self.takeOverReceiver_lineEdit.setFont(font)
         self.takeOverReceiver_lineEdit.setStyleSheet("QLineEdit {\n"
-"    color: rgb(0, 0, 0);\n"
-"    border: none;\n"
-"    padding: 2px;\n"
-"    font-size: 16px;\n"
-"}\n"
-"\n"
-"QLineEdit::placeholder {\n"
-"    color: rgb(150, 150, 150);\n"
-"}\n"
-"\n"
-"QLineEdit:hover {\n"
-"    border-color: rgb(35, 26, 132);\n"
-"}")
+                                                     "    color: rgb(0, 0, 0);\n"
+                                                     "    border: none;\n"
+                                                     "    padding: 2px;\n"
+                                                     "    font-size: 16px;\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QLineEdit::placeholder {\n"
+                                                     "    color: rgb(150, 150, 150);\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QLineEdit:hover {\n"
+                                                     "    border-color: rgb(35, 26, 132);\n"
+                                                     "}")
         self.takeOverReceiver_lineEdit.setObjectName("takeOverReceiver_lineEdit")
         self.horizontalLayout_13.addWidget(self.takeOverReceiver_lineEdit)
         self.horizontalLayout_124.addLayout(self.horizontalLayout_13)
@@ -2290,12 +2290,13 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setPointSize(12)
         self.label_15.setFont(font)
         self.label_15.setStyleSheet("QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                    "    color: rgb(0, 0, 0);\n"
+                                    "}")
         self.label_15.setObjectName("label_15")
         self.horizontalLayout_17.addWidget(self.label_15)
         self.pushButton_addRule = QtWidgets.QPushButton(parent=self.frame_59)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred,
+                                           QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_addRule.sizePolicy().hasHeightForWidth())
@@ -2307,25 +2308,60 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setPointSize(-1)
         self.pushButton_addRule.setFont(font)
         self.pushButton_addRule.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(105, 27, 253);\n"
-"    border: 1px solid rgba(85, 0, 255, 120);\n"
-"    border-radius: 4px;\n"
-"    color: white;\n"
-"    font-size: 14px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(85, 20, 200);\n"
-"    border: 1px solid rgb(100, 90, 220);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(65, 15, 150);\n"
-"    border: 1px solid rgb(70, 60, 180);\n"
-"}")
+                                              "    background-color: rgb(105, 27, 253);\n"
+                                              "    border: 1px solid rgba(85, 0, 255, 120);\n"
+                                              "    border-radius: 4px;\n"
+                                              "    color: white;\n"
+                                              "    font-size: 14px;\n"
+                                              "}\n"
+                                              "\n"
+                                              "QPushButton:hover {\n"
+                                              "    background-color: rgb(85, 20, 200);\n"
+                                              "    border: 1px solid rgb(100, 90, 220);\n"
+                                              "}\n"
+                                              "\n"
+                                              "QPushButton:pressed {\n"
+                                              "    background-color: rgb(65, 15, 150);\n"
+                                              "    border: 1px solid rgb(70, 60, 180);\n"
+                                              "}")
         self.pushButton_addRule.setObjectName("pushButton_addRule")
         self.horizontalLayout_17.addWidget(self.pushButton_addRule)
         self.horizontalLayout_124.addLayout(self.horizontalLayout_17)
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.label_13 = QtWidgets.QLabel(parent=self.frame_59)
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑 Light")
+        font.setPointSize(12)
+        self.label_13.setFont(font)
+        self.label_13.setStyleSheet("QLabel {\n"
+                                    "    color: rgb(0, 0, 0);\n"
+                                    "}")
+        self.label_13.setObjectName("label_13")
+        self.horizontalLayout_19.addWidget(self.label_13)
+        self.Characters_lineEdit = QtWidgets.QLineEdit(parent=self.frame_59)
+        self.Characters_lineEdit.setMinimumSize(QtCore.QSize(0, 32))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.Characters_lineEdit.setFont(font)
+        self.Characters_lineEdit.setStyleSheet("QLineEdit {\n"
+                                               "    color: rgb(0, 0, 0);\n"
+                                               "    border: none;\n"
+                                               "    padding: 2px;\n"
+                                               "    font-size: 16px;\n"
+                                               "}\n"
+                                               "\n"
+                                               "QLineEdit::placeholder {\n"
+                                               "    color: rgb(150, 150, 150);\n"
+                                               "}\n"
+                                               "\n"
+                                               "QLineEdit:hover {\n"
+                                               "    border-color: rgb(35, 26, 132);\n"
+                                               "}")
+        self.Characters_lineEdit.setInputMask("")
+        self.Characters_lineEdit.setObjectName("Characters_lineEdit")
+        self.horizontalLayout_19.addWidget(self.Characters_lineEdit)
+        self.horizontalLayout_124.addLayout(self.horizontalLayout_19)
         self.horizontalLayout_14 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_14.setContentsMargins(-1, -1, 2, -1)
         self.horizontalLayout_14.setObjectName("horizontalLayout_14")
@@ -2335,50 +2371,50 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setPointSize(12)
         self.label_14.setFont(font)
         self.label_14.setStyleSheet("QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                    "    color: rgb(0, 0, 0);\n"
+                                    "}")
         self.label_14.setObjectName("label_14")
         self.horizontalLayout_14.addWidget(self.label_14)
         self.comboBox_AiLmodel = QtWidgets.QComboBox(parent=self.frame_59)
         self.comboBox_AiLmodel.setMinimumSize(QtCore.QSize(88, 0))
         self.comboBox_AiLmodel.setMaximumSize(QtCore.QSize(110, 16777215))
         self.comboBox_AiLmodel.setStyleSheet("QComboBox {\n"
-"    background-color: #FFFFFF;\n"
-"    border: 1px solid rgb(87, 78, 209);\n"
-"    border-radius: 4px;\n"
-"    color: rgb(0, 0, 0);\n"
-"    font-size: 15px;\n"
-"    padding-right: 0;\n"
-"    text-align: center;\n"
-"    padding-left: 2px;\n"
-"}\n"
-"\n"
-"QComboBox:hover {\n"
-"    background-color: rgba(229, 228, 253, 0.2);\n"
-"}\n"
-"\n"
-"QComboBox:focus {\n"
-"    border-color: rgb(35, 26, 132);\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    width: 0px;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"    image: none;\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: #FFFFFF;\n"
-"    border: 1px solid rgb(87, 78, 209);\n"
-"    border-radius: 4px;\n"
-"    color: rgb(0, 0, 0);\n"
-"    font-size: 15px;\n"
-"    padding: 2px;\n"
-"    selection-background-color: rgb(229, 228, 253);\n"
-"    selection-color: rgb(0, 0, 0);\n"
-"}")
+                                             "    background-color: #FFFFFF;\n"
+                                             "    border: 1px solid rgb(87, 78, 209);\n"
+                                             "    border-radius: 4px;\n"
+                                             "    color: rgb(0, 0, 0);\n"
+                                             "    font-size: 15px;\n"
+                                             "    padding-right: 0;\n"
+                                             "    text-align: center;\n"
+                                             "    padding-left: 2px;\n"
+                                             "}\n"
+                                             "\n"
+                                             "QComboBox:hover {\n"
+                                             "    background-color: rgba(229, 228, 253, 0.2);\n"
+                                             "}\n"
+                                             "\n"
+                                             "QComboBox:focus {\n"
+                                             "    border-color: rgb(35, 26, 132);\n"
+                                             "}\n"
+                                             "\n"
+                                             "QComboBox::drop-down {\n"
+                                             "    width: 0px;\n"
+                                             "}\n"
+                                             "\n"
+                                             "QComboBox::down-arrow {\n"
+                                             "    image: none;\n"
+                                             "}\n"
+                                             "\n"
+                                             "QComboBox QAbstractItemView {\n"
+                                             "    background-color: #FFFFFF;\n"
+                                             "    border: 1px solid rgb(87, 78, 209);\n"
+                                             "    border-radius: 4px;\n"
+                                             "    color: rgb(0, 0, 0);\n"
+                                             "    font-size: 15px;\n"
+                                             "    padding: 2px;\n"
+                                             "    selection-background-color: rgb(229, 228, 253);\n"
+                                             "    selection-color: rgb(0, 0, 0);\n"
+                                             "}")
         self.comboBox_AiLmodel.setObjectName("comboBox_AiLmodel")
         self.comboBox_AiLmodel.addItem("")
         self.comboBox_AiLmodel.addItem("")
@@ -2387,19 +2423,19 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         self.takeOver_widget = QtWidgets.QWidget(parent=self.frame_59)
         self.takeOver_widget.setMinimumSize(QtCore.QSize(28, 28))
         self.takeOver_widget.setMaximumSize(QtCore.QSize(28, 28))
-        self.takeOver_widget.setSizeIncrement(QtCore.QSize(28, 28))
+        self.takeOver_widget.setSizeIncrement(QtCore.QSize(28, 0))
         self.takeOver_widget.setStyleSheet(f"image: url({get_resource_path('resources/img/page3/page3_AI标志图标.svg')});")
         self.takeOver_widget.setObjectName("takeOver_widget")
         self.horizontalLayout_14.addWidget(self.takeOver_widget)
         self.horizontalLayout_124.addLayout(self.horizontalLayout_14)
         self.horizontalLayout_124.setStretch(0, 2)
-        self.horizontalLayout_124.setStretch(2, 1)
+        self.horizontalLayout_124.setStretch(3, 1)
         self.verticalLayout_121.addWidget(self.frame_59)
         self.widget_110 = QtWidgets.QWidget(parent=self.frame_61)
         self.widget_110.setMinimumSize(QtCore.QSize(361, 0))
         self.widget_110.setMaximumSize(QtCore.QSize(176666, 17666))
         self.widget_110.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-radius:28px")
+                                      "border-radius:28px")
         self.widget_110.setObjectName("widget_110")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.widget_110)
         self.verticalLayout_4.setContentsMargins(12, -1, 12, -1)
@@ -2410,10 +2446,10 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setPointSize(22)
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"    padding: 4px;\n"
-"    qproperty-alignment: AlignCenter;\n"
-"}")
+                                   "    color: rgb(0, 0, 0);\n"
+                                   "    padding: 4px;\n"
+                                   "    qproperty-alignment: AlignCenter;\n"
+                                   "}")
         self.label_7.setObjectName("label_7")
         self.verticalLayout_4.addWidget(self.label_7)
         self.takeOverTime_label = QtWidgets.QLabel(parent=self.widget_110)
@@ -2423,51 +2459,55 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setPointSize(88)
         self.takeOverTime_label.setFont(font)
         self.takeOverTime_label.setStyleSheet("QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"    padding: 4px;\n"
-"    qproperty-alignment: AlignCenter;\n"
-"}")
+                                              "    color: rgb(0, 0, 0);\n"
+                                              "    padding: 4px;\n"
+                                              "    qproperty-alignment: AlignCenter;\n"
+                                              "}")
         self.takeOverTime_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.takeOverTime_label.setObjectName("takeOverTime_label")
         self.verticalLayout_4.addWidget(self.takeOverTime_label)
         self.horizontalLayout_150 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_150.setSpacing(12)
         self.horizontalLayout_150.setObjectName("horizontalLayout_150")
-        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding,
+                                             QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_150.addItem(spacerItem10)
         self.pushButton_takeover = QtWidgets.QPushButton(parent=self.widget_110)
         self.pushButton_takeover.setMinimumSize(QtCore.QSize(80, 80))
         self.pushButton_takeover.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(105, 27, 253);\n"
-"    border: 2px solid rgb(255, 255, 255);\n"
-"    border-radius: 40px;\n"
-"    color: white;\n"
-"    font-size: 16px;\n"
-"    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);\n"
-"    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(120, 32, 255);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(90, 22, 230);\n"
-"}")
+                                               "    background-color: rgb(105, 27, 253);\n"
+                                               "    border: 2px solid rgb(255, 255, 255);\n"
+                                               "    border-radius: 40px;\n"
+                                               "    color: white;\n"
+                                               "    font-size: 16px;\n"
+                                               "    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);\n"
+                                               "    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;\n"
+                                               "}\n"
+                                               "\n"
+                                               "QPushButton:hover {\n"
+                                               "    background-color: rgb(120, 32, 255);\n"
+                                               "}\n"
+                                               "\n"
+                                               "QPushButton:pressed {\n"
+                                               "    background-color: rgb(90, 22, 230);\n"
+                                               "}")
         self.pushButton_takeover.setText("")
         icon22 = QtGui.QIcon()
-        icon22.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page3/page3_开始接管.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon22.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/page3/page3_开始接管.svg")), QtGui.QIcon.Mode.Normal,
+                         QtGui.QIcon.State.Off)
         self.pushButton_takeover.setIcon(icon22)
         self.pushButton_takeover.setIconSize(QtCore.QSize(38, 38))
         self.pushButton_takeover.setObjectName("pushButton_takeover")
         self.horizontalLayout_150.addWidget(self.pushButton_takeover)
-        spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding,
+                                             QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_150.addItem(spacerItem11)
         self.verticalLayout_4.addLayout(self.horizontalLayout_150)
         self.verticalLayout_121.addWidget(self.widget_110)
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
         self.verticalLayout_8.setObjectName("verticalLayout_8")
-        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,
+                                             QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_8.addItem(spacerItem12)
         self.verticalLayout_121.addLayout(self.verticalLayout_8)
         self.verticalLayout_121.setStretch(0, 1)
@@ -2487,7 +2527,7 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         self.retranslateUi(MainWindow)
         self.left_listWidget.setCurrentRow(0)
         self.convertPage.setCurrentIndex(0)
-        self.left_listWidget.currentRowChanged['int'].connect(self.convertPage.setCurrentIndex) # type: ignore
+        self.left_listWidget.currentRowChanged['int'].connect(self.convertPage.setCurrentIndex)  # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -2594,12 +2634,15 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         self.pushButton_startSplit.setText(_translate("MainWindow", "发送句子"))
         self.LeafAi_Title.setText(_translate("MainWindow", "Leaf Ai"))
         self.label_9.setText(_translate("MainWindow", "接管联系人"))
-        self.takeOverReceiver_lineEdit.setPlaceholderText(_translate("MainWindow", "在此输入需接管的联系人（备注优先）"))
+        self.takeOverReceiver_lineEdit.setPlaceholderText(_translate("MainWindow", "输入联系人（备注优先）"))
         self.label_15.setText(_translate("MainWindow", "自定义回复"))
         self.pushButton_addRule.setText(_translate("MainWindow", "添加规则"))
+        self.label_13.setText(_translate("MainWindow", "Ai人设"))
+        self.Characters_lineEdit.setText(_translate("MainWindow", "你是个高冷的人"))
+        self.Characters_lineEdit.setPlaceholderText(_translate("MainWindow", "在此输入Ai人设"))
         self.label_14.setText(_translate("MainWindow", "选择Ai大模型"))
-        self.comboBox_AiLmodel.setItemText(0, _translate("MainWindow", "文心一言"))
-        self.comboBox_AiLmodel.setItemText(1, _translate("MainWindow", "DeepSeek"))
-        self.comboBox_AiLmodel.setItemText(2, _translate("MainWindow", "通义千问"))
+        self.comboBox_AiLmodel.setItemText(0, _translate("MainWindow", "星火讯飞"))
+        self.comboBox_AiLmodel.setItemText(1, _translate("MainWindow", "文心一言"))
+        self.comboBox_AiLmodel.setItemText(2, _translate("MainWindow", "月之暗面"))
         self.label_7.setText(_translate("MainWindow", "Leaf Ai 已为您接管"))
         self.takeOverTime_label.setText(_translate("MainWindow", "00:00:00"))

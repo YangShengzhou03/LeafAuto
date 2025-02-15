@@ -3262,7 +3262,7 @@ QPushButton:pressed {
                         <x>0</x>
                         <y>0</y>
                         <width>360</width>
-                        <height>493</height>
+                        <height>482</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">
@@ -4657,7 +4657,7 @@ border-radius:12px</string>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_124" stretch="2,0,1">
+                         <layout class="QHBoxLayout" name="horizontalLayout_124" stretch="2,0,0,1">
                           <property name="spacing">
                            <number>12</number>
                           </property>
@@ -4723,7 +4723,7 @@ QLineEdit:hover {
 }</string>
                               </property>
                               <property name="placeholderText">
-                               <string>在此输入需接管的联系人（备注优先）</string>
+                               <string>输入联系人（备注优先）</string>
                               </property>
                              </widget>
                             </item>
@@ -4811,6 +4811,68 @@ QPushButton:pressed {
                            </layout>
                           </item>
                           <item>
+                           <layout class="QHBoxLayout" name="horizontalLayout_19">
+                            <item>
+                             <widget class="QLabel" name="label_13">
+                              <property name="font">
+                               <font>
+                                <family>微软雅黑 Light</family>
+                                <pointsize>12</pointsize>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                              </property>
+                              <property name="text">
+                               <string>Ai人设</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QLineEdit" name="Characters_lineEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>32</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <pointsize>-1</pointsize>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QLineEdit {
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 2px;
+    font-size: 16px;
+}
+
+QLineEdit::placeholder {
+    color: rgb(150, 150, 150);
+}
+
+QLineEdit:hover {
+    border-color: rgb(35, 26, 132);
+}</string>
+                              </property>
+                              <property name="inputMask">
+                               <string/>
+                              </property>
+                              <property name="text">
+                               <string>你是个高冷的人</string>
+                              </property>
+                              <property name="placeholderText">
+                               <string>在此输入Ai人设</string>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                          <item>
                            <layout class="QHBoxLayout" name="horizontalLayout_14">
                             <property name="rightMargin">
                              <number>2</number>
@@ -4888,17 +4950,17 @@ QComboBox QAbstractItemView {
                               </property>
                               <item>
                                <property name="text">
+                                <string>星火讯飞</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
                                 <string>文心一言</string>
                                </property>
                               </item>
                               <item>
                                <property name="text">
-                                <string>DeepSeek</string>
-                               </property>
-                              </item>
-                              <item>
-                               <property name="text">
-                                <string>通义千问</string>
+                                <string>月之暗面</string>
                                </property>
                               </item>
                              </widget>
