@@ -2,6 +2,7 @@ import json
 from PyQt6 import QtCore, QtWidgets
 
 from UI_Reply import Ui_ReplyDialog
+from common import log
 
 
 class ReplyDialog(QtWidgets.QDialog):
@@ -50,7 +51,7 @@ class ReplyDialog(QtWidgets.QDialog):
             with open('_internal/rules.json', 'w', encoding='utf-8') as f:
                 json.dump(valid_rules, f, ensure_ascii=False, indent=4)
         except Exception:
-            pass
+            log('ERROR', '规则保存失败,可能是非管理员身份运行')
 
     def saveRulesToJsonAndClose(self):
         self.saveRulesToJson()

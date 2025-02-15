@@ -187,6 +187,12 @@ class AutoInfo(QtWidgets.QWidget):
                 self.ready_tasks.remove(task)
                 log('WARNING', f'已删除任务 {info_text[:35] + "……" if len(info_text) > 30 else info_text}')
                 break
+        if not self.ready_tasks:
+            self.is_executing = False
+            self.parent.start_pushButton.setText("开始执行")
+            if self.worker_thread is not None:
+                self.worker_thread.requestInterruption()
+                self.worker_thread = None
         self.update_ui()
         self.save_tasks_to_json()
 
@@ -313,7 +319,7 @@ class AutoInfo(QtWidgets.QWidget):
                         writer.writerow(['Time', 'Name', 'Info', 'Frequency'])
                         for task in self.ready_tasks:
                             writer.writerow([task['time'], task['name'], task['info'], task['frequency']])
-                    log("DEBUG", f"使用UTF-8编码任务文件已保存至{file_name}")
+                    log("DEBUG", f"因有特殊字符,已用UTF-8编码保存至{file_name}")
         except Exception as e:
             log("ERROR", f"任务保存失败,{e}")
 
