@@ -2,7 +2,7 @@
 ; 有关创建 Inno Setup 脚本文件的详细资料请查阅帮助文档！
 
 #define MyAppName "LeafAuto"
-#define MyAppVersion "4.3.6.0"
+#define MyAppVersion "4.3.7.0"
 #define MyAppPublisher "Yangshengzhou"
 #define MyAppURL "https://blog.csdn.net/Yang_shengzhou"
 #define AppSupportURL "https://blog.csdn.net/Yang_shengzhou/article/details/143782041"
@@ -20,7 +20,7 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#AppSupportURL}
 AppUpdatesURL={#MyAppURL}
-VersionInfoVersion=4.3.6.0
+VersionInfoVersion=4.3.7.0
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\YangShengzhou\Desktop\license.txt
@@ -42,6 +42,7 @@ UninstallDisplayIcon=D:\code\Python\LeafAuto\resource\img\Setup.ico
 Type: files; Name: "{app}\*.*"
 Type: files; Name: "{app}\_internal\system_info.ini"
 Type: files; Name: "{app}\_internal\tasks.json"
+Type: files; Name: "{app}\_internal\rules.json"
 Type: dirifempty; Name: "{app}\_internal"
 Type: dirifempty; Name: "{app}"
 
