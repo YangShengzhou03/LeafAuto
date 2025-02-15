@@ -10,6 +10,8 @@ pyinstaller Application.spec
 """
 
 
+# TODO 拆段发送的文本框夜间模式为全白
+
 def bring_existing_to_front():
     socket = QLocalSocket()
     socket.connectToServer("LeafAuto_Server")
