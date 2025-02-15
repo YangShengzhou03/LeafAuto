@@ -1,4 +1,5 @@
 import ctypes
+import json
 import os
 import threading
 from datetime import datetime
@@ -22,6 +23,18 @@ class AiWorkerThread(QThread):
         self.stop_event = threading.Event()
         self.running = True
         self.system_content = role
+        self.rules = self.load_rules()
+
+    def load_rules(self):
+        try:
+            with open('_internal/rules.json', 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            log("WARNING", "接管规则不存在,您可新建规则")
+            return None
+        except json.JSONDecodeError:
+            log("ERROR", "接管规则文件格式错误")
+            return []
 
     def run(self):
         try:
@@ -34,7 +47,15 @@ class AiWorkerThread(QThread):
             try:
                 msgs = self.app_instance.wx.GetAllMessage()
                 if msgs and msgs[-1].type == "friend":
-                    self.main(msgs[-1].content, self.receiver)
+                    msg = msgs[-1].content
+                    if self.rules is not None:
+                        matched_reply = self.match_rule(msg)
+                        if matched_reply:
+                            self.app_instance.wx.SendMsg(msg=matched_reply, who=self.receiver)
+                        else:
+                            self.main(msg, self.receiver)
+                    else:
+                        self.main(msg, self.receiver)
             except Exception as e:
                 log("ERROR", f"{str(e)}")
                 break
@@ -60,6 +81,12 @@ class AiWorkerThread(QThread):
             params={'grant_type': 'client_credentials', 'client_id': 'eCB39lMiTbHXV0mTt1d6bBw7', 'client_secret': 'WUbEO3XdMNJLTJKNQfFbMSQvtBVzRhvu'}
         ).get("access_token")
 
+    def match_rule(self, msg):
+        for rule in self.rules:
+            if rule['keyword'] in msg:
+                return rule['reply_content']
+        return None
+
     def main(self, msg, who):
         if self.model == "文心一言":
             access_token = self.get_access_token()
@@ -75,14 +102,14 @@ class AiWorkerThread(QThread):
             completion = client.chat.completions.create(
                 model="moonshot-v1-8k",
                 messages=[{"role": "system", "content": self.system_content}, {"role": "user", "content": msg}],
-                temperature=0.3,
+                temperature=0.9,
             )
             result = completion.choices[0].message.content
-        else :
+        else:
             data = {
                 "max_tokens": 64,
                 "top_k": 4,
-                "temperature": 0.5,
+                "temperature": 0.9,
                 "messages": [
                     {"role": "system", "content": self.system_content},
                     {"role": "user", "content": msg}

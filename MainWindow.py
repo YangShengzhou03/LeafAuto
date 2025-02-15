@@ -11,6 +11,7 @@ import common
 from ActivitiesWindow import ActivitiesWindow
 from AiAssistant import AiAssistant
 from AutoInfo import AutoInfo
+from KeyReply import ReplyDialog
 from SettingWindow import SettingWindow
 from Split import Split
 from System_info import read_key_value, ensure_config_file_exists, write_key_value
@@ -303,6 +304,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def connect_signals(self):
         self.setting_window = SettingWindow()
         self.activities_window = ActivitiesWindow()
+        self.key_reply = ReplyDialog()
         self.file_pushButton.clicked.connect(self.auto_info.openFileNameDialog)
         self.video_pushButton_.clicked.connect(self.auto_info.video_chat)
         self.pushButton_save.clicked.connect(self.auto_info.save_configuration)
@@ -327,6 +329,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_startSplit.clicked.connect(self.split.on_start_send_clicked)
         self.pushButton_takeover.clicked.connect(self.ai_assistant.start_takeover)
         self.takeOverReceiver_lineEdit.returnPressed.connect(self.ai_assistant.start_takeover)
+        self.pushButton_addRule.clicked.connect(self.key_reply.show)
 
         checkboxes = [self.checkBox_Ai, self.checkBox_period, self.checkBox_comma, self.checkBox_Space]
         for checkbox in checkboxes:
@@ -349,6 +352,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             QtWidgets.QMessageBox.warning(self, "非管理员身份", "当前非管理员身份,会员可能无法激活")
         self.activities_window.show()
         self.activities_window.activateWindow()
+
+    def open_keyReply(self):
+        self.key_reply.show()
 
     def handle_checkbox_click(self, checkbox):
         if checkbox.isChecked():
