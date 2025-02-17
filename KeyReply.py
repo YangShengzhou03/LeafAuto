@@ -1,8 +1,8 @@
 import json
-from PyQt6 import QtCore, QtWidgets
+from PyQt6 import QtCore, QtWidgets, QtGui
 from PyQt6.QtWidgets import QFileDialog
 from UI_Reply import Ui_ReplyDialog
-from common import log
+from common import log, get_resource_path
 
 
 class ReplyDialog(QtWidgets.QDialog):
@@ -11,6 +11,7 @@ class ReplyDialog(QtWidgets.QDialog):
         self.ui = Ui_ReplyDialog()
         self.ui.setupUi(self)
         self.setWindowTitle("编辑Ai接管规则")
+        self.setWindowIcon(QtGui.QIcon(get_resource_path('resources/img/tray.ico')))
         self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
         self.ui.pushButton_download.clicked.connect(self.saveRulesToJsonAndClose)
