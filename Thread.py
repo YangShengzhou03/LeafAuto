@@ -82,7 +82,8 @@ class AiWorkerThread(QThread):
     def get_access_token(self):
         return self.query_api(
             "https://aip.baidubce.com/oauth/2.0/token",
-            params={'grant_type': 'client_credentials', 'client_id': 'eCB39lMiTbHXV0mTt1d6bBw7', 'client_secret': 'WUbEO3XdMNJLTJKNQfFbMSQvtBVzRhvu'}
+            params={'grant_type': 'client_credentials', 'client_id': 'eCB39lMiTbHXV0mTt1d6bBw7',
+                    'client_secret': 'WUbEO3XdMNJLTJKNQfFbMSQvtBVzRhvu'}
         ).get("access_token")
 
     def match_rule(self, msg):
@@ -106,7 +107,8 @@ class AiWorkerThread(QThread):
             ).get('result', "无法解析响应")
         elif self.model == "月之暗面":
             from openai import OpenAI
-            client = OpenAI(api_key="sk-dx1RuweBS0LU0bCR5HizbWjXLuBL6HrS8BT21NEEGwbeyuo6", base_url="https://api.moonshot.cn/v1")
+            client = OpenAI(api_key="sk-dx1RuweBS0LU0bCR5HizbWjXLuBL6HrS8BT21NEEGwbeyuo6",
+                            base_url="https://api.moonshot.cn/v1")
             completion = client.chat.completions.create(
                 model="moonshot-v1-8k",
                 messages=[{"role": "system", "content": self.system_content}, {"role": "user", "content": msg}],
@@ -209,12 +211,15 @@ class WorkerThread(QtCore.QThread):
                 if self.interrupted:
                     break
 
-                if os.path.isfile(info):
-                    file_name = os.path.basename(info)
-                    log("INFO", f"开始把文件 {file_name} 发给 {name}")
-                    if self.interrupted:
-                        break
-                    self.app_instance.wx.SendFiles(filepath=info, who=name)
+                if os.path.isdir(os.path.dirname(info)):
+                    if os.path.isfile(info):
+                        file_name = os.path.basename(info)
+                        log("INFO", f"开始把文件 {file_name} 发给 {name}")
+                        if self.interrupted:
+                            break
+                        self.app_instance.wx.SendFiles(filepath=info, who=name)
+                    else:
+                        raise FileNotFoundError(f"该路径下没有 {os.path.basename(info)} 文件")
                 elif info == 'Video_chat':
                     log("INFO", f"开始与 {name} 视频通话")
                     if self.interrupted:

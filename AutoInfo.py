@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+import re
 import time
 from datetime import datetime, timedelta
 
@@ -350,12 +351,18 @@ class AutoInfo(QtWidgets.QWidget):
             for index, row in enumerate(new_tasks):
                 if all(key in row for key in ['Time', 'Name', 'Info', 'Frequency']):
                     if row['Time'] and row['Name'] and row['Info']:
-                        valid_tasks.append(row)
-
+                        if re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$", row['Time']):
+                            try:
+                                datetime.strptime(row['Time'], "%Y-%m-%dT%H:%M:%S")
+                                valid_tasks.append(row)
+                            except ValueError:
+                                log("WARNING",
+                                    f"任务 {index + 1} 的时间 '{row['Time']}' 格式不正确或值无效，已跳过此任务")
+                        else:
+                            log("WARNING", f"任务 {index + 1} 的时间 '{row['Time']}' 格式不正确或值无效，已跳过此任务")
             if not valid_tasks:
                 log('ERROR', '任务文件中有错误数据,导入出错')
                 return
-
             total_tasks = len(self.ready_tasks) + len(valid_tasks)
             if (self.Membership == 'Free' and total_tasks > 5) or (self.Membership == 'Base' and total_tasks > 30):
                 Membership_limit = 5 if self.Membership == 'Free' else 30
@@ -366,7 +373,6 @@ class AutoInfo(QtWidgets.QWidget):
                 else:
                     log("WARNING", f"当前版本已达到最大任务数限制,请升级会员")
                     return
-
             for row in valid_tasks:
                 widget = self.create_widget(row['Time'], row['Name'], row['Info'], row['Frequency'])
                 self.parent.formLayout_3.addRow(widget)
