@@ -8,19 +8,17 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-from common import get_resource_path
-
 
 class Ui_ReplyDialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("ReplyDialog")
-        Dialog.resize(862, 516)
-        self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
+    def setupUi(self, ReplyDialog):
+        ReplyDialog.setObjectName("ReplyDialog")
+        ReplyDialog.resize(862, 516)
+        self.verticalLayout = QtWidgets.QVBoxLayout(ReplyDialog)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.frame = QtWidgets.QFrame(parent=Dialog)
+        self.frame = QtWidgets.QFrame(parent=ReplyDialog)
         self.frame.setStyleSheet("QFrame#frame{\n"
-"background-color: rgb(245, 249, 254);\n"
-"border-radius:25px;\n"
+"background-color: rgba(170, 0, 255, 15);\n"
+"border-radius:36px;\n"
 "}")
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
@@ -40,15 +38,15 @@ class Ui_ReplyDialog(object):
 "background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "                                  stop:0 rgb(105, 27, 253), \n"
 "                                  stop:1 rgb(200, 160, 240));\n"
-"border-radius:16px;\n"
+"border-radius:27px;\n"
 "color: rgb(255, 255, 255);\n"
 "}\n"
 "\n"
 "")
         self.widget_3.setObjectName("widget_3")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.widget_3)
-        self.horizontalLayout_5.setContentsMargins(18, 18, 18, 18)
-        self.horizontalLayout_5.setSpacing(18)
+        self.horizontalLayout_5.setContentsMargins(18, 12, 12, 12)
+        self.horizontalLayout_5.setSpacing(12)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
@@ -63,64 +61,99 @@ class Ui_ReplyDialog(object):
         self.label_title.setStyleSheet("color: rgba(222, 255, 255, 255)")
         self.label_title.setObjectName("label_title")
         self.verticalLayout_5.addWidget(self.label_title)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setSpacing(9)
+        self.mainframe = QtWidgets.QFrame(parent=self.widget_3)
+        self.mainframe.setStyleSheet("background:rgba(255, 255, 255, 80);\n"
+"border-radius: 15px;")
+        self.mainframe.setObjectName("mainframe")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.mainframe)
+        self.verticalLayout_2.setContentsMargins(6, 6, 6, 6)
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.scrollArea = QtWidgets.QScrollArea(parent=self.widget_3)
-        self.scrollArea.setStyleSheet("border: none;\n"
-"background:rgba(0, 0, 0, 0);")
+        self.scrollArea = QtWidgets.QScrollArea(parent=self.mainframe)
+        self.scrollArea.setStyleSheet("QScrollArea, QScrollArea * {\n"
+"    border: none;\n"
+"    background: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"QScrollArea QScrollBar:vertical {\n"
+"    width: 8px;\n"
+"    background: transparent;\n"
+"}\n"
+"\n"
+"QScrollArea QScrollBar::handle:vertical {\n"
+"    background: rgba(125, 125, 125, 20%);\n"
+"    border-radius: 4px;\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"QScrollArea QScrollBar::handle:vertical:hover {\n"
+"    background: rgba(125, 125, 125, 70%);\n"
+"}\n"
+"\n"
+"QScrollArea QScrollBar::add-line:vertical,\n"
+"QScrollArea QScrollBar::sub-line:vertical {\n"
+"    height: 0px;\n"
+"    width: 0px;\n"
+"    background: transparent;\n"
+"}\n"
+"\n"
+"QScrollArea QScrollBar::add-page:vertical,\n"
+"QScrollArea QScrollBar::sub-page:vertical {\n"
+"    background: transparent;\n"
+"    border-radius: 4px;\n"
+"}")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 784, 312))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 780, 352))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setContentsMargins(4, 6, 4, 0)
+        self.verticalLayout_3.setSpacing(9)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.horizontalFrame_7 = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
-        self.horizontalFrame_7.setMaximumSize(QtCore.QSize(16777215, 52))
-        self.horizontalFrame_7.setStyleSheet("border-radius: 8px;\n"
+        self.horizontalFrame_12 = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
+        self.horizontalFrame_12.setMaximumSize(QtCore.QSize(16777215, 52))
+        self.horizontalFrame_12.setStyleSheet("border-radius: 9px;\n"
 "background:rgb(255, 255, 255);")
-        self.horizontalFrame_7.setObjectName("horizontalFrame_7")
-        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.horizontalFrame_7)
-        self.horizontalLayout_12.setContentsMargins(6, 4, 6, 4)
-        self.horizontalLayout_12.setSpacing(6)
-        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        self.label_9 = QtWidgets.QLabel(parent=self.horizontalFrame_7)
+        self.horizontalFrame_12.setObjectName("horizontalFrame_12")
+        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.horizontalFrame_12)
+        self.horizontalLayout_17.setContentsMargins(4, 4, 4, 4)
+        self.horizontalLayout_17.setSpacing(6)
+        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
+        self.label_16 = QtWidgets.QLabel(parent=self.horizontalFrame_12)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label_9.setFont(font)
-        self.label_9.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_16.setFont(font)
+        self.label_16.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label_9.setObjectName("label_9")
-        self.horizontalLayout_12.addWidget(self.label_9)
-        self.RuleName_lineEdit = QtWidgets.QLineEdit(parent=self.horizontalFrame_7)
+        self.label_16.setObjectName("label_16")
+        self.horizontalLayout_17.addWidget(self.label_16)
+        self.RuleName_lineEdit_1 = QtWidgets.QLineEdit(parent=self.horizontalFrame_12)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.RuleName_lineEdit.setFont(font)
-        self.RuleName_lineEdit.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.RuleName_lineEdit_1.setFont(font)
+        self.RuleName_lineEdit_1.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
-        self.RuleName_lineEdit.setObjectName("RuleName_lineEdit")
-        self.horizontalLayout_12.addWidget(self.RuleName_lineEdit)
-        self.label = QtWidgets.QLabel(parent=self.horizontalFrame_7)
+        self.RuleName_lineEdit_1.setObjectName("RuleName_lineEdit_1")
+        self.horizontalLayout_17.addWidget(self.RuleName_lineEdit_1)
+        self.label_17 = QtWidgets.QLabel(parent=self.horizontalFrame_12)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label.setFont(font)
-        self.label.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_17.setFont(font)
+        self.label_17.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label.setObjectName("label")
-        self.horizontalLayout_12.addWidget(self.label)
-        self.KeyWord_comboBox = QtWidgets.QComboBox(parent=self.horizontalFrame_7)
-        self.KeyWord_comboBox.setMinimumSize(QtCore.QSize(76, 0))
+        self.label_17.setObjectName("label_17")
+        self.horizontalLayout_17.addWidget(self.label_17)
+        self.KeyWord_comboBox_1 = QtWidgets.QComboBox(parent=self.horizontalFrame_12)
+        self.KeyWord_comboBox_1.setMinimumSize(QtCore.QSize(76, 0))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.KeyWord_comboBox.setFont(font)
-        self.KeyWord_comboBox.setStyleSheet("QComboBox {\n"
+        self.KeyWord_comboBox_1.setFont(font)
+        self.KeyWord_comboBox_1.setStyleSheet("QComboBox {\n"
 "    color: rgb(0, 0, 0);\n"
 "    background: rgb(255, 255, 255);\n"
 "    border-radius: 0px;\n"
@@ -135,44 +168,44 @@ class Ui_ReplyDialog(object):
 "QComboBox::down-arrow {\n"
 "    image: none;\n"
 "}")
-        self.KeyWord_comboBox.setObjectName("KeyWord_comboBox")
-        self.KeyWord_comboBox.addItem("")
-        self.KeyWord_comboBox.addItem("")
-        self.horizontalLayout_12.addWidget(self.KeyWord_comboBox)
-        self.KeyWord_lineEdit = QtWidgets.QLineEdit(parent=self.horizontalFrame_7)
-        self.KeyWord_lineEdit.setMinimumSize(QtCore.QSize(145, 0))
+        self.KeyWord_comboBox_1.setObjectName("KeyWord_comboBox_1")
+        self.KeyWord_comboBox_1.addItem("")
+        self.KeyWord_comboBox_1.addItem("")
+        self.horizontalLayout_17.addWidget(self.KeyWord_comboBox_1)
+        self.KeyWord_lineEdit_1 = QtWidgets.QLineEdit(parent=self.horizontalFrame_12)
+        self.KeyWord_lineEdit_1.setMinimumSize(QtCore.QSize(145, 0))
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.KeyWord_lineEdit.setFont(font)
-        self.KeyWord_lineEdit.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.KeyWord_lineEdit_1.setFont(font)
+        self.KeyWord_lineEdit_1.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
-        self.KeyWord_lineEdit.setObjectName("KeyWord_lineEdit")
-        self.horizontalLayout_12.addWidget(self.KeyWord_lineEdit)
-        self.label_2 = QtWidgets.QLabel(parent=self.horizontalFrame_7)
+        self.KeyWord_lineEdit_1.setObjectName("KeyWord_lineEdit_1")
+        self.horizontalLayout_17.addWidget(self.KeyWord_lineEdit_1)
+        self.label_18 = QtWidgets.QLabel(parent=self.horizontalFrame_12)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_18.setFont(font)
+        self.label_18.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label_2.setObjectName("label_2")
-        self.horizontalLayout_12.addWidget(self.label_2)
-        self.Reply_lineEdit = QtWidgets.QLineEdit(parent=self.horizontalFrame_7)
-        self.Reply_lineEdit.setMinimumSize(QtCore.QSize(220, 0))
+        self.label_18.setObjectName("label_18")
+        self.horizontalLayout_17.addWidget(self.label_18)
+        self.Reply_lineEdit_1 = QtWidgets.QLineEdit(parent=self.horizontalFrame_12)
+        self.Reply_lineEdit_1.setMinimumSize(QtCore.QSize(188, 0))
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.Reply_lineEdit.setFont(font)
-        self.Reply_lineEdit.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.Reply_lineEdit_1.setFont(font)
+        self.Reply_lineEdit_1.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
-        self.Reply_lineEdit.setObjectName("Reply_lineEdit")
-        self.horizontalLayout_12.addWidget(self.Reply_lineEdit)
-        self.file_pushButton = QtWidgets.QPushButton(parent=self.horizontalFrame_7)
-        self.file_pushButton.setMinimumSize(QtCore.QSize(32, 32))
-        self.file_pushButton.setStyleSheet("QPushButton{\n"
+        self.Reply_lineEdit_1.setObjectName("Reply_lineEdit_1")
+        self.horizontalLayout_17.addWidget(self.Reply_lineEdit_1)
+        self.file_pushButton_1 = QtWidgets.QPushButton(parent=self.horizontalFrame_12)
+        self.file_pushButton_1.setMinimumSize(QtCore.QSize(32, 32))
+        self.file_pushButton_1.setStyleSheet("QPushButton{\n"
 "    background-color: rgba(255, 255, 255, 0);\n"
 "border: none;\n"
 "border-radius:20px;\n"
@@ -184,35 +217,54 @@ class Ui_ReplyDialog(object):
 "\n"
 "}\n"
 "")
-        self.file_pushButton.setText("")
-        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
-        self.file_pushButton.setIcon(icon)
-        self.file_pushButton.setIconSize(QtCore.QSize(24, 24))
-        self.file_pushButton.setObjectName("file_pushButton")
-        self.horizontalLayout_12.addWidget(self.file_pushButton)
-        self.horizontalLayout_12.setStretch(1, 1)
-        self.horizontalLayout_12.setStretch(4, 1)
-        self.horizontalLayout_12.setStretch(6, 1)
-        self.verticalLayout_3.addWidget(self.horizontalFrame_7)
-        self.horizontalFrame_8 = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
-        self.horizontalFrame_8.setMaximumSize(QtCore.QSize(16777215, 52))
-        self.horizontalFrame_8.setStyleSheet("border-radius: 8px;\n"
+        self.file_pushButton_1.setText("")
+        icon = QtGui.QIcon.fromTheme("resources/img/page1/page1_打开文件.svg")
+        self.file_pushButton_1.setIcon(icon)
+        self.file_pushButton_1.setIconSize(QtCore.QSize(24, 24))
+        self.file_pushButton_1.setObjectName("file_pushButton_1")
+        self.horizontalLayout_17.addWidget(self.file_pushButton_1)
+        self.pushButton_1 = QtWidgets.QPushButton(parent=self.horizontalFrame_12)
+        self.pushButton_1.setMinimumSize(QtCore.QSize(42, 24))
+        self.pushButton_1.setMaximumSize(QtCore.QSize(42, 24))
+        self.pushButton_1.setStyleSheet("            QPushButton {\n"
+"                background-color: rgba(255, 0, 0, 0.55);\n"
+"                border: none;\n"
+"                border-radius: 4px;\n"
+"                color: white;\n"
+"                font-size: 12px;\n"
+"                padding: 2px;\n"
+"            }\n"
+"            QPushButton:hover {\n"
+"                background-color: rgba(255, 0, 0, 0.75);\n"
+"            }\n"
+"            QPushButton:pressed {\n"
+"                background-color: rgba(255, 0, 0, 0.95);\n"
+"            }")
+        self.pushButton_1.setObjectName("pushButton_1")
+        self.horizontalLayout_17.addWidget(self.pushButton_1)
+        self.horizontalLayout_17.setStretch(1, 1)
+        self.horizontalLayout_17.setStretch(4, 1)
+        self.horizontalLayout_17.setStretch(6, 1)
+        self.verticalLayout_3.addWidget(self.horizontalFrame_12)
+        self.horizontalFrame_13 = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
+        self.horizontalFrame_13.setMaximumSize(QtCore.QSize(16777215, 52))
+        self.horizontalFrame_13.setStyleSheet("border-radius: 9px;\n"
 "background:rgb(255, 255, 255);")
-        self.horizontalFrame_8.setObjectName("horizontalFrame_8")
-        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.horizontalFrame_8)
-        self.horizontalLayout_13.setContentsMargins(6, 4, 6, 4)
-        self.horizontalLayout_13.setSpacing(6)
-        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
-        self.label_10 = QtWidgets.QLabel(parent=self.horizontalFrame_8)
+        self.horizontalFrame_13.setObjectName("horizontalFrame_13")
+        self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.horizontalFrame_13)
+        self.horizontalLayout_18.setContentsMargins(4, 4, 4, 4)
+        self.horizontalLayout_18.setSpacing(6)
+        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
+        self.label_19 = QtWidgets.QLabel(parent=self.horizontalFrame_13)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label_10.setFont(font)
-        self.label_10.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_19.setFont(font)
+        self.label_19.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label_10.setObjectName("label_10")
-        self.horizontalLayout_13.addWidget(self.label_10)
-        self.RuleName_lineEdit_2 = QtWidgets.QLineEdit(parent=self.horizontalFrame_8)
+        self.label_19.setObjectName("label_19")
+        self.horizontalLayout_18.addWidget(self.label_19)
+        self.RuleName_lineEdit_2 = QtWidgets.QLineEdit(parent=self.horizontalFrame_13)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
@@ -221,17 +273,17 @@ class Ui_ReplyDialog(object):
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
         self.RuleName_lineEdit_2.setObjectName("RuleName_lineEdit_2")
-        self.horizontalLayout_13.addWidget(self.RuleName_lineEdit_2)
-        self.label_3 = QtWidgets.QLabel(parent=self.horizontalFrame_8)
+        self.horizontalLayout_18.addWidget(self.RuleName_lineEdit_2)
+        self.label_20 = QtWidgets.QLabel(parent=self.horizontalFrame_13)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_20.setFont(font)
+        self.label_20.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout_13.addWidget(self.label_3)
-        self.KeyWord_comboBox_2 = QtWidgets.QComboBox(parent=self.horizontalFrame_8)
+        self.label_20.setObjectName("label_20")
+        self.horizontalLayout_18.addWidget(self.label_20)
+        self.KeyWord_comboBox_2 = QtWidgets.QComboBox(parent=self.horizontalFrame_13)
         self.KeyWord_comboBox_2.setMinimumSize(QtCore.QSize(76, 0))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -254,8 +306,8 @@ class Ui_ReplyDialog(object):
         self.KeyWord_comboBox_2.setObjectName("KeyWord_comboBox_2")
         self.KeyWord_comboBox_2.addItem("")
         self.KeyWord_comboBox_2.addItem("")
-        self.horizontalLayout_13.addWidget(self.KeyWord_comboBox_2)
-        self.KeyWord_lineEdit_2 = QtWidgets.QLineEdit(parent=self.horizontalFrame_8)
+        self.horizontalLayout_18.addWidget(self.KeyWord_comboBox_2)
+        self.KeyWord_lineEdit_2 = QtWidgets.QLineEdit(parent=self.horizontalFrame_13)
         self.KeyWord_lineEdit_2.setMinimumSize(QtCore.QSize(145, 0))
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
@@ -265,18 +317,18 @@ class Ui_ReplyDialog(object):
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
         self.KeyWord_lineEdit_2.setObjectName("KeyWord_lineEdit_2")
-        self.horizontalLayout_13.addWidget(self.KeyWord_lineEdit_2)
-        self.label_4 = QtWidgets.QLabel(parent=self.horizontalFrame_8)
+        self.horizontalLayout_18.addWidget(self.KeyWord_lineEdit_2)
+        self.label_21 = QtWidgets.QLabel(parent=self.horizontalFrame_13)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label_4.setFont(font)
-        self.label_4.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_21.setFont(font)
+        self.label_21.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label_4.setObjectName("label_4")
-        self.horizontalLayout_13.addWidget(self.label_4)
-        self.Reply_lineEdit_2 = QtWidgets.QLineEdit(parent=self.horizontalFrame_8)
-        self.Reply_lineEdit_2.setMinimumSize(QtCore.QSize(220, 0))
+        self.label_21.setObjectName("label_21")
+        self.horizontalLayout_18.addWidget(self.label_21)
+        self.Reply_lineEdit_2 = QtWidgets.QLineEdit(parent=self.horizontalFrame_13)
+        self.Reply_lineEdit_2.setMinimumSize(QtCore.QSize(188, 0))
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
@@ -285,8 +337,8 @@ class Ui_ReplyDialog(object):
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
         self.Reply_lineEdit_2.setObjectName("Reply_lineEdit_2")
-        self.horizontalLayout_13.addWidget(self.Reply_lineEdit_2)
-        self.file_pushButton_2 = QtWidgets.QPushButton(parent=self.horizontalFrame_8)
+        self.horizontalLayout_18.addWidget(self.Reply_lineEdit_2)
+        self.file_pushButton_2 = QtWidgets.QPushButton(parent=self.horizontalFrame_13)
         self.file_pushButton_2.setMinimumSize(QtCore.QSize(32, 32))
         self.file_pushButton_2.setStyleSheet("QPushButton{\n"
 "    background-color: rgba(255, 255, 255, 0);\n"
@@ -301,34 +353,53 @@ class Ui_ReplyDialog(object):
 "}\n"
 "")
         self.file_pushButton_2.setText("")
-        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
+        icon = QtGui.QIcon.fromTheme("resources/img/page1/page1_打开文件.svg")
         self.file_pushButton_2.setIcon(icon)
         self.file_pushButton_2.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton_2.setObjectName("file_pushButton_2")
-        self.horizontalLayout_13.addWidget(self.file_pushButton_2)
-        self.horizontalLayout_13.setStretch(1, 1)
-        self.horizontalLayout_13.setStretch(4, 1)
-        self.horizontalLayout_13.setStretch(6, 1)
-        self.verticalLayout_3.addWidget(self.horizontalFrame_8)
-        self.horizontalFrame_9 = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
-        self.horizontalFrame_9.setMaximumSize(QtCore.QSize(16777215, 52))
-        self.horizontalFrame_9.setStyleSheet("border-radius: 8px;\n"
+        self.horizontalLayout_18.addWidget(self.file_pushButton_2)
+        self.pushButton_2 = QtWidgets.QPushButton(parent=self.horizontalFrame_13)
+        self.pushButton_2.setMinimumSize(QtCore.QSize(42, 24))
+        self.pushButton_2.setMaximumSize(QtCore.QSize(42, 24))
+        self.pushButton_2.setStyleSheet("            QPushButton {\n"
+"                background-color: rgba(255, 0, 0, 0.55);\n"
+"                border: none;\n"
+"                border-radius: 4px;\n"
+"                color: white;\n"
+"                font-size: 12px;\n"
+"                padding: 2px;\n"
+"            }\n"
+"            QPushButton:hover {\n"
+"                background-color: rgba(255, 0, 0, 0.75);\n"
+"            }\n"
+"            QPushButton:pressed {\n"
+"                background-color: rgba(255, 0, 0, 0.95);\n"
+"            }")
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.horizontalLayout_18.addWidget(self.pushButton_2)
+        self.horizontalLayout_18.setStretch(1, 1)
+        self.horizontalLayout_18.setStretch(4, 1)
+        self.horizontalLayout_18.setStretch(6, 1)
+        self.verticalLayout_3.addWidget(self.horizontalFrame_13)
+        self.horizontalFrame_14 = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
+        self.horizontalFrame_14.setMaximumSize(QtCore.QSize(16777215, 52))
+        self.horizontalFrame_14.setStyleSheet("border-radius: 9px;\n"
 "background:rgb(255, 255, 255);")
-        self.horizontalFrame_9.setObjectName("horizontalFrame_9")
-        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.horizontalFrame_9)
-        self.horizontalLayout_14.setContentsMargins(6, 4, 6, 4)
-        self.horizontalLayout_14.setSpacing(6)
-        self.horizontalLayout_14.setObjectName("horizontalLayout_14")
-        self.label_11 = QtWidgets.QLabel(parent=self.horizontalFrame_9)
+        self.horizontalFrame_14.setObjectName("horizontalFrame_14")
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.horizontalFrame_14)
+        self.horizontalLayout_19.setContentsMargins(4, 4, 4, 4)
+        self.horizontalLayout_19.setSpacing(6)
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.label_22 = QtWidgets.QLabel(parent=self.horizontalFrame_14)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label_11.setFont(font)
-        self.label_11.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_22.setFont(font)
+        self.label_22.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label_11.setObjectName("label_11")
-        self.horizontalLayout_14.addWidget(self.label_11)
-        self.RuleName_lineEdit_3 = QtWidgets.QLineEdit(parent=self.horizontalFrame_9)
+        self.label_22.setObjectName("label_22")
+        self.horizontalLayout_19.addWidget(self.label_22)
+        self.RuleName_lineEdit_3 = QtWidgets.QLineEdit(parent=self.horizontalFrame_14)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
@@ -337,17 +408,17 @@ class Ui_ReplyDialog(object):
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
         self.RuleName_lineEdit_3.setObjectName("RuleName_lineEdit_3")
-        self.horizontalLayout_14.addWidget(self.RuleName_lineEdit_3)
-        self.label_5 = QtWidgets.QLabel(parent=self.horizontalFrame_9)
+        self.horizontalLayout_19.addWidget(self.RuleName_lineEdit_3)
+        self.label_23 = QtWidgets.QLabel(parent=self.horizontalFrame_14)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label_5.setFont(font)
-        self.label_5.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_23.setFont(font)
+        self.label_23.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label_5.setObjectName("label_5")
-        self.horizontalLayout_14.addWidget(self.label_5)
-        self.KeyWord_comboBox_3 = QtWidgets.QComboBox(parent=self.horizontalFrame_9)
+        self.label_23.setObjectName("label_23")
+        self.horizontalLayout_19.addWidget(self.label_23)
+        self.KeyWord_comboBox_3 = QtWidgets.QComboBox(parent=self.horizontalFrame_14)
         self.KeyWord_comboBox_3.setMinimumSize(QtCore.QSize(76, 0))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -370,8 +441,8 @@ class Ui_ReplyDialog(object):
         self.KeyWord_comboBox_3.setObjectName("KeyWord_comboBox_3")
         self.KeyWord_comboBox_3.addItem("")
         self.KeyWord_comboBox_3.addItem("")
-        self.horizontalLayout_14.addWidget(self.KeyWord_comboBox_3)
-        self.KeyWord_lineEdit_3 = QtWidgets.QLineEdit(parent=self.horizontalFrame_9)
+        self.horizontalLayout_19.addWidget(self.KeyWord_comboBox_3)
+        self.KeyWord_lineEdit_3 = QtWidgets.QLineEdit(parent=self.horizontalFrame_14)
         self.KeyWord_lineEdit_3.setMinimumSize(QtCore.QSize(145, 0))
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
@@ -381,18 +452,18 @@ class Ui_ReplyDialog(object):
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
         self.KeyWord_lineEdit_3.setObjectName("KeyWord_lineEdit_3")
-        self.horizontalLayout_14.addWidget(self.KeyWord_lineEdit_3)
-        self.label_6 = QtWidgets.QLabel(parent=self.horizontalFrame_9)
+        self.horizontalLayout_19.addWidget(self.KeyWord_lineEdit_3)
+        self.label_24 = QtWidgets.QLabel(parent=self.horizontalFrame_14)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        self.label_6.setFont(font)
-        self.label_6.setStyleSheet("color:rgb(0, 0, 0);\n"
+        self.label_24.setFont(font)
+        self.label_24.setStyleSheet("color:rgb(0, 0, 0);\n"
 "background:rgba(0, 0, 0, 0);")
-        self.label_6.setObjectName("label_6")
-        self.horizontalLayout_14.addWidget(self.label_6)
-        self.Reply_lineEdit_3 = QtWidgets.QLineEdit(parent=self.horizontalFrame_9)
-        self.Reply_lineEdit_3.setMinimumSize(QtCore.QSize(220, 0))
+        self.label_24.setObjectName("label_24")
+        self.horizontalLayout_19.addWidget(self.label_24)
+        self.Reply_lineEdit_3 = QtWidgets.QLineEdit(parent=self.horizontalFrame_14)
+        self.Reply_lineEdit_3.setMinimumSize(QtCore.QSize(188, 0))
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
@@ -401,8 +472,8 @@ class Ui_ReplyDialog(object):
 "background:rgb(255, 255, 255);\n"
 "border-radius: 0px;")
         self.Reply_lineEdit_3.setObjectName("Reply_lineEdit_3")
-        self.horizontalLayout_14.addWidget(self.Reply_lineEdit_3)
-        self.file_pushButton_3 = QtWidgets.QPushButton(parent=self.horizontalFrame_9)
+        self.horizontalLayout_19.addWidget(self.Reply_lineEdit_3)
+        self.file_pushButton_3 = QtWidgets.QPushButton(parent=self.horizontalFrame_14)
         self.file_pushButton_3.setMinimumSize(QtCore.QSize(32, 32))
         self.file_pushButton_3.setStyleSheet("QPushButton{\n"
 "    background-color: rgba(255, 255, 255, 0);\n"
@@ -417,257 +488,45 @@ class Ui_ReplyDialog(object):
 "}\n"
 "")
         self.file_pushButton_3.setText("")
-        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
+        icon = QtGui.QIcon.fromTheme("resources/img/page1/page1_打开文件.svg")
         self.file_pushButton_3.setIcon(icon)
         self.file_pushButton_3.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton_3.setObjectName("file_pushButton_3")
-        self.horizontalLayout_14.addWidget(self.file_pushButton_3)
-        self.horizontalLayout_14.setStretch(1, 1)
-        self.horizontalLayout_14.setStretch(4, 1)
-        self.horizontalLayout_14.setStretch(6, 1)
-        self.verticalLayout_3.addWidget(self.horizontalFrame_9)
-        self.horizontalFrame_10 = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
-        self.horizontalFrame_10.setMaximumSize(QtCore.QSize(16777215, 52))
-        self.horizontalFrame_10.setStyleSheet("border-radius: 8px;\n"
-"background:rgb(255, 255, 255);")
-        self.horizontalFrame_10.setObjectName("horizontalFrame_10")
-        self.horizontalLayout_15 = QtWidgets.QHBoxLayout(self.horizontalFrame_10)
-        self.horizontalLayout_15.setContentsMargins(6, 4, 6, 4)
-        self.horizontalLayout_15.setSpacing(6)
-        self.horizontalLayout_15.setObjectName("horizontalLayout_15")
-        self.label_12 = QtWidgets.QLabel(parent=self.horizontalFrame_10)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.label_12.setFont(font)
-        self.label_12.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgba(0, 0, 0, 0);")
-        self.label_12.setObjectName("label_12")
-        self.horizontalLayout_15.addWidget(self.label_12)
-        self.RuleName_lineEdit_4 = QtWidgets.QLineEdit(parent=self.horizontalFrame_10)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.RuleName_lineEdit_4.setFont(font)
-        self.RuleName_lineEdit_4.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgb(255, 255, 255);\n"
-"border-radius: 0px;")
-        self.RuleName_lineEdit_4.setObjectName("RuleName_lineEdit_4")
-        self.horizontalLayout_15.addWidget(self.RuleName_lineEdit_4)
-        self.label_7 = QtWidgets.QLabel(parent=self.horizontalFrame_10)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.label_7.setFont(font)
-        self.label_7.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgba(0, 0, 0, 0);")
-        self.label_7.setObjectName("label_7")
-        self.horizontalLayout_15.addWidget(self.label_7)
-        self.KeyWord_comboBox_4 = QtWidgets.QComboBox(parent=self.horizontalFrame_10)
-        self.KeyWord_comboBox_4.setMinimumSize(QtCore.QSize(76, 0))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.KeyWord_comboBox_4.setFont(font)
-        self.KeyWord_comboBox_4.setStyleSheet("QComboBox {\n"
-"    color: rgb(0, 0, 0);\n"
-"    background: rgb(255, 255, 255);\n"
-"    border-radius: 0px;\n"
-"    border: none;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    width: 0px;\n"
-"    border: none;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"    image: none;\n"
-"}")
-        self.KeyWord_comboBox_4.setObjectName("KeyWord_comboBox_4")
-        self.KeyWord_comboBox_4.addItem("")
-        self.KeyWord_comboBox_4.addItem("")
-        self.horizontalLayout_15.addWidget(self.KeyWord_comboBox_4)
-        self.KeyWord_lineEdit_4 = QtWidgets.QLineEdit(parent=self.horizontalFrame_10)
-        self.KeyWord_lineEdit_4.setMinimumSize(QtCore.QSize(145, 0))
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.KeyWord_lineEdit_4.setFont(font)
-        self.KeyWord_lineEdit_4.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgb(255, 255, 255);\n"
-"border-radius: 0px;")
-        self.KeyWord_lineEdit_4.setObjectName("KeyWord_lineEdit_4")
-        self.horizontalLayout_15.addWidget(self.KeyWord_lineEdit_4)
-        self.label_8 = QtWidgets.QLabel(parent=self.horizontalFrame_10)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgba(0, 0, 0, 0);")
-        self.label_8.setObjectName("label_8")
-        self.horizontalLayout_15.addWidget(self.label_8)
-        self.Reply_lineEdit_4 = QtWidgets.QLineEdit(parent=self.horizontalFrame_10)
-        self.Reply_lineEdit_4.setMinimumSize(QtCore.QSize(220, 0))
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.Reply_lineEdit_4.setFont(font)
-        self.Reply_lineEdit_4.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgb(255, 255, 255);\n"
-"border-radius: 0px;")
-        self.Reply_lineEdit_4.setObjectName("Reply_lineEdit_4")
-        self.horizontalLayout_15.addWidget(self.Reply_lineEdit_4)
-        self.file_pushButton_4 = QtWidgets.QPushButton(parent=self.horizontalFrame_10)
-        self.file_pushButton_4.setMinimumSize(QtCore.QSize(32, 32))
-        self.file_pushButton_4.setStyleSheet("QPushButton{\n"
-"    background-color: rgba(255, 255, 255, 0);\n"
-"border: none;\n"
-"border-radius:20px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"\n"
-"}\n"
-"QPushButton:pressed {\n"
-"\n"
-"}\n"
-"")
-        self.file_pushButton_4.setText("")
-        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
-        self.file_pushButton_4.setIcon(icon)
-        self.file_pushButton_4.setIconSize(QtCore.QSize(24, 24))
-        self.file_pushButton_4.setObjectName("file_pushButton_4")
-        self.horizontalLayout_15.addWidget(self.file_pushButton_4)
-        self.horizontalLayout_15.setStretch(1, 1)
-        self.horizontalLayout_15.setStretch(4, 1)
-        self.horizontalLayout_15.setStretch(6, 1)
-        self.verticalLayout_3.addWidget(self.horizontalFrame_10)
-        self.horizontalFrame_11 = QtWidgets.QFrame(parent=self.scrollAreaWidgetContents)
-        self.horizontalFrame_11.setMaximumSize(QtCore.QSize(16777215, 52))
-        self.horizontalFrame_11.setStyleSheet("border-radius: 8px;\n"
-"background:rgb(255, 255, 255);")
-        self.horizontalFrame_11.setObjectName("horizontalFrame_11")
-        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.horizontalFrame_11)
-        self.horizontalLayout_16.setContentsMargins(6, 4, 6, 4)
-        self.horizontalLayout_16.setSpacing(6)
-        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
-        self.label_13 = QtWidgets.QLabel(parent=self.horizontalFrame_11)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.label_13.setFont(font)
-        self.label_13.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgba(0, 0, 0, 0);")
-        self.label_13.setObjectName("label_13")
-        self.horizontalLayout_16.addWidget(self.label_13)
-        self.RuleName_lineEdit_5 = QtWidgets.QLineEdit(parent=self.horizontalFrame_11)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.RuleName_lineEdit_5.setFont(font)
-        self.RuleName_lineEdit_5.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgb(255, 255, 255);\n"
-"border-radius: 0px;")
-        self.RuleName_lineEdit_5.setObjectName("RuleName_lineEdit_5")
-        self.horizontalLayout_16.addWidget(self.RuleName_lineEdit_5)
-        self.label_14 = QtWidgets.QLabel(parent=self.horizontalFrame_11)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.label_14.setFont(font)
-        self.label_14.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgba(0, 0, 0, 0);")
-        self.label_14.setObjectName("label_14")
-        self.horizontalLayout_16.addWidget(self.label_14)
-        self.KeyWord_comboBox_5 = QtWidgets.QComboBox(parent=self.horizontalFrame_11)
-        self.KeyWord_comboBox_5.setMinimumSize(QtCore.QSize(76, 0))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.KeyWord_comboBox_5.setFont(font)
-        self.KeyWord_comboBox_5.setStyleSheet("QComboBox {\n"
-"    color: rgb(0, 0, 0);\n"
-"    background: rgb(255, 255, 255);\n"
-"    border-radius: 0px;\n"
-"    border: none;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    width: 0px;\n"
-"    border: none;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"    image: none;\n"
-"}")
-        self.KeyWord_comboBox_5.setObjectName("KeyWord_comboBox_5")
-        self.KeyWord_comboBox_5.addItem("")
-        self.KeyWord_comboBox_5.addItem("")
-        self.horizontalLayout_16.addWidget(self.KeyWord_comboBox_5)
-        self.KeyWord_lineEdit_5 = QtWidgets.QLineEdit(parent=self.horizontalFrame_11)
-        self.KeyWord_lineEdit_5.setMinimumSize(QtCore.QSize(145, 0))
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.KeyWord_lineEdit_5.setFont(font)
-        self.KeyWord_lineEdit_5.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgb(255, 255, 255);\n"
-"border-radius: 0px;")
-        self.KeyWord_lineEdit_5.setObjectName("KeyWord_lineEdit_5")
-        self.horizontalLayout_16.addWidget(self.KeyWord_lineEdit_5)
-        self.label_15 = QtWidgets.QLabel(parent=self.horizontalFrame_11)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.label_15.setFont(font)
-        self.label_15.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgba(0, 0, 0, 0);")
-        self.label_15.setObjectName("label_15")
-        self.horizontalLayout_16.addWidget(self.label_15)
-        self.Reply_lineEdit_5 = QtWidgets.QLineEdit(parent=self.horizontalFrame_11)
-        self.Reply_lineEdit_5.setMinimumSize(QtCore.QSize(220, 0))
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        self.Reply_lineEdit_5.setFont(font)
-        self.Reply_lineEdit_5.setStyleSheet("color:rgb(0, 0, 0);\n"
-"background:rgb(255, 255, 255);\n"
-"border-radius: 0px;")
-        self.Reply_lineEdit_5.setObjectName("Reply_lineEdit_5")
-        self.horizontalLayout_16.addWidget(self.Reply_lineEdit_5)
-        self.file_pushButton_5 = QtWidgets.QPushButton(parent=self.horizontalFrame_11)
-        self.file_pushButton_5.setMinimumSize(QtCore.QSize(32, 32))
-        self.file_pushButton_5.setStyleSheet("QPushButton{\n"
-"    background-color: rgba(255, 255, 255, 0);\n"
-"border: none;\n"
-"border-radius:20px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"\n"
-"}\n"
-"QPushButton:pressed {\n"
-"\n"
-"}\n"
-"")
-        self.file_pushButton_5.setText("")
-        icon = QtGui.QIcon.fromTheme(get_resource_path("resources/img/page1/page1_打开文件.svg"))
-        self.file_pushButton_5.setIcon(icon)
-        self.file_pushButton_5.setIconSize(QtCore.QSize(24, 24))
-        self.file_pushButton_5.setObjectName("file_pushButton_5")
-        self.horizontalLayout_16.addWidget(self.file_pushButton_5)
-        self.horizontalLayout_16.setStretch(1, 1)
-        self.horizontalLayout_16.setStretch(4, 1)
-        self.horizontalLayout_16.setStretch(6, 1)
-        self.verticalLayout_3.addWidget(self.horizontalFrame_11)
+        self.horizontalLayout_19.addWidget(self.file_pushButton_3)
+        self.pushButton_3 = QtWidgets.QPushButton(parent=self.horizontalFrame_14)
+        self.pushButton_3.setMinimumSize(QtCore.QSize(42, 24))
+        self.pushButton_3.setMaximumSize(QtCore.QSize(42, 24))
+        self.pushButton_3.setStyleSheet("            QPushButton {\n"
+"                background-color: rgba(255, 0, 0, 0.55);\n"
+"                border: none;\n"
+"                border-radius: 4px;\n"
+"                color: white;\n"
+"                font-size: 12px;\n"
+"                padding: 2px;\n"
+"            }\n"
+"            QPushButton:hover {\n"
+"                background-color: rgba(255, 0, 0, 0.75);\n"
+"            }\n"
+"            QPushButton:pressed {\n"
+"                background-color: rgba(255, 0, 0, 0.95);\n"
+"            }")
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.horizontalLayout_19.addWidget(self.pushButton_3)
+        self.horizontalLayout_19.setStretch(1, 1)
+        self.horizontalLayout_19.setStretch(4, 1)
+        self.horizontalLayout_19.setStretch(6, 1)
+        self.verticalLayout_3.addWidget(self.horizontalFrame_14)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_3.addItem(spacerItem)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout_2.addWidget(self.scrollArea)
-        self.verticalLayout_5.addLayout(self.verticalLayout_2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setContentsMargins(-1, -1, 6, -1)
         self.horizontalLayout.setSpacing(12)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
-        self.pushButton_download = QtWidgets.QPushButton(parent=self.widget_3)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout.addItem(spacerItem1)
+        self.pushButton_download = QtWidgets.QPushButton(parent=self.mainframe)
         self.pushButton_download.setMinimumSize(QtCore.QSize(88, 36))
         self.pushButton_download.setMaximumSize(QtCore.QSize(88, 36))
         self.pushButton_download.setStyleSheet("QPushButton {\n"
@@ -688,10 +547,10 @@ class Ui_ReplyDialog(object):
 "}")
         self.pushButton_download.setObjectName("pushButton_download")
         self.horizontalLayout.addWidget(self.pushButton_download)
-        self.verticalLayout_5.addLayout(self.horizontalLayout)
+        self.verticalLayout_2.addLayout(self.horizontalLayout)
+        self.verticalLayout_5.addWidget(self.mainframe)
         self.verticalLayout_5.setStretch(0, 1)
-        self.verticalLayout_5.setStretch(1, 5)
-        self.verticalLayout_5.setStretch(2, 1)
+        self.verticalLayout_5.setStretch(1, 8)
         self.horizontalLayout_4.addLayout(self.verticalLayout_5)
         self.horizontalLayout_5.addLayout(self.horizontalLayout_4)
         self.horizontalLayout_5.setStretch(0, 5)
@@ -701,51 +560,38 @@ class Ui_ReplyDialog(object):
         self.horizontalLayout_7.setStretch(0, 4)
         self.verticalLayout.addWidget(self.frame)
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(ReplyDialog)
+        QtCore.QMetaObject.connectSlotsByName(ReplyDialog)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, ReplyDialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label_title.setText(_translate("Dialog", "自动回复规则"))
-        self.label_9.setText(_translate("Dialog", "规则名称"))
-        self.RuleName_lineEdit.setPlaceholderText(_translate("Dialog", "输入名称"))
-        self.label.setText(_translate("Dialog", "关键词"))
-        self.KeyWord_comboBox.setItemText(0, _translate("Dialog", "半匹配"))
-        self.KeyWord_comboBox.setItemText(1, _translate("Dialog", "全匹配"))
-        self.KeyWord_lineEdit.setPlaceholderText(_translate("Dialog", "输入关键词"))
-        self.label_2.setText(_translate("Dialog", "回复内容"))
-        self.Reply_lineEdit.setPlaceholderText(_translate("Dialog", "文字或文件路径"))
-        self.label_10.setText(_translate("Dialog", "规则名称"))
-        self.RuleName_lineEdit_2.setPlaceholderText(_translate("Dialog", "输入名称"))
-        self.label_3.setText(_translate("Dialog", "关键词"))
-        self.KeyWord_comboBox_2.setItemText(0, _translate("Dialog", "半匹配"))
-        self.KeyWord_comboBox_2.setItemText(1, _translate("Dialog", "全匹配"))
-        self.KeyWord_lineEdit_2.setPlaceholderText(_translate("Dialog", "输入关键词"))
-        self.label_4.setText(_translate("Dialog", "回复内容"))
-        self.Reply_lineEdit_2.setPlaceholderText(_translate("Dialog", "文字或文件路径"))
-        self.label_11.setText(_translate("Dialog", "规则名称"))
-        self.RuleName_lineEdit_3.setPlaceholderText(_translate("Dialog", "输入名称"))
-        self.label_5.setText(_translate("Dialog", "关键词"))
-        self.KeyWord_comboBox_3.setItemText(0, _translate("Dialog", "半匹配"))
-        self.KeyWord_comboBox_3.setItemText(1, _translate("Dialog", "全匹配"))
-        self.KeyWord_lineEdit_3.setPlaceholderText(_translate("Dialog", "输入关键词"))
-        self.label_6.setText(_translate("Dialog", "回复内容"))
-        self.Reply_lineEdit_3.setPlaceholderText(_translate("Dialog", "文字或文件路径"))
-        self.label_12.setText(_translate("Dialog", "规则名称"))
-        self.RuleName_lineEdit_4.setPlaceholderText(_translate("Dialog", "输入名称"))
-        self.label_7.setText(_translate("Dialog", "关键词"))
-        self.KeyWord_comboBox_4.setItemText(0, _translate("Dialog", "半匹配"))
-        self.KeyWord_comboBox_4.setItemText(1, _translate("Dialog", "全匹配"))
-        self.KeyWord_lineEdit_4.setPlaceholderText(_translate("Dialog", "输入关键词"))
-        self.label_8.setText(_translate("Dialog", "回复内容"))
-        self.Reply_lineEdit_4.setPlaceholderText(_translate("Dialog", "文字或文件路径"))
-        self.label_13.setText(_translate("Dialog", "规则名称"))
-        self.RuleName_lineEdit_5.setPlaceholderText(_translate("Dialog", "输入名称"))
-        self.label_14.setText(_translate("Dialog", "关键词"))
-        self.KeyWord_comboBox_5.setItemText(0, _translate("Dialog", "半匹配"))
-        self.KeyWord_comboBox_5.setItemText(1, _translate("Dialog", "全匹配"))
-        self.KeyWord_lineEdit_5.setPlaceholderText(_translate("Dialog", "输入关键词"))
-        self.label_15.setText(_translate("Dialog", "回复内容"))
-        self.Reply_lineEdit_5.setPlaceholderText(_translate("Dialog", "文字或文件路径"))
-        self.pushButton_download.setText(_translate("Dialog", "保存"))
+        ReplyDialog.setWindowTitle(_translate("ReplyDialog", "Dialog"))
+        self.label_title.setText(_translate("ReplyDialog", "自动回复规则"))
+        self.label_16.setText(_translate("ReplyDialog", "名称"))
+        self.RuleName_lineEdit_1.setPlaceholderText(_translate("ReplyDialog", "输入名称"))
+        self.label_17.setText(_translate("ReplyDialog", "关键词"))
+        self.KeyWord_comboBox_1.setItemText(0, _translate("ReplyDialog", "半匹配"))
+        self.KeyWord_comboBox_1.setItemText(1, _translate("ReplyDialog", "全匹配"))
+        self.KeyWord_lineEdit_1.setPlaceholderText(_translate("ReplyDialog", "输入关键词"))
+        self.label_18.setText(_translate("ReplyDialog", "回复内容"))
+        self.Reply_lineEdit_1.setPlaceholderText(_translate("ReplyDialog", "文字或文件路径"))
+        self.pushButton_1.setText(_translate("ReplyDialog", "清空"))
+        self.label_19.setText(_translate("ReplyDialog", "名称"))
+        self.RuleName_lineEdit_2.setPlaceholderText(_translate("ReplyDialog", "输入名称"))
+        self.label_20.setText(_translate("ReplyDialog", "关键词"))
+        self.KeyWord_comboBox_2.setItemText(0, _translate("ReplyDialog", "半匹配"))
+        self.KeyWord_comboBox_2.setItemText(1, _translate("ReplyDialog", "全匹配"))
+        self.KeyWord_lineEdit_2.setPlaceholderText(_translate("ReplyDialog", "输入关键词"))
+        self.label_21.setText(_translate("ReplyDialog", "回复内容"))
+        self.Reply_lineEdit_2.setPlaceholderText(_translate("ReplyDialog", "文字或文件路径"))
+        self.pushButton_2.setText(_translate("ReplyDialog", "清空"))
+        self.label_22.setText(_translate("ReplyDialog", "名称"))
+        self.RuleName_lineEdit_3.setPlaceholderText(_translate("ReplyDialog", "输入名称"))
+        self.label_23.setText(_translate("ReplyDialog", "关键词"))
+        self.KeyWord_comboBox_3.setItemText(0, _translate("ReplyDialog", "半匹配"))
+        self.KeyWord_comboBox_3.setItemText(1, _translate("ReplyDialog", "全匹配"))
+        self.KeyWord_lineEdit_3.setPlaceholderText(_translate("ReplyDialog", "输入关键词"))
+        self.label_24.setText(_translate("ReplyDialog", "回复内容"))
+        self.Reply_lineEdit_3.setPlaceholderText(_translate("ReplyDialog", "文字或文件路径"))
+        self.pushButton_3.setText(_translate("ReplyDialog", "清空"))
+        self.pushButton_download.setText(_translate("ReplyDialog", "保存"))
