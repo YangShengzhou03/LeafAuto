@@ -1533,19 +1533,51 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.scrollArea_3.sizePolicy().hasHeightForWidth())
         self.scrollArea_3.setSizePolicy(sizePolicy)
-        self.scrollArea_3.setMinimumSize(QtCore.QSize(360, 482))
-        self.scrollArea_3.setMaximumSize(QtCore.QSize(360, 16777215))
-        self.scrollArea_3.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
+        self.scrollArea_3.setMinimumSize(QtCore.QSize(368, 482))
+        self.scrollArea_3.setMaximumSize(QtCore.QSize(368, 16777215))
+        self.scrollArea_3.setStyleSheet("""
+        QScrollArea, QScrollArea * {
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        QScrollArea QScrollBar:vertical {
+            width: 8px;
+            background: transparent;
+        }
+
+        QScrollArea QScrollBar::handle:vertical {
+            background: rgba(125, 125, 125, 20%);
+            border-radius: 4px;
+            min-height: 20px;
+        }
+
+        QScrollArea QScrollBar::handle:vertical:hover {
+            background: rgba(125, 125, 125, 70%);
+        }
+
+        QScrollArea QScrollBar::add-line:vertical,
+        QScrollArea QScrollBar::sub-line:vertical {
+            height: 0px;
+            width: 0px;
+            background: transparent;
+        }
+
+        QScrollArea QScrollBar::add-page:vertical,
+        QScrollArea QScrollBar::sub-page:vertical {
+            background: transparent;
+            border-radius: 4px;
+        }
+        """)
         self.scrollArea_3.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.scrollArea_3.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
-        self.scrollArea_3.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.scrollArea_3.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.scrollArea_3.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.scrollArea_3.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_3.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollArea_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_3.setObjectName("scrollArea_3")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 360, 493))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 368, 493))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.formLayout_3 = QtWidgets.QFormLayout(self.scrollAreaWidgetContents_3)
         self.formLayout_3.setLabelAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)

@@ -579,7 +579,7 @@ background-color: rgba(255, 255, 255, 255);
              </sizepolicy>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_0">
              <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -3222,18 +3222,48 @@ QPushButton:pressed {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>360</width>
+                       <width>369</width>
                        <height>482</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>360</width>
+                       <width>369</width>
                        <height>16777215</height>
                       </size>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                      <string notr="true">QScrollArea, QScrollArea * {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+QScrollArea QScrollBar:vertical {
+    width: 8px;
+    background: transparent;
+}
+
+QScrollArea QScrollBar::handle:vertical {
+    background: rgba(125, 125, 125, 20%);
+    border-radius: 4px;
+    min-height: 20px;
+}
+
+QScrollArea QScrollBar::handle:vertical:hover {
+    background: rgba(125, 125, 125, 70%);
+}
+
+QScrollArea QScrollBar::add-line:vertical,
+QScrollArea QScrollBar::sub-line:vertical {
+    height: 0px;
+    width: 0px;
+    background: transparent;
+}
+
+QScrollArea QScrollBar::add-page:vertical,
+QScrollArea QScrollBar::sub-page:vertical {
+    background: transparent;
+    border-radius: 4px;
+}</string>
                      </property>
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
@@ -3242,10 +3272,10 @@ QPushButton:pressed {
                       <enum>QFrame::Sunken</enum>
                      </property>
                      <property name="verticalScrollBarPolicy">
-                      <enum>Qt::ScrollBarAlwaysOff</enum>
+                      <enum>Qt::ScrollBarAsNeeded</enum>
                      </property>
                      <property name="horizontalScrollBarPolicy">
-                      <enum>Qt::ScrollBarAlwaysOff</enum>
+                      <enum>Qt::ScrollBarAsNeeded</enum>
                      </property>
                      <property name="sizeAdjustPolicy">
                       <enum>QAbstractScrollArea::AdjustToContents</enum>
@@ -3261,8 +3291,8 @@ QPushButton:pressed {
                        <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>360</width>
-                        <height>482</height>
+                        <width>369</width>
+                        <height>493</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">
