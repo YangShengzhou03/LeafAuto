@@ -10,7 +10,7 @@ pyinstaller Application.spec
 """
 
 
-# TODO 规则界面、支付界面
+# TODO 支付界面
 def bring_existing_to_front():
     socket = QLocalSocket()
     socket.connectToServer("LeafAuto_Server")

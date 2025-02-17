@@ -36,6 +36,17 @@ class AiWorkerThread(QThread):
             log("ERROR", "接管规则文件格式错误")
             return []
 
+    def match_rule(self, msg):
+        matched_replies = []
+        for rule in self.rules:
+            if rule['match_type'] == '全匹配':
+                if msg.strip() == rule['keyword'].strip():
+                    matched_replies.append(rule['reply_content'])
+            elif rule['match_type'] == '半匹配':
+                if rule['keyword'].strip() in msg.strip():
+                    matched_replies.append(rule['reply_content'])
+        return matched_replies
+
     def run(self):
         try:
             self.app_instance.wx.SendMsg(msg=" ", who=self.receiver)
@@ -49,13 +60,13 @@ class AiWorkerThread(QThread):
                 if msgs and msgs[-1].type == "friend":
                     msg = msgs[-1].content
                     if self.rules is not None:
-                        matched_reply = self.match_rule(msg)
-                        if matched_reply:
-                            # 检查 matched_reply 是否为有效文件路径
-                            if os.path.isfile(matched_reply):
-                                self.app_instance.wx.SendFiles(filepath=matched_reply, who=self.receiver)
-                            else:
-                                self.app_instance.wx.SendMsg(msg=matched_reply, who=self.receiver)
+                        matched_replies = self.match_rule(msg)
+                        if matched_replies:
+                            for reply in matched_replies:
+                                if os.path.isfile(reply):
+                                    self.app_instance.wx.SendFiles(filepath=reply, who=self.receiver)
+                                else:
+                                    self.app_instance.wx.SendMsg(msg=reply, who=self.receiver)
                         else:
                             self.main(msg, self.receiver)
                     else:
@@ -85,16 +96,6 @@ class AiWorkerThread(QThread):
             params={'grant_type': 'client_credentials', 'client_id': 'eCB39lMiTbHXV0mTt1d6bBw7',
                     'client_secret': 'WUbEO3XdMNJLTJKNQfFbMSQvtBVzRhvu'}
         ).get("access_token")
-
-    def match_rule(self, msg):
-        for rule in self.rules:
-            if rule['match_type'] == '全匹配':
-                if msg.strip() == rule['keyword'].strip():
-                    return rule['reply_content']
-            elif rule['match_type'] == '半匹配':
-                if rule['keyword'].strip() in msg.strip():
-                    return rule['reply_content']
-        return None
 
     def main(self, msg, who):
         if self.model == "文心一言":
