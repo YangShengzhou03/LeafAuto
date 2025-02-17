@@ -579,7 +579,7 @@ background-color: rgba(255, 255, 255, 255);
              </sizepolicy>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_0">
              <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -3222,13 +3222,13 @@ QPushButton:pressed {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>369</width>
+                       <width>368</width>
                        <height>482</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>369</width>
+                       <width>368</width>
                        <height>16777215</height>
                       </size>
                      </property>
@@ -3291,7 +3291,7 @@ QScrollArea QScrollBar::sub-page:vertical {
                        <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>369</width>
+                        <width>368</width>
                         <height>493</height>
                        </rect>
                       </property>

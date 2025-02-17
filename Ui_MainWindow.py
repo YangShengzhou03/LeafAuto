@@ -1445,7 +1445,7 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.comboBox_Frequency.sizePolicy().hasHeightForWidth())
         self.comboBox_Frequency.setSizePolicy(sizePolicy)
-        self.comboBox_Frequency.setMinimumSize(QtCore.QSize(76, 0))
+        self.comboBox_Frequency.setMinimumSize(QtCore.QSize(58, 0))
         self.comboBox_Frequency.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.comboBox_Frequency.setStyleSheet("QComboBox {\n"
 "    background-color: #FFFFFF;\n"
