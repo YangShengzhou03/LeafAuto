@@ -15,7 +15,7 @@ class AiWorkerThread(QThread):
     pause_changed = pyqtSignal(bool)
     finished = pyqtSignal()
 
-    def __init__(self, app_instance, receiver, model="月之暗面", role="你是一个体贴的人，但回答问题时尽量简短。"):
+    def __init__(self, app_instance, receiver, model="月之暗面", role="你是个高冷的人，回信息比较简短。"):
         super().__init__()
         self.app_instance = app_instance
         self.receiver = receiver
@@ -30,7 +30,7 @@ class AiWorkerThread(QThread):
             with open('_internal/rules.json', 'r', encoding='utf-8') as f:
                 return json.load(f)
         except FileNotFoundError:
-            log("WARNING", "接管规则不存在,您可新建规则")
+            log("WARNING", "回复规则未创建,您可新建规则")
             return None
         except json.JSONDecodeError:
             log("ERROR", "接管规则文件格式错误")
@@ -63,9 +63,14 @@ class AiWorkerThread(QThread):
                         matched_replies = self.match_rule(msg)
                         if matched_replies:
                             for reply in matched_replies:
-                                if os.path.isfile(reply):
-                                    self.app_instance.wx.SendFiles(filepath=reply, who=self.receiver)
+                                if os.path.isdir(os.path.dirname(reply)):
+                                    if os.path.isfile(reply):
+                                        log("INFO", f"根据规则发送文件 {os.path.basename(reply)}")
+                                        self.app_instance.wx.SendFiles(filepath=reply, who=self.receiver)
+                                    else:
+                                        raise FileNotFoundError(f"回复规则有误,没有 {os.path.basename(reply)} 文件")
                                 else:
+                                    log("INFO", f"根据规则自动回复 {reply}")
                                     self.app_instance.wx.SendMsg(msg=reply, who=self.receiver)
                         else:
                             self.main(msg, self.receiver)
