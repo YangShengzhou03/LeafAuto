@@ -15,7 +15,7 @@ class AiWorkerThread(QThread):
     pause_changed = pyqtSignal(bool)
     finished = pyqtSignal()
 
-    def __init__(self, app_instance, receiver, model="月之暗面", role="你是个高冷的人，回信息比较简短。"):
+    def __init__(self, app_instance, receiver, model="月之暗面", role="你是个很好的朋友，回复消息简洁明了"):
         super().__init__()
         self.app_instance = app_instance
         self.receiver = receiver

@@ -2693,7 +2693,7 @@ class Ui_MainWindow(object):
         self.label_15.setText(_translate("MainWindow", "自动回复"))
         self.pushButton_addRule.setText(_translate("MainWindow", "添加规则"))
         self.label_13.setText(_translate("MainWindow", "Ai人设"))
-        self.Characters_lineEdit.setText(_translate("MainWindow", "你是个高冷的人，回信息都很简短。"))
+        self.Characters_lineEdit.setText(_translate("MainWindow", "你是个很好的朋友，回复消息简洁明了"))
         self.Characters_lineEdit.setPlaceholderText(_translate("MainWindow", "在此输入Ai人设"))
         self.label_14.setText(_translate("MainWindow", "Ai模型"))
         self.comboBox_AiLmodel.setItemText(0, _translate("MainWindow", "星火讯飞"))
