@@ -12,99 +12,178 @@ from common import get_resource_path
 
 
 class Ui_ActivitiesWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("ActivitiesWindow")
-        MainWindow.resize(960, 600)
-        MainWindow.setMinimumSize(QtCore.QSize(960, 600))
-        MainWindow.setMaximumSize(QtCore.QSize(960, 600))
-        MainWindow.setStyleSheet("")
-        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+    def setupUi(self, ActivitiesWindow):
+        ActivitiesWindow.setObjectName("ActivitiesWindow")
+        ActivitiesWindow.resize(960, 600)
+        ActivitiesWindow.setMinimumSize(QtCore.QSize(960, 600))
+        ActivitiesWindow.setMaximumSize(QtCore.QSize(960, 600))
+        ActivitiesWindow.setStyleSheet("")
+        self.centralwidget = QtWidgets.QWidget(parent=ActivitiesWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.frame = QtWidgets.QFrame(parent=self.centralwidget)
-        self.frame.setStyleSheet("border:none")
-        self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame.setObjectName("frame")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_2.setSpacing(0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.frame_left_ad = QtWidgets.QFrame(parent=self.frame)
-        self.frame_left_ad.setMinimumSize(QtCore.QSize(188, 582))
-        self.frame_left_ad.setMaximumSize(QtCore.QSize(188, 582))
-        self.frame_left_ad.setStyleSheet("QFrame{\n"
-f"background: url({get_resource_path('resources/img/activity/left_ad.png')});\n"
-"border:0px solid red;\n"
-"border-top-left-radius:20px;\n"
-"border-top-right-radius:0px;\n"
-"border-bottom-right-radius:0px;\n"
-"border-bottom-left-radius:20px;\n"
-"}")
-        self.frame_left_ad.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_left_ad.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_left_ad.setObjectName("frame_left_ad")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_left_ad)
-        self.verticalLayout_5.setContentsMargins(12, 24, 12, 24)
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.horizontalLayout_2.addWidget(self.frame_left_ad)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setSpacing(0)
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setContentsMargins(-1, -1, 9, -1)
+        self.verticalLayout.setSpacing(9)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.frame_4 = QtWidgets.QFrame(parent=self.frame)
-        self.frame_4.setStyleSheet("QFrame{\n"
-"background-color: rgb(245, 249, 254);\n"
-"border:1px solid rgb(66, 116, 248);\n"
-"border-top-left-radius:0px;\n"
-"border-top-right-radius:0px;\n"
-"border-bottom-right-radius:20px;\n"
-"border-bottom-left-radius:0px;\n"
+        self.frame_Main = QtWidgets.QFrame(parent=self.centralwidget)
+        self.frame_Main.setStyleSheet("QFrame {\n"
+"    background: qlineargradient(\n"
+"        spread:pad, \n"
+"        x1:0.75, y1:0.25, x2:0.25, y2:0.75, \n"
+"        stop:0 rgba(255, 244, 236, 255), \n"
+"        stop:1 rgba(248, 231, 210, 255)\n"
+"    );\n"
+"    border:none;\n"
+"    border-radius:20px;\n"
 "}")
-        self.frame_4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_4.setObjectName("frame_4")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_4)
+        self.frame_Main.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_Main.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_Main.setObjectName("frame_Main")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_Main)
+        self.verticalLayout_3.setContentsMargins(-1, -1, -1, 9)
+        self.verticalLayout_3.setSpacing(4)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.horizontalLayout_10 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_10.setContentsMargins(12, -1, -1, -1)
+        self.horizontalLayout_10.setContentsMargins(12, -1, 12, -1)
         self.horizontalLayout_10.setSpacing(4)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        self.label_head_title = QtWidgets.QLabel(parent=self.frame_4)
+        self.label_head_title = QtWidgets.QLabel(parent=self.frame_Main)
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setFamily("微软雅黑 Light")
+        font.setPointSize(16)
         self.label_head_title.setFont(font)
-        self.label_head_title.setStyleSheet("border:none;\n"
-"color: rgb(160, 160, 160);")
+        self.label_head_title.setStyleSheet("QLabel {\n"
+"    border: none;\n"
+"    color: rgb(10, 10, 10);\n"
+"    background: rgba(0, 0, 0, 0);\n"
+"}")
         self.label_head_title.setObjectName("label_head_title")
         self.horizontalLayout_10.addWidget(self.label_head_title)
+        self.label_identify = QtWidgets.QLabel(parent=self.frame_Main)
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑 Light")
+        font.setPointSize(16)
+        font.setBold(False)
+        self.label_identify.setFont(font)
+        self.label_identify.setStyleSheet("QLabel {\n"
+"    border: none;\n"
+"    color: rgb(10, 10, 10);\n"
+"    background: rgba(0, 0, 0, 0);\n"
+"}")
+        self.label_identify.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_identify.setObjectName("label_identify")
+        self.horizontalLayout_10.addWidget(self.label_identify)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_10.addItem(spacerItem)
-        self.pushButton_close = QtWidgets.QPushButton(parent=self.frame_4)
+        self.pushButton_exchange = QtWidgets.QPushButton(parent=self.frame_Main)
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑 Light")
+        font.setPointSize(10)
+        self.pushButton_exchange.setFont(font)
+        self.pushButton_exchange.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pushButton_exchange.setStyleSheet("QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(123, 123, 123);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(64, 64, 64);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(32, 32, 32);\n"
+"}")
+        icon = QtGui.QIcon.fromTheme("激活码兑换.svg")
+        self.pushButton_exchange.setIcon(icon)
+        self.pushButton_exchange.setIconSize(QtCore.QSize(18, 18))
+        self.pushButton_exchange.setObjectName("pushButton_exchange")
+        self.horizontalLayout_10.addWidget(self.pushButton_exchange)
+        self.pushButton_close = QtWidgets.QPushButton(parent=self.frame_Main)
         self.pushButton_close.setMinimumSize(QtCore.QSize(32, 32))
         self.pushButton_close.setMaximumSize(QtCore.QSize(32, 32))
         self.pushButton_close.setStyleSheet("QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0);\n"
 "    border: none;\n"
+"    border-radius:12px;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgba(255, 255, 255, 200);\n"
+"    background-color: rgba(255, 255, 255, 150);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: rgba(255, 255, 255, 255);\n"
+"    background-color: rgba(255, 255, 255, 75);\n"
 "}")
         self.pushButton_close.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/窗口控制/窗口控制-关闭.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_close.setIcon(icon)
-        self.pushButton_close.setIconSize(QtCore.QSize(28, 28))
+        self.pushButton_close.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_close.setObjectName("pushButton_close")
         self.horizontalLayout_10.addWidget(self.pushButton_close)
         self.verticalLayout_3.addLayout(self.horizontalLayout_10)
-        self.frame_select_version = QtWidgets.QFrame(parent=self.frame_4)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.verticalFrame = QtWidgets.QFrame(parent=self.frame_Main)
+        self.verticalFrame.setStyleSheet("QFrame{\n"
+"background-color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:12px;\n"
+"}")
+        self.verticalFrame.setObjectName("verticalFrame")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalFrame)
+        self.verticalLayout_2.setContentsMargins(6, 6, 6, 6)
+        self.verticalLayout_2.setSpacing(4)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setContentsMargins(12, 6, 9, 6)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.label_privilege = QtWidgets.QLabel(parent=self.verticalFrame)
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(11)
+        font.setBold(False)
+        self.label_privilege.setFont(font)
+        self.label_privilege.setStyleSheet("QLabel {\n"
+"    border: none;\n"
+"    color: rgb(254, 81, 111);\n"
+"    background: rgba(0, 0, 0, 0);\n"
+"}")
+        self.label_privilege.setObjectName("label_privilege")
+        self.horizontalLayout_3.addWidget(self.label_privilege)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem1)
+        self.pushButton_privilege = QtWidgets.QPushButton(parent=self.verticalFrame)
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑 Light")
+        font.setPointSize(10)
+        self.pushButton_privilege.setFont(font)
+        self.pushButton_privilege.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pushButton_privilege.setStyleSheet("QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(123, 123, 123);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(64, 64, 64);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(32, 32, 32);\n"
+"}")
+        self.pushButton_privilege.setObjectName("pushButton_privilege")
+        self.horizontalLayout_3.addWidget(self.pushButton_privilege)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
+        self.frame_select_version = QtWidgets.QFrame(parent=self.verticalFrame)
         self.frame_select_version.setStyleSheet("QFrame{\n"
 "background-color: rgb(255, 255, 255);\n"
 "border:0px solid red;\n"
@@ -117,118 +196,193 @@ f"background: url({get_resource_path('resources/img/activity/left_ad.png')});\n"
         self.frame_select_version.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_select_version.setObjectName("frame_select_version")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_select_version)
-        self.horizontalLayout_6.setSpacing(18)
+        self.horizontalLayout_6.setContentsMargins(0, 4, 0, 6)
+        self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.pushButton_year = QtWidgets.QPushButton(parent=self.frame_select_version)
-        self.pushButton_year.setMinimumSize(QtCore.QSize(160, 160))
-        self.pushButton_year.setMaximumSize(QtCore.QSize(160, 160))
-        self.pushButton_year.setStyleSheet("QPushButton{\n"
-"    margin-right:3px;\n"
-"    margin-bottom:0px;\n"
+        self.pushButton_year.setMinimumSize(QtCore.QSize(150, 150))
+        self.pushButton_year.setMaximumSize(QtCore.QSize(150, 150))
+        self.pushButton_year.setStyleSheet("QPushButton {\n"
+"    margin-right: 3px;\n"
+"    margin-bottom: 0px;\n"
 "    color: rgb(255, 255, 255);\n"
 "    border: 2px solid rgba(120, 120, 120, 60);\n"
-"    border-radius:8px;\n"
+"    border-radius: 8px;\n"
+"    background: none;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
 "}\n"
+"\n"
 "QPushButton:hover {\n"
-"border: 2px solid rgb(255, 170, 127);\n"
+"    border: 2px solid rgba(254, 81, 111, 120);\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0.5, y1:1, x2:0.5, y2:0,\n"
+"        stop:0 rgba(0, 0, 0, 0),\n"
+"        stop:1 rgba(255, 153, 170, 88)\n"
+"    );\n"
+"    transition: background 0.2s ease-in-out;\n"
 "}\n"
+"\n"
 "QPushButton:pressed {\n"
-"border: 2px solid rgb(255, 85, 0);\n"
-"}\n"
-"")
+"    border: 2px solid rgba(254, 81, 111, 255);\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0.5, y1:1, x2:0.5, y2:0,\n"
+"        stop:0 rgba(0, 0, 0, 0),\n"
+"        stop:1 rgba(255, 153, 170, 88)\n"
+"    );\n"
+"    transition: background 0.1s ease-in-out;\n"
+"}")
         self.pushButton_year.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/year-click.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_year.setIcon(icon1)
-        self.pushButton_year.setIconSize(QtCore.QSize(160, 160))
+        icon = QtGui.QIcon.fromTheme("\'resources/img/activity/year-click.png\'")
+        self.pushButton_year.setIcon(icon)
+        self.pushButton_year.setIconSize(QtCore.QSize(140, 140))
         self.pushButton_year.setObjectName("pushButton_year")
         self.horizontalLayout_6.addWidget(self.pushButton_year)
         self.pushButton_VIP = QtWidgets.QPushButton(parent=self.frame_select_version)
-        self.pushButton_VIP.setMinimumSize(QtCore.QSize(160, 160))
-        self.pushButton_VIP.setMaximumSize(QtCore.QSize(160, 160))
-        self.pushButton_VIP.setStyleSheet("QPushButton{\n"
-"    margin-right:3px;\n"
-"    margin-bottom:0px;\n"
+        self.pushButton_VIP.setMinimumSize(QtCore.QSize(150, 150))
+        self.pushButton_VIP.setMaximumSize(QtCore.QSize(150, 150))
+        self.pushButton_VIP.setStyleSheet("QPushButton {\n"
+"    margin-right: 3px;\n"
+"    margin-bottom: 0px;\n"
 "    color: rgb(255, 255, 255);\n"
 "    border: 2px solid rgba(120, 120, 120, 60);\n"
-"    border-radius:8px;\n"
+"    border-radius: 8px;\n"
+"    background: none;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
 "}\n"
+"\n"
 "QPushButton:hover {\n"
-"border: 2px solid rgb(255, 170, 127);\n"
+"    border: 2px solid rgba(254, 81, 111, 120);\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0.5, y1:1, x2:0.5, y2:0,\n"
+"        stop:0 rgba(0, 0, 0, 0),\n"
+"        stop:1 rgba(255, 153, 170, 88)\n"
+"    );\n"
+"    transition: background 0.2s ease-in-out;\n"
 "}\n"
+"\n"
 "QPushButton:pressed {\n"
-"border: 2px solid rgb(255, 85, 0);\n"
-"}\n"
-"")
+"    border: 2px solid rgba(254, 81, 111, 255);\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0.5, y1:1, x2:0.5, y2:0,\n"
+"        stop:0 rgba(0, 0, 0, 0),\n"
+"        stop:1 rgba(255, 153, 170, 88)\n"
+"    );\n"
+"    transition: background 0.1s ease-in-out;\n"
+"}")
         self.pushButton_VIP.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/VIP-unclick.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_VIP.setIcon(icon2)
-        self.pushButton_VIP.setIconSize(QtCore.QSize(160, 160))
+        icon = QtGui.QIcon.fromTheme("\'resources/img/activity/VIP-unclick.png\'")
+        self.pushButton_VIP.setIcon(icon)
+        self.pushButton_VIP.setIconSize(QtCore.QSize(140, 140))
         self.pushButton_VIP.setObjectName("pushButton_VIP")
         self.horizontalLayout_6.addWidget(self.pushButton_VIP)
         self.pushButton_AiVIP = QtWidgets.QPushButton(parent=self.frame_select_version)
-        self.pushButton_AiVIP.setMinimumSize(QtCore.QSize(160, 160))
-        self.pushButton_AiVIP.setMaximumSize(QtCore.QSize(160, 160))
-        self.pushButton_AiVIP.setStyleSheet("QPushButton{\n"
-"    margin-right:3px;\n"
-"    margin-bottom:0px;\n"
+        self.pushButton_AiVIP.setMinimumSize(QtCore.QSize(150, 150))
+        self.pushButton_AiVIP.setMaximumSize(QtCore.QSize(150, 150))
+        self.pushButton_AiVIP.setStyleSheet("QPushButton {\n"
+"    margin-right: 3px;\n"
+"    margin-bottom: 0px;\n"
 "    color: rgb(255, 255, 255);\n"
 "    border: 2px solid rgba(120, 120, 120, 60);\n"
-"    border-radius:8px;\n"
+"    border-radius: 8px;\n"
+"    background: none;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
 "}\n"
+"\n"
 "QPushButton:hover {\n"
-"border: 2px solid rgb(255, 170, 127);\n"
+"    border: 2px solid rgba(254, 81, 111, 120);\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0.5, y1:1, x2:0.5, y2:0,\n"
+"        stop:0 rgba(0, 0, 0, 0),\n"
+"        stop:1 rgba(255, 153, 170, 88)\n"
+"    );\n"
+"    transition: background 0.2s ease-in-out;\n"
 "}\n"
+"\n"
 "QPushButton:pressed {\n"
-"border: 2px solid rgb(255, 85, 0);\n"
-"}\n"
-"")
+"    border: 2px solid rgba(254, 81, 111, 255);\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0.5, y1:1, x2:0.5, y2:0,\n"
+"        stop:0 rgba(0, 0, 0, 0),\n"
+"        stop:1 rgba(255, 153, 170, 88)\n"
+"    );\n"
+"    transition: background 0.1s ease-in-out;\n"
+"}")
         self.pushButton_AiVIP.setText("")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/AiVIP-unclick.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_AiVIP.setIcon(icon3)
-        self.pushButton_AiVIP.setIconSize(QtCore.QSize(160, 160))
+        icon = QtGui.QIcon.fromTheme("\'resources/img/activity/AiVIP-unclick.png\'")
+        self.pushButton_AiVIP.setIcon(icon)
+        self.pushButton_AiVIP.setIconSize(QtCore.QSize(140, 140))
         self.pushButton_AiVIP.setObjectName("pushButton_AiVIP")
         self.horizontalLayout_6.addWidget(self.pushButton_AiVIP)
         self.pushButton_Base = QtWidgets.QPushButton(parent=self.frame_select_version)
-        self.pushButton_Base.setMinimumSize(QtCore.QSize(160, 160))
-        self.pushButton_Base.setMaximumSize(QtCore.QSize(160, 160))
-        self.pushButton_Base.setStyleSheet("QPushButton{\n"
-"    margin-right:3px;\n"
-"    margin-bottom:0px;\n"
+        self.pushButton_Base.setMinimumSize(QtCore.QSize(150, 150))
+        self.pushButton_Base.setMaximumSize(QtCore.QSize(150, 150))
+        self.pushButton_Base.setStyleSheet("QPushButton {\n"
+"    margin-right: 3px;\n"
+"    margin-bottom: 0px;\n"
 "    color: rgb(255, 255, 255);\n"
 "    border: 2px solid rgba(120, 120, 120, 60);\n"
-"    border-radius:8px;\n"
+"    border-radius: 8px;\n"
+"    background: none;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
 "}\n"
+"\n"
 "QPushButton:hover {\n"
-"border: 2px solid rgb(255, 170, 127);\n"
+"    border: 2px solid rgba(254, 81, 111, 120);\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0.5, y1:1, x2:0.5, y2:0,\n"
+"        stop:0 rgba(0, 0, 0, 0),\n"
+"        stop:1 rgba(255, 153, 170, 88)\n"
+"    );\n"
+"    transition: background 0.2s ease-in-out;\n"
 "}\n"
+"\n"
 "QPushButton:pressed {\n"
-"border: 2px solid rgb(255, 85, 0);\n"
-"}\n"
-"")
+"    border: 2px solid rgba(254, 81, 111, 255);\n"
+"    background: qlineargradient(\n"
+"        spread:pad,\n"
+"        x1:0.5, y1:1, x2:0.5, y2:0,\n"
+"        stop:0 rgba(0, 0, 0, 0),\n"
+"        stop:1 rgba(255, 153, 170, 88)\n"
+"    );\n"
+"    transition: background 0.1s ease-in-out;\n"
+"}")
         self.pushButton_Base.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/Base-unclick.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_Base.setIcon(icon4)
-        self.pushButton_Base.setIconSize(QtCore.QSize(160, 160))
+        icon = QtGui.QIcon.fromTheme("\'resources/img/activity/Base-unclick.png\'")
+        self.pushButton_Base.setIcon(icon)
+        self.pushButton_Base.setIconSize(QtCore.QSize(140, 140))
         self.pushButton_Base.setObjectName("pushButton_Base")
         self.horizontalLayout_6.addWidget(self.pushButton_Base)
-        self.verticalLayout_3.addWidget(self.frame_select_version)
-        self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_8.setContentsMargins(12, -1, -1, -1)
+        self.verticalLayout_2.addWidget(self.frame_select_version)
+        self.Frame_mid = QtWidgets.QFrame(parent=self.verticalFrame)
+        self.Frame_mid.setStyleSheet("background:rgb(254, 246, 241);\n"
+"border: 1px solid rgba(213, 202, 188, 180);\n"
+"border-radius:4px;")
+        self.Frame_mid.setObjectName("Frame_mid")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.Frame_mid)
+        self.horizontalLayout_8.setContentsMargins(12, 2, 0, 2)
         self.horizontalLayout_8.setSpacing(6)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        self.label_5 = QtWidgets.QLabel(parent=self.frame_4)
+        self.label_5 = QtWidgets.QLabel(parent=self.Frame_mid)
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setFamily("微软雅黑 Light")
+        font.setPointSize(10)
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("border:none;\n"
 "color: rgb(135, 135, 135);")
         self.label_5.setObjectName("label_5")
         self.horizontalLayout_8.addWidget(self.label_5)
-        self.label_prices = QtWidgets.QLabel(parent=self.frame_4)
+        self.label_prices = QtWidgets.QLabel(parent=self.Frame_mid)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_prices.setFont(font)
@@ -236,7 +390,7 @@ f"background: url({get_resource_path('resources/img/activity/left_ad.png')});\n"
 "border:none;")
         self.label_prices.setObjectName("label_prices")
         self.horizontalLayout_8.addWidget(self.label_prices)
-        self.label_Yuan = QtWidgets.QLabel(parent=self.frame_4)
+        self.label_Yuan = QtWidgets.QLabel(parent=self.Frame_mid)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_Yuan.setFont(font)
@@ -244,319 +398,247 @@ f"background: url({get_resource_path('resources/img/activity/left_ad.png')});\n"
 "color: rgb(135, 135, 135);")
         self.label_Yuan.setObjectName("label_Yuan")
         self.horizontalLayout_8.addWidget(self.label_Yuan)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_8.addItem(spacerItem1)
-        self.verticalLayout_3.addLayout(self.horizontalLayout_8)
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.frame_5 = QtWidgets.QFrame(parent=self.frame_4)
-        self.frame_5.setMinimumSize(QtCore.QSize(734, 250))
-        self.frame_5.setMaximumSize(QtCore.QSize(734, 250))
-        self.frame_5.setStyleSheet("QFrame{\n"
-"background-color: rgb(255, 255, 255);\n"
-"border:0px solid red;\n"
-"border-radius:20px;\n"
-"}")
-        self.frame_5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_5.setObjectName("frame_5")
-        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_5)
-        self.horizontalLayout_11.setContentsMargins(12, 9, 12, 12)
-        self.horizontalLayout_11.setSpacing(30)
-        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_4.setContentsMargins(6, -1, 6, -1)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.pushButton_Wechat = QtWidgets.QPushButton(parent=self.frame_5)
-        self.pushButton_Wechat.setMinimumSize(QtCore.QSize(140, 140))
-        self.pushButton_Wechat.setMaximumSize(QtCore.QSize(140, 140))
-        self.pushButton_Wechat.setStyleSheet("QPushButton{\n"
-"    margin-right:3px;\n"
-"    margin-bottom:0px;\n"
-"    color: rgb(255, 255, 255);\n"
-"    border:2px outset rgb(7, 193, 96);\n"
-"    border-radius:14px;\n"
-"}\n"
-"")
-        self.pushButton_Wechat.setInputMethodHints(QtCore.Qt.InputMethodHint.ImhFormattedNumbersOnly)
-        self.pushButton_Wechat.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/wp99.jpg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_Wechat.setIcon(icon5)
-        self.pushButton_Wechat.setIconSize(QtCore.QSize(140, 140))
-        self.pushButton_Wechat.setObjectName("pushButton_Wechat")
-        self.verticalLayout_4.addWidget(self.pushButton_Wechat)
-        self.pushButton_11 = QtWidgets.QPushButton(parent=self.frame_5)
-        self.pushButton_11.setMinimumSize(QtCore.QSize(140, 36))
-        self.pushButton_11.setMaximumSize(QtCore.QSize(140, 36))
-        self.pushButton_11.setStyleSheet("QPushButton{\n"
-"    margin-right:3px;\n"
-"    margin-bottom:0px;\n"
-"    color: rgb(255, 255, 255);\n"
-"    border:1px outset rgb(255, 255, 255);\n"
-"    border-radius:8px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"\n"
-"border:2px outset rgba(36, 36, 36,0);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"\n"
-"border:4px outset rgba(36, 36, 36,0);\n"
-"}\n"
-"")
-        self.pushButton_11.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/微信支付.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_11.setIcon(icon6)
-        self.pushButton_11.setIconSize(QtCore.QSize(140, 36))
-        self.pushButton_11.setObjectName("pushButton_11")
-        self.verticalLayout_4.addWidget(self.pushButton_11)
-        self.horizontalLayout_11.addLayout(self.verticalLayout_4)
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_7.setContentsMargins(6, -1, 6, -1)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.pushButton_QQ = QtWidgets.QPushButton(parent=self.frame_5)
-        self.pushButton_QQ.setMinimumSize(QtCore.QSize(140, 140))
-        self.pushButton_QQ.setMaximumSize(QtCore.QSize(140, 140))
-        self.pushButton_QQ.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.pushButton_QQ.setStyleSheet("QPushButton{\n"
-"    margin-right:3px;\n"
-"    margin-bottom:0px;\n"
-"    color: rgb(255, 255, 255);\n"
-"    border-radius:14px;\n"
-"}\n"
-"")
-        self.pushButton_QQ.setInputMethodHints(QtCore.Qt.InputMethodHint.ImhFormattedNumbersOnly)
-        self.pushButton_QQ.setText("")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/QQ_名片.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_QQ.setIcon(icon7)
-        self.pushButton_QQ.setIconSize(QtCore.QSize(140, 140))
-        self.pushButton_QQ.setObjectName("pushButton_QQ")
-        self.verticalLayout_7.addWidget(self.pushButton_QQ)
-        self.pushButton_16 = QtWidgets.QPushButton(parent=self.frame_5)
-        self.pushButton_16.setMinimumSize(QtCore.QSize(140, 36))
-        self.pushButton_16.setMaximumSize(QtCore.QSize(36, 32))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_16.setFont(font)
-        self.pushButton_16.setStyleSheet("QPushButton{\n"
-"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,stop:0 rgba(0, 150, 255, 255), stop:1 rgba(0, 100, 255, 255));\n"
-"    margin-right:3px;\n"
-"    margin-bottom:0px;\n"
-"    color: rgb(255, 255, 255);\n"
-"    border:1px outset rgb(255, 255, 255);\n"
-"    border-radius:8px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"border:2px outset rgba(36, 36, 36,0);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"border:4px outset rgba(36, 36, 36,0);\n"
-"}\n"
-"")
-        self.pushButton_16.setIconSize(QtCore.QSize(28, 28))
-        self.pushButton_16.setObjectName("pushButton_16")
-        self.verticalLayout_7.addWidget(self.pushButton_16)
-        self.horizontalLayout_11.addLayout(self.verticalLayout_7)
-        self.frame_3 = QtWidgets.QFrame(parent=self.frame_5)
-        self.frame_3.setStyleSheet("QFrame{\n"
-"image: none;\n"
-"background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(85, 0, 255), stop:1 rgb(85, 255, 255));\n"
-"border-radius:18px \n"
-"}\n"
-"QLabel{\n"
-"background-color: rgba(255, 255, 255, 0);\n"
-"}")
-        self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_3.setObjectName("frame_3")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame_3)
-        self.verticalLayout_8.setContentsMargins(22, 18, 24, 10)
-        self.verticalLayout_8.setSpacing(4)
-        self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_4.addItem(spacerItem2)
-        self.frame_9 = QtWidgets.QFrame(parent=self.frame_3)
-        self.frame_9.setMaximumSize(QtCore.QSize(280, 16777215))
-        self.frame_9.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
-        self.frame_9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_9.setObjectName("frame_9")
-        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame_9)
-        self.verticalLayout_10.setContentsMargins(0, 6, 0, 6)
-        self.verticalLayout_10.setSpacing(12)
-        self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.frame_10 = QtWidgets.QFrame(parent=self.frame_9)
-        self.frame_10.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
-        self.frame_10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_10.setObjectName("frame_10")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_10)
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_9.setSpacing(0)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.label = QtWidgets.QLabel(parent=self.frame_10)
-        self.label.setMaximumSize(QtCore.QSize(16777215, 26777))
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(16)
-        font.setBold(False)
-        self.label.setFont(font)
-        self.label.setStyleSheet("color:rgb(255, 255, 255);")
-        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label.setObjectName("label")
-        self.verticalLayout_9.addWidget(self.label)
-        self.verticalLayout_10.addWidget(self.frame_10)
-        self.frame_7 = QtWidgets.QFrame(parent=self.frame_9)
-        self.frame_7.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_7.setMaximumSize(QtCore.QSize(188, 16777215))
-        self.frame_7.setStyleSheet("border-radius:8px ;\n"
-"background-color: rgba(255, 255, 255, 51);")
-        self.frame_7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_7.setObjectName("frame_7")
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.frame_7)
-        self.horizontalLayout_7.setContentsMargins(-1, 0, 12, 0)
-        self.horizontalLayout_7.setSpacing(0)
-        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.label_4 = QtWidgets.QLabel(parent=self.frame_7)
+        self.horizontalLayout_8.addItem(spacerItem2)
+        self.verticalLayout_2.addWidget(self.Frame_mid)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setContentsMargins(12, -1, 12, -1)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_4.addItem(spacerItem3)
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_5.setContentsMargins(56, -1, 56, -1)
+        self.horizontalLayout_5.setSpacing(12)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem4)
+        self.label_7 = QtWidgets.QLabel(parent=self.verticalFrame)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        font.setBold(False)
-        self.label_4.setFont(font)
-        self.label_4.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
-"selection-color: rgb(34, 34, 34);")
-        self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_4.setObjectName("label_4")
-        self.horizontalLayout_7.addWidget(self.label_4)
-        self.label_identify = QtWidgets.QLabel(parent=self.frame_7)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+        self.horizontalLayout_5.addWidget(self.label_7)
+        self.lineEdit_code = QtWidgets.QLineEdit(parent=self.verticalFrame)
+        self.lineEdit_code.setMinimumSize(QtCore.QSize(0, 38))
         font = QtGui.QFont()
-        font.setFamily("微软雅黑")
-        font.setPointSize(-1)
-        font.setBold(False)
-        self.label_identify.setFont(font)
-        self.label_identify.setStyleSheet("QLabel {\n"
-"                background-color: rgba(255, 255, 255, 0);\n"
-"                selection-color: rgb(34, 34, 34);\n"
-"                color: black;\n"
-"                font-size: 20px;\n"
-"                text-align: center;\n"
-"                qproperty-alignment: \'AlignCenter\';\n"
-"            }")
-        self.label_identify.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_identify.setObjectName("label_identify")
-        self.horizontalLayout_7.addWidget(self.label_identify)
-        self.horizontalLayout_7.setStretch(0, 1)
-        self.horizontalLayout_7.setStretch(1, 3)
-        self.verticalLayout_10.addWidget(self.frame_7)
-        self.frame_8 = QtWidgets.QFrame(parent=self.frame_9)
-        self.frame_8.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_8.setMaximumSize(QtCore.QSize(188, 16777215))
-        self.frame_8.setStyleSheet("border-radius:8px ;\n"
-"background-color: rgba(255, 255, 255, 51);")
-        self.frame_8.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_8.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_8.setObjectName("frame_8")
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.frame_8)
-        self.horizontalLayout_9.setContentsMargins(9, 0, 12, 0)
-        self.horizontalLayout_9.setSpacing(0)
-        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.label_8 = QtWidgets.QLabel(parent=self.frame_8)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
-        font.setBold(False)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
-"selection-color: rgb(34, 34, 34);")
-        self.label_8.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_8.setObjectName("label_8")
-        self.horizontalLayout_9.addWidget(self.label_8)
-        self.lineEdit_code = QtWidgets.QLineEdit(parent=self.frame_8)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑 Light")
-        font.setPointSize(12)
-        font.setBold(False)
         self.lineEdit_code.setFont(font)
-        self.lineEdit_code.setStyleSheet("QLineEdit{\n"
-"    background-color: rgba(255, 255, 255, 0);\n"
-"    selection-color: rgb(34, 34, 34);\n"
-"}")
-        self.lineEdit_code.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.lineEdit_code.setStyleSheet("background:rgb(255, 255, 255);\n"
+"border-radius:4px;\n"
+"border: 1px solid rgba(120, 120, 120, 150);")
         self.lineEdit_code.setObjectName("lineEdit_code")
-        self.horizontalLayout_9.addWidget(self.lineEdit_code)
-        self.horizontalLayout_9.setStretch(1, 9)
-        self.verticalLayout_10.addWidget(self.frame_8)
-        self.pushButton_OK = QtWidgets.QPushButton(parent=self.frame_9)
-        self.pushButton_OK.setMinimumSize(QtCore.QSize(112, 28))
+        self.horizontalLayout_5.addWidget(self.lineEdit_code)
+        self.pushButton_OK = QtWidgets.QPushButton(parent=self.verticalFrame)
+        self.pushButton_OK.setMinimumSize(QtCore.QSize(86, 34))
+        self.pushButton_OK.setMaximumSize(QtCore.QSize(86, 34))
         font = QtGui.QFont()
-        font.setPointSize(-1)
-        font.setBold(False)
+        font.setPointSize(12)
         self.pushButton_OK.setFont(font)
+        self.pushButton_OK.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_OK.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(0, 0, 0);\n"
-"    border-radius: 6px;\n"
+"    background: rgb(215, 184, 121);\n"
 "    color: rgb(255, 255, 255);\n"
-"    padding: 8px 16px;\n"
-"    font-size: 16px;\n"
-"    border: none;\n"
-"    min-width: 80px;\n"
+"    border-radius: 4px;\n"
+"    transition: background 0.3s, transform 0.2s;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(105, 105, 105)}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(65, 65, 65);\n"
-"    padding-top: 10px;\n"
-"    padding-left: 18px;\n"
-"    padding-right: 14px;\n"
+"    background: rgb(235, 204, 141);\n"
 "}\n"
 "\n"
-"QPushButton:disabled {\n"
-"    background-color: rgb(100, 100, 100);\n"
-"    color: rgb(150, 150, 150);\n"
+"QPushButton:pressed {\n"
+"    background: rgb(195, 164, 101);\n"
+"    transform: translateY(2px);\n"
 "}")
         self.pushButton_OK.setObjectName("pushButton_OK")
-        self.verticalLayout_10.addWidget(self.pushButton_OK)
-        self.horizontalLayout_4.addWidget(self.frame_9)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_4.addItem(spacerItem3)
-        self.verticalLayout_8.addLayout(self.horizontalLayout_4)
-        self.horizontalLayout_11.addWidget(self.frame_3)
-        self.horizontalLayout_3.addWidget(self.frame_5)
-        self.verticalLayout_3.addLayout(self.horizontalLayout_3)
+        self.horizontalLayout_5.addWidget(self.pushButton_OK)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem5)
+        self.horizontalLayout_5.setStretch(2, 1)
+        self.verticalLayout_4.addLayout(self.horizontalLayout_5)
+        self.widget_bottom = QtWidgets.QWidget(parent=self.verticalFrame)
+        self.widget_bottom.setMinimumSize(QtCore.QSize(650, 138))
+        self.widget_bottom.setMaximumSize(QtCore.QSize(650, 16777215))
+        self.widget_bottom.setStyleSheet("QWidget {\n"
+"    border-radius: 12px;\n"
+"image: url(\'resources/img/activity/bottom.png\');\n"
+"background: transparent;\n"
+"}")
+        self.widget_bottom.setObjectName("widget_bottom")
+        self.verticalLayout_4.addWidget(self.widget_bottom)
+        self.verticalLayout_2.addLayout(self.verticalLayout_4)
+        self.verticalLayout_2.setStretch(3, 1)
+        self.horizontalLayout.addWidget(self.verticalFrame)
+        self.Frame_Right = QtWidgets.QFrame(parent=self.frame_Main)
+        self.Frame_Right.setStyleSheet("QFrame {\n"
+"    background: qlineargradient(\n"
+"        spread:pad, \n"
+"        x1:0.75, y1:0.25, x2:0.25, y2:0.75, \n"
+"        stop:0 rgba(255, 251, 250, 255), \n"
+"        stop:1 rgba(255, 252, 247, 255)\n"
+"    );\n"
+"    border:none;\n"
+"    border-radius:10px;\n"
+"}")
+        self.Frame_Right.setObjectName("Frame_Right")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.Frame_Right)
+        self.verticalLayout_5.setContentsMargins(0, 88, 0, 12)
+        self.verticalLayout_5.setSpacing(2)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem6)
+        self.label = QtWidgets.QLabel(parent=self.Frame_Right)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label.setFont(font)
+        self.label.setStyleSheet("border:none;\n"
+"color: rgb(135, 135, 135);")
+        self.label.setObjectName("label")
+        self.horizontalLayout_2.addWidget(self.label)
+        self.label_2 = QtWidgets.QLabel(parent=self.Frame_Right)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(True)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color:rgb(255, 85, 0);")
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout_2.addWidget(self.label_2)
+        self.label_prices_2 = QtWidgets.QLabel(parent=self.Frame_Right)
+        font = QtGui.QFont()
+        font.setPointSize(30)
+        font.setBold(True)
+        self.label_prices_2.setFont(font)
+        self.label_prices_2.setStyleSheet("color:rgb(255, 85, 0);")
+        self.label_prices_2.setObjectName("label_prices_2")
+        self.horizontalLayout_2.addWidget(self.label_prices_2)
+        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem7)
+        self.verticalLayout_5.addLayout(self.horizontalLayout_2)
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem8)
+        self.pushButton_Wechat = QtWidgets.QPushButton(parent=self.Frame_Right)
+        self.pushButton_Wechat.setMinimumSize(QtCore.QSize(150, 150))
+        self.pushButton_Wechat.setMaximumSize(QtCore.QSize(150, 150))
+        self.pushButton_Wechat.setStyleSheet("QPushButton{\n"
+"    color: rgb(255, 255, 255);\n"
+"    border: 2px solid rgba(120, 120, 120, 60);\n"
+"    border-radius:12px;\n"
+"}")
+        self.pushButton_Wechat.setText("")
+        icon = QtGui.QIcon.fromTheme("\'resources/img/activity/wp99.jpg\'")
+        self.pushButton_Wechat.setIcon(icon)
+        self.pushButton_Wechat.setIconSize(QtCore.QSize(138, 138))
+        self.pushButton_Wechat.setObjectName("pushButton_Wechat")
+        self.horizontalLayout_4.addWidget(self.pushButton_Wechat)
+        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem9)
+        self.verticalLayout_5.addLayout(self.horizontalLayout_4)
+        self.label_3 = QtWidgets.QLabel(parent=self.Frame_Right)
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(10)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("QLabel {\n"
+"    border: none;\n"
+"    color: rgb(0, 186, 0);\n"
+"    background: rgba(0, 0, 0, 0);\n"
+"    qproperty-alignment: \'AlignHCenter | AlignVCenter\';\n"
+"}")
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_5.addWidget(self.label_3)
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.pushButton_check = QtWidgets.QPushButton(parent=self.Frame_Right)
+        self.pushButton_check.setMinimumSize(QtCore.QSize(120, 30))
+        self.pushButton_check.setMaximumSize(QtCore.QSize(120, 30))
+        self.pushButton_check.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pushButton_check.setStyleSheet("QPushButton {\n"
+"    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,\n"
+"                                      stop:0 rgb(128, 94, 62), \n"
+"                                      stop:1 rgb(128, 94, 162));\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 4px;\n"
+"    transition: background 0.3s, transform 0.2s;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,\n"
+"                                      stop:0 rgb(178, 144, 122),\n"
+"                                      stop:1 rgb(178, 144, 212));\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,\n"
+"                                      stop:0 rgb(98, 74, 42), \n"
+"                                      stop:1 rgb(98, 74, 142)); \n"
+"    transform: translateY(2px);\n"
+"}")
+        self.pushButton_check.setObjectName("pushButton_check")
+        self.horizontalLayout_7.addWidget(self.pushButton_check)
+        self.verticalLayout_5.addLayout(self.horizontalLayout_7)
+        spacerItem10 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem10)
+        self.pushButton_feedback = QtWidgets.QPushButton(parent=self.Frame_Right)
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑 Light")
+        font.setPointSize(10)
+        self.pushButton_feedback.setFont(font)
+        self.pushButton_feedback.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pushButton_feedback.setStyleSheet("QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(123, 123, 123);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(64, 64, 64);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border: none;\n"
+"    color: rgb(32, 32, 32);\n"
+"}")
+        self.pushButton_feedback.setObjectName("pushButton_feedback")
+        self.verticalLayout_5.addWidget(self.pushButton_feedback)
+        self.horizontalLayout.addWidget(self.Frame_Right)
+        self.horizontalLayout.setStretch(0, 3)
+        self.horizontalLayout.setStretch(1, 1)
+        self.verticalLayout_3.addLayout(self.horizontalLayout)
         self.verticalLayout_3.setStretch(0, 1)
-        self.verticalLayout_3.setStretch(1, 5)
-        self.verticalLayout_3.setStretch(2, 1)
-        self.verticalLayout_3.setStretch(3, 6)
-        self.verticalLayout.addWidget(self.frame_4)
-        self.horizontalLayout_2.addLayout(self.verticalLayout)
-        self.horizontalLayout_2.setStretch(0, 1)
-        self.horizontalLayout_2.setStretch(1, 4)
-        self.horizontalLayout.addWidget(self.frame)
-        MainWindow.setCentralWidget(self.centralwidget)
+        self.verticalLayout_3.setStretch(1, 10)
+        self.verticalLayout.addWidget(self.frame_Main)
+        ActivitiesWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(ActivitiesWindow)
+        QtCore.QMetaObject.connectSlotsByName(ActivitiesWindow)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, ActivitiesWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_head_title.setText(_translate("MainWindow", "枫叶，感谢一路有你相伴"))
-        self.label_5.setText(_translate("MainWindow", "支付金额："))
-        self.label_prices.setText(_translate("MainWindow", "99.00"))
-        self.label_Yuan.setText(_translate("MainWindow", "元"))
-        self.pushButton_16.setText(_translate("MainWindow", "QQ扫码领取秘钥"))
-        self.label.setText(_translate("MainWindow", "专享特权"))
-        self.label_4.setText(_translate("MainWindow", "识别码："))
-        self.label_identify.setText(_translate("MainWindow", "123456"))
-        self.label_8.setText(_translate("MainWindow", "激活码："))
-        self.lineEdit_code.setPlaceholderText(_translate("MainWindow", "激活秘钥"))
-        self.pushButton_OK.setText(_translate("MainWindow", "确定"))
+        ActivitiesWindow.setWindowTitle(_translate("ActivitiesWindow", "MainWindow"))
+        self.label_head_title.setText(_translate("ActivitiesWindow", "Hi，"))
+        self.label_identify.setText(_translate("ActivitiesWindow", "123456"))
+        self.pushButton_exchange.setText(_translate("ActivitiesWindow", "激活码兑换"))
+        self.label_privilege.setText(_translate("ActivitiesWindow", "VIP尊享，开启您的至尊之旅，感受非凡体验"))
+        self.pushButton_privilege.setText(_translate("ActivitiesWindow", "查看特权对比 >"))
+        self.label_5.setText(_translate("ActivitiesWindow", "支付金额："))
+        self.label_prices.setText(_translate("ActivitiesWindow", "99.00"))
+        self.label_Yuan.setText(_translate("ActivitiesWindow", "元"))
+        self.label_7.setText(_translate("ActivitiesWindow", "激活码："))
+        self.lineEdit_code.setPlaceholderText(_translate("ActivitiesWindow", "请在此输入会员激活码"))
+        self.pushButton_OK.setText(_translate("ActivitiesWindow", "确定"))
+        self.label.setText(_translate("ActivitiesWindow", "实付价:"))
+        self.label_2.setText(_translate("ActivitiesWindow", "￥"))
+        self.label_prices_2.setText(_translate("ActivitiesWindow", "99"))
+        self.label_3.setText(_translate("ActivitiesWindow", "仅支持微信扫码支付"))
+        self.pushButton_check.setText(_translate("ActivitiesWindow", "我已支付"))
+        self.pushButton_feedback.setText(_translate("ActivitiesWindow", "问题反馈 >"))
