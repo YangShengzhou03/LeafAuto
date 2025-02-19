@@ -130,6 +130,7 @@ class AutoInfo(QtWidgets.QWidget):
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
         receiver_label.setFont(font)
+        receiver_label.setStyleSheet("color:rgb(0, 0, 0);")
         receiver_label.setObjectName("receiver_label")
         horizontalLayout_77.addWidget(receiver_label)
 

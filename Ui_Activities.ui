@@ -803,6 +803,9 @@ background: transparent;
                         <pointsize>12</pointsize>
                        </font>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">color:rgb(0, 0, 0);</string>
+                      </property>
                       <property name="text">
                        <string>激活码：</string>
                       </property>

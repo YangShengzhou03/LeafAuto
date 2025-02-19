@@ -32,7 +32,7 @@ class ReplyDialog(QtWidgets.QDialog):
                 rules = json.load(f)
                 self.fill_ui_with_rules(rules)
         except FileNotFoundError:
-            log('WARNING', 'rules.json 文件未找到')
+            pass
         except Exception as e:
             log('ERROR', f'加载规则失败: {str(e)}')
 
