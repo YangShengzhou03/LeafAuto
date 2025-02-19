@@ -97,7 +97,7 @@ class Ui_ActivitiesWindow(object):
 "    border: none;\n"
 "    color: rgb(32, 32, 32);\n"
 "}")
-        icon = QtGui.QIcon.fromTheme("激活码兑换.svg")
+        icon = QtGui.QIcon.fromTheme(get_resource_path('resources/img/activity/兑换激活码.svg'))
         self.pushButton_exchange.setIcon(icon)
         self.pushButton_exchange.setIconSize(QtCore.QSize(18, 18))
         self.pushButton_exchange.setObjectName("pushButton_exchange")
@@ -108,7 +108,7 @@ class Ui_ActivitiesWindow(object):
         self.pushButton_close.setStyleSheet("QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0);\n"
 "    border: none;\n"
-"    border-radius:12px;\n"
+"    border-radius:8px;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -403,7 +403,7 @@ class Ui_ActivitiesWindow(object):
         self.verticalLayout_2.addWidget(self.Frame_mid)
         self.verticalLayout_4 = QtWidgets.QVBoxLayout()
         self.verticalLayout_4.setContentsMargins(0, -1, 0, -1)
-        self.verticalLayout_4.setSpacing(6)
+        self.verticalLayout_4.setSpacing(2)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.verticalFrame1 = QtWidgets.QFrame(parent=self.verticalFrame)
         self.verticalFrame1.setObjectName("verticalFrame1")
@@ -418,27 +418,29 @@ class Ui_ActivitiesWindow(object):
         self.widget_head.setMinimumSize(QtCore.QSize(650, 100))
         self.widget_head.setMaximumSize(QtCore.QSize(650, 16777215))
         self.widget_head.setStyleSheet("QWidget {\n"
-"    border-radius: 12px;\n"
+"border-radius: 0px;\n"
 f"image: url({get_resource_path('resources/img/activity/head.png')});\n"
 "background: transparent;\n"
 "}")
         self.widget_head.setObjectName("widget_head")
         self.horizontalLayout_9.addWidget(self.widget_head)
         self.verticalLayout_6.addLayout(self.horizontalLayout_9)
-        self.Code_redemption = QtWidgets.QHBoxLayout()
-        self.Code_redemption.setContentsMargins(56, -1, 56, -1)
-        self.Code_redemption.setSpacing(12)
+        self.Code_redemption = QtWidgets.QFrame(parent=self.verticalFrame1)
         self.Code_redemption.setObjectName("Code_redemption")
+        self.Code_redemption_2 = QtWidgets.QHBoxLayout(self.Code_redemption)
+        self.Code_redemption_2.setContentsMargins(56, -1, 56, -1)
+        self.Code_redemption_2.setSpacing(12)
+        self.Code_redemption_2.setObjectName("Code_redemption_2")
         spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.Code_redemption.addItem(spacerItem3)
-        self.label_7 = QtWidgets.QLabel(parent=self.verticalFrame1)
+        self.Code_redemption_2.addItem(spacerItem3)
+        self.label_7 = QtWidgets.QLabel(parent=self.Code_redemption)
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
         self.label_7.setFont(font)
         self.label_7.setObjectName("label_7")
-        self.Code_redemption.addWidget(self.label_7)
-        self.lineEdit_code = QtWidgets.QLineEdit(parent=self.verticalFrame1)
+        self.Code_redemption_2.addWidget(self.label_7)
+        self.lineEdit_code = QtWidgets.QLineEdit(parent=self.Code_redemption)
         self.lineEdit_code.setMinimumSize(QtCore.QSize(0, 38))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -447,8 +449,8 @@ f"image: url({get_resource_path('resources/img/activity/head.png')});\n"
 "border-radius:4px;\n"
 "border: 1px solid rgba(120, 120, 120, 150);")
         self.lineEdit_code.setObjectName("lineEdit_code")
-        self.Code_redemption.addWidget(self.lineEdit_code)
-        self.pushButton_OK = QtWidgets.QPushButton(parent=self.verticalFrame1)
+        self.Code_redemption_2.addWidget(self.lineEdit_code)
+        self.pushButton_OK = QtWidgets.QPushButton(parent=self.Code_redemption)
         self.pushButton_OK.setMinimumSize(QtCore.QSize(86, 34))
         self.pushButton_OK.setMaximumSize(QtCore.QSize(86, 34))
         font = QtGui.QFont()
@@ -471,11 +473,11 @@ f"image: url({get_resource_path('resources/img/activity/head.png')});\n"
 "    transform: translateY(2px);\n"
 "}")
         self.pushButton_OK.setObjectName("pushButton_OK")
-        self.Code_redemption.addWidget(self.pushButton_OK)
+        self.Code_redemption_2.addWidget(self.pushButton_OK)
         spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.Code_redemption.addItem(spacerItem4)
-        self.Code_redemption.setStretch(2, 1)
-        self.verticalLayout_6.addLayout(self.Code_redemption)
+        self.Code_redemption_2.addItem(spacerItem4)
+        self.Code_redemption_2.setStretch(2, 1)
+        self.verticalLayout_6.addWidget(self.Code_redemption)
         self.verticalLayout_6.setStretch(0, 1)
         self.verticalLayout_4.addWidget(self.verticalFrame1)
         self.widget_bottom = QtWidgets.QWidget(parent=self.verticalFrame)
@@ -555,7 +557,7 @@ f"image: url({get_resource_path('resources/img/activity/bottom.png')});\n"
         self.pushButton_Wechat.setText("")
         icon = QtGui.QIcon.fromTheme(get_resource_path('resources/img/activity/wp99.jpg'))
         self.pushButton_Wechat.setIcon(icon)
-        self.pushButton_Wechat.setIconSize(QtCore.QSize(138, 138))
+        self.pushButton_Wechat.setIconSize(QtCore.QSize(134, 134))
         self.pushButton_Wechat.setObjectName("pushButton_Wechat")
         self.horizontalLayout_4.addWidget(self.pushButton_Wechat)
         spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)

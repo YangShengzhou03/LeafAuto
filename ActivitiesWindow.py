@@ -1,10 +1,9 @@
 import random
 from datetime import timedelta
 from PyQt6 import QtWidgets, QtCore, QtGui
-from PyQt6.QtCore import QRegularExpression
-from PyQt6.QtGui import QRegularExpressionValidator
+from PyQt6.QtCore import QRegularExpression, QUrl
+from PyQt6.QtGui import QRegularExpressionValidator, QDesktopServices
 
-# 假设以下模块是正确的并且可以正常导入
 from System_info import get_motherboard_serial_number, write_key_value, read_key_value
 from Ui_Activities import Ui_ActivitiesWindow
 from common import get_resource_path, get_current_time, get_url
@@ -21,7 +20,7 @@ class ActivitiesWindow(QtWidgets.QMainWindow, Ui_ActivitiesWindow):
             self.windowFlags() | QtCore.Qt.WindowType.FramelessWindowHint | QtCore.Qt.WindowType.WindowStaysOnTopHint)
         self.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
         self.identify = random.randint(100000, 999999)
-        self.current_selected_button = None  # Track the currently selected button
+        self.current_selected_button = None
         self.connect_signals()
 
     def connect_signals(self):
@@ -37,8 +36,17 @@ class ActivitiesWindow(QtWidgets.QMainWindow, Ui_ActivitiesWindow):
         self.ui.pushButton_OK.clicked.connect(self.validate_activation)
         self.ui.lineEdit_code.textChanged.connect(lambda text: self.ui.lineEdit_code.setText(text.upper()))
         self.ui.label_identify.setText(str(self.identify))
+        self.ui.pushButton_exchange.clicked.connect(self.QQ_code)
+        self.ui.pushButton_check.clicked.connect(self.QQ_code)
+        self.ui.pushButton_feedback.clicked.connect(self.QQ_code)
+        self.ui.pushButton_privilege.clicked.connect(self.help)
+        self.apply_default_styles()
 
-        # Apply default style to all buttons
+    def QQ_code(self):
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/QQ_Act.png')), QtGui.QIcon.Mode.Normal,
+                       QtGui.QIcon.State.Off)
+        self.ui.pushButton_Wechat.setIcon(icon)
         self.apply_default_styles()
 
     def apply_default_styles(self):
@@ -121,10 +129,7 @@ QPushButton:pressed {
 }
 """
 
-        # Reset styles of all buttons to default
         self.apply_default_styles()
-
-        # Apply active style to the clicked button
         button.setStyleSheet(active_style)
         self.current_selected_button = button
 
@@ -134,6 +139,7 @@ QPushButton:pressed {
         self.ui.pushButton_Wechat.setIcon(icon)
         self.update_button_style(self.ui.pushButton_VIP)
         self.ui.label_prices.setText("18.90")
+        self.ui.label_prices_2.setText("18.9")
 
     def year_vip(self):
         icon = QtGui.QIcon()
@@ -141,6 +147,7 @@ QPushButton:pressed {
         self.ui.pushButton_Wechat.setIcon(icon)
         self.update_button_style(self.ui.pushButton_year)
         self.ui.label_prices.setText("99.00")
+        self.ui.label_prices_2.setText("99")
 
     def ai_vip(self):
         icon = QtGui.QIcon()
@@ -148,6 +155,7 @@ QPushButton:pressed {
         self.ui.pushButton_Wechat.setIcon(icon)
         self.update_button_style(self.ui.pushButton_AiVIP)
         self.ui.label_prices.setText("17.90")
+        self.ui.label_prices_2.setText("17.9")
 
     def base_vip(self):
         icon = QtGui.QIcon()
@@ -155,6 +163,7 @@ QPushButton:pressed {
         self.ui.pushButton_Wechat.setIcon(icon)
         self.update_button_style(self.ui.pushButton_Base)
         self.ui.label_prices.setText("9.90")
+        self.ui.label_prices_2.setText("9.9")
 
     def validate_activation(self):
         try:
@@ -189,10 +198,10 @@ QPushButton:pressed {
                 membership = 'VIP'
                 expiration_time = (last_time + timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')
             else:
-                QtWidgets.QMessageBox.warning(self, "无效的激活秘钥", "请输入正确的激活秘钥，如已购买请在下方扫码领取")
+                QtWidgets.QMessageBox.warning(self, "无效秘钥", "请输入正确的激活秘钥,如已购买请扫码领取")
                 return
         else:
-            QtWidgets.QMessageBox.warning(self, "无效的激活秘钥", "请输入正确的激活秘钥，如已购买请在下方扫码领取")
+            QtWidgets.QMessageBox.warning(self, "2的激活秘钥", "请输入正确的激活秘钥,如已购买请扫码领取")
             return
 
         motherboard_sn = get_motherboard_serial_number()
@@ -204,7 +213,10 @@ QPushButton:pressed {
         if read_key_value('membership') != membership or \
                 read_key_value('expiration_time') != expiration_time or \
                 read_key_value('motherboardsn') != motherboard_sn:
-            QtWidgets.QMessageBox.critical(self, "激活失败", "激活未能完成,请以管理员身份运行软件再次尝试")
+            QtWidgets.QMessageBox.critical(self, "激活失败", "激活出错,请以管理员身份运行软件")
         else:
-            QtWidgets.QMessageBox.information(self, "激活成功", f"枫叶 {membership} 激活成功,有效期至{expiration_time}")
+            QtWidgets.QMessageBox.information(self, "激活成功", f"会员激活成功,有效期至{expiration_time}")
             QtWidgets.QApplication.quit()
+
+    def help(self):
+        QDesktopServices.openUrl(QUrl('https://blog.csdn.net/Yang_shengzhou/article/details/143782041'))
