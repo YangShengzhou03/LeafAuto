@@ -446,7 +446,7 @@ f"image: url({get_resource_path('resources/img/activity/head.png')});\n"
         font = QtGui.QFont()
         font.setPointSize(12)
         self.lineEdit_code.setFont(font)
-        self.lineEdit_code.setStyleSheet("background:rgb(255, 255, 255);\n"
+        self.lineEdit_code.setStyleSheet("color:rgb(0, 0, 0);\n""background:rgb(255, 255, 255);\n"
 "border-radius:4px;\n"
 "border: 1px solid rgba(120, 120, 120, 150);")
         self.lineEdit_code.setObjectName("lineEdit_code")

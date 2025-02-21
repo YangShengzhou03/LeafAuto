@@ -3292,7 +3292,7 @@ QScrollArea QScrollBar::sub-page:vertical {
                         <x>0</x>
                         <y>0</y>
                         <width>368</width>
-                        <height>482</height>
+                        <height>493</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">
@@ -4397,7 +4397,7 @@ border-radius:18px
                                </font>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">QTextEdit: {
+                               <string notr="true">* {
 	color: rgb(0, 0, 0);
 }
 QTextEdit QScrollBar:vertical {

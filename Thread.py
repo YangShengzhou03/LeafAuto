@@ -57,6 +57,7 @@ class AiWorkerThread(QThread):
         while self.running and not self.stop_event.is_set():
             try:
                 msgs = self.app_instance.wx.GetAllMessage()
+                print(str(msgs))
                 if msgs and msgs[-1].type == "friend":
                     msg = msgs[-1].content
                     if self.rules is not None:
