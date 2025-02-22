@@ -314,7 +314,7 @@ border-left:5px solid rgb(172, 154, 233)
         <widget class="QFrame" name="right">
          <property name="styleSheet">
           <string notr="true">QFrame{
-	background-color: rgb(245, 249, 254);
+background-color: rgb(245, 249, 254);
 border:0px solid red;
 border-radius:30px
 }</string>
@@ -4708,7 +4708,7 @@ border-radius:18px
                           </size>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">background-color: rgb(255, 255, 255);
+                          <string notr="true">background-color: rgb(245, 249, 254);
 border-radius:12px</string>
                          </property>
                          <property name="frameShape">
@@ -4717,9 +4717,9 @@ border-radius:12px</string>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_124" stretch="0,0,1,0">
+                         <layout class="QHBoxLayout" name="horizontalLayout_124" stretch="0,0,0,0">
                           <property name="spacing">
-                           <number>9</number>
+                           <number>6</number>
                           </property>
                           <property name="leftMargin">
                            <number>0</number>
@@ -4734,43 +4734,60 @@ border-radius:12px</string>
                            <number>0</number>
                           </property>
                           <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_13">
-                            <property name="spacing">
-                             <number>0</number>
+                           <widget class="QFrame" name="take_over">
+                            <property name="styleSheet">
+                             <string notr="true">background:rgb(255, 255, 255);
+border-radius: 2px;</string>
                             </property>
-                            <item>
-                             <widget class="QLabel" name="label_9">
-                              <property name="font">
-                               <font>
-                                <family>微软雅黑 Light</family>
-                                <pointsize>12</pointsize>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel {
+                            <layout class="QHBoxLayout" name="horizontalLayout_13">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>4</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>4</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QLabel" name="label_9">
+                               <property name="font">
+                                <font>
+                                 <family>微软雅黑 Light</family>
+                                 <pointsize>12</pointsize>
+                                </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QLabel {
     color: rgb(0, 0, 0);
 }</string>
-                              </property>
-                              <property name="text">
-                               <string>接管对象</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLineEdit" name="takeOverReceiver_lineEdit">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>32</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <pointsize>-1</pointsize>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLineEdit {
+                               </property>
+                               <property name="text">
+                                <string>接管对象</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLineEdit" name="takeOverReceiver_lineEdit">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>32</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <pointsize>-1</pointsize>
+                                </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QLineEdit {
     color: rgb(0, 0, 0);
     border: none;
     padding: 2px;
@@ -4784,28 +4801,28 @@ QLineEdit::placeholder {
 QLineEdit:hover {
     border-color: rgb(35, 26, 132);
 }</string>
-                              </property>
-                              <property name="placeholderText">
-                               <string>输入联系人备注</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QCheckBox" name="checkBox">
-                              <property name="minimumSize">
-                               <size>
-                                <width>48</width>
-                                <height>28</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>48</width>
-                                <height>28</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QCheckBox {
+                               </property>
+                               <property name="placeholderText">
+                                <string>输入联系人备注</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QCheckBox" name="checkBox">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>48</width>
+                                 <height>28</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>48</width>
+                                 <height>28</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QCheckBox {
     width: 16px;
     height: 16px;
     margin: 1px;
@@ -4840,90 +4857,102 @@ QCheckBox::indicator:checked {
     background-color: white;
     left: 21px;
 }</string>
-                              </property>
-                              <property name="text">
-                               <string/>
-                              </property>
-                              <property name="checked">
-                               <bool>false</bool>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLabel" name="label_16">
-                              <property name="font">
-                               <font>
-                                <family>微软雅黑 Light</family>
-                                <pointsize>12</pointsize>
-                               </font>
-                              </property>
-                              <property name="text">
-                               <string>全局接管</string>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
+                               </property>
+                               <property name="text">
+                                <string/>
+                               </property>
+                               <property name="checked">
+                                <bool>false</bool>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLabel" name="label_16">
+                               <property name="font">
+                                <font>
+                                 <family>微软雅黑 Light</family>
+                                 <pointsize>12</pointsize>
+                                </font>
+                               </property>
+                               <property name="text">
+                                <string>全局接管</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
                           </item>
                           <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_17">
-                            <property name="spacing">
-                             <number>4</number>
+                           <widget class="QFrame" name="takeover_rule">
+                            <property name="styleSheet">
+                             <string notr="true">background:rgb(255, 255, 255);
+border-radius: 2px;</string>
                             </property>
-                            <property name="leftMargin">
-                             <number>4</number>
-                            </property>
-                            <property name="rightMargin">
-                             <number>4</number>
-                            </property>
-                            <item>
-                             <widget class="QLabel" name="label_15">
-                              <property name="font">
-                               <font>
-                                <family>微软雅黑 Light</family>
-                                <pointsize>12</pointsize>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel {
+                            <layout class="QHBoxLayout" name="horizontalLayout_17">
+                             <property name="spacing">
+                              <number>2</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>4</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>4</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QLabel" name="label_15">
+                               <property name="font">
+                                <font>
+                                 <family>微软雅黑 Light</family>
+                                 <pointsize>12</pointsize>
+                                </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QLabel {
     color: rgb(0, 0, 0);
 }</string>
-                              </property>
-                              <property name="text">
-                               <string>回复规则</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QPushButton" name="pushButton_addRule">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>78</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>78</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>微软雅黑</family>
-                                <pointsize>-1</pointsize>
-                               </font>
-                              </property>
-                              <property name="focusPolicy">
-                               <enum>Qt::NoFocus</enum>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QPushButton {
+                               </property>
+                               <property name="text">
+                                <string>回复规则</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="pushButton_addRule">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
+                               </property>
+                               <property name="minimumSize">
+                                <size>
+                                 <width>78</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>78</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <family>微软雅黑</family>
+                                 <pointsize>-1</pointsize>
+                                </font>
+                               </property>
+                               <property name="focusPolicy">
+                                <enum>Qt::NoFocus</enum>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QPushButton {
     background-color: rgb(105, 27, 253);
     border: 1px solid rgba(85, 0, 255, 120);
     border-radius: 4px;
@@ -4940,49 +4969,70 @@ QPushButton:pressed {
     background-color: rgb(65, 15, 150);
     border: 1px solid rgb(70, 60, 180);
 }</string>
-                              </property>
-                              <property name="text">
-                               <string>添加规则</string>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
+                               </property>
+                               <property name="text">
+                                <string>添加规则</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
                           </item>
                           <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_19">
-                            <item>
-                             <widget class="QLabel" name="label_13">
-                              <property name="font">
-                               <font>
-                                <family>微软雅黑 Light</family>
-                                <pointsize>12</pointsize>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel {
+                           <widget class="QFrame" name="Ai_move">
+                            <property name="styleSheet">
+                             <string notr="true">background:rgb(255, 255, 255);
+border-radius: 2px;</string>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_19">
+                             <property name="spacing">
+                              <number>2</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>4</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>4</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QLabel" name="label_13">
+                               <property name="font">
+                                <font>
+                                 <family>微软雅黑 Light</family>
+                                 <pointsize>12</pointsize>
+                                </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QLabel {
     color: rgb(0, 0, 0);
 }</string>
-                              </property>
-                              <property name="text">
-                               <string>Ai人设</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLineEdit" name="Characters_lineEdit">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>32</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <pointsize>-1</pointsize>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLineEdit {
+                               </property>
+                               <property name="text">
+                                <string>Ai人设</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLineEdit" name="Characters_lineEdit">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>32</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <pointsize>-1</pointsize>
+                                </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QLineEdit {
     color: rgb(0, 0, 0);
     border: none;
     padding: 2px;
@@ -4996,84 +5046,102 @@ QLineEdit::placeholder {
 QLineEdit:hover {
     border-color: rgb(35, 26, 132);
 }</string>
-                              </property>
-                              <property name="inputMask">
-                               <string/>
-                              </property>
-                              <property name="text">
-                               <string>你是个高冷的人。</string>
-                              </property>
-                              <property name="placeholderText">
-                               <string>在此输入Ai人设</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QWidget" name="takeOver_widget" native="true">
-                              <property name="minimumSize">
-                               <size>
-                                <width>28</width>
-                                <height>28</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>28</width>
-                                <height>28</height>
-                               </size>
-                              </property>
-                              <property name="sizeIncrement">
-                               <size>
-                                <width>28</width>
-                                <height>0</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">image: url(&quot;resources/img/page3/page3_AI标志图标.svg&quot;);</string>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
+                               </property>
+                               <property name="inputMask">
+                                <string/>
+                               </property>
+                               <property name="text">
+                                <string>你是个高冷的人。</string>
+                               </property>
+                               <property name="placeholderText">
+                                <string>在此输入Ai人设</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QWidget" name="takeOver_widget" native="true">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>28</width>
+                                 <height>28</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>28</width>
+                                 <height>28</height>
+                                </size>
+                               </property>
+                               <property name="sizeIncrement">
+                                <size>
+                                 <width>28</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">image: url(&quot;resources/img/page3/page3_AI标志图标.svg&quot;);</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
                           </item>
                           <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_14">
-                            <property name="rightMargin">
-                             <number>2</number>
+                           <widget class="QFrame" name="Ai_model">
+                            <property name="styleSheet">
+                             <string notr="true">background:rgb(255, 255, 255);
+border-radius: 2px;</string>
                             </property>
-                            <item>
-                             <widget class="QLabel" name="label_14">
-                              <property name="font">
-                               <font>
-                                <family>微软雅黑 Light</family>
-                                <pointsize>12</pointsize>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel {
+                            <layout class="QHBoxLayout" name="horizontalLayout_14">
+                             <property name="spacing">
+                              <number>2</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>4</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>4</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QLabel" name="label_14">
+                               <property name="font">
+                                <font>
+                                 <family>微软雅黑 Light</family>
+                                 <pointsize>12</pointsize>
+                                </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QLabel {
     color: rgb(0, 0, 0);
 }</string>
-                              </property>
-                              <property name="text">
-                               <string>Ai模型</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QComboBox" name="comboBox_AiLmodel">
-                              <property name="minimumSize">
-                               <size>
-                                <width>76</width>
-                                <height>0</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>110</width>
-                                <height>16777215</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QComboBox {
+                               </property>
+                               <property name="text">
+                                <string>Ai模型</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QComboBox" name="comboBox_AiLmodel">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>76</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>110</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QComboBox {
     background-color: #FFFFFF;
     border: 1px solid rgb(87, 78, 209);
     border-radius: 4px;
@@ -5110,25 +5178,26 @@ QComboBox QAbstractItemView {
     selection-background-color: rgb(229, 228, 253);
     selection-color: rgb(0, 0, 0);
 }</string>
-                              </property>
-                              <item>
-                               <property name="text">
-                                <string>星火讯飞</string>
                                </property>
-                              </item>
-                              <item>
-                               <property name="text">
-                                <string>文心一言</string>
-                               </property>
-                              </item>
-                              <item>
-                               <property name="text">
-                                <string>月之暗面</string>
-                               </property>
-                              </item>
-                             </widget>
-                            </item>
-                           </layout>
+                               <item>
+                                <property name="text">
+                                 <string>星火讯飞</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>文心一言</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>月之暗面</string>
+                                </property>
+                               </item>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
                           </item>
                          </layout>
                         </widget>

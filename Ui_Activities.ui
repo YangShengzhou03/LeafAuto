@@ -165,8 +165,8 @@ QPushButton:pressed {
             <string>激活码兑换</string>
            </property>
            <property name="icon">
-            <iconset theme="激活码兑换.svg">
-             <normaloff>.</normaloff>.</iconset>
+            <iconset>
+             <normaloff>resources/img/activity/兑换激活码.svg</normaloff>resources/img/activity/兑换激活码.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -210,7 +210,7 @@ QPushButton:pressed {
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>:/buttom/img/buttom/API 应用_api-app.svg</normaloff>:/buttom/img/buttom/API 应用_api-app.svg</iconset>
+             <normaloff>resources/img/窗口控制/窗口控制-关闭.svg</normaloff>resources/img/窗口控制/窗口控制-关闭.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -420,8 +420,8 @@ QPushButton:pressed {
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset theme="'resources/img/activity/year-click.png'">
-                   <normaloff>.</normaloff>.</iconset>
+                  <iconset>
+                   <normaloff>resources/img/activity/year.png</normaloff>resources/img/activity/year.png</iconset>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -483,8 +483,8 @@ QPushButton:pressed {
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset theme="'resources/img/activity/VIP-unclick.png'">
-                   <normaloff>.</normaloff>.</iconset>
+                  <iconset>
+                   <normaloff>resources/img/activity/VIP.png</normaloff>resources/img/activity/VIP.png</iconset>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -546,8 +546,8 @@ QPushButton:pressed {
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset theme="'resources/img/activity/AiVIP-unclick.png'">
-                   <normaloff>.</normaloff>.</iconset>
+                  <iconset>
+                   <normaloff>resources/img/activity/AiVIP.png</normaloff>resources/img/activity/AiVIP.png</iconset>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -609,8 +609,8 @@ QPushButton:pressed {
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset theme="'resources/img/activity/Base-unclick.png'">
-                   <normaloff>.</normaloff>.</iconset>
+                  <iconset>
+                   <normaloff>resources/img/activity/Base.png</normaloff>resources/img/activity/Base.png</iconset>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -1089,8 +1089,8 @@ color: rgb(135, 135, 135);</string>
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset theme="'resources/img/activity/wp99.jpg'">
-                  <normaloff>.</normaloff>.</iconset>
+                 <iconset>
+                  <normaloff>resources/img/activity/QQ_Act.png</normaloff>resources/img/activity/QQ_Act.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
