@@ -3304,7 +3304,7 @@ QScrollArea QScrollBar::sub-page:vertical {
                         <x>0</x>
                         <y>0</y>
                         <width>368</width>
-                        <height>493</height>
+                        <height>482</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">
@@ -4708,8 +4708,7 @@ border-radius:18px
                           </size>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">background-color: rgb(245, 249, 254);
-border-radius:12px</string>
+                          <string notr="true">border-radius:0px</string>
                          </property>
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
