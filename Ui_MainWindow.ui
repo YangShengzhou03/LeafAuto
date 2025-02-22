@@ -162,7 +162,7 @@ border-radius:30px
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">image: url(:/svg/img/img/image.png);
+                   <string notr="true">image: url(&quot;resources/img/List/List_头像.svg&quot;);
 border:3px solid rgb(255, 255, 255);
 border-radius:32px</string>
                   </property>
@@ -267,7 +267,7 @@ border-left:5px solid rgb(172, 154, 233)
 </string>
             </property>
             <property name="currentRow">
-             <number>0</number>
+             <number>-1</number>
             </property>
             <item>
              <property name="text">
@@ -275,7 +275,7 @@ border-left:5px solid rgb(172, 154, 233)
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>:/buttom_white/img/buttom_white/首页_home-two.svg</normaloff>:/buttom_white/img/buttom_white/首页_home-two.svg</iconset>
+               <normaloff>resources/img/List/List_0.svg</normaloff>resources/img/List/List_0.svg</iconset>
              </property>
             </item>
             <item>
@@ -284,7 +284,7 @@ border-left:5px solid rgb(172, 154, 233)
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>:/buttom_white/img/buttom_white/文字讯息_text-message.svg</normaloff>:/buttom_white/img/buttom_white/文字讯息_text-message.svg</iconset>
+               <normaloff>resources/img/List/List_1.svg</normaloff>resources/img/List/List_1.svg</iconset>
              </property>
             </item>
             <item>
@@ -293,7 +293,7 @@ border-left:5px solid rgb(172, 154, 233)
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>:/buttom_white/img/buttom_white/日历_calendar.svg</normaloff>:/buttom_white/img/buttom_white/日历_calendar.svg</iconset>
+               <normaloff>resources/img/List/List_2.svg</normaloff>resources/img/List/List_2.svg</iconset>
              </property>
             </item>
             <item>
@@ -302,7 +302,7 @@ border-left:5px solid rgb(172, 154, 233)
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>:/buttom_white/img/buttom_white/云办公_network-drive.svg</normaloff>:/buttom_white/img/buttom_white/云办公_network-drive.svg</iconset>
+               <normaloff>resources/img/List/List_3.svg</normaloff>resources/img/List/List_3.svg</iconset>
              </property>
             </item>
            </widget>
@@ -396,7 +396,7 @@ border-radius:30px
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">image: url(:/svg/img/img/image.png);
+                <string notr="true">image: url(&quot;resources/img/头标/头标-荣耀超级会员.svg&quot;);
 background: transparent;
 border-radius:26px</string>
                </property>
@@ -413,6 +413,9 @@ border-radius:26px</string>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 background-color: rgba(255, 255, 255, 0);
@@ -431,7 +434,7 @@ background-color: rgba(255, 255, 255, 255);
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>:/buttom/img/buttom/耳机声音_headphone-sound.svg</normaloff>:/buttom/img/buttom/耳机声音_headphone-sound.svg</iconset>
+                 <normaloff>resources/img/窗口控制/窗口控制-联系作者.svg</normaloff>resources/img/窗口控制/窗口控制-联系作者.svg</iconset>
                </property>
               </widget>
              </item>
@@ -446,6 +449,9 @@ background-color: rgba(255, 255, 255, 255);
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 background-color: rgba(255, 255, 255, 0);
@@ -464,7 +470,7 @@ background-color: rgba(255, 255, 255, 255);
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>:/buttom/img/buttom/耳机_headset-two.svg</normaloff>:/buttom/img/buttom/耳机_headset-two.svg</iconset>
+                 <normaloff>resources/img/窗口控制/窗口控制-设置.svg</normaloff>resources/img/窗口控制/窗口控制-设置.svg</iconset>
                </property>
               </widget>
              </item>
@@ -479,6 +485,9 @@ background-color: rgba(255, 255, 255, 255);
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 background-color: rgba(255, 255, 255, 0);
@@ -497,7 +506,7 @@ background-color: rgba(255, 255, 255, 255);
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>:/buttom/img/buttom/移到后面_send-to-back.svg</normaloff>:/buttom/img/buttom/移到后面_send-to-back.svg</iconset>
+                 <normaloff>resources/img/窗口控制/窗口控制-最小化.svg</normaloff>resources/img/窗口控制/窗口控制-最小化.svg</iconset>
                </property>
               </widget>
              </item>
@@ -512,6 +521,9 @@ background-color: rgba(255, 255, 255, 255);
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 background-color: rgba(255, 255, 255, 0);
@@ -530,7 +542,7 @@ background-color: rgba(255, 255, 255, 255);
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>:/buttom/img/buttom/拓展_extend.svg</normaloff>:/buttom/img/buttom/拓展_extend.svg</iconset>
+                 <normaloff>resources/img/窗口控制/窗口控制-最大化.svg</normaloff>resources/img/窗口控制/窗口控制-最大化.svg</iconset>
                </property>
               </widget>
              </item>
@@ -545,6 +557,9 @@ background-color: rgba(255, 255, 255, 255);
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 background-color: rgba(255, 255, 255, 0);
@@ -563,7 +578,7 @@ background-color: rgba(255, 255, 255, 255);
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>:/buttom/img/buttom/关闭_close.svg</normaloff>:/buttom/img/buttom/关闭_close.svg</iconset>
+                 <normaloff>resources/img/窗口控制/窗口控制-关闭.svg</normaloff>resources/img/窗口控制/窗口控制-关闭.svg</iconset>
                </property>
               </widget>
              </item>
@@ -752,6 +767,9 @@ background-color: transparent;</string>
                              <property name="cursor">
                               <cursorShape>PointingHandCursor</cursorShape>
                              </property>
+                             <property name="focusPolicy">
+                              <enum>Qt::NoFocus</enum>
+                             </property>
                              <property name="styleSheet">
                               <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
@@ -775,7 +793,7 @@ border:4px outset rgba(36, 36, 36,0);
                              </property>
                              <property name="icon">
                               <iconset>
-                               <normaloff>:/buttom_white/img/buttom_white/西瓜视频_xigua.svg</normaloff>:/buttom_white/img/buttom_white/西瓜视频_xigua.svg</iconset>
+                               <normaloff>resources/img/小标/小标-免费试用版本.svg</normaloff>resources/img/小标/小标-免费试用版本.svg</iconset>
                              </property>
                             </widget>
                            </item>
@@ -968,6 +986,9 @@ border:none</string>
                              <property name="cursor">
                               <cursorShape>PointingHandCursor</cursorShape>
                              </property>
+                             <property name="focusPolicy">
+                              <enum>Qt::NoFocus</enum>
+                             </property>
                              <property name="styleSheet">
                               <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
@@ -991,7 +1012,7 @@ border:4px outset rgba(36, 36, 36,0);
                              </property>
                              <property name="icon">
                               <iconset>
-                               <normaloff>:/buttom_white/img/buttom_white/西装_clothes-suit.svg</normaloff>:/buttom_white/img/buttom_white/西装_clothes-suit.svg</iconset>
+                               <normaloff>resources/img/小标/小标-标准会员版本.svg</normaloff>resources/img/小标/小标-标准会员版本.svg</iconset>
                              </property>
                             </widget>
                            </item>
@@ -1184,6 +1205,9 @@ border:none</string>
                              <property name="cursor">
                               <cursorShape>PointingHandCursor</cursorShape>
                              </property>
+                             <property name="focusPolicy">
+                              <enum>Qt::NoFocus</enum>
+                             </property>
                              <property name="styleSheet">
                               <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
@@ -1207,7 +1231,7 @@ border:4px outset rgba(36, 36, 36,0);
                              </property>
                              <property name="icon">
                               <iconset>
-                               <normaloff>:/buttom_white/img/buttom_white/解组_ungroup.svg</normaloff>:/buttom_white/img/buttom_white/解组_ungroup.svg</iconset>
+                               <normaloff>resources/img/小标/小标-高级会员版本.svg</normaloff>resources/img/小标/小标-高级会员版本.svg</iconset>
                              </property>
                             </widget>
                            </item>
@@ -1399,6 +1423,9 @@ border:none</string>
                              <property name="cursor">
                               <cursorShape>PointingHandCursor</cursorShape>
                              </property>
+                             <property name="focusPolicy">
+                              <enum>Qt::NoFocus</enum>
+                             </property>
                              <property name="styleSheet">
                               <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
@@ -1422,7 +1449,7 @@ border:4px outset rgba(36, 36, 36,0);
                              </property>
                              <property name="icon">
                               <iconset>
-                               <normaloff>:/buttom_white/img/buttom_white/视频电话_phone-video-call.svg</normaloff>:/buttom_white/img/buttom_white/视频电话_phone-video-call.svg</iconset>
+                               <normaloff>resources/img/小标/小标-超级会员版本.svg</normaloff>resources/img/小标/小标-超级会员版本.svg</iconset>
                              </property>
                             </widget>
                            </item>
@@ -1556,7 +1583,7 @@ padding-left:12px;</string>
                        <property name="minimumSize">
                         <size>
                          <width>236</width>
-                         <height>0</height>
+                         <height>223</height>
                         </size>
                        </property>
                        <property name="styleSheet">
@@ -1729,7 +1756,7 @@ color: rgb(255, 255, 255);</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>:/svg/img/svg/对号1.png</normaloff>:/svg/img/svg/对号1.png</iconset>
+                              <normaloff>resources/img/page0/page0_允许白钩.svg</normaloff>resources/img/page0/page0_允许白钩.svg</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1776,7 +1803,7 @@ color: rgb(255, 255, 255);</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>:/svg/img/svg/对号1 (1).png</normaloff>:/svg/img/svg/对号1 (1).png</iconset>
+                              <normaloff>resources/img/page0/page0_允许白钩.svg</normaloff>resources/img/page0/page0_允许白钩.svg</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1823,7 +1850,7 @@ color: rgb(255, 255, 255);</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>:/svg/img/svg/对号1 (2).png</normaloff>:/svg/img/svg/对号1 (2).png</iconset>
+                              <normaloff>resources/img/page0/page0_禁止白叉.svg</normaloff>resources/img/page0/page0_禁止白叉.svg</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -2027,7 +2054,7 @@ border-radius:18px
                                <property name="styleSheet">
                                 <string notr="true">QFrame {
     padding: 8px;
-    image: url(:/svg/img/svg/闪电-实.png);
+    image: url(&quot;resources/img/小标/小标-超级会员版本.svg&quot;);
     background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
                                 stop:0 rgba(155, 81, 45, 255),
                                 stop:1 rgba(175, 91, 55, 255));
@@ -2122,11 +2149,9 @@ border-radius:18px
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">
-
-QFrame{
+                             <string notr="true">QFrame{
 padding:8px;
-image: url(:/svg/img/svg/闪电-实.png);
+image: url(&quot;resources/img/page0/page0_累计发送.svg&quot;);
 	background-color: rgb(255, 81, 45);
 border:0px solid red;
 border-radius:10px
@@ -2234,13 +2259,9 @@ border-radius:10px
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">
-
-
-
-QFrame{
+                             <string notr="true">QFrame{
 padding:8px;
-image: url(:/svg/img/svg/对比.png);
+image: url(&quot;resources/img/page0/page0_提示音.svg&quot;);
 	background-color: rgb(255, 81, 45);
 border:0px solid red;
 border-radius:10px
@@ -2354,16 +2375,10 @@ border-radius:10px
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">
-
-
-
-
-QFrame{
+                             <string notr="true">QFrame{
 padding:8px;
-image: url(:/svg/img/svg/星星.png);
-
-	background-color: rgb(255, 81, 45);
+image: url(&quot;resources/img/page0/page0_微信语言.svg&quot;);
+background-color: rgb(255, 81, 45);
 border:0px solid red;
 border-radius:10px
 }</string>
@@ -2470,16 +2485,10 @@ border-radius:10px
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">
-
-
-
-
-
-QFrame{
+                             <string notr="true">QFrame{
 padding:8px;
-image: url(:/svg/img/svg/箭头_页面_向上.png);
-	background-color: rgb(255, 81, 45);
+image: url(&quot;resources/img/page0/page0_枫叶版本.svg&quot;);
+background-color: rgb(255, 81, 45);
 border:0px solid red;
 border-radius:10px
 }</string>
@@ -2780,7 +2789,7 @@ QPushButton:pressed {
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>:/buttom/img/buttom/胶手套_glove.svg</normaloff>:/buttom/img/buttom/胶手套_glove.svg</iconset>
+                           <normaloff>resources/img/page1/page1_打开文件.svg</normaloff>resources/img/page1/page1_打开文件.svg</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -2817,7 +2826,7 @@ QPushButton:pressed {
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>:/buttom/img/buttom/脚_foot.svg</normaloff>:/buttom/img/buttom/脚_foot.svg</iconset>
+                           <normaloff>resources/img/page1/page1_视频通话.svg</normaloff>resources/img/page1/page1_视频通话.svg</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -3164,6 +3173,9 @@ QComboBox QAbstractItemView {
                         <height>36</height>
                        </size>
                       </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">QPushButton {
     background-color: rgb(105, 27, 253);
@@ -3188,7 +3200,7 @@ QPushButton:pressed {
                       </property>
                       <property name="icon">
                        <iconset>
-                        <normaloff>:/buttom_white/img/buttom_white/旋风_whirlwind.svg</normaloff>:/buttom_white/img/buttom_white/旋风_whirlwind.svg</iconset>
+                        <normaloff>resources/img/page1/page1_添加任务.svg</normaloff>resources/img/page1/page1_添加任务.svg</iconset>
                       </property>
                      </widget>
                     </item>
@@ -3369,7 +3381,7 @@ border-radius:18px</string>
                              </size>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">image: url(:/svg/img/img/image.png);</string>
+                             <string notr="true">image: url(&quot;resources/img/page1/page1_发送就绪.svg&quot;);</string>
                             </property>
                            </widget>
                           </item>
@@ -3608,6 +3620,9 @@ border-radius:12px</string>
                                  <family>微软雅黑 Light</family>
                                 </font>
                                </property>
+                               <property name="focusPolicy">
+                                <enum>Qt::NoFocus</enum>
+                               </property>
                                <property name="styleSheet">
                                 <string notr="true">QPushButton {  
     color: rgb(0, 0, 0);  
@@ -3618,7 +3633,7 @@ border-radius:12px</string>
                                </property>
                                <property name="icon">
                                 <iconset>
-                                 <normaloff>:/buttom/img/buttom/16宫格_grid-sixteen.svg</normaloff>:/buttom/img/buttom/16宫格_grid-sixteen.svg</iconset>
+                                 <normaloff>resources/img/page1/page1_保存任务.svg</normaloff>resources/img/page1/page1_保存任务.svg</iconset>
                                </property>
                               </widget>
                              </item>
@@ -3630,6 +3645,9 @@ border-radius:12px</string>
                                  <pointsize>9</pointsize>
                                 </font>
                                </property>
+                               <property name="focusPolicy">
+                                <enum>Qt::NoFocus</enum>
+                               </property>
                                <property name="styleSheet">
                                 <string notr="true">QPushButton {  
     color: rgb(0, 0, 0);  
@@ -3640,7 +3658,7 @@ border-radius:12px</string>
                                </property>
                                <property name="icon">
                                 <iconset>
-                                 <normaloff>:/buttom/img/buttom/AirPods_airpods.svg</normaloff>:/buttom/img/buttom/AirPods_airpods.svg</iconset>
+                                 <normaloff>resources/img/page1/page1_导入任务.svg</normaloff>resources/img/page1/page1_导入任务.svg</iconset>
                                </property>
                               </widget>
                              </item>
@@ -3761,6 +3779,9 @@ border-radius:18px
                            </property>
                            <property name="cursor" stdset="0">
                             <cursorShape>IBeamCursor</cursorShape>
+                           </property>
+                           <property name="focusPolicy">
+                            <enum>Qt::NoFocus</enum>
                            </property>
                            <property name="styleSheet">
                             <string notr="true">QTextEdit QScrollBar:vertical {
@@ -3915,6 +3936,9 @@ border-bottom-left-radius:12px;</string>
                               <font>
                                <pointsize>-1</pointsize>
                               </font>
+                             </property>
+                             <property name="focusPolicy">
+                              <enum>Qt::NoFocus</enum>
                              </property>
                              <property name="styleSheet">
                               <string notr="true">QPushButton {  
@@ -4195,7 +4219,7 @@ QLineEdit:hover {
                        </property>
                        <property name="icon">
                         <iconset>
-                         <normaloff>:/buttom/img/buttom/F6_f-six-key.svg</normaloff>:/buttom/img/buttom/F6_f-six-key.svg</iconset>
+                         <normaloff>resources/img/page2/page2_智慧拆句.svg</normaloff>resources/img/page2/page2_智慧拆句.svg</iconset>
                        </property>
                       </widget>
                      </item>
@@ -4453,6 +4477,9 @@ QTextEdit QScrollBar::sub-page:vertical {
                                 <height>47</height>
                                </size>
                               </property>
+                              <property name="focusPolicy">
+                               <enum>Qt::NoFocus</enum>
+                              </property>
                               <property name="styleSheet">
                                <string notr="true">QPushButton {  
     margin: 3px;
@@ -4520,6 +4547,9 @@ QPushButton:pressed {
                                 <width>130</width>
                                 <height>47</height>
                                </size>
+                              </property>
+                              <property name="focusPolicy">
+                               <enum>Qt::NoFocus</enum>
                               </property>
                               <property name="styleSheet">
                                <string notr="true">QPushButton {  
@@ -4705,6 +4735,9 @@ border-radius:12px</string>
                           </property>
                           <item>
                            <layout class="QHBoxLayout" name="horizontalLayout_13">
+                            <property name="spacing">
+                             <number>0</number>
+                            </property>
                             <item>
                              <widget class="QLabel" name="label_9">
                               <property name="font">
@@ -4719,7 +4752,7 @@ border-radius:12px</string>
 }</string>
                               </property>
                               <property name="text">
-                               <string>接管联系人</string>
+                               <string>接管对象</string>
                               </property>
                              </widget>
                             </item>
@@ -4757,6 +4790,78 @@ QLineEdit:hover {
                               </property>
                              </widget>
                             </item>
+                            <item>
+                             <widget class="QCheckBox" name="checkBox">
+                              <property name="minimumSize">
+                               <size>
+                                <width>48</width>
+                                <height>28</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>48</width>
+                                <height>28</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QCheckBox {
+    width: 16px;
+    height: 16px;
+    margin: 1px;
+    border-radius: 12px;
+    padding: 0;
+    border: 1px solid #8a8a8a;
+}
+
+QCheckBox::indicator {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 1px;
+}
+
+QCheckBox:unchecked {
+    background-color: white;
+}
+
+QCheckBox:checked {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+}
+
+QCheckBox::indicator:unchecked {
+    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+    left: 1px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: white;
+    left: 21px;
+}</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="checked">
+                               <bool>false</bool>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QLabel" name="label_16">
+                              <property name="font">
+                               <font>
+                                <family>微软雅黑 Light</family>
+                                <pointsize>12</pointsize>
+                               </font>
+                              </property>
+                              <property name="text">
+                               <string>全局接管</string>
+                              </property>
+                             </widget>
+                            </item>
                            </layout>
                           </item>
                           <item>
@@ -4784,7 +4889,7 @@ QLineEdit:hover {
 }</string>
                               </property>
                               <property name="text">
-                               <string>自动回复</string>
+                               <string>回复规则</string>
                               </property>
                              </widget>
                             </item>
@@ -4813,6 +4918,9 @@ QLineEdit:hover {
                                 <family>微软雅黑</family>
                                 <pointsize>-1</pointsize>
                                </font>
+                              </property>
+                              <property name="focusPolicy">
+                               <enum>Qt::NoFocus</enum>
                               </property>
                               <property name="styleSheet">
                                <string notr="true">QPushButton {
@@ -4893,7 +5001,7 @@ QLineEdit:hover {
                                <string/>
                               </property>
                               <property name="text">
-                               <string>你是个高冷的人，回信息都很简短。</string>
+                               <string>你是个高冷的人。</string>
                               </property>
                               <property name="placeholderText">
                                <string>在此输入Ai人设</string>
@@ -4921,7 +5029,7 @@ QLineEdit:hover {
                                </size>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">image: url(:/buttom/img/buttom/放大_zoom-in.svg);</string>
+                               <string notr="true">image: url(&quot;resources/img/page3/page3_AI标志图标.svg&quot;);</string>
                               </property>
                              </widget>
                             </item>
@@ -5130,6 +5238,9 @@ border-radius:28px</string>
                                 <height>80</height>
                                </size>
                               </property>
+                              <property name="focusPolicy">
+                               <enum>Qt::NoFocus</enum>
+                              </property>
                               <property name="styleSheet">
                                <string notr="true">QPushButton {
     background-color: rgb(105, 27, 253);
@@ -5154,7 +5265,7 @@ QPushButton:pressed {
                               </property>
                               <property name="icon">
                                <iconset>
-                                <normaloff>:/buttom_white/img/buttom_white/花_blossom.svg</normaloff>:/buttom_white/img/buttom_white/花_blossom.svg</iconset>
+                                <normaloff>resources/img/page3/page3_开始接管.svg</normaloff>resources/img/page3/page3_开始接管.svg</iconset>
                               </property>
                               <property name="iconSize">
                                <size>
