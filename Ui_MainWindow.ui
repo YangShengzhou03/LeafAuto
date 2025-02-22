@@ -3304,7 +3304,7 @@ QScrollArea QScrollBar::sub-page:vertical {
                         <x>0</x>
                         <y>0</y>
                         <width>368</width>
-                        <height>482</height>
+                        <height>493</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">
@@ -4807,7 +4807,7 @@ QLineEdit:hover {
                               </widget>
                              </item>
                              <item>
-                              <widget class="QCheckBox" name="checkBox">
+                              <widget class="QCheckBox" name="Global_takeover">
                                <property name="minimumSize">
                                 <size>
                                  <width>48</width>

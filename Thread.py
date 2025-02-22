@@ -48,36 +48,62 @@ class AiWorkerThread(QThread):
         return matched_replies
 
     def run(self):
-        try:
-            self.app_instance.wx.SendMsg(msg=" ", who=self.receiver)
-        except Exception as e:
-            log("ERROR", f"{str(e)}")
-            self.app_instance.on_thread_finished()
+        if self.receiver != "全局Ai接管":
+            try:
+                self.app_instance.wx.SendMsg(msg=" ", who=self.receiver)
+            except Exception as e:
+                log("ERROR", f"{str(e)}")
+                self.app_instance.on_thread_finished()
 
         while self.running and not self.stop_event.is_set():
             try:
                 # TODO 全局接管
-                # print(str(self.app_instance.wx.GetAllNewMessage(max_round=10)))
-                msgs = self.app_instance.wx.GetAllMessage()
-                if msgs and msgs[-1].type == "friend":
-                    msg = msgs[-1].content
-                    if self.rules is not None:
-                        matched_replies = self.match_rule(msg)
-                        if matched_replies:
-                            for reply in matched_replies:
-                                if os.path.isdir(os.path.dirname(reply)):
-                                    if os.path.isfile(reply):
-                                        log("INFO", f"根据规则发送文件 {os.path.basename(reply)}")
-                                        self.app_instance.wx.SendFiles(filepath=reply, who=self.receiver)
-                                    else:
-                                        raise FileNotFoundError(f"回复规则有误,没有 {os.path.basename(reply)} 文件")
+                if self.receiver == "全局Ai接管":
+                    new_msg = self.app_instance.wx.GetAllNewMessage()
+                    if new_msg is not None and new_msg:
+                        who = next(iter(new_msg))
+                        msgs = self.app_instance.wx.GetAllMessage()
+                        if msgs and msgs[-1].type == "friend":
+                            msg = msgs[-1].content
+                            if self.rules is not None:
+                                matched_replies = self.match_rule(msg)
+                                if matched_replies:
+                                    for reply in matched_replies:
+                                        if os.path.isdir(os.path.dirname(reply)):
+                                            if os.path.isfile(reply):
+                                                log("INFO", f"根据规则发送文件 {os.path.basename(reply)}")
+                                                self.app_instance.wx.SendFiles(filepath=reply, who=who)
+                                            else:
+                                                raise FileNotFoundError(
+                                                    f"回复规则有误,没有 {os.path.basename(reply)} 文件")
+                                        else:
+                                            log("INFO", f"根据规则自动回复 {reply}")
+                                            self.app_instance.wx.SendMsg(msg=reply, who=who)
                                 else:
-                                    log("INFO", f"根据规则自动回复 {reply}")
-                                    self.app_instance.wx.SendMsg(msg=reply, who=self.receiver)
+                                    self.main(msg, who)
+                            else:
+                                self.main(msg, who)
+                else:
+                    msgs = self.app_instance.wx.GetAllMessage()
+                    if msgs and msgs[-1].type == "friend":
+                        msg = msgs[-1].content
+                        if self.rules is not None:
+                            matched_replies = self.match_rule(msg)
+                            if matched_replies:
+                                for reply in matched_replies:
+                                    if os.path.isdir(os.path.dirname(reply)):
+                                        if os.path.isfile(reply):
+                                            log("INFO", f"根据规则发送文件 {os.path.basename(reply)}")
+                                            self.app_instance.wx.SendFiles(filepath=reply, who=self.receiver)
+                                        else:
+                                            raise FileNotFoundError(f"回复规则有误,没有 {os.path.basename(reply)} 文件")
+                                    else:
+                                        log("INFO", f"根据规则自动回复 {reply}")
+                                        self.app_instance.wx.SendMsg(msg=reply, who=self.receiver)
+                            else:
+                                self.main(msg, self.receiver)
                         else:
                             self.main(msg, self.receiver)
-                    else:
-                        self.main(msg, self.receiver)
             except Exception as e:
                 log("ERROR", f"{str(e)}")
                 break

@@ -1,4 +1,5 @@
 from PyQt6 import QtWidgets, QtCore, QtGui
+
 from Thread import AiWorkerThread
 from common import log, get_resource_path
 
@@ -14,6 +15,15 @@ class AiAssistant(QtWidgets.QWidget):
         self.timer = QtCore.QTimer(self)
         self.timer.timeout.connect(self.update_timer)
         self.elapsed_time = 0
+
+    def updateAiEditStatus(self):
+        is_checked = self.parent.Global_takeover.isChecked()
+        if is_checked:
+            self.parent.takeOverReceiver_lineEdit.setText("全局Ai接管")
+            self.parent.takeOverReceiver_lineEdit.setEnabled(False)
+        else:
+            self.parent.takeOverReceiver_lineEdit.setText("")
+            self.parent.takeOverReceiver_lineEdit.setEnabled(True)
 
     def start_takeover(self):
         if self.is_taking_over:

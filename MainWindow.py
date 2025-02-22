@@ -329,6 +329,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_startSplit.clicked.connect(self.split.on_start_send_clicked)
         self.pushButton_takeover.clicked.connect(self.ai_assistant.start_takeover)
         self.takeOverReceiver_lineEdit.returnPressed.connect(self.ai_assistant.start_takeover)
+        self.Global_takeover.stateChanged.connect(self.ai_assistant.updateAiEditStatus)
         self.pushButton_addRule.clicked.connect(self.key_reply.show)
 
         checkboxes = [self.checkBox_Ai, self.checkBox_period, self.checkBox_comma, self.checkBox_Space]
