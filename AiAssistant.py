@@ -93,7 +93,7 @@ class AiAssistant(QtWidgets.QWidget):
             minutes, seconds = divmod(self.elapsed_time, 60)
             hours, minutes = divmod(minutes, 60)
             time_str = f"{hours:02}:{minutes:02}:{seconds:02}"
-            html = f"<html><head/><body><p align=\"center\"><span style=\" font-size:72pt;\">{time_str}</span></p></body></html>"
+            html = f"<html><head/><body><p align=\"center\"><span style=\" font-size:88pt;\">{time_str}</span></p></body></html>"
             self.parent.takeOverTime_label.setText(html)
 
     def update_button_icon(self, icon_path):

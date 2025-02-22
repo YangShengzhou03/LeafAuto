@@ -5050,7 +5050,7 @@ QLineEdit:hover {
                                 <string/>
                                </property>
                                <property name="text">
-                                <string>你是个高冷的人。</string>
+                                <string>你很温馨,回复简单明了。</string>
                                </property>
                                <property name="placeholderText">
                                 <string>在此输入Ai人设</string>

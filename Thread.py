@@ -15,7 +15,7 @@ class AiWorkerThread(QThread):
     pause_changed = pyqtSignal(bool)
     finished = pyqtSignal()
 
-    def __init__(self, app_instance, receiver, model="月之暗面", role="你是个很好的朋友，回复消息简洁明了"):
+    def __init__(self, app_instance, receiver, model="月之暗面", role="你很温馨,回复简单明了。"):
         super().__init__()
         self.app_instance = app_instance
         self.receiver = receiver
@@ -57,7 +57,6 @@ class AiWorkerThread(QThread):
 
         while self.running and not self.stop_event.is_set():
             try:
-                # TODO 全局接管
                 if self.receiver == "全局Ai接管":
                     new_msg = self.app_instance.wx.GetAllNewMessage()
                     if new_msg is not None and new_msg:
