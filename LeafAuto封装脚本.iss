@@ -23,7 +23,7 @@ AppUpdatesURL={#MyAppURL}
 VersionInfoVersion=4.3.8.0
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\YangShengzhou\Desktop\license.txt
+LicenseFile=D:\code\Python\LeafAuto\license.txt
 ; 以下行取消注释，以在非管理安装模式下运行（仅为当前用户安装）。
 ;PrivilegesRequired=lowest
 ; 以管理员身份运行
