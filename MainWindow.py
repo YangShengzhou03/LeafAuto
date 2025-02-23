@@ -88,7 +88,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.auto_info.ready_tasks.clear()
                     current_time = datetime.now()
 
-                    membership_limit = 5 if self.Membership == 'Free' else 30
+                    membership_limit = 5 if self.Membership == 'Free' else (9999 if self.Membership == 'VIP' else 30)
                     remaining_slots = membership_limit - len(self.auto_info.ready_tasks)
 
                     for task in loaded_tasks:
