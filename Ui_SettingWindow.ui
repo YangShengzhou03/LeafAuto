@@ -911,12 +911,12 @@ QCheckBox::indicator:checked {
 }</string>
                      </property>
                      <property name="text">
-                      <string>QQ模式切换</string>
+                      <string>信息出错时发送邮件提醒</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="checkBox_QQmode">
+                    <widget class="QCheckBox" name="checkBox_Email">
                      <property name="minimumSize">
                       <size>
                        <width>52</width>

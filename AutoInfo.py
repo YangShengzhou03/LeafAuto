@@ -2,8 +2,11 @@ import csv
 import json
 import os
 import re
+import smtplib
 import time
 from datetime import datetime, timedelta
+from email.header import Header
+from email.mime.text import MIMEText
 
 from PyQt6 import QtWidgets, QtCore, QtGui
 
@@ -256,6 +259,7 @@ class AutoInfo(QtWidgets.QWidget):
                             else:
                                 icon_path_key = 'page1_发送失败.svg'
                                 self.play_error_sound()
+                                self.send_error_email(task)
                             new_icon_path = get_resource_path(f'resources/img/page1/{icon_path_key}')
                             widget_image.setStyleSheet(f"image: url({new_icon_path});")
 
@@ -384,6 +388,7 @@ class AutoInfo(QtWidgets.QWidget):
                     'frequency': row['Frequency']
                 })
             log("DEBUG", f"计划已从 {file_name} 导入")
+            self.save_tasks_to_json()
 
     def play_error_sound(self):
         if str_to_bool(read_key_value('error_sound')):
@@ -398,3 +403,40 @@ class AutoInfo(QtWidgets.QWidget):
                 return
             self.error_sound_thread.update_sound_file(self.selected_audio_file)
             self.error_sound_thread.start()
+
+    def send_error_email(self, task):
+        if str_to_bool(read_key_value('error_email')):
+            try:
+                sender_email = '3555844679@qq.com'
+                receiver_email = read_key_value('email')
+                smtp_server = 'smtp.qq.com'
+                smtp_port = 465
+
+                username = '3555844679@qq.com'
+                password = 'xtibpzrdwnppchhi'
+
+                # 改进后的邮件主题和正文
+                subject = f"【枫叶提醒】您于{task['time']}发送给{task['name']}的信息出错了"
+                body = (
+                    f"尊敬的用户朋友：\n\n您好！感谢您一直以来对枫叶信息服务保障团队的支持与信任。\n\n我们非常遗憾地通知您，在【{task['time']}】尝试将您的【{task['info']}】信息发送给【{task['name']}】时，由于系统遇到了未知的技术故障，导致此次信息未能成功送达。\n"
+                    "\n我们深知这一情况可能给您带来的不便，对此我们深表歉意。为了帮助您尽快解决问题，我们建议您可以首先检查所填写的信息是否准确无误，接收者是否与实际备注完全一致。\n"
+                    "\n如果您确认所有信息均正确无误，但仍无法成功发送，请不要犹豫，随时联系我们的客户服务团队。您可以通过联系开发者或者发送电子邮件至我们的邮箱来获取进一步的帮助和支持。\n"
+                    "\n同时，我们也鼓励您通过访问我们的官方网站或下载最新的应用程序来了解更多信息和自助解决指南。我们不断努力改进我们的服务和技术，以确保为每一位用户提供最佳的使用体验。\n"
+                    "\n最后，对于此次事件给您带来的任何不便，我们再次表示深深的歉意，并感谢您的耐心等待和理解。请相信我们会全力以赴解决此问题，并持续提升我们的服务质量。\n"
+                    "\n祝您拥有美好的一天！\n——枫叶信息服务保障团队"
+                )
+
+                receiver_name = '尊贵的枫叶用户朋友'
+
+                message = MIMEText(body, 'plain', 'utf-8')
+                message['From'] = 'LeafAuto <3555844679@qq.com>'
+                message['To'] = f"{Header(receiver_name, 'utf-8')} <{receiver_email}>"
+                message['Subject'] = Header(subject, 'utf-8')
+
+                server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+                server.login(username, password)
+                server.sendmail(sender_email, [receiver_email], message.as_string())
+            except Exception as e:
+                log("ERROR", "邮件发送失败")
+            finally:
+                server.quit()

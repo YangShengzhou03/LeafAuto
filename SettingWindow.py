@@ -1,6 +1,10 @@
+import re
+
 from PyQt6 import QtWidgets, QtCore, QtGui
 from PyQt6.QtCore import QUrl
 from PyQt6.QtGui import QDesktopServices
+from PyQt6.QtWidgets import QInputDialog, QMessageBox
+
 import UpdateDialog
 from System_info import write_key_value, read_key_value
 from Thread import ErrorSoundThread
@@ -23,15 +27,38 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
 
         self.error_sound_thread = ErrorSoundThread()
 
+        self.ui.checkBox_Email.clicked.connect(self.select_email)
+
         self.ui.pushButton_exit_setting.clicked.connect(self.save_close)
         self.ui.pushButton_test_sound.clicked.connect(self.toggle_audio)
         self.ui.pushButton_check_updata.clicked.connect(self.check_update)
         self.ui.pushButton_help.clicked.connect(self.help)
         if read_key_value('membership') == 'Free':
             self.ui.checkBox_net_time.setEnabled(False)
+            self.ui.checkBox_Email.setEnabled(False)
 
         self.setting_init()
         self.ui.comboBox_errorAudio.currentIndexChanged.connect(self.update_selected_sound)
+
+    def select_email(self, state):
+        if state:
+            email = self.show_input_dialog()
+            if email is not None:
+                write_key_value('email', str(email))
+            else:
+                self.ui.checkBox_Email.setChecked(False)
+        else:
+            self.ui.checkBox_Email.setChecked(False)
+
+    def show_input_dialog(self):
+        email, ok = QInputDialog.getText(None, '输入邮箱', '请输入接收任务出错的邮箱:')
+        if ok and email:
+            if re.match(r"[^@]+@[^@]+\.[^@]+", email):
+                return email
+            else:
+                QMessageBox.warning(self, "错误", "邮箱格式无效,请输入正确的邮箱")
+                return None
+        return None
 
     def help(self):
         QDesktopServices.openUrl(QUrl('https://blog.csdn.net/Yang_shengzhou/article/details/143782041'))
@@ -49,6 +76,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
 
     def setting_init(self):
         for key, checkbox in [
+            ('error_email', self.ui.checkBox_Email),
             ('error_sound', self.ui.checkBox_sound),
             ('net_time', self.ui.checkBox_net_time),
             ('auto_update', self.ui.checkBox_updata),
@@ -94,6 +122,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
             if self.error_sound_thread._is_playing:
                 self.error_sound_thread.stop_playback()
             for key, checkbox in [
+                ('error_email', self.ui.checkBox_Email),
                 ('error_sound', self.ui.checkBox_sound),
                 ('net_time', self.ui.checkBox_net_time),
                 ('auto_update', self.ui.checkBox_updata),
