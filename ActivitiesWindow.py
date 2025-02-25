@@ -22,6 +22,7 @@ class ActivitiesWindow(QtWidgets.QMainWindow, Ui_ActivitiesWindow):
         self.identify = random.randint(100000, 999999)
         self.current_selected_button = None
         self.connect_signals()
+        self.year_vip()
 
     def connect_signals(self):
         self.ui.pushButton_close.clicked.connect(self.close)
@@ -198,10 +199,10 @@ QPushButton:pressed {
                 membership = 'VIP'
                 expiration_time = (last_time + timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')
             else:
-                QtWidgets.QMessageBox.warning(self, "无效秘钥", "请输入正确的激活秘钥,如已购买请扫码领取")
+                QtWidgets.QMessageBox.warning(self, "无效秘钥", "请输入正确的秘钥，如已购买请QQ扫码获取")
                 return
         else:
-            QtWidgets.QMessageBox.warning(self, "2的激活秘钥", "请输入正确的激活秘钥,如已购买请扫码领取")
+            QtWidgets.QMessageBox.warning(self, "错误秘钥", "请输入正确的秘钥，如已购买请QQ扫获取")
             return
 
         motherboard_sn = get_motherboard_serial_number()

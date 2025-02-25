@@ -102,7 +102,7 @@ def author():
     layout = QVBoxLayout(container)
 
     qr_code_label = QLabel(container)
-    resource_path = get_resource_path("resources/img/activity/QQ_Act.png")
+    resource_path = get_resource_path("resources/img/activity/QQ_Card.png")
     pixmap = QPixmap(resource_path)
     qr_code_label.setPixmap(pixmap)
     qr_code_label.setAlignment(Qt.AlignmentFlag.AlignCenter)

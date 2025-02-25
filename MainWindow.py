@@ -342,7 +342,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             write_key_value('admin_log', 'Test')
         except Exception:
-            QtWidgets.QMessageBox.warning(self, "非管理员身份", "当前非管理员身份,设置可能无法保存")
+            QtWidgets.QMessageBox.critical(self, "非管理员身份", "当前非管理员身份运行，设置可能无法保存")
         self.setting_window.show()
         self.setting_window.activateWindow()
 
@@ -350,7 +350,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             write_key_value('admin_log', 'Test')
         except Exception:
-            QtWidgets.QMessageBox.warning(self, "非管理员身份", "当前非管理员身份,会员可能无法激活")
+            QtWidgets.QMessageBox.critical(self, "非管理员身份", "当前非管理员身份运行，会员可能无法激活")
         self.activities_window.show()
         self.activities_window.activateWindow()
 
@@ -382,7 +382,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.hide()
         self.tray_icon.showMessage(
             "任务在后台继续执行",
-            "枫叶程序已最小化到系统托盘",
+            "枫叶已最小化到系统托盘",
             QtWidgets.QSystemTrayIcon.MessageIcon.Information,
             2000
         )
