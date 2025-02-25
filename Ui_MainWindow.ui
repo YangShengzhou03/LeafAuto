@@ -3304,7 +3304,7 @@ QScrollArea QScrollBar::sub-page:vertical {
                         <x>0</x>
                         <y>0</y>
                         <width>368</width>
-                        <height>493</height>
+                        <height>482</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">
@@ -4872,6 +4872,9 @@ QCheckBox::indicator:checked {
                                  <family>微软雅黑 Light</family>
                                  <pointsize>12</pointsize>
                                 </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">color:rgb(0, 0, 0);</string>
                                </property>
                                <property name="text">
                                 <string>全局接管</string>

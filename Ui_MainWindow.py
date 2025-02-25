@@ -2356,6 +2356,9 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         font.setFamily("微软雅黑 Light")
         font.setPointSize(12)
         self.label_16.setFont(font)
+        self.label_16.setStyleSheet("QLabel {\n"
+                                   "color: rgb(0, 0, 0);\n"
+                                   "}")
         self.label_16.setObjectName("label_16")
         self.horizontalLayout_13.addWidget(self.label_16)
         self.horizontalLayout_124.addWidget(self.take_over)
