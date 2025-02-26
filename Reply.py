@@ -1,6 +1,5 @@
 import json
 from PyQt6 import QtCore, QtWidgets, QtGui
-
 from UI_Reply import Ui_ReplyDialog
 from common import get_resource_path
 
@@ -16,7 +15,10 @@ class ReplyDialog(QtWidgets.QDialog):
         self.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
         self.ui.pushButton_save.clicked.connect(self.saveRulesToJsonAndClose)
         self.ui.pushButton_add.clicked.connect(self.add_rule)
+        self.ui.pushButton_cancel.clicked.connect(self.close)
         self.rules = []
+        self.loadRulesFromJson()
+        self.displayRules()
 
     def loadRulesFromJson(self):
         try:
@@ -153,13 +155,31 @@ class ReplyDialog(QtWidgets.QDialog):
         match_type = self.ui.Rule_comboBox.currentText()
         keyword = self.ui.KeyWord_lineEdit.text()
         reply_content = self.ui.Reply_lineEdit.text()
-
         if rule_name == "" or keyword == "" or reply_content == "":
             return
-
+        existing_rule_names = [rule['rule_name'] for rule in self.rules]
+        if rule_name in existing_rule_names:
+            QtWidgets.QMessageBox.warning(self, "重复的规则名称", "规则名称已存在，请使用其他名称。")
+            return
         widget_item = self.create_frame(rule_name, match_type, keyword, reply_content)
         self.ui.formLayout.addRow(widget_item)
+        self.rules.append({
+            "rule_name": rule_name,
+            "match_type": match_type,
+            "keyword": keyword,
+            "reply_content": reply_content
+        })
 
     def remove_rule(self, widget_item):
         widget_item.setParent(None)
         widget_item.deleteLater()
+
+    def displayRules(self):
+        for rule in self.rules:
+            widget_item = self.create_frame(
+                rule['rule_name'],
+                rule['match_type'],
+                rule['keyword'],
+                rule['reply_content']
+            )
+            self.ui.formLayout.addRow(widget_item)
