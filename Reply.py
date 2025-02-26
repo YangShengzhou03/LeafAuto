@@ -28,22 +28,25 @@ class ReplyDialog(QtWidgets.QDialog):
             self.rules = []
 
     def saveRulesToJson(self):
-        rules = []
-        for i in range(self.ui.formLayout.count()):
-            widget_item = self.ui.formLayout.itemAt(i).widget()
-            if widget_item is not None and isinstance(widget_item, QtWidgets.QWidget):
-                rule_name = widget_item.findChild(QtWidgets.QLabel, "label_Name").text()
-                match_type = widget_item.findChild(QtWidgets.QLabel, "label_Rule").text()
-                keyword = widget_item.findChild(QtWidgets.QLabel, "label_KeyWord").text()
-                reply_content = widget_item.findChild(QtWidgets.QLabel, "label_Reply").text()
-                rules.append({
-                    "rule_name": rule_name,
-                    "match_type": match_type,
-                    "keyword": keyword,
-                    "reply_content": reply_content
-                })
-        with open(get_resource_path('_internal/AutoReply_Rules.json'), 'w', encoding='utf-8') as file:
-            json.dump(rules, file, ensure_ascii=False, indent=4)
+        try:
+            rules = []
+            for i in range(self.ui.formLayout.count()):
+                widget_item = self.ui.formLayout.itemAt(i).widget()
+                if widget_item is not None and isinstance(widget_item, QtWidgets.QWidget):
+                    rule_name = widget_item.findChild(QtWidgets.QLabel, "label_Name").text()
+                    match_type = widget_item.findChild(QtWidgets.QLabel, "label_Rule").text()
+                    keyword = widget_item.findChild(QtWidgets.QLabel, "label_KeyWord").text()
+                    reply_content = widget_item.findChild(QtWidgets.QLabel, "label_Reply").text()
+                    rules.append({
+                        "rule_name": rule_name,
+                        "match_type": match_type,
+                        "keyword": keyword,
+                        "reply_content": reply_content
+                    })
+            with open(get_resource_path('_internal/AutoReply_Rules.json'), 'w', encoding='utf-8') as file:
+                json.dump(rules, file, ensure_ascii=False, indent=4)
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(self, "保存失败", "保存出错，请以管理员身份运行枫叶")
 
     def saveRulesToJsonAndClose(self):
         self.saveRulesToJson()
@@ -156,6 +159,7 @@ class ReplyDialog(QtWidgets.QDialog):
         keyword = self.ui.KeyWord_lineEdit.text()
         reply_content = self.ui.Reply_lineEdit.text()
         if rule_name == "" or keyword == "" or reply_content == "":
+            QtWidgets.QMessageBox.warning(self, "输入不完整", "您尚未完成所有必填项，请确保输入完整。")
             return
         existing_rule_names = [rule['rule_name'] for rule in self.rules]
         if rule_name in existing_rule_names:

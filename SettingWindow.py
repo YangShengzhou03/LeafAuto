@@ -1,3 +1,4 @@
+import os
 import re
 
 from PyQt6 import QtWidgets, QtCore, QtGui
@@ -32,6 +33,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
         self.ui.pushButton_exit_setting.clicked.connect(self.save_close)
         self.ui.pushButton_test_sound.clicked.connect(self.toggle_audio)
         self.ui.pushButton_check_updata.clicked.connect(self.check_update)
+        self.ui.pushButton_clean.clicked.connect(self.clean_date)
         self.ui.pushButton_help.clicked.connect(self.help)
         if read_key_value('membership') == 'Free':
             self.ui.checkBox_net_time.setEnabled(False)
@@ -39,6 +41,22 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
 
         self.setting_init()
         self.ui.comboBox_errorAudio.currentIndexChanged.connect(self.update_selected_sound)
+
+    import os
+
+    def clean_date(self):
+        file1 = get_resource_path('_internal/AutoReply_Rules.json')
+        file2 = get_resource_path('_internal/tasks.json')
+        files_to_clean = [file1, file2]
+        cleaned_any = False
+        for file in files_to_clean:
+            if os.path.exists(file):
+                os.remove(file)
+                cleaned_any = True
+        if not cleaned_any:
+            QtWidgets.QMessageBox.warning(self, "无需清理", "没有缓存数据，无需清理。")
+        else:
+            QtWidgets.QMessageBox.information(self, "清理完成", "缓存数据清理完成。")
 
     def select_email(self, state):
         if state:

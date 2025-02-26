@@ -54,7 +54,7 @@ class Ui_SettingWindow(object):
         self.widget_SettingLogo = QtWidgets.QWidget(parent=self.frame_left_head)
         self.widget_SettingLogo.setMinimumSize(QtCore.QSize(0, 36))
         self.widget_SettingLogo.setMaximumSize(QtCore.QSize(16777215, 36))
-        self.widget_SettingLogo.setStyleSheet(f"image: url({get_resource_path('LOGO')};")
+        self.widget_SettingLogo.setStyleSheet(f"image: url({get_resource_path('LOGO')}")
         self.widget_SettingLogo.setObjectName("widget_SettingLogo")
         self.horizontalLayout_17.addWidget(self.widget_SettingLogo)
         self.verticalLayout_12.addWidget(self.frame_left_head)
@@ -695,11 +695,48 @@ class Ui_SettingWindow(object):
         self.horizontalLayout_7.setStretch(0, 1)
         self.horizontalLayout_7.setStretch(1, 1)
         self.verticalLayout_4.addLayout(self.horizontalLayout_7)
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_8.setContentsMargins(188, -1, 188, -1)
+        self.horizontalLayout_8.setSpacing(0)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.label_errorAudio_2 = QtWidgets.QLabel(parent=self.frame_setting_2)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_errorAudio_2.setFont(font)
+        self.label_errorAudio_2.setStyleSheet("QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"}")
+        self.label_errorAudio_2.setObjectName("label_errorAudio_2")
+        self.horizontalLayout_8.addWidget(self.label_errorAudio_2)
+        self.pushButton_clean = QtWidgets.QPushButton(parent=self.frame_setting_2)
+        self.pushButton_clean.setMinimumSize(QtCore.QSize(88, 32))
+        self.pushButton_clean.setMaximumSize(QtCore.QSize(88, 32))
+        self.pushButton_clean.setStyleSheet("QPushButton {\n"
+"    background-color: rgba(140, 120, 250, 180);\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    font-family: \'Microsoft YaHei\';\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(140, 120, 255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(140, 100, 255);\n"
+"}")
+        self.pushButton_clean.setObjectName("pushButton_clean")
+        self.horizontalLayout_8.addWidget(self.pushButton_clean)
+        self.horizontalLayout_8.setStretch(0, 1)
+        self.verticalLayout_4.addLayout(self.horizontalLayout_8)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_4.addItem(spacerItem1)
         self.verticalLayout_4.setStretch(1, 1)
         self.verticalLayout_4.setStretch(2, 1)
         self.verticalLayout_4.setStretch(3, 1)
+        self.verticalLayout_4.setStretch(4, 1)
         self.verticalLayout_2.addWidget(self.frame_setting_2)
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
@@ -1026,6 +1063,8 @@ class Ui_SettingWindow(object):
         self.comboBox_errorAudio.setItemText(2, _translate("SettingWindow", "提示音3"))
         self.comboBox_errorAudio.setItemText(3, _translate("SettingWindow", "提示音4"))
         self.comboBox_errorAudio.setItemText(4, _translate("SettingWindow", "提示音5"))
+        self.label_errorAudio_2.setText(_translate("SettingWindow", "一键清除缓存数据"))
+        self.pushButton_clean.setText(_translate("SettingWindow", "清除缓存"))
         self.label_setting_3.setText(_translate("SettingWindow", "其他设置"))
         self.label_setting_4.setText(_translate("SettingWindow", "关于枫叶"))
         self.label.setText(_translate("SettingWindow", "版本信息"))
