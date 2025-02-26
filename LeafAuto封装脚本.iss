@@ -29,7 +29,7 @@ LicenseFile=D:\code\Python\LeafAuto\license.txt
 ; 以管理员身份运行
 PrivilegesRequired=admin
 OutputDir=C:\Users\YangShengzhou\Desktop
-OutputBaseFilename=枫叶安装程序
+OutputBaseFilename=枫叶信息程序
 SetupIconFile=D:\code\Python\LeafAuto\resources\img\setup.ico
 Compression=lzma2/max
 SolidCompression=yes
@@ -42,7 +42,7 @@ UninstallDisplayIcon={app}\_internal\resources\img\icon.ico
 Type: files; Name: "{app}\*.*"
 Type: files; Name: "{app}\_internal\system_info.ini"
 Type: files; Name: "{app}\_internal\tasks.json"
-Type: files; Name: "{app}\_internal\rules.json"
+Type: files; Name: "{app}\_internal/AutoReply_Rules.json"
 Type: dirifempty; Name: "{app}\_internal"
 Type: dirifempty; Name: "{app}"
 
