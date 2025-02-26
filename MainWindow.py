@@ -126,7 +126,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.ready_tasks = []
 
     def on_vip_frame_clicked(self, event):
-        self.open_activities_window()
+        if self.Membership != 'VIP':
+            self.open_activities_window()
+        else:
+            common.author()
 
     def dragEnterEvent(self, event):
         if event.mimeData().hasUrls():
