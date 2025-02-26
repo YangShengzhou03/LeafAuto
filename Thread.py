@@ -27,7 +27,7 @@ class AiWorkerThread(QThread):
 
     def load_rules(self):
         try:
-            with open('_internal/rules.json', 'r', encoding='utf-8') as f:
+            with open('_internal/AutoReply_Rules.json', 'r', encoding='utf-8') as f:
                 return json.load(f)
         except FileNotFoundError:
             log("WARNING", "回复规则未创建,您可新建规则")

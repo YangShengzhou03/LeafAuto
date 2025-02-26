@@ -11,7 +11,7 @@ import common
 from ActivitiesWindow import ActivitiesWindow
 from AiAssistant import AiAssistant
 from AutoInfo import AutoInfo
-from KeyReply import ReplyDialog
+from Reply import ReplyDialog
 from SettingWindow import SettingWindow
 from Split import Split
 from System_info import read_key_value, ensure_config_file_exists, write_key_value
