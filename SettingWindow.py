@@ -42,11 +42,9 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
         self.setting_init()
         self.ui.comboBox_errorAudio.currentIndexChanged.connect(self.update_selected_sound)
 
-    import os
-
     def clean_date(self):
-        file1 = get_resource_path('_internal/AutoReply_Rules.json')
-        file2 = get_resource_path('_internal/tasks.json')
+        file1 = '_internal/AutoReply_Rules.json'
+        file2 = '_internal/tasks.json'
         files_to_clean = [file1, file2]
         cleaned_any = False
         for file in files_to_clean:
