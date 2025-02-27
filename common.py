@@ -3,6 +3,7 @@ import sys
 from datetime import datetime
 
 import requests
+from PyQt6 import QtGui
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap, QIcon
 from PyQt6.QtWidgets import QDialog, QVBoxLayout, QLabel, QPushButton, QWidget
@@ -91,6 +92,8 @@ def get_resource_path(relative_path):
 
 def author():
     dialog = QDialog()
+    dialog.setWindowTitle("联系开发者")
+    dialog.setWindowIcon(QtGui.QIcon(get_resource_path('resources/img/tray.ico')))
     dialog.setWindowFlags(dialog.windowFlags() | Qt.WindowType.FramelessWindowHint)
     dialog.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
     dialog.setFixedSize(320, 450)
