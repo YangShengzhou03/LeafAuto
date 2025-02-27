@@ -2659,7 +2659,7 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         self.label_68.setText(_translate("MainWindow", "试用中"))
         self.pushButton_29.setText(_translate("MainWindow", "智慧拆句双引擎"))
         self.label_69.setText(_translate("MainWindow", "试用中"))
-        self.pushButton_30.setText(_translate("MainWindow", "Ai大模型信息接管"))
+        self.pushButton_30.setText(_translate("MainWindow", "大模型信息接管"))
         self.label_70.setText(_translate("MainWindow", "试用中"))
         self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"

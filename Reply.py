@@ -43,10 +43,10 @@ class ReplyDialog(QtWidgets.QDialog):
                         "keyword": keyword,
                         "reply_content": reply_content
                     })
-            with open(get_resource_path('_internal/AutoReply_Rules.json'), 'w', encoding='utf-8') as file:
+            with open('_internal/AutoReply_Rules.json', 'w', encoding='utf-8') as file:
                 json.dump(rules, file, ensure_ascii=False, indent=4)
         except Exception as e:
-            QtWidgets.QMessageBox.critical(self, "保存失败", "保存出错，请以管理员身份运行枫叶")
+            QtWidgets.QMessageBox.critical(self, "保存失败", f"保存出错，{e}")
 
     def saveRulesToJsonAndClose(self):
         self.saveRulesToJson()

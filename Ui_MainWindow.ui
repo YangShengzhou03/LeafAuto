@@ -1846,7 +1846,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                             </property>
                             <property name="text">
-                             <string>Ai大模型信息接管</string>
+                             <string>大模型信息接管</string>
                             </property>
                             <property name="icon">
                              <iconset>

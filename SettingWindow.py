@@ -35,7 +35,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
         self.ui.pushButton_check_updata.clicked.connect(self.check_update)
         self.ui.pushButton_clean.clicked.connect(self.clean_date)
         self.ui.pushButton_help.clicked.connect(self.help)
-        if read_key_value('membership') == 'Free':
+        if read_key_value('membership') != 'VIP':
             self.ui.checkBox_net_time.setEnabled(False)
             self.ui.checkBox_Email.setEnabled(False)
 
@@ -67,7 +67,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
             self.ui.checkBox_Email.setChecked(False)
 
     def show_input_dialog(self):
-        email, ok = QInputDialog.getText(None, '输入邮箱', '请输入接收任务出错的邮箱:')
+        email, ok = QInputDialog.getText(self, '输入邮箱', '请输入用于接收出错信息的邮箱:')
         if ok and email:
             if re.match(r"[^@]+@[^@]+\.[^@]+", email):
                 return email
