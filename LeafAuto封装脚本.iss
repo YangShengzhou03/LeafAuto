@@ -2,7 +2,7 @@
 ; 有关创建 Inno Setup 脚本文件的详细资料请查阅帮助文档！
 
 #define MyAppName "LeafAuto"
-#define MyAppVersion "4.3.8.0"
+#define MyAppVersion "4.3.8.3"
 #define MyAppPublisher "Yangshengzhou"
 #define MyAppURL "https://blog.csdn.net/Yang_shengzhou"
 #define AppSupportURL "https://blog.csdn.net/Yang_shengzhou/article/details/143782041"
@@ -20,7 +20,7 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#AppSupportURL}
 AppUpdatesURL={#MyAppURL}
-VersionInfoVersion=4.3.8.0
+VersionInfoVersion=4.3.8.3
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=D:\code\Python\LeafAuto\license.txt
@@ -29,7 +29,7 @@ LicenseFile=D:\code\Python\LeafAuto\license.txt
 ; 以管理员身份运行
 PrivilegesRequired=admin
 OutputDir=C:\Users\YangShengzhou\Desktop
-OutputBaseFilename=枫叶信息程序
+OutputBaseFilename=枫叶信息{#MyAppVersion}
 SetupIconFile=D:\code\Python\LeafAuto\resources\img\setup.ico
 Compression=lzma2/max
 SolidCompression=yes

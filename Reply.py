@@ -15,10 +15,16 @@ class ReplyDialog(QtWidgets.QDialog):
         self.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
         self.ui.pushButton_save.clicked.connect(self.saveRulesToJsonAndClose)
         self.ui.pushButton_add.clicked.connect(self.add_rule)
+        self.ui.file_pushButton.clicked.connect(self.open_file)
         self.ui.pushButton_cancel.clicked.connect(self.close)
         self.rules = []
         self.loadRulesFromJson()
         self.displayRules()
+
+    def open_file(self):
+        file_path, _ = QtWidgets.QFileDialog.getOpenFileName(self, "选择文件", "", "All Files (*)")
+        if file_path:
+            self.ui.Reply_lineEdit.setText(file_path)
 
     def loadRulesFromJson(self):
         try:
