@@ -11,26 +11,21 @@ from UI_UpdateDialog import Ui_UpdateDialog
 def check_update():
     url = 'https://www.cnblogs.com/YangShengzhou/p/18611081'
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=3)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
         title_element = soup.find('a', class_='postTitle2')
         post_body = soup.find('div', class_='postBody')
-
         if not title_element or not post_body:
             return 1
-
         title = title_element.text.strip()
         blog_content = post_body.get_text().strip()
         title_parts = title.split('==')
         content_parts = blog_content.split('==')
-
         if len(title_parts) != 3:
             return 1
-
         title_str, latest_version_str, update_link = title_parts
         key, update_content, information = content_parts
-
         lastlyVersion = float(latest_version_str.strip())
         lastlyVersionUrl = update_link.strip()
         current_version = float(read_key_value('version'))
@@ -40,7 +35,7 @@ def check_update():
             else:
                 necessary = True
             dialog = UpdateDialog(url=lastlyVersionUrl, title=title_str, content=update_content, necessary=necessary)
-            dialog.exec()
+            dialog.exec_()
         else:
             return 0
     except Exception:

@@ -200,13 +200,16 @@ border-radius:32px</string>
                   <property name="font">
                    <font>
                     <family>微软雅黑 Light</family>
+                    <pointsize>10</pointsize>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true"/>
+                   <string notr="true">color: #ffffff;
+font-size: 10pt;
+qproperty-alignment: AlignCenter;</string>
                   </property>
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;微信未启动&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>微信未启动</string>
                   </property>
                  </widget>
                 </item>
@@ -267,7 +270,7 @@ border-left:5px solid rgb(172, 154, 233)
 </string>
             </property>
             <property name="currentRow">
-             <number>-1</number>
+             <number>0</number>
             </property>
             <item>
              <property name="text">
@@ -2102,18 +2105,35 @@ border-radius:18px
                              <property name="font">
                               <font>
                                <family>微软雅黑 Light</family>
-                               <pointsize>9</pointsize>
+                               <pointsize>14</pointsize>
+                               <bold>true</bold>
                               </font>
                              </property>
+                             <property name="styleSheet">
+                              <string notr="true">QLabel {
+    qproperty-alignment: AlignCenter;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #9b512d;
+}</string>
+                             </property>
                              <property name="text">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; color:#9b512d;&quot;&gt;欢迎使用枫叶信息自动化（LeafAuto）&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>欢迎使用枫叶信息自动化（LeafAuto）</string>
                              </property>
                             </widget>
                            </item>
                            <item>
                             <widget class="QLabel" name="label_11">
+                             <property name="styleSheet">
+                              <string notr="true"> QLabel {
+     qproperty-alignment: AlignCenter;
+     font-size: 10pt;
+     color: #ffffff;
+	padding: 2px;
+}</string>
+                             </property>
                              <property name="text">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;LeafAuto © 2025 Yangshengzhou All Rights Reserved&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>LeafAuto © 2025 Yangshengzhou All Rights Reserved</string>
                              </property>
                             </widget>
                            </item>
@@ -3304,7 +3324,7 @@ QScrollArea QScrollBar::sub-page:vertical {
                         <x>0</x>
                         <y>0</y>
                         <width>368</width>
-                        <height>482</height>
+                        <height>493</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">

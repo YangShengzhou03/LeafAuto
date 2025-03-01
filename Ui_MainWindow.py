@@ -2621,7 +2621,7 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.left_listWidget.setCurrentRow(-1)
+        self.left_listWidget.setCurrentRow(0)
         self.convertPage.setCurrentIndex(0)
         self.left_listWidget.currentRowChanged['int'].connect(self.convertPage.setCurrentIndex) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
