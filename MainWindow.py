@@ -20,7 +20,7 @@ from UpdateDialog import check_update
 from common import get_resource_path, log, get_current_time, get_url
 
 wx = None
-current_version = 4.38
+current_version = 4.39
 
 
 def reload_wx():
