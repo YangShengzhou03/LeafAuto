@@ -10,6 +10,7 @@ from PyQt6.QtCore import QThread, pyqtSignal
 
 from common import log, get_current_time
 
+# self.parent.update_wx()
 
 class AiWorkerThread(QThread):
     pause_changed = pyqtSignal(bool)
@@ -229,50 +230,65 @@ class WorkerThread(QtCore.QThread):
                 self.prevent_sleep = False
                 self.app_instance.on_thread_finished()
                 break
+
             task_time = datetime.strptime(next_task['time'], '%Y-%m-%dT%H:%M:%S')
             remaining_time = (task_time - get_current_time(self.current_time)).total_seconds()
             if remaining_time > 0:
                 if self.interrupted:
                     break
                 self.msleep(int(remaining_time * 1000))
+
             if self.interrupted:
                 break
-            try:
-                name = next_task['name']
-                info = next_task['info']
 
-                if self.interrupted:
-                    break
+            max_retries = 1
+            retries = 0
+            success = False
 
-                if os.path.isdir(os.path.dirname(info)):
-                    if os.path.isfile(info):
-                        file_name = os.path.basename(info)
-                        log("INFO", f"开始把文件 {file_name} 发给 {name}")
+            while retries <= max_retries and not success:
+                try:
+                    name = next_task['name']
+                    info = next_task['info']
+
+                    if self.interrupted:
+                        break
+
+                    if os.path.isdir(os.path.dirname(info)):
+                        if os.path.isfile(info):
+                            file_name = os.path.basename(info)
+                            log("INFO", f"开始把文件 {file_name} 发给 {name}")
+                            if self.interrupted:
+                                break
+                            self.app_instance.wx.SendFiles(filepath=info, who=name)
+                        else:
+                            raise FileNotFoundError(f"该路径下没有 {os.path.basename(info)} 文件")
+                    elif info == 'Video_chat':
+                        log("INFO", f"开始与 {name} 视频通话")
                         if self.interrupted:
                             break
-                        self.app_instance.wx.SendFiles(filepath=info, who=name)
+                        self.app_instance.wx.VideoCall(who=name)
                     else:
-                        raise FileNotFoundError(f"该路径下没有 {os.path.basename(info)} 文件")
-                elif info == 'Video_chat':
-                    log("INFO", f"开始与 {name} 视频通话")
-                    if self.interrupted:
-                        break
-                    self.app_instance.wx.VideoCall(who=name)
-                else:
-                    log("INFO", f"开始把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]}")
-                    if self.interrupted:
-                        break
-                    self.app_instance.wx.SendMsg(msg=info, who=name)
+                        log("INFO", f"开始把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]}")
+                        if self.interrupted:
+                            break
+                        self.app_instance.wx.SendMsg(msg=info, who=name)
 
-                if self.interrupted:
-                    break
-                log("DEBUG", f"成功把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]} ")
-            except Exception as e:
-                self.msleep(50)
-                log("ERROR", f"{str(e)}")
-                self.app_instance.update_task_status(next_task, '出错')
-            else:
-                self.app_instance.update_task_status(next_task, '成功')
+                    if self.interrupted:
+                        break
+                    log("DEBUG", f"成功把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]} ")
+                    success = True
+                except Exception as e:
+                    if "拒绝访问" in str(e) and retries < max_retries:
+                        log("ERROR", f"微信数据发生变化，即将自动适应")
+                        retries += 1
+                        self.app_instance.parent.update_wx()
+                        self.msleep(50)
+                    else:
+                        log("ERROR", f"{str(e)}")
+                        self.app_instance.update_task_status(next_task, '出错')
+                        break
+                else:
+                    self.app_instance.update_task_status(next_task, '成功')
 
             while not self.interrupted and self.is_paused:
                 self.msleep(50)

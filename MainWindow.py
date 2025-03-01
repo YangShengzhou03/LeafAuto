@@ -23,10 +23,29 @@ wx = None
 current_version = 4.38
 
 
+def reload_wx():
+    global wx
+    try:
+        wx = WeChat(language=read_key_value('language'))
+        MainWindow.wx = wx
+    except Exception as e:
+        if str(e) == "(1400, 'SetWindowPos', '无效的窗口句柄。')":
+            log("ERROR", "微信未登录, 请登录微信后重启枫叶")
+            return '微信未登录'
+        else:
+            log("ERROR", f"程序初始化出错, 错误原因:{e}")
+            return '程序意外故障'
+    else:
+        if MainWindow.wx and hasattr(MainWindow.wx, 'nickname'):
+            log("DEBUG", f"自动重载,{MainWindow.wx.nickname} 登录成功")
+            return MainWindow.wx.nickname
+
+
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.ui = Ui_MainWindow()
         self.setWindowTitle("枫叶信息自动化系统")
         self.setWindowIcon(QtGui.QIcon(get_resource_path('resources/img/icon.ico')))
         common.main_window = self
@@ -78,6 +97,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if common.str_to_bool(read_key_value('auto_update')):
             check_update()
         self.load_tasks_from_json()
+
+    def update_wx(self):
+        nickname = reload_wx()
+        self.userName_label.setText(nickname)
+        self.auto_info.wx = wx
+        self.split.wx = wx
+        self.ai_assistant.wx = wx
 
     def load_tasks_from_json(self):
         json_file_path = '_internal/tasks.json'

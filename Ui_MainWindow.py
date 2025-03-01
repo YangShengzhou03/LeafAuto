@@ -85,7 +85,11 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("微软雅黑 Light")
         self.userName_label.setFont(font)
-        self.userName_label.setStyleSheet("")
+        self.userName_label.setStyleSheet(
+                "color: #ffffff;"
+                "font-size: 10pt;"
+                "qproperty-alignment: AlignCenter;"
+        )
         self.userName_label.setObjectName("userName_label")
         self.horizontalLayout_4.addWidget(self.userName_label)
         self.verticalLayout.addWidget(self.userName_frame)
@@ -2625,7 +2629,7 @@ f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.userName_label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; color:#ffffff;\">微信未启动</span></p></body></html>"))
+        self.userName_label.setText(_translate("MainWindow", "微信未启动"))
         __sortingEnabled = self.left_listWidget.isSortingEnabled()
         self.left_listWidget.setSortingEnabled(False)
         item = self.left_listWidget.item(0)
