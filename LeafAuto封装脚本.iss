@@ -2,7 +2,7 @@
 ; 有关创建 Inno Setup 脚本文件的详细资料请查阅帮助文档！
 
 #define MyAppName "LeafAuto"
-#define MyAppVersion "4.3.8.3"
+#define MyAppVersion "4.3.9.0"
 #define MyAppPublisher "Yangshengzhou"
 #define MyAppURL "https://blog.csdn.net/Yang_shengzhou"
 #define AppSupportURL "https://blog.csdn.net/Yang_shengzhou/article/details/143782041"
@@ -20,7 +20,7 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#AppSupportURL}
 AppUpdatesURL={#MyAppURL}
-VersionInfoVersion=4.3.8.3
+VersionInfoVersion=4.3.9.0
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=D:\code\Python\LeafAuto\license.txt

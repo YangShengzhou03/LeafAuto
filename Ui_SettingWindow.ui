@@ -1037,7 +1037,7 @@ QCheckBox::indicator:checked {
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1,1,1,1,0">
+                <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1,1,1,1,1,0">
                  <property name="spacing">
                   <number>22</number>
                  </property>
@@ -1240,6 +1240,80 @@ QSpinBox:focus {
                   </layout>
                  </item>
                  <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_29" stretch="1,1">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>188</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>188</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_openmore">
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>微信多开窗口数量</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="spinBox_openmore">
+                     <property name="minimumSize">
+                      <size>
+                       <width>106</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>106</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QSpinBox {
+    border: 1px solid #ccc;
+    padding: 4px 20px 4px 8px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 14px;
+    width: 120px;
+    background-color: #fff;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+}
+
+QSpinBox:hover {
+    border-color: #888;
+    background-color: #f5f5f5;
+}
+
+QSpinBox:focus {
+    border-color: #0078d4;
+    box-shadow: 0 0 3px rgba(0, 120, 212, 0.8);
+}</string>
+                     </property>
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>15</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1">
                    <property name="spacing">
                     <number>0</number>
@@ -1363,7 +1437,7 @@ QComboBox QAbstractItemView {
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton">
+                    <widget class="QPushButton" name="pushButton_clean">
                      <property name="minimumSize">
                       <size>
                        <width>88</width>

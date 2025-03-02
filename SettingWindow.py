@@ -35,9 +35,17 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
         self.ui.pushButton_check_updata.clicked.connect(self.check_update)
         self.ui.pushButton_clean.clicked.connect(self.clean_date)
         self.ui.pushButton_help.clicked.connect(self.help)
-        if read_key_value('membership') != 'VIP':
+
+        membership = read_key_value('membership')
+        if membership == 'VIP':
+            self.ui.spinBox_openmore.setMaximum(15)
+        elif membership == 'AiVIP':
+            self.ui.checkBox_Email.setEnabled(False)
+            self.ui.spinBox_openmore.setMaximum(2)
+        else:
             self.ui.checkBox_net_time.setEnabled(False)
             self.ui.checkBox_Email.setEnabled(False)
+            self.ui.spinBox_openmore.setMaximum(1)
 
         self.setting_init()
         self.ui.comboBox_errorAudio.currentIndexChanged.connect(self.update_selected_sound)
@@ -107,6 +115,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
             self.ui.comboBox_language.setCurrentIndex(index)
         self.ui.label_version.setText('V' + read_key_value('version'))
         self.ui.spinBox_timestep.setValue(int(read_key_value('add_timestep')))
+        self.ui.spinBox_openmore.setValue(int(read_key_value('open_more'))-1)
 
         self.audio_files = {
             0: get_resource_path('resources/sound/error_sound_1.mp3'),
@@ -146,6 +155,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
             ]:
                 write_key_value(key, str(checkbox.isChecked()))
             write_key_value('add_timestep', str(self.ui.spinBox_timestep.value()))
+            write_key_value('open_more', str(self.ui.spinBox_openmore.value()+1))
             selected_language = self.ui.comboBox_language.currentText()
             language_code = self.reverse_language_map.get(selected_language, 'cn')
             write_key_value('language', language_code)

@@ -2078,10 +2078,19 @@ border-radius:18px
                                <property name="font">
                                 <font>
                                  <family>微软雅黑 Light</family>
+                                 <pointsize>16</pointsize>
+                                 <bold>true</bold>
                                 </font>
                                </property>
+                               <property name="styleSheet">
+                                <string notr="true">QLabel {
+font-size: 16pt;
+font-weight: bold;
+color: #ffffff;
+}</string>
+                               </property>
                                <property name="text">
-                                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:700; color:#ffffff;&quot;&gt;欢迎使用LeafAuto&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                <string>欢迎使用LeafAuto</string>
                                </property>
                               </widget>
                              </item>
@@ -3614,11 +3623,13 @@ border-radius:12px</string>
                              </property>
                              <property name="styleSheet">
                               <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
+	font-weight: 400;
+	qproperty-alignment: AlignHCenter;
 }</string>
                              </property>
                              <property name="text">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;添加任务到左侧列表，再点击开始执行按钮&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>添加任务到左侧列表，再点击开始执行按钮</string>
                              </property>
                             </widget>
                            </item>
@@ -3840,7 +3851,7 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                            </property>
                           </widget>
                          </item>
