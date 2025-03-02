@@ -121,6 +121,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.userName_combo.setObjectName("userName_combo")
         if not wx_list:
             self.userName_combo.addItem('微信未启动')
+            log("ERROR", "微信未登录, 请登录微信后重启枫叶")
         else:
             for wx in wx_list:
                 self.userName_combo.addItem(wx.nickname)
