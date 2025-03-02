@@ -68,6 +68,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if self.language not in ['cn', 'cn_t', 'en']:
                 self.language = 'cn'
             wx = WeChat(language=self.language)
+
         except Exception as e:
             if str(e) == "(1400, 'SetWindowPos', '无效的窗口句柄。')":
                 log("ERROR", "微信未登录, 请登录微信后重启枫叶")
