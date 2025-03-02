@@ -24,6 +24,7 @@ wx = None
 wx_list = []
 current_version = 4.39
 
+
 def reload_wx():
     global wx
     global wx_list
@@ -295,6 +296,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_66.setText("6%")
             self.checkBox_Ai.setEnabled(False)
             self.checkBox_stopSleep.setEnabled(False)
+            self.userName_combo.setEnabled(False)
         elif membership == 'Base':
             small_member_image = get_resource_path('resources/img/小标/小标-标准会员版本.svg')
             member_image = get_resource_path('resources/img/头标/头标-银色标准会员.svg')
@@ -310,6 +312,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.checkBox_stopSleep.setChecked(True)
             self.base_pushButton.setEnabled(False)
             self.label_8.setText("已解锁 正在享用")
+            self.userName_combo.setEnabled(False)
         elif membership == 'AiVIP':
             small_member_image = get_resource_path('resources/img/小标/小标-高级会员版本.svg')
             member_image = get_resource_path('resources/img/头标/头标-紫银高级会员.svg')

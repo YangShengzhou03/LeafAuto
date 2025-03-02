@@ -8,6 +8,8 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from common import get_resource_path
+
 
 class Ui_SettingWindow(object):
     def setupUi(self, SettingWindow):
@@ -95,22 +97,22 @@ class Ui_SettingWindow(object):
         self.listWidget_setting.setObjectName("listWidget_setting")
         item = QtWidgets.QListWidgetItem()
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("resources/img/setting/基本设置.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/基本设置.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon)
         self.listWidget_setting.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("resources/img/setting/高级设置.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/高级设置.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon1)
         self.listWidget_setting.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("resources/img/setting/其他设置.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/其他设置.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon2)
         self.listWidget_setting.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("resources/img/setting/关于枫叶.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/关于枫叶.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon3)
         self.listWidget_setting.addItem(item)
         self.horizontalLayout_15.addWidget(self.listWidget_setting)
@@ -142,7 +144,7 @@ class Ui_SettingWindow(object):
 "color: rgb(0, 0, 0);\n"
 "}")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("resources/img/setting/完成设置.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/完成设置.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_exit_setting.setIcon(icon4)
         self.pushButton_exit_setting.setObjectName("pushButton_exit_setting")
         self.horizontalLayout_16.addWidget(self.pushButton_exit_setting, 0, QtCore.Qt.AlignmentFlag.AlignBottom)
@@ -331,7 +333,7 @@ class Ui_SettingWindow(object):
 "border:none;")
         self.pushButton_test_sound.setText("")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("resources/img/setting/播放测试.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon7.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/播放测试.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_test_sound.setIcon(icon7)
         self.pushButton_test_sound.setIconSize(QtCore.QSize(28, 28))
         self.pushButton_test_sound.setObjectName("pushButton_test_sound")
@@ -894,7 +896,7 @@ class Ui_SettingWindow(object):
 "border:none;")
         self.pushButton_logo.setText("")
         icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("resources/img/setting/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon10.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/logo.png")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_logo.setIcon(icon10)
         self.pushButton_logo.setIconSize(QtCore.QSize(80, 80))
         self.pushButton_logo.setObjectName("pushButton_logo")
