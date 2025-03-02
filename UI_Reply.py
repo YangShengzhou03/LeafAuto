@@ -8,6 +8,8 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from common import get_resource_path
+
 
 class Ui_ReplyDialog(object):
     def setupUi(self, ReplyDialog):
@@ -193,7 +195,7 @@ class Ui_ReplyDialog(object):
 "")
         self.file_pushButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("resources/img/page1/page1_打开文件.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/page1/page1_打开文件.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.file_pushButton.setIcon(icon)
         self.file_pushButton.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton.setObjectName("file_pushButton")
