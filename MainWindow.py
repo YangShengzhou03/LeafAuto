@@ -89,8 +89,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             if wx and hasattr(wx, 'nickname'):
                 log("DEBUG", f"初始化完成，{wx.nickname} 已登录，欢迎您!")
-                self.set_username_combobox()
 
+        self.set_username_combobox()
         self.auto_info = AutoInfo(wx, self.Membership, self)
         self.split = Split(wx, self.Membership, self)
         self.ai_assistant = AiAssistant(wx, self.Membership, self)
@@ -119,8 +119,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.userName_label = None
         self.userName_combo = CenteredComboBox(parent=self.userName_frame)
         self.userName_combo.setObjectName("userName_combo")
-        for wx in wx_list:
-            self.userName_combo.addItem(wx.nickname)
+        if not wx_list:
+            self.userName_combo.addItem('微信未启动')
+        else:
+            for wx in wx_list:
+                self.userName_combo.addItem(wx.nickname)
         self.horizontalLayout_4.addWidget(self.userName_combo)
 
     def userName_combo_change(self):
