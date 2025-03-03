@@ -10,7 +10,7 @@ CONFIG_PATH = '_internal/system_info.ini'
 MAX_RETRIES = 5
 
 DEFAULT_VALUES = {
-    'version': '1.2',
+    'version': '4.3',
     'error_sound': 'True',
     'net_time': 'False',
     'auto_update': 'True',
@@ -27,7 +27,7 @@ DEFAULT_VALUES = {
 def get_motherboard_serial_number():
     c = wmi.WMI()
     for board_id in c.Win32_BaseBoard():
-        return board_id.SerialNumber
+        return str(board_id.SerialNumber).strip()
     return 'Null'
 
 
@@ -87,7 +87,7 @@ def ensure_config_file_exists():
 def create_config_file():
     config = configparser.ConfigParser()
     config['SystemInfo'] = {
-        'version': '1.2',
+        'version': '4.3',
         'error_sound': 'True',
         'net_time': 'False',
         'auto_update': 'True',

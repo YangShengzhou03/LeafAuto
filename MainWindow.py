@@ -11,7 +11,6 @@ import common
 from ActivitiesWindow import ActivitiesWindow
 from AiAssistant import AiAssistant
 from AutoInfo import AutoInfo
-from CenteredComboBox import CenteredComboBox
 from Reply import ReplyDialog
 from SettingWindow import SettingWindow
 from Split import Split
@@ -21,32 +20,24 @@ from UpdateDialog import check_update
 from common import get_resource_path, log, get_current_time, get_url
 
 wx = None
-wx_list = []
 current_version = 4.39
 
 
 def reload_wx():
     global wx
-    global wx_list
     try:
-        wx_list.clear()
-        for i in range(1, int(read_key_value('open_more'))):
-            try:
-                wx_list.append(WeChat(read_key_value('language'), foundIndex=i))
-            except Exception:
-                break
-        wx = wx_list[0]
+        wx = WeChat(language=read_key_value('language'))
         MainWindow.wx = wx
     except Exception as e:
         if str(e) == "(1400, 'SetWindowPos', '无效的窗口句柄。')":
             log("ERROR", "微信未登录, 请登录微信后重启枫叶")
-            return False
+            return '微信未登录'
         else:
             log("ERROR", f"程序初始化出错, 错误原因:{e}")
-            return False
+            return '初始化错误'
     else:
         log("DEBUG", f"自动重载,{wx.nickname} 登录成功")
-        return True
+        return wx.nickname
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -75,22 +66,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             if self.language not in ['cn', 'cn_t', 'en']:
                 self.language = 'cn'
-            for i in range(1, int(read_key_value('open_more'))):
-                try:
-                    wx_list.append(WeChat(language=self.language, foundIndex=i))
-                except Exception:
-                    break
-                wx = wx_list[0]
+            wx = WeChat(language=self.language)
         except Exception as e:
             if str(e) == "(1400, 'SetWindowPos', '无效的窗口句柄。')":
                 log("ERROR", "微信未登录, 请登录微信后重启枫叶")
+                self.userName_label.setText('微信未登录')
             else:
                 log("ERROR", f"程序初始化出错, 错误原因:{e}")
+                self.userName_label.setText('初始化错误')
         else:
             if wx and hasattr(wx, 'nickname'):
                 log("DEBUG", f"初始化完成，{wx.nickname} 已登录，欢迎您!")
+                self.userName_label.setText(wx.nickname)
 
-        self.set_username_combobox()
         self.auto_info = AutoInfo(wx, self.Membership, self)
         self.split = Split(wx, self.Membership, self)
         self.ai_assistant = AiAssistant(wx, self.Membership, self)
@@ -111,37 +99,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             check_update()
         self.load_tasks_from_json()
 
-    def set_username_combobox(self):
-        global wx_list
-        if hasattr(self, 'userName_label') and self.userName_label is not None:
-            self.horizontalLayout_4.removeWidget(self.userName_label)
-            self.userName_label.deleteLater()
-            self.userName_label = None
-        self.userName_combo = CenteredComboBox(parent=self.userName_frame)
-        self.userName_combo.setObjectName("userName_combo")
-        if not wx_list:
-            self.userName_combo.addItem('微信未启动')
-            log("ERROR", "微信未登录, 请登录微信后重启枫叶")
-        else:
-            for wx in wx_list:
-                self.userName_combo.addItem(wx.nickname)
-        self.horizontalLayout_4.addWidget(self.userName_combo)
-
-    def userName_combo_change(self):
-        index = self.userName_combo.currentIndex()
-        global wx_list
-        global wx
-        wx = wx_list[index]
-        self.auto_info.wx = wx
-        self.split.wx = wx
-        self.ai_assistant.wx = wx
-
     def update_wx(self):
-        if reload_wx():
-            self.userName_combo.clear()
-            for wx_item in wx_list:
-                self.userName_combo.addItem(wx_item.nickname)
         global wx
+        nick_name = reload_wx()
+        self.userName_label.setText(nick_name)
         self.auto_info.wx = wx
         self.split.wx = wx
         self.ai_assistant.wx = wx
@@ -300,7 +261,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_66.setText("6%")
             self.checkBox_Ai.setEnabled(False)
             self.checkBox_stopSleep.setEnabled(False)
-            self.userName_combo.setEnabled(False)
         elif membership == 'Base':
             small_member_image = get_resource_path('resources/img/小标/小标-标准会员版本.svg')
             member_image = get_resource_path('resources/img/头标/头标-银色标准会员.svg')
@@ -316,7 +276,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.checkBox_stopSleep.setChecked(True)
             self.base_pushButton.setEnabled(False)
             self.label_8.setText("已解锁 正在享用")
-            self.userName_combo.setEnabled(False)
         elif membership == 'AiVIP':
             small_member_image = get_resource_path('resources/img/小标/小标-高级会员版本.svg')
             member_image = get_resource_path('resources/img/头标/头标-紫银高级会员.svg')
@@ -374,7 +333,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                                          "}")
 
     def connect_signals(self):
-        self.userName_combo.currentIndexChanged.connect(self.userName_combo_change)
         self.setting_window = SettingWindow()
         self.activities_window = ActivitiesWindow()
         self.key_reply = ReplyDialog()
