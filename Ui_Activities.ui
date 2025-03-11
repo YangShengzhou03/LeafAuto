@@ -1244,9 +1244,5 @@ QPushButton:pressed {
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
-  <include location="../Trigger_new/resources.qrc"/>
- </resources>
  <connections/>
 </ui>
