@@ -16,29 +16,29 @@ def bring_existing_to_front():
         socket.write(b'bringToFront')
         socket.waitForBytesWritten(1000)
         socket.disconnectFromServer()
-        socket.waitForDisconnected(1000)
 
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
 
     local_server = QtNetwork.QLocalServer()
-    if local_server.listen("LeafAuto_Server"):
-        def new_connection():
-            socket = local_server.nextPendingConnection()
-            if socket.waitForReadyRead(1000):
-                data = socket.readAll().data()
-                if data == b'bringToFront':
-                    window.activateWindow()
-                    window.raise_()
-                    window.showNormal()
+    if not local_server.listen("LeafAuto_Server"):
+        bring_existing_to_front()
+        return
 
-        local_server.newConnection.connect(new_connection)
+    def new_connection():
+        socket = local_server.nextPendingConnection()
+        if socket.waitForReadyRead(1000):
+            if socket.readAll().data() == b'bringToFront':
+                window.activateWindow()
+                window.raise_()
+                window.showNormal()
+
+    local_server.newConnection.connect(new_connection)
 
     window = MainWindow()
     window.move(100, 50)
     window.show()
-    bring_existing_to_front()
 
     sys.exit(app.exec())
 
