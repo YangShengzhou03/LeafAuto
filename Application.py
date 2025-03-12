@@ -1,6 +1,6 @@
 import sys
 
-from PyQt6 import QtWidgets, QtNetwork, QtCore
+from PyQt6 import QtWidgets, QtCore
 from PyQt6.QtWidgets import QApplication
 
 from MainWindow import MainWindow
