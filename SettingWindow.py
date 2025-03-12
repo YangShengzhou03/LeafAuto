@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 
 from PyQt6 import QtWidgets, QtCore, QtGui
 from PyQt6.QtCore import QUrl
@@ -62,7 +63,8 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
         if not cleaned_any:
             QtWidgets.QMessageBox.warning(self, "无需清理", "没有缓存数据，无需清理。")
         else:
-            QtWidgets.QMessageBox.information(self, "清理完成", "缓存数据清理完成。")
+            QtWidgets.QMessageBox.information(self, "清理完成", "缓存清理完成，枫叶将重启。")
+            sys.exit(0)
 
     def select_email(self, state):
         if state:
