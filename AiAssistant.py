@@ -1,5 +1,5 @@
 from PyQt6 import QtWidgets, QtCore, QtGui
-# 测试一下
+
 from Thread import AiWorkerThread
 from common import log, get_resource_path
 
