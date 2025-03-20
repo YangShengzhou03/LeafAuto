@@ -261,6 +261,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_66.setText("6%")
             self.checkBox_Ai.setEnabled(False)
             self.checkBox_stopSleep.setEnabled(False)
+            self.checkBox_period.setChecked(True)
+            self.checkBox_comma.setChecked(True)
+            self.checkBox_Space.setChecked(True)
         elif membership == 'Base':
             small_member_image = get_resource_path('resources/img/小标/小标-标准会员版本.svg')
             member_image = get_resource_path('resources/img/头标/头标-银色标准会员.svg')
@@ -452,5 +455,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if notice_content:
                 self.textBrowser.setHtml(notice_content)
         except Exception:
-            self.textBrowser.setHtml('<center><h2>🎉欢迎使用·枫叶信息自动化，祝您一切顺利🎉</h2><h2>服务连接似乎遇到了一点小麻烦，但别担心，不影响正常使用！</h2'
+            self.textBrowser.setHtml('<center><h2>欢迎使用LeafAuto</h2><h2>LeafAuto是我在2024'
+                                     '年大二时写的练习程序，没想到居然这么多人爱用。希望大家多提宝贵意见，同时也希望大家会喜欢她。</h2'
                                      '></center>')

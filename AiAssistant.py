@@ -70,7 +70,6 @@ class AiAssistant(QtWidgets.QWidget):
             html = f"<html><head/><body><p align=\"center\"><span style=\" font-size:72pt;\">{time_str}</span></p></body></html>"
             self.parent.takeOverTime_label.setText(html)
 
-            # 根据版本设置限制时间
             if self.Membership == 'Free':
                 max_time = 60  # 1分钟
             elif self.Membership == 'Base':

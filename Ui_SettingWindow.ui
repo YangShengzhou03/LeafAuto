@@ -715,7 +715,7 @@ border:none;</string>
 }</string>
                      </property>
                      <property name="text">
-                      <string>全局使用网络授时（会员专享）</string>
+                      <string>软件全局使用网络授时</string>
                      </property>
                     </widget>
                    </item>
@@ -816,7 +816,7 @@ QCheckBox::indicator:checked {
 }</string>
                      </property>
                      <property name="text">
-                      <string>启动时自动检查更新</string>
+                      <string>启动软件时自动检查更新</string>
                      </property>
                     </widget>
                    </item>
@@ -1110,7 +1110,7 @@ QCheckBox::indicator:checked {
 }</string>
                      </property>
                      <property name="text">
-                      <string>PC客户端微信语言</string>
+                      <string>客户端微信语言</string>
                      </property>
                     </widget>
                    </item>
@@ -1432,7 +1432,7 @@ QComboBox QAbstractItemView {
 }</string>
                      </property>
                      <property name="text">
-                      <string>一键清除缓存数据</string>
+                      <string>清理缓存数据</string>
                      </property>
                     </widget>
                    </item>
@@ -2203,9 +2203,6 @@ QPushButton:pressed {
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
  <connections>
   <connection>
    <sender>listWidget_setting</sender>

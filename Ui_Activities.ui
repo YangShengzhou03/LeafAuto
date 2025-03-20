@@ -31,10 +31,19 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
-     <number>9</number>
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
     </property>
     <property name="rightMargin">
-     <number>9</number>
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
     </property>
     <item>
      <widget class="QFrame" name="frame_Main">
@@ -79,7 +88,7 @@
            <property name="font">
             <font>
              <family>微软雅黑 Light</family>
-             <pointsize>16</pointsize>
+             <pointsize>20</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -99,7 +108,7 @@
            <property name="font">
             <font>
              <family>微软雅黑 Light</family>
-             <pointsize>16</pointsize>
+             <pointsize>22</pointsize>
              <bold>false</bold>
             </font>
            </property>
@@ -247,7 +256,7 @@ border-radius:12px;
              <number>6</number>
             </property>
             <property name="bottomMargin">
-             <number>6</number>
+             <number>0</number>
             </property>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -714,7 +723,7 @@ color: rgb(135, 135, 135);</string>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,0">
               <property name="spacing">
-               <number>2</number>
+               <number>8</number>
               </property>
               <property name="leftMargin">
                <number>0</number>
@@ -749,15 +758,20 @@ color: rgb(135, 135, 135);</string>
                     <widget class="QWidget" name="widget_head" native="true">
                      <property name="minimumSize">
                       <size>
-                       <width>650</width>
+                       <width>680</width>
                        <height>100</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>650</width>
+                       <width>680</width>
                        <height>16777215</height>
                       </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>8</pointsize>
+                      </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QWidget {
@@ -1244,5 +1258,6 @@ QPushButton:pressed {
    </layout>
   </widget>
  </widget>
+ <resources/>
  <connections/>
 </ui>

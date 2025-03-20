@@ -10,12 +10,14 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_UpdateDialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(450, 280)
-        self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
+    def setupUi(self, UpdateDialog):
+        UpdateDialog.setObjectName("UpdateDialog")
+        UpdateDialog.resize(432, 262)
+        self.verticalLayout = QtWidgets.QVBoxLayout(UpdateDialog)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.frame = QtWidgets.QFrame(parent=Dialog)
+        self.frame = QtWidgets.QFrame(parent=UpdateDialog)
         self.frame.setStyleSheet("QFrame#frame{\n"
 "background-color: rgb(245, 249, 254);\n"
 "border-radius:25px;\n"
@@ -32,7 +34,7 @@ class Ui_UpdateDialog(object):
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.widget_3 = QtWidgets.QWidget(parent=self.frame)
-        self.widget_3.setMinimumSize(QtCore.QSize(0, 0))
+        self.widget_3.setMinimumSize(QtCore.QSize(414, 244))
         self.widget_3.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.widget_3.setStyleSheet(".QWidget{\n"
 "background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
@@ -130,13 +132,13 @@ class Ui_UpdateDialog(object):
         self.horizontalLayout_7.setStretch(0, 4)
         self.verticalLayout.addWidget(self.frame)
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(UpdateDialog)
+        QtCore.QMetaObject.connectSlotsByName(UpdateDialog)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, UpdateDialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label_title.setText(_translate("Dialog", "Dialog Title"))
-        self.label_content.setText(_translate("Dialog", "Dialog content"))
-        self.pushButton_cancel.setText(_translate("Dialog", "暂不更新"))
-        self.pushButton_download.setText(_translate("Dialog", "立即下载"))
+        UpdateDialog.setWindowTitle(_translate("UpdateDialog", "Dialog"))
+        self.label_title.setText(_translate("UpdateDialog", "Dialog Title"))
+        self.label_content.setText(_translate("UpdateDialog", "Dialog content"))
+        self.pushButton_cancel.setText(_translate("UpdateDialog", "暂不更新"))
+        self.pushButton_download.setText(_translate("UpdateDialog", "立即下载"))

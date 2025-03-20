@@ -61,9 +61,9 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
                 os.remove(file)
                 cleaned_any = True
         if not cleaned_any:
-            QtWidgets.QMessageBox.warning(self, "无需清理", "没有缓存数据，无需清理。")
+            QtWidgets.QMessageBox.warning(self, "无需清理", "已经很干净了，无需清理。")
         else:
-            QtWidgets.QMessageBox.information(self, "清理完成", "缓存清理完成，枫叶将重启。")
+            QtWidgets.QMessageBox.information(self, "清理完成", "数据已清理，即将重启以完成。")
             sys.exit(0)
 
     def select_email(self, state):
@@ -163,7 +163,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
             write_key_value('language', language_code)
             write_key_value('selected_audio_index', str(self.ui.comboBox_errorAudio.currentIndex()))
         except Exception as e:
-            log('ERROR', f'设置保存失败{e}')
+            log('ERROR', f'设置保存失败，请用管理员身份运行软件。')
         else:
             log('DEBUG', '设置保存成功，部分功能需重启生效')
             QtWidgets.QMessageBox.information(self, "设置保存成功", "设置保存成功，部分功能需重启生效")

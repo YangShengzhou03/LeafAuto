@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1289</width>
-    <height>734</height>
+    <width>1272</width>
+    <height>705</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,6 +18,21 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QFrame" name="main_Frame">
       <property name="styleSheet">
@@ -385,13 +400,13 @@ border-radius:30px
               <widget class="QFrame" name="vip_frame">
                <property name="minimumSize">
                 <size>
-                 <width>98</width>
+                 <width>104</width>
                  <height>52</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>98</width>
+                 <width>104</width>
                  <height>52</height>
                 </size>
                </property>
@@ -679,7 +694,7 @@ background-color: rgba(255, 255, 255, 255);
                       <number>9</number>
                      </property>
                      <property name="bottomMargin">
-                      <number>16</number>
+                      <number>10</number>
                      </property>
                      <item>
                       <widget class="QFrame" name="frame_top1">
@@ -1579,7 +1594,7 @@ padding-left:12px;</string>
                       <number>9</number>
                      </property>
                      <property name="bottomMargin">
-                      <number>12</number>
+                      <number>9</number>
                      </property>
                      <item>
                       <widget class="QFrame" name="instrument_frame">
@@ -1928,10 +1943,12 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑 Light'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:14pt; font-weight:700;&quot;&gt;欢迎使用枫叶信息自动化系统&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:14pt; font-weight:700;&quot;&gt;欢迎使用LeafAuto&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Microsoft YaHei UI';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;尊敬的用户，欢迎使用枫叶信息自动化系统！&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;      我们很高兴为您提供一个高效、智能的工作平台，旨在简化您的日常工作流程，提升工作效率。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;尊敬的用户：&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;       感谢您使用LeafAuto！&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;      LeafAuto 是我在2024年大二时写的练习程序，没想到居然这么多人爱用。希望大家多提宝贵意见，同时也希望大家会喜欢她。 &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;       如果您觉得好用，可以推荐给更多人，这样能让她变得更好！ &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                         </item>
@@ -1953,7 +1970,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                      </property>
                      <layout class="QGridLayout" name="gridLayout">
                       <property name="leftMargin">
-                       <number>9</number>
+                       <number>10</number>
                       </property>
                       <property name="topMargin">
                        <number>6</number>
@@ -2582,7 +2599,7 @@ border-radius:10px
                                   </font>
                                  </property>
                                  <property name="text">
-                                  <string>V4.37</string>
+                                  <string>V4.39</string>
                                  </property>
                                 </widget>
                                </item>
@@ -3239,7 +3256,7 @@ QPushButton:pressed {
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_71" stretch="0,1">
                    <property name="spacing">
-                    <number>9</number>
+                    <number>8</number>
                    </property>
                    <property name="leftMargin">
                     <number>9</number>
@@ -3333,7 +3350,7 @@ QScrollArea QScrollBar::sub-page:vertical {
                         <x>0</x>
                         <y>0</y>
                         <width>368</width>
-                        <height>493</height>
+                        <height>482</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">
@@ -3361,174 +3378,6 @@ QScrollArea QScrollBar::sub-page:vertical {
                        <property name="bottomMargin">
                         <number>9</number>
                        </property>
-                       <item row="1" column="0">
-                        <widget class="QWidget" name="widget_item" native="true">
-                         <property name="minimumSize">
-                          <size>
-                           <width>360</width>
-                           <height>70</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>360</width>
-                           <height>70</height>
-                          </size>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:18px</string>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_76">
-                          <property name="spacing">
-                           <number>6</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>12</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>2</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>12</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>2</number>
-                          </property>
-                          <item>
-                           <widget class="QWidget" name="widget_54" native="true">
-                            <property name="minimumSize">
-                             <size>
-                              <width>36</width>
-                              <height>36</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>36</width>
-                              <height>36</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">image: url(&quot;resources/img/page1/page1_发送就绪.svg&quot;);</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <layout class="QVBoxLayout" name="verticalLayout_64" stretch="0,0">
-                            <property name="spacing">
-                             <number>0</number>
-                            </property>
-                            <property name="leftMargin">
-                             <number>6</number>
-                            </property>
-                            <property name="topMargin">
-                             <number>6</number>
-                            </property>
-                            <property name="rightMargin">
-                             <number>6</number>
-                            </property>
-                            <property name="bottomMargin">
-                             <number>6</number>
-                            </property>
-                            <item>
-                             <layout class="QHBoxLayout" name="horizontalLayout_77" stretch="1,0,0">
-                              <property name="spacing">
-                               <number>4</number>
-                              </property>
-                              <property name="leftMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="topMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="rightMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="bottomMargin">
-                               <number>0</number>
-                              </property>
-                              <item>
-                               <widget class="QLabel" name="receiver_label">
-                                <property name="font">
-                                 <font>
-                                  <family>微软雅黑 Light</family>
-                                  <pointsize>12</pointsize>
-                                 </font>
-                                </property>
-                                <property name="text">
-                                 <string>接收人</string>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QLabel" name="time_label">
-                                <property name="font">
-                                 <font>
-                                  <pointsize>10</pointsize>
-                                 </font>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">color: rgb(169, 169, 169);</string>
-                                </property>
-                                <property name="text">
-                                 <string>2025-12-29T15:17:37</string>
-                                </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QLabel" name="label_2">
-                                <property name="styleSheet">
-                                 <string notr="true">color:rgb(105, 27, 253);
-text-align: center;
-background:rgba(0, 0, 0, 0);</string>
-                                </property>
-                                <property name="text">
-                                 <string>仅一次</string>
-                                </property>
-                               </widget>
-                              </item>
-                             </layout>
-                            </item>
-                            <item>
-                             <layout class="QHBoxLayout" name="horizontalLayout_7">
-                              <property name="leftMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="topMargin">
-                               <number>6</number>
-                              </property>
-                              <property name="rightMargin">
-                               <number>12</number>
-                              </property>
-                              <property name="bottomMargin">
-                               <number>3</number>
-                              </property>
-                              <item>
-                               <widget class="QLabel" name="message_label">
-                                <property name="font">
-                                 <font>
-                                  <pointsize>10</pointsize>
-                                 </font>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">color: rgb(169, 169, 169);</string>
-                                </property>
-                                <property name="text">
-                                 <string>枫叶信息自动化系统 © 2025 保留所有权利</string>
-                                </property>
-                               </widget>
-                              </item>
-                             </layout>
-                            </item>
-                           </layout>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
                       </layout>
                      </widget>
                     </widget>
@@ -4749,7 +4598,7 @@ border-radius:18px
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_124" stretch="0,0,0,0">
                           <property name="spacing">
-                           <number>6</number>
+                           <number>4</number>
                           </property>
                           <property name="leftMargin">
                            <number>0</number>
@@ -4937,24 +4786,6 @@ border-radius: 2px;</string>
                              <property name="bottomMargin">
                               <number>0</number>
                              </property>
-                             <item>
-                              <widget class="QLabel" name="label_15">
-                               <property name="font">
-                                <font>
-                                 <family>微软雅黑 Light</family>
-                                 <pointsize>12</pointsize>
-                                </font>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-}</string>
-                               </property>
-                               <property name="text">
-                                <string>回复规则</string>
-                               </property>
-                              </widget>
-                             </item>
                              <item>
                               <widget class="QPushButton" name="pushButton_addRule">
                                <property name="sizePolicy">
