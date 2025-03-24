@@ -10,7 +10,6 @@ from PyQt6.QtCore import QThread, pyqtSignal
 
 from common import log, get_current_time
 
-# self.parent.update_wx()
 
 class AiWorkerThread(QThread):
     pause_changed = pyqtSignal(bool)
@@ -271,14 +270,18 @@ class WorkerThread(QtCore.QThread):
                         log("INFO", f"开始把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]}")
                         if self.interrupted:
                             break
-                        self.app_instance.wx.SendMsg(msg=info, who=name)
+                        if "@所有人" in info:
+                            info = info.replace("@所有人", "").strip()
+                            self.app_instance.wx.AtAll(msg=info, who=name)
+                        else:
+                            self.app_instance.wx.SendMsg(msg=info, who=name)
 
                     if self.interrupted:
                         break
                     log("DEBUG", f"成功把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]} ")
                     success = True
                 except Exception as e:
-                    if "拒绝访问" in str(e) and retries < max_retries:
+                    if '未找到' not in str(e) and retries < max_retries:
                         log("ERROR", f"微信数据发生变化，即将自动适应")
                         retries += 1
                         self.app_instance.parent.update_wx()
