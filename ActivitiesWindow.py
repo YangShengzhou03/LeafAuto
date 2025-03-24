@@ -197,7 +197,7 @@ QPushButton:pressed {
         elif Key_value is not None:
             if input_password == Key_value:
                 membership = 'VIP'
-                expiration_time = (last_time + timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')
+                expiration_time = (last_time + timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S')
             else:
                 QtWidgets.QMessageBox.warning(self, "无效秘钥", "请输入正确的秘钥，如已购买请QQ扫码获取")
                 return
