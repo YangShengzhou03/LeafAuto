@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1272, 705)
+        MainWindow.resize(1271, 711)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -169,8 +169,8 @@ class Ui_MainWindow(object):
         spacerItem2 = QtWidgets.QSpacerItem(761, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_33.addItem(spacerItem2)
         self.vip_frame = QtWidgets.QFrame(parent=self.rightHead_frame)
-        self.vip_frame.setMinimumSize(QtCore.QSize(104, 52))
-        self.vip_frame.setMaximumSize(QtCore.QSize(104, 52))
+        self.vip_frame.setMinimumSize(QtCore.QSize(98, 52))
+        self.vip_frame.setMaximumSize(QtCore.QSize(98, 52))
         self.vip_frame.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.vip_frame.setStyleSheet("image: url(\"resources/img/头标/头标-荣耀超级会员.svg\");\n"
 "background: transparent;\n"
@@ -322,7 +322,7 @@ class Ui_MainWindow(object):
         self.page_in.setSpacing(0)
         self.page_in.setObjectName("page_in")
         self.versionBlock_Layout = QtWidgets.QHBoxLayout()
-        self.versionBlock_Layout.setContentsMargins(9, 16, 9, 10)
+        self.versionBlock_Layout.setContentsMargins(9, 16, 9, 16)
         self.versionBlock_Layout.setSpacing(12)
         self.versionBlock_Layout.setObjectName("versionBlock_Layout")
         self.frame_top1 = QtWidgets.QFrame(parent=self.leafAuto_Widget)
@@ -741,7 +741,7 @@ class Ui_MainWindow(object):
         self.versionBlock_Layout.addWidget(self.frame_top4)
         self.page_in.addLayout(self.versionBlock_Layout)
         self.centralSection_Layout = QtWidgets.QHBoxLayout()
-        self.centralSection_Layout.setContentsMargins(9, 12, 9, 9)
+        self.centralSection_Layout.setContentsMargins(9, 12, 9, 12)
         self.centralSection_Layout.setSpacing(12)
         self.centralSection_Layout.setObjectName("centralSection_Layout")
         self.instrument_frame = QtWidgets.QFrame(parent=self.leafAuto_Widget)
@@ -912,7 +912,7 @@ class Ui_MainWindow(object):
         self.bottom_frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.bottom_frame.setObjectName("bottom_frame")
         self.gridLayout = QtWidgets.QGridLayout(self.bottom_frame)
-        self.gridLayout.setContentsMargins(10, 6, 9, 6)
+        self.gridLayout.setContentsMargins(9, 6, 9, 6)
         self.gridLayout.setObjectName("gridLayout")
         self.inBottom_frame = QtWidgets.QFrame(parent=self.bottom_frame)
         self.inBottom_frame.setMinimumSize(QtCore.QSize(936, 0))
@@ -1538,7 +1538,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addWidget(self.DataInput)
         self.horizontalLayout_71 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_71.setContentsMargins(9, 6, 9, 6)
-        self.horizontalLayout_71.setSpacing(8)
+        self.horizontalLayout_71.setSpacing(7)
         self.horizontalLayout_71.setObjectName("horizontalLayout_71")
         self.scrollArea_3 = QtWidgets.QScrollArea(parent=self.verticalWidget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
@@ -1588,7 +1588,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_3.setObjectName("scrollArea_3")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 368, 482))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 368, 488))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.formLayout_3 = QtWidgets.QFormLayout(self.scrollAreaWidgetContents_3)
         self.formLayout_3.setLabelAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
@@ -2229,7 +2229,7 @@ class Ui_MainWindow(object):
         self.frame_59.setObjectName("frame_59")
         self.horizontalLayout_124 = QtWidgets.QHBoxLayout(self.frame_59)
         self.horizontalLayout_124.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_124.setSpacing(4)
+        self.horizontalLayout_124.setSpacing(6)
         self.horizontalLayout_124.setObjectName("horizontalLayout_124")
         self.take_over = QtWidgets.QFrame(parent=self.frame_59)
         self.take_over.setStyleSheet("background:rgb(255, 255, 255);\n"
@@ -2617,12 +2617,10 @@ class Ui_MainWindow(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'微软雅黑 Light\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:14pt; font-weight:700;\">欢迎使用LeafAuto</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:14pt; font-weight:700;\">欢迎使用枫叶信息自动化系统</span></p>\n"
 "<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Microsoft YaHei UI\';\"><br /></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt;\">尊敬的用户：</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt;\">       感谢您使用LeafAuto！</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt;\">      LeafAuto 是我在2024年大二时写的练习程序，没想到居然这么多人爱用。希望大家多提宝贵意见，同时也希望大家会喜欢她。 </span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt;\">       如果您觉得好用，可以推荐给更多人，这样能让她变得更好！ </span></p></body></html>"))
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt;\">尊敬的用户，欢迎使用枫叶信息自动化系统！</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt;\">      我们很高兴为您提供一个高效、智能的工作平台，旨在简化您的日常工作流程，提升工作效率。</span></p></body></html>"))
         self.welcome_label.setText(_translate("MainWindow", "欢迎使用LeafAuto"))
         self.label_12.setText(_translate("MainWindow", "欢迎使用枫叶信息自动化（LeafAuto）"))
         self.label_11.setText(_translate("MainWindow", "LeafAuto © 2025 Yangshengzhou All Rights Reserved"))

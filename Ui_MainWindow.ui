@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1272</width>
-    <height>705</height>
+    <width>1271</width>
+    <height>711</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -400,13 +400,13 @@ border-radius:30px
               <widget class="QFrame" name="vip_frame">
                <property name="minimumSize">
                 <size>
-                 <width>104</width>
+                 <width>98</width>
                  <height>52</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>104</width>
+                 <width>98</width>
                  <height>52</height>
                 </size>
                </property>
@@ -694,7 +694,7 @@ background-color: rgba(255, 255, 255, 255);
                       <number>9</number>
                      </property>
                      <property name="bottomMargin">
-                      <number>10</number>
+                      <number>16</number>
                      </property>
                      <item>
                       <widget class="QFrame" name="frame_top1">
@@ -1594,7 +1594,7 @@ padding-left:12px;</string>
                       <number>9</number>
                      </property>
                      <property name="bottomMargin">
-                      <number>9</number>
+                      <number>12</number>
                      </property>
                      <item>
                       <widget class="QFrame" name="instrument_frame">
@@ -1943,12 +1943,10 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑 Light'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:14pt; font-weight:700;&quot;&gt;欢迎使用LeafAuto&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:14pt; font-weight:700;&quot;&gt;欢迎使用枫叶信息自动化系统&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Microsoft YaHei UI';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;尊敬的用户：&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;       感谢您使用LeafAuto！&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;      LeafAuto 是我在2024年大二时写的练习程序，没想到居然这么多人爱用。希望大家多提宝贵意见，同时也希望大家会喜欢她。 &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;       如果您觉得好用，可以推荐给更多人，这样能让她变得更好！ &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;尊敬的用户，欢迎使用枫叶信息自动化系统！&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt;&quot;&gt;      我们很高兴为您提供一个高效、智能的工作平台，旨在简化您的日常工作流程，提升工作效率。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                         </item>
@@ -1970,7 +1968,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                      </property>
                      <layout class="QGridLayout" name="gridLayout">
                       <property name="leftMargin">
-                       <number>10</number>
+                       <number>9</number>
                       </property>
                       <property name="topMargin">
                        <number>6</number>
@@ -2139,6 +2137,7 @@ color: #ffffff;
                               <string notr="true">QLabel {
     qproperty-alignment: AlignCenter;
     font-size: 14pt;
+    font-weight: bold;
     color: #9b512d;
 }</string>
                              </property>
@@ -3255,7 +3254,7 @@ QPushButton:pressed {
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_71" stretch="0,1">
                    <property name="spacing">
-                    <number>8</number>
+                    <number>7</number>
                    </property>
                    <property name="leftMargin">
                     <number>9</number>
@@ -3349,7 +3348,7 @@ QScrollArea QScrollBar::sub-page:vertical {
                         <x>0</x>
                         <y>0</y>
                         <width>368</width>
-                        <height>482</height>
+                        <height>488</height>
                        </rect>
                       </property>
                       <layout class="QFormLayout" name="formLayout_3">
@@ -4597,7 +4596,7 @@ border-radius:18px
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_124" stretch="0,0,0,0">
                           <property name="spacing">
-                           <number>4</number>
+                           <number>6</number>
                           </property>
                           <property name="leftMargin">
                            <number>0</number>
@@ -5264,9 +5263,6 @@ QPushButton:pressed {
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
  <connections>
   <connection>
    <sender>left_listWidget</sender>

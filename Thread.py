@@ -271,7 +271,6 @@ class WorkerThread(QtCore.QThread):
                         if self.interrupted:
                             break
                         if "@所有人" in info:
-                            info = info.replace("@所有人", "").strip()
                             self.app_instance.wx.AtAll(msg=info, who=name)
                         else:
                             self.app_instance.wx.SendMsg(msg=info, who=name)
@@ -281,7 +280,7 @@ class WorkerThread(QtCore.QThread):
                     log("DEBUG", f"成功把 {info[:25] + '……' if len(info) > 25 else info} 发给 {name[:8]} ")
                     success = True
                 except Exception as e:
-                    if '未找到' not in str(e) and retries < max_retries:
+                    if str(e) and retries < max_retries:
                         log("ERROR", f"微信数据发生变化，即将自动适应")
                         retries += 1
                         self.app_instance.parent.update_wx()
