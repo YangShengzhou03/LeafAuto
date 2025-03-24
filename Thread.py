@@ -282,7 +282,7 @@ class WorkerThread(QtCore.QThread):
                     success = True
                 except Exception as e:
                     if str(e) and retries < max_retries:
-                        log("ERROR", f"微信数据发生变化，即将自动适应")
+                        log("ERROR", f"微信数据有误，即将自动修复:{str(e)}")
                         retries += 1
                         self.app_instance.parent.update_wx()
                         self.msleep(50)

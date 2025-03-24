@@ -1588,7 +1588,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_3.setObjectName("scrollArea_3")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 368, 488))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 368, 482))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.formLayout_3 = QtWidgets.QFormLayout(self.scrollAreaWidgetContents_3)
         self.formLayout_3.setLabelAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
@@ -2617,10 +2617,10 @@ class Ui_MainWindow(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'微软雅黑 Light\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:14pt; font-weight:700;\">欢迎使用枫叶信息自动化系统</span></p>\n"
-"<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Microsoft YaHei UI\';\"><br /></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt;\">尊敬的用户，欢迎使用枫叶信息自动化系统！</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt;\">      我们很高兴为您提供一个高效、智能的工作平台，旨在简化您的日常工作流程，提升工作效率。</span></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:14pt; font-weight:700; color:#ffffff;\">欢迎使用枫叶信息自动化</span></p>\n"
+"<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Microsoft YaHei UI\'; color:#ffffff;\"><br /></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei UI\'; font-size:12pt; color:#ffffff;\">      </span><span style=\" font-family:\'Microsoft YaHei\',\'sans-serif\'; font-size:16px; color:#ffffff;\">LeafAuto 是我在2024年大二时写的练习程序，没想到居然这么多人爱用。希望大家多提宝贵意见，同时也希望大家会喜欢她。 </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Microsoft YaHei\',\'sans-serif\'; font-size:16px; color:#ffffff;\">       如果您觉得好用，可以推荐给更多人，这样能让她变得更好！ </span></p></body></html>"))
         self.welcome_label.setText(_translate("MainWindow", "欢迎使用LeafAuto"))
         self.label_12.setText(_translate("MainWindow", "欢迎使用枫叶信息自动化（LeafAuto）"))
         self.label_11.setText(_translate("MainWindow", "LeafAuto © 2025 Yangshengzhou All Rights Reserved"))
