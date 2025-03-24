@@ -271,6 +271,7 @@ class WorkerThread(QtCore.QThread):
                         if self.interrupted:
                             break
                         if "@所有人" in info:
+                            info = info.replace("@所有人", "").strip()
                             self.app_instance.wx.AtAll(msg=info, who=name)
                         else:
                             self.app_instance.wx.SendMsg(msg=info, who=name)
