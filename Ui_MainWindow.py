@@ -8,6 +8,8 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from common import get_resource_path
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -67,7 +69,7 @@ class Ui_MainWindow(object):
         self.userAvatar_frame = QtWidgets.QFrame(parent=self.userAvatar_widget)
         self.userAvatar_frame.setMinimumSize(QtCore.QSize(64, 64))
         self.userAvatar_frame.setMaximumSize(QtCore.QSize(64, 64))
-        self.userAvatar_frame.setStyleSheet("image: url(\"resources/img/List/List_头像.svg\");\n"
+        self.userAvatar_frame.setStyleSheet(f"image: url(\"{get_resource_path('resources/img/List/List_头像.svg')}\");\n"
 "border:3px solid rgb(255, 255, 255);\n"
 "border-radius:32px")
         self.userAvatar_frame.setObjectName("userAvatar_frame")
@@ -123,22 +125,22 @@ class Ui_MainWindow(object):
         self.left_listWidget.setObjectName("left_listWidget")
         item = QtWidgets.QListWidgetItem()
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("resources/img/List/List_0.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/List/List_0.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon)
         self.left_listWidget.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("resources/img/List/List_1.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/List/List_1.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon1)
         self.left_listWidget.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("resources/img/List/List_2.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/List/List_2.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon2)
         self.left_listWidget.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("resources/img/List/List_3.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/List/List_3.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon3)
         self.left_listWidget.addItem(item)
         self.verticalLayout_2.addWidget(self.left_listWidget)
@@ -172,7 +174,7 @@ class Ui_MainWindow(object):
         self.vip_frame.setMinimumSize(QtCore.QSize(98, 52))
         self.vip_frame.setMaximumSize(QtCore.QSize(98, 52))
         self.vip_frame.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.vip_frame.setStyleSheet("image: url(\"resources/img/头标/头标-荣耀超级会员.svg\");\n"
+        self.vip_frame.setStyleSheet(f"image: url({get_resource_path('resources/img/头标/头标-荣耀超级会员.svg')}\");\n"
 "background: transparent;\n"
 "border-radius:26px")
         self.vip_frame.setObjectName("vip_frame")
@@ -194,7 +196,7 @@ class Ui_MainWindow(object):
 "")
         self.feedback_pushButton.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("resources/img/窗口控制/窗口控制-联系作者.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/窗口控制/窗口控制-联系作者.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.feedback_pushButton.setIcon(icon4)
         self.feedback_pushButton.setObjectName("feedback_pushButton")
         self.horizontalLayout_33.addWidget(self.feedback_pushButton)
@@ -215,7 +217,7 @@ class Ui_MainWindow(object):
 "")
         self.setup_pushButton.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("resources/img/窗口控制/窗口控制-设置.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/窗口控制/窗口控制-设置.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.setup_pushButton.setIcon(icon5)
         self.setup_pushButton.setObjectName("setup_pushButton")
         self.horizontalLayout_33.addWidget(self.setup_pushButton)
@@ -236,7 +238,7 @@ class Ui_MainWindow(object):
 "")
         self.minimize_pushButton.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("resources/img/窗口控制/窗口控制-最小化.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon6.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/窗口控制/窗口控制-最小化.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.minimize_pushButton.setIcon(icon6)
         self.minimize_pushButton.setObjectName("minimize_pushButton")
         self.horizontalLayout_33.addWidget(self.minimize_pushButton)
@@ -257,7 +259,7 @@ class Ui_MainWindow(object):
 "")
         self.maximize_pushButton.setText("")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("resources/img/窗口控制/窗口控制-最大化.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon7.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/窗口控制/窗口控制-最大化.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.maximize_pushButton.setIcon(icon7)
         self.maximize_pushButton.setObjectName("maximize_pushButton")
         self.horizontalLayout_33.addWidget(self.maximize_pushButton)
@@ -278,7 +280,7 @@ class Ui_MainWindow(object):
 "")
         self.close_pushButton.setText("")
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("resources/img/窗口控制/窗口控制-关闭.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon8.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/窗口控制/窗口控制-关闭.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.close_pushButton.setIcon(icon8)
         self.close_pushButton.setObjectName("close_pushButton")
         self.horizontalLayout_33.addWidget(self.close_pushButton)
@@ -383,7 +385,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("resources/img/小标/小标-免费试用版本.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon9.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/小标/小标-免费试用版本.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.Free_pushButton.setIcon(icon9)
         self.Free_pushButton.setObjectName("Free_pushButton")
         self.horizontalLayout_6.addWidget(self.Free_pushButton)
@@ -484,7 +486,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("resources/img/小标/小标-标准会员版本.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon10.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/小标/小标-标准会员版本.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.base_pushButton.setIcon(icon10)
         self.base_pushButton.setObjectName("base_pushButton")
         self.horizontalLayout_9.addWidget(self.base_pushButton)
@@ -587,7 +589,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap("resources/img/小标/小标-高级会员版本.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon11.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/小标/小标-高级会员版本.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.Ai_pushButton.setIcon(icon11)
         self.Ai_pushButton.setObjectName("Ai_pushButton")
         self.horizontalLayout_10.addWidget(self.Ai_pushButton)
@@ -689,7 +691,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap("resources/img/小标/小标-超级会员版本.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon12.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/小标/小标-超级会员版本.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.vip_pushButton.setIcon(icon12)
         self.vip_pushButton.setObjectName("vip_pushButton")
         self.horizontalLayout_11.addWidget(self.vip_pushButton)
@@ -830,7 +832,7 @@ class Ui_MainWindow(object):
         self.pushButton_28.setStyleSheet("border:none;\n"
 "color: rgb(255, 255, 255);")
         icon13 = QtGui.QIcon()
-        icon13.addPixmap(QtGui.QPixmap("resources/img/page0/page0_允许白钩.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon13.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page0/page0_允许白钩.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_28.setIcon(icon13)
         self.pushButton_28.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_28.setObjectName("pushButton_28")
@@ -870,7 +872,7 @@ class Ui_MainWindow(object):
         self.pushButton_30.setStyleSheet("border:none;\n"
 "color: rgb(255, 255, 255);")
         icon14 = QtGui.QIcon()
-        icon14.addPixmap(QtGui.QPixmap("resources/img/page0/page0_禁止白叉.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon14.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page0/page0_禁止白叉.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_30.setIcon(icon14)
         self.pushButton_30.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_30.setObjectName("pushButton_30")
@@ -943,7 +945,7 @@ class Ui_MainWindow(object):
         self.version_frame.setMaximumSize(QtCore.QSize(60, 60))
         self.version_frame.setStyleSheet("QFrame {\n"
 "    padding: 8px;\n"
-"    image: url(\"resources/img/小标/小标-超级会员版本.svg\");\n"
+f"    image: url({get_resource_path('resources/img/小标/小标-超级会员版本.svg')});\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "                                stop:0 rgba(155, 81, 45, 255),\n"
 "                                stop:1 rgba(175, 91, 55, 255));\n"
@@ -1004,7 +1006,7 @@ class Ui_MainWindow(object):
         self.frame_100.setGeometry(QtCore.QRect(19, 4, 40, 41))
         self.frame_100.setStyleSheet("QFrame{\n"
 "padding:8px;\n"
-"image: url(\"resources/img/page0/page0_累计发送.svg\");\n"
+f"image: url({get_resource_path('resources/img/page0/page0_累计发送.svg')});\n"
 "    background-color: rgb(255, 81, 45);\n"
 "border:0px solid red;\n"
 "border-radius:10px\n"
@@ -1056,7 +1058,7 @@ class Ui_MainWindow(object):
         self.frame_103.setGeometry(QtCore.QRect(19, 4, 40, 41))
         self.frame_103.setStyleSheet("QFrame{\n"
 "padding:8px;\n"
-"image: url(\"resources/img/page0/page0_提示音.svg\");\n"
+f"image: url({get_resource_path('resources/img/page0/page0_提示音.svg')});\n"
 "    background-color: rgb(255, 81, 45);\n"
 "border:0px solid red;\n"
 "border-radius:10px\n"
@@ -1109,7 +1111,7 @@ class Ui_MainWindow(object):
         self.frame_106.setGeometry(QtCore.QRect(19, 4, 40, 41))
         self.frame_106.setStyleSheet("QFrame{\n"
 "padding:8px;\n"
-"image: url(\"resources/img/page0/page0_微信语言.svg\");\n"
+f"image: url({get_resource_path('resources/img/page0/page0_微信语言.svg')});\n"
 "background-color: rgb(255, 81, 45);\n"
 "border:0px solid red;\n"
 "border-radius:10px\n"
@@ -1161,7 +1163,7 @@ class Ui_MainWindow(object):
         self.frame_109.setGeometry(QtCore.QRect(19, 4, 40, 41))
         self.frame_109.setStyleSheet("QFrame{\n"
 "padding:8px;\n"
-"image: url(\"resources/img/page0/page0_枫叶版本.svg\");\n"
+f"image: url({get_resource_path('resources/img/page0/page0_枫叶版本.svg')});\n"
 "background-color: rgb(255, 81, 45);\n"
 "border:0px solid red;\n"
 "border-radius:10px\n"
@@ -1314,7 +1316,7 @@ class Ui_MainWindow(object):
 "")
         self.file_pushButton.setText("")
         icon15 = QtGui.QIcon()
-        icon15.addPixmap(QtGui.QPixmap("resources/img/page1/page1_打开文件.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon15.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page1/page1_打开文件.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.file_pushButton.setIcon(icon15)
         self.file_pushButton.setIconSize(QtCore.QSize(24, 24))
         self.file_pushButton.setObjectName("file_pushButton")
@@ -1335,7 +1337,7 @@ class Ui_MainWindow(object):
 "")
         self.video_pushButton_.setText("")
         icon16 = QtGui.QIcon()
-        icon16.addPixmap(QtGui.QPixmap("resources/img/page1/page1_视频通话.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon16.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page1/page1_视频通话.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.video_pushButton_.setIcon(icon16)
         self.video_pushButton_.setIconSize(QtCore.QSize(24, 24))
         self.video_pushButton_.setObjectName("video_pushButton_")
@@ -1531,7 +1533,7 @@ class Ui_MainWindow(object):
 "}")
         self.add_pushButton.setText("")
         icon17 = QtGui.QIcon()
-        icon17.addPixmap(QtGui.QPixmap("resources/img/page1/page1_添加任务.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon17.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page1/page1_添加任务.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.add_pushButton.setIcon(icon17)
         self.add_pushButton.setObjectName("add_pushButton")
         self.horizontalLayout_5.addWidget(self.add_pushButton)
@@ -1649,7 +1651,7 @@ class Ui_MainWindow(object):
 "    color: rgb(0, 0, 0);  \n"
 "}")
         icon18 = QtGui.QIcon()
-        icon18.addPixmap(QtGui.QPixmap("resources/img/page1/page1_保存任务.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon18.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page1/page1_保存任务.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_save.setIcon(icon18)
         self.pushButton_save.setObjectName("pushButton_save")
         self.horizontalLayout_26.addWidget(self.pushButton_save)
@@ -1663,7 +1665,7 @@ class Ui_MainWindow(object):
 "    color: rgb(0, 0, 0);  \n"
 "}")
         icon19 = QtGui.QIcon()
-        icon19.addPixmap(QtGui.QPixmap("resources/img/page1/page1_导入任务.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon19.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page1/page1_导入任务.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_import.setIcon(icon19)
         self.pushButton_import.setObjectName("pushButton_import")
         self.horizontalLayout_26.addWidget(self.pushButton_import)
@@ -1951,7 +1953,7 @@ class Ui_MainWindow(object):
 "    color: rgb(0, 0, 0);\n"
 "}")
         icon20 = QtGui.QIcon()
-        icon20.addPixmap(QtGui.QPixmap("resources/img/page2/page2_智慧拆句.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon20.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page2/page2_智慧拆句.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBox_Ai.setIcon(icon20)
         self.checkBox_Ai.setObjectName("checkBox_Ai")
         self.horizontalLayout_16.addWidget(self.checkBox_Ai)
@@ -2406,7 +2408,7 @@ class Ui_MainWindow(object):
         self.takeOver_widget.setMinimumSize(QtCore.QSize(28, 28))
         self.takeOver_widget.setMaximumSize(QtCore.QSize(28, 28))
         self.takeOver_widget.setSizeIncrement(QtCore.QSize(28, 0))
-        self.takeOver_widget.setStyleSheet("image: url(\"resources/img/page3/page3_AI标志图标.svg\");")
+        self.takeOver_widget.setStyleSheet(f"image: url({get_resource_path('resources/img/page3/page3_AI标志图标.svg')});")
         self.takeOver_widget.setObjectName("takeOver_widget")
         self.horizontalLayout_19.addWidget(self.takeOver_widget)
         self.horizontalLayout_124.addWidget(self.Ai_move)
@@ -2537,7 +2539,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_takeover.setText("")
         icon21 = QtGui.QIcon()
-        icon21.addPixmap(QtGui.QPixmap("resources/img/page3/page3_开始接管.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon21.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/page3/page3_开始接管.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_takeover.setIcon(icon21)
         self.pushButton_takeover.setIconSize(QtCore.QSize(38, 38))
         self.pushButton_takeover.setObjectName("pushButton_takeover")
