@@ -8,6 +8,8 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from common import get_resource_path
+
 
 class Ui_ActivitiesWindow(object):
     def setupUi(self, ActivitiesWindow):
@@ -96,7 +98,7 @@ class Ui_ActivitiesWindow(object):
 "    color: rgb(32, 32, 32);\n"
 "}")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("resources/img/activity/兑换激活码.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/兑换激活码.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_exchange.setIcon(icon)
         self.pushButton_exchange.setIconSize(QtCore.QSize(18, 18))
         self.pushButton_exchange.setObjectName("pushButton_exchange")
@@ -119,7 +121,7 @@ class Ui_ActivitiesWindow(object):
 "}")
         self.pushButton_close.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("resources/img/窗口控制/窗口控制-关闭.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/窗口控制/窗口控制-关闭.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_close.setIcon(icon1)
         self.pushButton_close.setIconSize(QtCore.QSize(16, 16))
         self.pushButton_close.setObjectName("pushButton_close")
@@ -235,7 +237,7 @@ class Ui_ActivitiesWindow(object):
 "}")
         self.pushButton_year.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("resources/img/activity/year.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/year.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_year.setIcon(icon2)
         self.pushButton_year.setIconSize(QtCore.QSize(140, 140))
         self.pushButton_year.setObjectName("pushButton_year")
@@ -277,7 +279,7 @@ class Ui_ActivitiesWindow(object):
 "}")
         self.pushButton_VIP.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("resources/img/activity/VIP.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/VIP.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_VIP.setIcon(icon3)
         self.pushButton_VIP.setIconSize(QtCore.QSize(140, 140))
         self.pushButton_VIP.setObjectName("pushButton_VIP")
@@ -319,7 +321,7 @@ class Ui_ActivitiesWindow(object):
 "}")
         self.pushButton_AiVIP.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("resources/img/activity/AiVIP.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/AiVIP.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_AiVIP.setIcon(icon4)
         self.pushButton_AiVIP.setIconSize(QtCore.QSize(140, 140))
         self.pushButton_AiVIP.setObjectName("pushButton_AiVIP")
@@ -361,7 +363,7 @@ class Ui_ActivitiesWindow(object):
 "}")
         self.pushButton_Base.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("resources/img/activity/Base.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/Base.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_Base.setIcon(icon5)
         self.pushButton_Base.setIconSize(QtCore.QSize(140, 140))
         self.pushButton_Base.setObjectName("pushButton_Base")
@@ -425,7 +427,7 @@ class Ui_ActivitiesWindow(object):
         self.widget_head.setFont(font)
         self.widget_head.setStyleSheet("QWidget {\n"
 "border-radius: 0px;\n"
-"image: url(\'resources/img/activity/head.png\');\n"
+f"image: url({get_resource_path('resources/img/activity/head.png')});\n"
 "background: transparent;\n"
 "}")
         self.widget_head.setObjectName("widget_head")
@@ -493,7 +495,7 @@ class Ui_ActivitiesWindow(object):
         self.widget_bottom.setMaximumSize(QtCore.QSize(650, 16777215))
         self.widget_bottom.setStyleSheet("QWidget {\n"
 "    border-radius: 12px;\n"
-"image: url(\'resources/img/activity/bottom.png\');\n"
+f"image: url({get_resource_path('resources/img/activity/bottom.png')});\n"
 "background: transparent;\n"
 "}")
         self.widget_bottom.setObjectName("widget_bottom")
@@ -564,7 +566,7 @@ class Ui_ActivitiesWindow(object):
 "}")
         self.pushButton_Wechat.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("resources/img/activity/QQ_Act.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon6.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/activity/QQ_Act.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_Wechat.setIcon(icon6)
         self.pushButton_Wechat.setIconSize(QtCore.QSize(130, 130))
         self.pushButton_Wechat.setObjectName("pushButton_Wechat")

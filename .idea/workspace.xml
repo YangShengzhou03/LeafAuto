@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1152a12b-dc41-46b9-9620-3eb81b9d0c61" name="Changes" comment="LeafAuto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ui_MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ui_MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_internal/system_info.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ui_Activities.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ui_Activities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ui_SettingWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ui_SettingWindow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +97,7 @@
       <workItem from="1742796570339" duration="481000" />
       <workItem from="1742797247513" duration="58000" />
       <workItem from="1742800728022" duration="2567000" />
-      <workItem from="1742809503653" duration="302000" />
+      <workItem from="1742809503653" duration="744000" />
     </task>
     <task id="LOCAL-00001" summary="LeafAuto">
       <option name="closed" value="true" />
@@ -147,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742800260834</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="LeafAuto">
+      <option name="closed" value="true" />
+      <created>1742809814541</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742809814542</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
