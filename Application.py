@@ -14,10 +14,10 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
     shared_memory = QtCore.QSharedMemory("LeafAuto_Server")
     if shared_memory.attach():
-        sys.exit(1)
+        sys.exit()
 
     if not shared_memory.create(1):
-        sys.exit(1)
+        sys.exit()
 
     window = MainWindow()
     window.setWindowTitle("枫叶信息自动化")
@@ -34,7 +34,7 @@ def start_application():
     except SystemExit:
         raise
     except Exception:
-        sys.exit(1)
+        sys.exit()
 
 
 if __name__ == '__main__':

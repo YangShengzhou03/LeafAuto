@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1152a12b-dc41-46b9-9620-3eb81b9d0c61" name="Changes" comment="LeafAuto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ui_Activities.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ui_Activities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ui_SettingWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ui_SettingWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/System_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/System_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ui_SettingWindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Ui_SettingWindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/page3/page3_开始接管.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/page3/page3_开始接管.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +99,11 @@
       <workItem from="1742796570339" duration="481000" />
       <workItem from="1742797247513" duration="58000" />
       <workItem from="1742800728022" duration="2567000" />
-      <workItem from="1742809503653" duration="744000" />
+      <workItem from="1742809503653" duration="871000" />
+      <workItem from="1743149720171" duration="234000" />
+      <workItem from="1743343741709" duration="5000" />
+      <workItem from="1743587410450" duration="31000" />
+      <workItem from="1743600810052" duration="1108000" />
     </task>
     <task id="LOCAL-00001" summary="LeafAuto">
       <option name="closed" value="true" />
@@ -155,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742809814542</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="LeafAuto">
+      <option name="closed" value="true" />
+      <created>1742810261318</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742810261318</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +198,7 @@
     <SUITE FILE_PATH="coverage/LeafAuto$Application.coverage" NAME="Application Coverage Results" MODIFIED="1742796980544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_py$common.coverage" NAME="common Coverage Results" MODIFIED="1733586240279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ui_MainWindow_py$App.coverage" NAME="App Coverage Results" MODIFIED="1736682319959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Application_py$Application.coverage" NAME="Application Coverage Results" MODIFIED="1742802242644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Application_py$Application.coverage" NAME="Application Coverage Results" MODIFIED="1743587419331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_py$ActivitiesWindow.coverage" NAME="ActivitiesWindow Coverage Results" MODIFIED="1739952872539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_py$AiAssistant.coverage" NAME="AiAssistant Coverage Results" MODIFIED="1730436052555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_py$Application.coverage" NAME="Application Coverage Results" MODIFIED="1741771073724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

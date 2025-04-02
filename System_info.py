@@ -1,5 +1,6 @@
 import configparser
 import os
+import sys
 from datetime import timedelta, datetime
 
 import wmi
@@ -81,7 +82,7 @@ def ensure_config_file_exists():
             retries += 1
 
     if retries >= MAX_RETRIES:
-        exit(0)
+        sys.exit()
 
 
 def create_config_file():

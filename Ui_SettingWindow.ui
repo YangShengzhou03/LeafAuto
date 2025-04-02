@@ -528,10 +528,6 @@ QCheckBox::indicator:checked {
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>:/buttom/img/buttom/F0_f-zero-key.svg</normaloff>:/buttom/img/buttom/F0_f-zero-key.svg</iconset>
-                     </property>
                      <property name="checked">
                       <bool>false</bool>
                      </property>
@@ -631,10 +627,6 @@ QCheckBox::indicator:checked {
                      </property>
                      <property name="text">
                       <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>:/buttom/img/buttom/F1_f-one-key.svg</normaloff>:/buttom/img/buttom/F1_f-one-key.svg</iconset>
                      </property>
                     </widget>
                    </item>
@@ -778,10 +770,6 @@ QCheckBox::indicator:checked {
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>:/buttom/img/buttom/F2_f-two-key.svg</normaloff>:/buttom/img/buttom/F2_f-two-key.svg</iconset>
-                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -879,10 +867,6 @@ QCheckBox::indicator:checked {
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>:/buttom/img/buttom/F4_f-four-key.svg</normaloff>:/buttom/img/buttom/F4_f-four-key.svg</iconset>
-                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -973,10 +957,6 @@ QCheckBox::indicator:checked {
                      </property>
                      <property name="text">
                       <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>:/buttom/img/buttom/F4_f-four-key.svg</normaloff>:/buttom/img/buttom/F4_f-four-key.svg</iconset>
                      </property>
                     </widget>
                    </item>
@@ -1240,7 +1220,7 @@ QSpinBox:focus {
                   </layout>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_29" stretch="1,1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_29" stretch="1,0">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -1263,51 +1243,68 @@ QSpinBox:focus {
 }</string>
                      </property>
                      <property name="text">
-                      <string>微信多开窗口数量</string>
+                      <string>阻止服务器运行自动锁屏</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QSpinBox" name="spinBox_openmore">
+                    <widget class="QCheckBox" name="checkBox_sever">
                      <property name="minimumSize">
                       <size>
-                       <width>106</width>
-                       <height>27</height>
+                       <width>52</width>
+                       <height>30</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>106</width>
-                       <height>27</height>
+                       <width>52</width>
+                       <height>30</height>
                       </size>
                      </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
                      <property name="styleSheet">
-                      <string notr="true">QSpinBox {
-    border: 1px solid #ccc;
-    padding: 4px 20px 4px 8px;
-    font-family: 'Microsoft YaHei', sans-serif;
-    font-size: 14px;
-    width: 120px;
-    background-color: #fff;
-    border-radius: 4px;
-    color: rgb(0, 0, 0);
+                      <string notr="true">QCheckBox {
+    width: 18px;
+    height: 14px;
+    margin: 1px;
+    border-radius: 14px;
+    padding: 0;
+    border: 1px solid #8a8a8a;
 }
 
-QSpinBox:hover {
-    border-color: #888;
-    background-color: #f5f5f5;
+QCheckBox::indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 1px;
 }
 
-QSpinBox:focus {
-    border-color: #0078d4;
-    box-shadow: 0 0 3px rgba(0, 120, 212, 0.8);
+QCheckBox:unchecked {
+    background-color: white;
+}
+
+QCheckBox:checked {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+}
+
+QCheckBox::indicator:unchecked {
+    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));
+    left: 1px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: white;
+    left: 24px;
 }</string>
                      </property>
-                     <property name="minimum">
-                      <number>1</number>
-                     </property>
-                     <property name="maximum">
-                      <number>15</number>
+                     <property name="text">
+                      <string/>
                      </property>
                     </widget>
                    </item>
@@ -2203,6 +2200,7 @@ QPushButton:pressed {
    </layout>
   </widget>
  </widget>
+ <resources/>
  <connections>
   <connection>
    <sender>listWidget_setting</sender>
