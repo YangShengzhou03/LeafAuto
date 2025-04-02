@@ -54,7 +54,7 @@ class Ui_SettingWindow(object):
         self.widget_SettingLogo = QtWidgets.QWidget(parent=self.frame_left_head)
         self.widget_SettingLogo.setMinimumSize(QtCore.QSize(0, 36))
         self.widget_SettingLogo.setMaximumSize(QtCore.QSize(16777215, 36))
-        self.widget_SettingLogo.setStyleSheet("image: url(:/svg/Morikawa/01_Data/img/logo/443px.png);")
+        self.widget_SettingLogo.setStyleSheet(f"image: url({get_resource_path('')});")
         self.widget_SettingLogo.setObjectName("widget_SettingLogo")
         self.horizontalLayout_17.addWidget(self.widget_SettingLogo)
         self.verticalLayout_12.addWidget(self.frame_left_head)
@@ -102,17 +102,17 @@ class Ui_SettingWindow(object):
         self.listWidget_setting.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/高级设置.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/高级设置.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon1)
         self.listWidget_setting.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/其他设置.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/其他设置.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon2)
         self.listWidget_setting.addItem(item)
         item = QtWidgets.QListWidgetItem()
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/关于枫叶.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/关于枫叶.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         item.setIcon(icon3)
         self.listWidget_setting.addItem(item)
         self.horizontalLayout_15.addWidget(self.listWidget_setting)
@@ -144,7 +144,7 @@ class Ui_SettingWindow(object):
 "color: rgb(0, 0, 0);\n"
 "}")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/完成设置.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/完成设置.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_exit_setting.setIcon(icon4)
         self.pushButton_exit_setting.setObjectName("pushButton_exit_setting")
         self.horizontalLayout_16.addWidget(self.pushButton_exit_setting, 0, QtCore.Qt.AlignmentFlag.AlignBottom)
@@ -256,9 +256,6 @@ class Ui_SettingWindow(object):
 "    left: 24px;\n"
 "}")
         self.checkBox_close_option.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/buttom/img/buttom/F0_f-zero-key.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.checkBox_close_option.setIcon(icon5)
         self.checkBox_close_option.setChecked(False)
         self.checkBox_close_option.setObjectName("checkBox_close_option")
         self.horizontalLayout_24.addWidget(self.checkBox_close_option)
@@ -319,9 +316,6 @@ class Ui_SettingWindow(object):
 "    left: 24px;\n"
 "}")
         self.checkBox_sound.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/buttom/img/buttom/F1_f-one-key.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.checkBox_sound.setIcon(icon6)
         self.checkBox_sound.setObjectName("checkBox_sound")
         self.horizontalLayout_23.addWidget(self.checkBox_sound)
         self.pushButton_test_sound = QtWidgets.QPushButton(parent=self.frame_setting_1)
@@ -332,9 +326,9 @@ class Ui_SettingWindow(object):
         self.pushButton_test_sound.setStyleSheet("color: rgb(199, 199, 199);\n"
 "border:none;")
         self.pushButton_test_sound.setText("")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/播放测试.svg')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_test_sound.setIcon(icon7)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/播放测试.svg")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_test_sound.setIcon(icon5)
         self.pushButton_test_sound.setIconSize(QtCore.QSize(28, 28))
         self.pushButton_test_sound.setObjectName("pushButton_test_sound")
         self.horizontalLayout_23.addWidget(self.pushButton_test_sound)
@@ -395,9 +389,6 @@ class Ui_SettingWindow(object):
 "    left: 24px;\n"
 "}")
         self.checkBox_net_time.setText("")
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(":/buttom/img/buttom/F2_f-two-key.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.checkBox_net_time.setIcon(icon8)
         self.checkBox_net_time.setObjectName("checkBox_net_time")
         self.horizontalLayout_6.addWidget(self.checkBox_net_time)
         self.verticalLayout_3.addLayout(self.horizontalLayout_6)
@@ -457,9 +448,6 @@ class Ui_SettingWindow(object):
 "    left: 24px;\n"
 "}")
         self.checkBox_updata.setText("")
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(":/buttom/img/buttom/F4_f-four-key.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.checkBox_updata.setIcon(icon9)
         self.checkBox_updata.setObjectName("checkBox_updata")
         self.horizontalLayout_5.addWidget(self.checkBox_updata)
         self.verticalLayout_3.addLayout(self.horizontalLayout_5)
@@ -518,7 +506,6 @@ class Ui_SettingWindow(object):
 "    left: 24px;\n"
 "}")
         self.checkBox_Email.setText("")
-        self.checkBox_Email.setIcon(icon9)
         self.checkBox_Email.setObjectName("checkBox_Email")
         self.horizontalLayout_19.addWidget(self.checkBox_Email)
         self.verticalLayout_3.addLayout(self.horizontalLayout_19)
@@ -660,35 +647,51 @@ class Ui_SettingWindow(object):
 "}")
         self.label_openmore.setObjectName("label_openmore")
         self.horizontalLayout_29.addWidget(self.label_openmore)
-        self.spinBox_openmore = QtWidgets.QSpinBox(parent=self.frame_setting_2)
-        self.spinBox_openmore.setMinimumSize(QtCore.QSize(106, 27))
-        self.spinBox_openmore.setMaximumSize(QtCore.QSize(106, 27))
-        self.spinBox_openmore.setStyleSheet("QSpinBox {\n"
-"    border: 1px solid #ccc;\n"
-"    padding: 4px 20px 4px 8px;\n"
-"    font-family: \'Microsoft YaHei\', sans-serif;\n"
-"    font-size: 14px;\n"
-"    width: 120px;\n"
-"    background-color: #fff;\n"
-"    border-radius: 4px;\n"
-"    color: rgb(0, 0, 0);\n"
+        self.checkBox_sever = QtWidgets.QCheckBox(parent=self.frame_setting_2)
+        self.checkBox_sever.setMinimumSize(QtCore.QSize(52, 30))
+        self.checkBox_sever.setMaximumSize(QtCore.QSize(52, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.checkBox_sever.setFont(font)
+        self.checkBox_sever.setStyleSheet("QCheckBox {\n"
+"    width: 18px;\n"
+"    height: 14px;\n"
+"    margin: 1px;\n"
+"    border-radius: 14px;\n"
+"    padding: 0;\n"
+"    border: 1px solid #8a8a8a;\n"
 "}\n"
 "\n"
-"QSpinBox:hover {\n"
-"    border-color: #888;\n"
-"    background-color: #f5f5f5;\n"
+"QCheckBox::indicator {\n"
+"    width: 24px;\n"
+"    height: 24px;\n"
+"    border-radius: 12px;\n"
+"    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);\n"
+"    position: absolute;\n"
+"    top: 1px;\n"
 "}\n"
 "\n"
-"QSpinBox:focus {\n"
-"    border-color: #0078d4;\n"
-"    box-shadow: 0 0 3px rgba(0, 120, 212, 0.8);\n"
+"QCheckBox:unchecked {\n"
+"    background-color: white;\n"
+"}\n"
+"\n"
+"QCheckBox:checked {\n"
+"    background-color: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"    background: qradialgradient(cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0.66 rgba(134, 119, 253, 255), stop:1 rgba(119, 111, 252, 255));\n"
+"    left: 1px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    background-color: white;\n"
+"    left: 24px;\n"
 "}")
-        self.spinBox_openmore.setMinimum(1)
-        self.spinBox_openmore.setMaximum(15)
-        self.spinBox_openmore.setObjectName("spinBox_openmore")
-        self.horizontalLayout_29.addWidget(self.spinBox_openmore)
+        self.checkBox_sever.setText("")
+        self.checkBox_sever.setObjectName("checkBox_sever")
+        self.horizontalLayout_29.addWidget(self.checkBox_sever)
         self.horizontalLayout_29.setStretch(0, 1)
-        self.horizontalLayout_29.setStretch(1, 1)
         self.verticalLayout_4.addLayout(self.horizontalLayout_29)
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_7.setContentsMargins(188, -1, 188, -1)
@@ -895,9 +898,9 @@ class Ui_SettingWindow(object):
         self.pushButton_logo.setStyleSheet("color: rgb(199, 199, 199);\n"
 "border:none;")
         self.pushButton_logo.setText("")
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap(get_resource_path('resources/img/setting/logo.png')), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton_logo.setIcon(icon10)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(get_resource_path("resources/img/setting/logo.png")), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_logo.setIcon(icon6)
         self.pushButton_logo.setIconSize(QtCore.QSize(80, 80))
         self.pushButton_logo.setObjectName("pushButton_logo")
         self.horizontalLayout_30.addWidget(self.pushButton_logo)
@@ -1101,7 +1104,7 @@ class Ui_SettingWindow(object):
         self.comboBox_language.setItemText(1, _translate("SettingWindow", "繁体中文"))
         self.comboBox_language.setItemText(2, _translate("SettingWindow", "English"))
         self.label_addtime.setText(_translate("SettingWindow", "添加任务自增分钟"))
-        self.label_openmore.setText(_translate("SettingWindow", "微信多开窗口数量"))
+        self.label_openmore.setText(_translate("SettingWindow", "阻止服务器断连自动锁屏"))
         self.label_errorAudio.setText(_translate("SettingWindow", "任务出错时提示音"))
         self.comboBox_errorAudio.setItemText(0, _translate("SettingWindow", "提示音1"))
         self.comboBox_errorAudio.setItemText(1, _translate("SettingWindow", "提示音2"))

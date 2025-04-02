@@ -39,14 +39,13 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
 
         membership = read_key_value('membership')
         if membership == 'VIP':
-            self.ui.spinBox_openmore.setMaximum(15)
+            pass
         elif membership == 'AiVIP':
             self.ui.checkBox_Email.setEnabled(False)
-            self.ui.spinBox_openmore.setMaximum(2)
         else:
             self.ui.checkBox_net_time.setEnabled(False)
             self.ui.checkBox_Email.setEnabled(False)
-            self.ui.spinBox_openmore.setMaximum(1)
+            # self.ui.checkBox_sever.setChecked(False)
 
         self.setting_init()
         self.ui.comboBox_errorAudio.currentIndexChanged.connect(self.update_selected_sound)
@@ -106,6 +105,7 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
             ('error_sound', self.ui.checkBox_sound),
             ('net_time', self.ui.checkBox_net_time),
             ('auto_update', self.ui.checkBox_updata),
+            ('serve_lock', self.ui.checkBox_sever),
             ('close_option', self.ui.checkBox_close_option)
         ]:
             checkbox.setChecked(str_to_bool(read_key_value(key)))
@@ -117,7 +117,6 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
             self.ui.comboBox_language.setCurrentIndex(index)
         self.ui.label_version.setText('V' + read_key_value('version'))
         self.ui.spinBox_timestep.setValue(int(read_key_value('add_timestep')))
-        self.ui.spinBox_openmore.setValue(int(read_key_value('open_more'))-1)
 
         self.audio_files = {
             0: get_resource_path('resources/sound/error_sound_1.mp3'),
@@ -153,11 +152,11 @@ class SettingWindow(QtWidgets.QMainWindow, Ui_SettingWindow):
                 ('error_sound', self.ui.checkBox_sound),
                 ('net_time', self.ui.checkBox_net_time),
                 ('auto_update', self.ui.checkBox_updata),
+                ('serve_lock', self.ui.checkBox_sever),
                 ('close_option', self.ui.checkBox_close_option)
             ]:
                 write_key_value(key, str(checkbox.isChecked()))
             write_key_value('add_timestep', str(self.ui.spinBox_timestep.value()))
-            write_key_value('open_more', str(self.ui.spinBox_openmore.value()+1))
             selected_language = self.ui.comboBox_language.currentText()
             language_code = self.reverse_language_map.get(selected_language, 'cn')
             write_key_value('language', language_code)

@@ -20,7 +20,7 @@ DEFAULT_VALUES = {
     'motherboardsn': 'LEAF AUTO',
     'membership_class': '0',
     'language': 'cn',
-    'open_more': '2',
+    'serve_lock': 'False',
     'add_timestep': 10
 }
 
@@ -98,7 +98,7 @@ def create_config_file():
         'motherboardsn': 'LEAF AUTO',
         'membership_class': '0',
         'language': 'cn',
-        'open_more': '2',
+        'serve_lock': 'False',
         'add_timestep': '10'
     }
     os.makedirs(os.path.dirname(CONFIG_PATH), exist_ok=True)

@@ -1,5 +1,6 @@
 import json
 import os
+import subprocess
 import sys
 from datetime import datetime, timedelta
 
@@ -97,6 +98,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.apply_Membership_limits(self.Membership)
         if common.str_to_bool(read_key_value('auto_update')):
             check_update()
+        if common.str_to_bool(read_key_value('serve_lock')):
+            self.serve_lock()
         self.load_tasks_from_json()
 
     def update_wx(self):
@@ -458,3 +461,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.textBrowser.setHtml('<center><h2>欢迎使用LeafAuto</h2><h2>LeafAuto是我在2024'
                                      '年大二时写的练习程序，没想到居然这么多人爱用。希望大家多提宝贵意见，同时也希望大家会喜欢她。</h2'
                                      '></center>')
+
+    def serve_lock(self):
+        try:
+            for i in range(10):
+                cmd = r'%windir%\System32\tscon.exe {} /dest:console'.format(str(i))
+                subprocess.run(cmd, shell=True, capture_output=True, text=True)
+        except Exception as e:
+            log("ERROR", f"阻止服务器锁屏失败: {str(e)}")

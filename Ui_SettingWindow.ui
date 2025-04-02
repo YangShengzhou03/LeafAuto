@@ -1243,7 +1243,7 @@ QSpinBox:focus {
 }</string>
                      </property>
                      <property name="text">
-                      <string>阻止服务器运行自动锁屏</string>
+                      <string>阻止服务器断连自动锁屏</string>
                      </property>
                     </widget>
                    </item>
