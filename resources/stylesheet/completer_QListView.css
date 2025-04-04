@@ -1,0 +1,38 @@
+QListView {
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 13px;
+    font-family: "微软雅黑", "Microsoft YaHei", sans-serif;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+QListView::item {
+    padding: 4px 10px;
+    min-height: 22px;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 1px;
+    transition: all 0.15s ease;
+}
+
+QListView::item:last-child {
+    border-bottom: none;
+    margin-bottom: 1px;
+    border-radius: 0 0 4px 4px;
+}
+
+QListView::item:selected {
+    background-color: #f0f7ff;
+    color: #0066cc;
+    border-radius: 0;
+}
+
+QListView::item:hover {
+    background-color: #f8f8f8;
+    color: rgb(105, 27, 253);
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}

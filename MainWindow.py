@@ -5,7 +5,9 @@ import sys
 from datetime import datetime, timedelta
 
 from PyQt6 import QtWidgets, QtCore, QtGui
+from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QAction
+from PyQt6.QtWidgets import QCompleter, QListView
 from wxauto import WeChat
 
 import common
@@ -101,6 +103,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if common.str_to_bool(read_key_value('serve_lock')):
             self.serve_lock()
         self.load_tasks_from_json()
+
+        wx.GetSessionList()
+        completer = QCompleter(wx.predict, self)
+        completer.setFilterMode(Qt.MatchFlag.MatchContains)
+        completer.setCompletionMode(QCompleter.CompletionMode.PopupCompletion)
+        popup = completer.popup()
+        if isinstance(popup, QListView):
+            popup.setStyleSheet(common.load_stylesheet("completer_QListView.css"))
+        self.receiver_lineEdit.setCompleter(completer)
 
     def update_wx(self):
         global wx
