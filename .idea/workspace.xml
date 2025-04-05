@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1152a12b-dc41-46b9-9620-3eb81b9d0c61" name="Changes" comment="LeafAuto">
-      <change afterPath="$PROJECT_DIR$/resources/stylesheet/completer_QListView.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.py" afterDir="false" />
     </list>
@@ -103,7 +102,11 @@
       <workItem from="1743587410450" duration="31000" />
       <workItem from="1743600810052" duration="2702000" />
       <workItem from="1743760387660" duration="1069000" />
-      <workItem from="1743761550750" duration="3596000" />
+      <workItem from="1743761550750" duration="3619000" />
+      <workItem from="1743769310001" duration="1358000" />
+      <workItem from="1743771047586" duration="717000" />
+      <workItem from="1743773730560" duration="19000" />
+      <workItem from="1743823937452" duration="80000" />
     </task>
     <task id="LOCAL-00001" summary="LeafAuto">
       <option name="closed" value="true" />
@@ -185,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743603456990</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="LeafAuto">
+      <option name="closed" value="true" />
+      <created>1743769282911</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1743769282911</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +225,7 @@
     <SUITE FILE_PATH="coverage/LeafAuto$Application.coverage" NAME="Application Coverage Results" MODIFIED="1742796980544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_py$common.coverage" NAME="common Coverage Results" MODIFIED="1733586240279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ui_MainWindow_py$App.coverage" NAME="App Coverage Results" MODIFIED="1736682319959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Application_py$Application.coverage" NAME="Application Coverage Results" MODIFIED="1743769121517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Application_py$Application.coverage" NAME="Application Coverage Results" MODIFIED="1743771055736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_py$ActivitiesWindow.coverage" NAME="ActivitiesWindow Coverage Results" MODIFIED="1739952872539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_py$AiAssistant.coverage" NAME="AiAssistant Coverage Results" MODIFIED="1730436052555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_py$Application.coverage" NAME="Application Coverage Results" MODIFIED="1741771073724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

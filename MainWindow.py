@@ -103,15 +103,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if common.str_to_bool(read_key_value('serve_lock')):
             self.serve_lock()
         self.load_tasks_from_json()
-
-        wx.GetSessionList()
-        completer = QCompleter(wx.predict, self)
-        completer.setFilterMode(Qt.MatchFlag.MatchContains)
-        completer.setCompletionMode(QCompleter.CompletionMode.PopupCompletion)
-        popup = completer.popup()
-        if isinstance(popup, QListView):
-            popup.setStyleSheet(common.load_stylesheet("completer_QListView.css"))
-        self.receiver_lineEdit.setCompleter(completer)
+        try:
+            wx.GetSessionList()
+            completer = QCompleter(wx.predict, self)
+            completer.setFilterMode(Qt.MatchFlag.MatchContains)
+            completer.setCompletionMode(QCompleter.CompletionMode.PopupCompletion)
+            popup = completer.popup()
+            if isinstance(popup, QListView):
+                popup.setStyleSheet(common.load_stylesheet("completer_QListView.css"))
+            self.receiver_lineEdit.setCompleter(completer)
+        except Exception:
+            pass
 
     def update_wx(self):
         global wx
